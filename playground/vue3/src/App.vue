@@ -1,0 +1,12 @@
+<script setup lang="ts"></script>
+
+<template lang="pug">
+ai-button(
+  type="button"
+  text="typescript"
+  if-hover="hover:bg-pink-600"
+  if-focus="focus:ring-red-500"
+  u-m="2"
+  loading="true"
+)
+</template>

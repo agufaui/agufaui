@@ -19,6 +19,9 @@ coverage
 .nuxt
 .output
 build
+.nitro
+.cache
+
 
 # misc
 CHANGELOG.md
@@ -28,17 +31,11 @@ CHANGELOG.md
 
 # debug
 logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+*.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
+.env.*
 
 # Editor directories and files
 .idea

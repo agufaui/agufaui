@@ -34,7 +34,7 @@
       "default": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./dist/style.css": {
+    "./style.css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
     }

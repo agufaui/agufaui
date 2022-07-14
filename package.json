@@ -11,7 +11,7 @@
     "watch": "nr -r --parallel --filter=./packages/** watch",
     "build": "nr -r --parallel --filter=./packages/** build && nr docs:build",
     "build:types": "nr -r --parallel --filter=./packages/** build:types",
-    "clean": "rimraf dist types packages/.*/dist packages/auto-imports.d.ts packages/.vitepress/components.d.ts && nr -r --parallel --filter=./packages/** clean",
+    "clean": "rimraf dist types packages/.*/dist packages/auto-imports.d.ts packages/.vitepress/components.d.ts && nr -r --parallel --filter=./packages/** clean && nr -r --parallel --filter=./playground/** clean",
     "docs": "vitepress dev packages",
     "docs:build": "vitepress build packages",
     "docs:serve": "vitepress serve packages",
