@@ -1,0 +1,69 @@
+{
+  "name": "@agufaui/core",
+  "version": "0.1.0",
+  "description": "Vue Components Library",
+  "author": "Agufa.tech <https://agufa.tech>",
+  "license": "MIT",
+  "homepage": "https://ui.agufa.tech",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agufaui/agufaui",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/agufaui/agufaui/issues"
+  },
+  "keywords": [
+    "agufa-ui",
+    "agufaui",
+    "agufa",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue",
+    "nuxt"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "jsdelivr": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/style.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "watch": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json && vite build --emptyOutDir=false --watch",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
+    "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path ../../.eslintignore .",
+    "lintfix": "nr lint --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "typeconfig": "vue-tsc --showConfig",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "@agufaui/use": "workspace:^0.1.0"
+  }
+}
