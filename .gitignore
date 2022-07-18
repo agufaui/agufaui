@@ -25,6 +25,14 @@ build
 
 # misc
 CHANGELOG.md
+index.json
+indexes.json
+packages/*/LICENSE
+packages/contributing.md
+packages/core/README.md
+packages/public/badge-*
+playgrounds/*/pnpm-lock.yaml
+types
 .DS_Store
 *.pem
 .temp

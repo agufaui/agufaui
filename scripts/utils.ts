@@ -1,0 +1,177 @@
+import { join, resolve } from "path";
+import fs from "fs-extra";
+import matter from "gray-matter";
+import parser from "prettier/parser-typescript";
+import prettier from "prettier";
+import YAML from "js-yaml";
+import Git from "simple-git";
+import type { PackageIndexes, AgufaUIElement } from "../packages/metadata";
+import { $fetch } from "ohmyfetch";
+import { packages } from "../packages/metadata/packages";
+import { getCategories } from "../packages/metadata/utils";
+
+export const git = Git();
+
+export const DOCS_URL = "https://agufaui.com";
+
+export const DIR_ROOT = resolve(__dirname, "..");
+export const DIR_SRC = resolve(__dirname, "../packages");
+
+export function hasDemo(pkgPath: string, name: string) {
+  return fs.existsSync(join(DIR_SRC, pkgPath, name, "demo.vue"));
+}
+
+export async function updateImport({ packages, functions }: PackageIndexes) {
+  for (const { name, dir, manualImport } of Object.values(packages)) {
+    if (manualImport) continue;
+
+    let imports: string[];
+    if (name !== "core") {
+      imports = functions
+        .filter((i) => i.package === name)
+        .map((f) => f.name)
+        .sort()
+        .map((name) => `export * from "./${name}";`);
+      await fs.writeFile(join(dir, "index.ts"), `${imports.join("\n")}\n`);
+    }
+  }
+}
+
+export function uniq<T extends any[]>(a: T) {
+  return Array.from(new Set(a));
+}
+
+export function stringifyFunctions(elements: AgufaUIElement[], title = true) {
+  let list = "";
+
+  const categories = getCategories(elements);
+
+  for (const category of categories) {
+    if (category.startsWith("_")) continue;
+
+    if (title) list += `### ${category}\n`;
+
+    const categoryElements = elements
+      .filter((i) => i.category === category)
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    for (const { name, docs, description, deprecated } of categoryElements) {
+      if (deprecated) continue;
+
+      const desc = description ? ` — ${description}` : "";
+      list += `  - [\`${name}\`](${docs})${desc}\n`;
+    }
+    list += "\n";
+  }
+  return list;
+}
+
+export function replacer(
+  code: string,
+  value: string,
+  key: string,
+  insert: "head" | "tail" | "none" = "none"
+) {
+  const START = `<!--${key}_STARTS-->`;
+  const END = `<!--${key}_ENDS-->`;
+  const regex = new RegExp(`${START}[\\s\\S]*?${END}`, "im");
+
+  const target = value ? `${START}\n${value}\n${END}` : `${START}${END}`;
+
+  if (!code.match(regex)) {
+    if (insert === "none") return code;
+    else if (insert === "head") return `${target}\n\n${code}`;
+    else return `${code}\n\n${target}`;
+  }
+
+  return code.replace(regex, target);
+}
+
+export async function updatePackageREADME({
+  packages,
+  functions,
+}: PackageIndexes) {
+  for (const { name, dir } of Object.values(packages)) {
+    const readmePath = join(dir, "README.md");
+
+    if (!fs.existsSync(readmePath)) continue;
+
+    const functionMD = stringifyFunctions(
+      functions.filter((i) => i.package === name),
+      false
+    );
+    let readme = await fs.readFile(readmePath, "utf-8");
+    readme = replacer(readme, functionMD, "FUNCTIONS_LIST");
+
+    await fs.writeFile(readmePath, `${readme.trim()}\n`, "utf-8");
+  }
+}
+
+export async function updateIndexREADME({
+  packages,
+  components,
+}: PackageIndexes) {
+  let readme = await fs.readFile("README.md", "utf-8");
+
+  const elCount = components.filter((i) => !i.internal).length;
+
+  readme = readme.replace(
+    /img\.shields\.io\/badge\/-(.+?)%20components/,
+    `img.shields.io/badge/-${elCount}%20components`
+  );
+
+  await fs.writeFile("README.md", `${readme.trim()}\n`, "utf-8");
+}
+
+export async function updateCountBadge(indexes: PackageIndexes) {
+  const elCount = indexes.components.filter((i) => !i.internal).length;
+  const url = `https://img.shields.io/badge/-${elCount}%20components-13708a`;
+  const data = await $fetch(url, { responseType: "text" });
+  await fs.writeFile(
+    join(DIR_ROOT, "packages/public/badge-function-count.svg"),
+    data,
+    "utf-8"
+  );
+}
+
+async function fetchContributors(page = 1) {
+  const additional = [];
+
+  const collaborators: string[] = [];
+  const data =
+    (await $fetch<{ login: string }[]>(
+      `https://api.github.com/repos/agufaui/agufaui/contributors?per_page=100&page=${page}`,
+      {
+        method: "get",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )) || [];
+  collaborators.push(...data.map((i) => i.login));
+  if (data.length === 100)
+    collaborators.push(...(await fetchContributors(page + 1)));
+
+  return Array.from(
+    new Set([
+      ...collaborators.filter(
+        (collaborator) =>
+          ![
+            "github-actions[bot]",
+            "dependabot[bot]",
+            "release-please-action[bot]",
+          ].includes(collaborator)
+      ),
+      ...additional,
+    ])
+  );
+}
+
+export async function updateContributors() {
+  const collaborators = await fetchContributors();
+  await fs.writeFile(
+    join(DIR_SRC, "./contributors.json"),
+    `${JSON.stringify(collaborators, null, 2)}\n`,
+    "utf8"
+  );
+}

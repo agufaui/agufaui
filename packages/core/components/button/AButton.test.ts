@@ -1,9 +1,9 @@
 import { render, fireEvent } from "@testing-library/vue";
-import AiButton from "./AiButton.vue";
+import AButton from "./AButton.vue";
 
-describe.concurrent("AiButton Test", async () => {
+describe.concurrent("AButton Test", async () => {
   // The render method returns a collection of utilities to query your component
-  const { getByTestId } = render(AiButton, {
+  const { getByTestId } = render(AButton, {
     props: {
       "data-testid": "custom-element",
       text: "component test",
@@ -14,21 +14,21 @@ describe.concurrent("AiButton Test", async () => {
   const button = getByTestId("custom-element");
 
   it("Props ifHover validation", async () => {
-    const validator = AiButton.props.ifHover.validator;
+    const validator = AButton.props.ifHover.validator;
     expect(validator("hover:bg-pink-400")).toBe(true);
     expect(validator("bg-pink-400")).toBe(false);
     expect(validator("focus:bg-pink-400")).toBe(false);
   });
 
   it("Props ifFocus validation", async () => {
-    const validator = AiButton.props.ifFocus.validator;
+    const validator = AButton.props.ifFocus.validator;
     expect(validator("focus:bg-pink-400")).toBe(true);
     expect(validator("bg-pink-400")).toBe(false);
     expect(validator("hover:bg-pink-400")).toBe(false);
   });
 
   it("Props iconPositon validation", async () => {
-    const validator = AiButton.props.iconPositon.validator;
+    const validator = AButton.props.iconPositon.validator;
     expect(validator("left")).toBe(true);
     expect(validator("right")).toBe(true);
     expect(validator("middle")).toBe(false);

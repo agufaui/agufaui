@@ -7,6 +7,11 @@ import AutoImport from "unplugin-auto-import/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "."),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "index.ts"),
@@ -46,7 +51,7 @@ export default defineConfig({
     }),
     Components({
       dts: resolve(__dirname, "types/components.d.ts"),
-      globs: [resolve(__dirname, "components") + "/**/Ai*.vue"],
+      globs: [resolve(__dirname, "components") + "/**/A*.vue"],
       directoryAsNamespace: true,
       transformer: "vue3",
     }),

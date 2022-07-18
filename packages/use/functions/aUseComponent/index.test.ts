@@ -1,8 +1,8 @@
-import { useComponent } from "./component";
+import { aUseComponent } from ".";
 
 describe.concurrent("Component Test", async () => {
   it("Props ifHover validation", async () => {
-    const { getColorCSS } = useComponent();
+    const { getColorCSS } = aUseComponent();
     expect(getColorCSS("blue")).toBe(
       "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
     );

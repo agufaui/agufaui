@@ -1,5 +1,5 @@
 import type { App } from "vue";
-import * as composables from "./shared";
+import * as composables from "./functions";
 
 const VuePlugin = {
   install(vue: App, options: any[]) {
@@ -19,6 +19,6 @@ if (typeof window !== "undefined" && window.Vue) {
   window.Vue.use(VuePlugin);
 }
 
-export * from "./shared";
+export * from "./functions";
 
 export default VuePlugin;

@@ -22,13 +22,13 @@ button(
       span(v-if="loading")
         div(class="animate-spin preserve-3d text-lg" :class="[loadingIcon, iconColor, iconSize, {'h-full': text !== ''}]")
       span(v-else-if="icon")
-        div(:class="[icon, iconColor, iconSize, {'h-full': text !== ''}]")
+        div(:class="[icon, {'h-full': text !== ''}]")
       span(v-if="text && iconPositon==='left'") {{ text }}
 </template>
 
 <script lang="ts">
 export default {
-  name: "AiButton", // name field must be specified for plugin (global component registration) to work
+  name: "AButton", // name field must be specified for plugin (global component registration) to work
   inheritAttrs: false,
 };
 </script>

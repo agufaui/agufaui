@@ -4,7 +4,7 @@
   "description": "Vue Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
-  "homepage": "https://ui.agufa.tech",
+  "homepage": "https://agufaui.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/agufaui/agufaui",
@@ -50,7 +50,7 @@
   },
   "scripts": {
     "watch": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json && vite build --emptyOutDir=false --watch",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
+    "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE ../../README.md",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
     "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path ../../.eslintignore .",

@@ -1,6 +1,6 @@
-import type { UseComponentReturn } from "./types";
+import type { AUseComponentReturn } from "./types";
 
-export function useComponent(): UseComponentReturn {
+export function aUseComponent(): AUseComponentReturn {
   function getColorCSS(color: String): String {
     switch (color) {
       case "blue":

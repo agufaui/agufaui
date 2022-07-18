@@ -1,3 +1,11 @@
-# Hello Button
+---
+category: Basic
+---
 
-<DocButton />
+# Button
+
+`<a-button />`
+
+# Usage
+
+<doc-button />

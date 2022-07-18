@@ -4,18 +4,20 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import Inspect from "vite-plugin-inspect";
+import { NavbarTitleFix } from "./.vitepress/plugins/navbarTitle";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@agufaui/core": resolve(__dirname, "core/index.ts"),
+      "@agufaui/core": resolve(__dirname, "core"),
       "@agufaui/docs-utils": resolve(__dirname, ".vitepress/plugins/utils.ts"),
       "@components": resolve(__dirname, "core/components"),
     },
   },
 
   plugins: [
+    NavbarTitleFix(),
     Unocss({
       // mode: "global",
     }),
@@ -33,7 +35,7 @@ export default defineConfig({
     AutoImport({
       dts: true,
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      dirs: [resolve(__dirname, "use")],
+      dirs: [resolve(__dirname, "use/functions")],
       imports: ["vitepress", "vue"],
       vueTemplate: true,
     }),

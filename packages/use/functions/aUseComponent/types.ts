@@ -1,3 +1,3 @@
-export interface UseComponentReturn {
+export interface AUseComponentReturn {
   getColorCSS: (color: String) => String;
 }

@@ -5,5 +5,5 @@
     "baseUrl": ".",
     "outDir": "dist",
   },
-  "include": ["types", "**/*.ts", "**/*.vue"],
+  "include": ["types", "functions", "*.ts"],
 }

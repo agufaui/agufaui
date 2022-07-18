@@ -27,7 +27,8 @@
     "packages",
     "packages/.vitepress/components/*.vue",
     "packages/.vitepress/*.ts", 
-    "*.ts"
+    "*.ts",
+    "meta",
   ],
   "exclude": [
     "**/node_modules",

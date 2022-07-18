@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template lang="pug">
-ai-button(
+a-button(
   type="button"
   text="typescript"
   if-hover="hover:bg-pink-600"

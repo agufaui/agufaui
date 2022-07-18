@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "index.ts"),
-      name: "agufauiuse",
+      name: "use",
       formats: ["es", "cjs", "umd"],
       fileName: (format) => {
         if (format === "es") {
@@ -43,7 +43,7 @@ export default defineConfig({
     AutoImport({
       dts: resolve(__dirname, "types/auto-imports.d.ts"),
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      dirs: [resolve(__dirname, "./shared")],
+      dirs: [resolve(__dirname, "./functions")],
       imports: ["vitepress", "vue"],
       vueTemplate: true,
     }),
