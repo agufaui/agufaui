@@ -1,5 +1,5 @@
 {
-  "name": "@agufaui/core",
+  "name": "@agufaui/vue",
   "version": "0.1.0",
   "description": "Vue Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/agufaui/agufaui",
-    "directory": "packages/core"
+    "directory": "packages/vue"
   },
   "bugs": {
     "url": "https://github.com/agufaui/agufaui/issues"
@@ -32,7 +32,7 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "default": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/vue/index.d.ts"
     },
     "./style.css": {
       "import": "./dist/style.css",
@@ -43,13 +43,13 @@
   "module": "./dist/index.mjs",
   "unpkg": "./dist/index.umd.js",
   "jsdelivr": "./dist/index.umd.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/vue/index.d.ts",
   "style": "./dist/style.css",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "watch": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json && vite build --emptyOutDir=false --watch",
+    "watch": "nr build:types && vite build --watch",
     "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE ../../README.md",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
     "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",

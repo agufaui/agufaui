@@ -11,14 +11,13 @@ export const packages: PackageManifest[] = [
   },
   {
     name: "core",
-    display: "AgufaUI",
-    description: "Vue UI Library",
-    path: "core/components",
+    display: "AgufaUIDocs",
+    description: "AgufaUI Documents and Types",
   },
   {
     name: "use",
     display: "Use",
-    description: "Composables for AgufaUI core components",
+    description: "Composables for AgufaUI Components",
     path: "use/functions",
   },
 ];

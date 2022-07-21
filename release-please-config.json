@@ -1,6 +1,6 @@
 {
   "packages": {
-    "packages/core": {
+    "packages/vue": {
       "releaseType": "node",
       "draft": false,
       "prerelease": false,

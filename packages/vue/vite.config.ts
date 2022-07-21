@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue";
 import Unocss from "unocss/vite";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
+import VueTypeImports from "vite-plugin-vue-type-imports";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -49,6 +50,7 @@ export default defineConfig({
     vue({
       reactivityTransform: true,
     }),
+    VueTypeImports(),
     Components({
       dts: resolve(__dirname, "types/components.d.ts"),
       globs: [resolve(__dirname, "components") + "/**/A*.vue"],
@@ -58,7 +60,11 @@ export default defineConfig({
     // auto import composables
     AutoImport({
       dts: resolve(__dirname, "types/auto-imports.d.ts"),
-      imports: ["vitepress", "vue"],
+      imports: [
+        "vitepress",
+        "vue",
+        { "@agufaui/use": ["aUseStringUtils", "aUseVueComponent"] },
+      ],
       vueTemplate: true,
     }),
   ],

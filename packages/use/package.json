@@ -43,7 +43,7 @@
     "access": "public"
   },
   "scripts": {
-    "watch": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json && vite build --emptyOutDir=false --watch",
+    "watch": "nr build:types && vite build --watch",
     "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE ./README.md",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
     "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",

@@ -1,7 +1,7 @@
 import type { AUseStringUtilsReturn } from "./types";
 
 export function aUseStringUtils(): AUseStringUtilsReturn {
-  function pascalCaseToSpace(word: string) {
+  function pascalCaseToSpace(word: string): string {
     return word
       .replace(/([a-z])([A-Z])/g, "$1 $2")
       .replace(/\b([A-Z]+)([A-Z])([a-z])/, "$1 $2$3")
@@ -9,5 +9,9 @@ export function aUseStringUtils(): AUseStringUtilsReturn {
       .trim();
   }
 
-  return { pascalCaseToSpace };
+  function firstLetterToUpper(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  return { pascalCaseToSpace, firstLetterToUpper };
 }

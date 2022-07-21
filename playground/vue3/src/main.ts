@@ -1,9 +1,27 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { VuePlugin } from "@agufaui/core";
+import { VuePlugin, Config } from "@agufaui/vue";
 import "@unocss/reset/tailwind.css";
 import "uno:icons.css";
-import "@agufaui/core/style.css";
+import "@agufaui/vue/style.css";
 import "uno.css";
 
-createApp(App).use(VuePlugin).mount("#app");
+const app = createApp(App);
+
+app.provide<Config>(
+  "agufaUIConfig",
+  new Config({
+    abutton: {
+      default: {
+        color: "text-green",
+        size: "text-lg",
+      },
+      primary: {
+        color: "text-white",
+        bg: "bg-sky",
+      },
+    },
+  })
+);
+
+app.use(VuePlugin).mount("#app");

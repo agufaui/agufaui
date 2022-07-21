@@ -7,7 +7,7 @@ a-button(text="with icon" u-m="2" size="text-lg" iconSize="text-2xl" icon="i-ph-
 a-button(round="rounded-1/2" px="px-2" u-m="2" size="text-md" icon="i-mdi-alarm")
 a-button(text="With loading" u-m="2" icon="i-ph-anchor" :loading="true")
 a-button(round="rounded-1/2" px="px-2" u-m="2" icon="i-ph-anchor" :loading="true")
-a-button(text="With loading" u-m="2" icon="i-ph-anchor" iconPositon="right" :loading="true")
+a-button(text="With loading" u-m="2" icon="i-ph-anchor" iconPositon="right" :loading="true" loadingIcon="i-ph-anchor")
 a-button(text="test" u-m="2" icon="i-ph-anchor" iconPositon="right")
 input(u-bg="blue-400" u-m="2")
 </template>

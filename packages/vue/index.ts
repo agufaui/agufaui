@@ -21,3 +21,4 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export * from "./components";
+export { default as Config } from "../core/config";

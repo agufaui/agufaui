@@ -31,13 +31,13 @@ const Guide = [
   { text: "Guidelines", link: "/guidelines" },
 ];
 
-const CoreCategories = coreCategoryNames.map((c) => ({
+const coreCategories = coreCategoryNames.map((c) => ({
   text: c,
   activeMatch: "___", // never active
   link: `/core/#category=${c}`,
 }));
 
-const CoreFnCategories = coreFnCategoryNames.map((c) => ({
+const coreFnCategories = coreFnCategoryNames.map((c) => ({
   text: c,
   activeMatch: "___", // never active
   link: `/use/#category=${c}`,
@@ -76,7 +76,7 @@ const config = {
   // extends: themeConfig,
 
   title: "AgufaUI",
-  description: "Vue UI Library with Unocss",
+  description: "Vue, React and Svelte UI Library",
   appearance: true,
   base: "/",
   lang: "en-US",
@@ -118,7 +118,7 @@ const config = {
               { text: "Recent Updated", link: "/core/#sort=updated" },
             ],
           },
-          { text: "Categories", items: CoreCategories },
+          { text: "Categories", items: coreCategories },
         ],
       },
       // {
@@ -131,7 +131,7 @@ const config = {
       //         { text: "Recent Updated", link: "/use/#sort=updated" },
       //       ],
       //     },
-      //     { text: "Categories", items: CoreFnCategories },
+      //     { text: "Categories", items: coreFnCategories },
       //   ],
       // },
       // {
@@ -181,7 +181,7 @@ const config = {
       "meta",
       {
         property: "og:description",
-        content: "Vue UI Library",
+        content: "Vue, React and Svelte UI Library",
       },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
@@ -207,7 +207,7 @@ function getComponentsSideBar() {
       text: name,
       items: components.map((i) => ({
         text: pascalCaseToSpace(i.name),
-        link: i.external || `/${i.package}/components/${i.name}/`,
+        link: i.external || `/${i.package}/${i.name}/`,
       })),
       link: name.startsWith("@")
         ? components[0].external || `/${components[0].package}/README`

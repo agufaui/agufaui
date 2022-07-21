@@ -29,9 +29,9 @@ Feel free to enhance existing components, functions, and make new ones.  Please 
 There are some notes for adding new components or functions
 
 - Before you start working, it's better to open an issue to discuss first.
-- Component implementation should be placed under `packages/core/components` as a folder and exposing in `index.ts`.
+- Component implementation should be placed under `packages/vue/components` as a folder and exposing in `index.ts`.
 - Function implementation should be placed under `packages/use/functions` as a folder and exposing in `index.ts`.  Functions should be only components related.
-- In `core` package, try not to introduce 3rd-party dependencies as this package is aimed to be as lightweight as possible.
+- In `vue` package, try not to introduce 3rd-party dependencies as this package is aimed to be as lightweight as possible.
 - If you'd like to introduce 3rd-party dependencies, please contribute to @agufaui/integrations or create a new add-on.
 - When writing documentation for your component or function, the `<!--FOOTER_STARTS-->` and `<!--FOOTER_ENDS-->` will be automatically updated at build time, so don't feel the need to update them.
 
@@ -42,7 +42,7 @@ New add-ons are greatly welcome!
 - Create a new folder under `packages/`, name it as your add-on name. 
 - Add add-on details in `scripts/packages.ts`
 - Create `README.md` under that folder.
-- Add functions as you would do to the core package.
+- Add functions as you would do to the vue package.
 - Commit and submit as a PR.
 
 ## Project Structure
@@ -53,7 +53,7 @@ We use monorepo for multiple packages
 
 ```
 packages
-  core/           - the core package
+  vue/           - the vue package
   use/            - shared functions (composables) across packages
   [...addons]/    - add-ons named
 ```

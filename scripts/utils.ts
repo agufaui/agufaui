@@ -26,7 +26,7 @@ export async function updateImport({ packages, functions }: PackageIndexes) {
     if (manualImport) continue;
 
     let imports: string[];
-    if (name !== "core") {
+    if (!["core", "vue"].includes(name)) {
       imports = functions
         .filter((i) => i.package === name)
         .map((f) => f.name)

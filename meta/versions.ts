@@ -1,3 +1,3 @@
-import { version } from "../packages/core/package.json";
+import { version } from "../packages/vue/package.json";
 
 export const currentVersion: string = `v${version}`;

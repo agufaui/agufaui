@@ -14,13 +14,13 @@
     "skipLibCheck": true,
     "lib": ["esnext", "dom"],
     "types": ["node", "vitest/globals", "@unocss/extractor-pug"],
-    "outDir": "dist",
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@agufaui/core": ["./packages/core/index.ts"],
-      "@agufaui/core/*": ["./packages/core/*"],
+      "@agufaui/vue": ["packages/vue/index.ts"],
+      "@agufaui/vue/*": ["packages/vue/*"],
       "@agufaui/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
+      "@agufaui/core": ["packages/core"],
     }
   },
   "include": [

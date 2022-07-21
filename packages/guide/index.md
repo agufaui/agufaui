@@ -5,7 +5,7 @@ AgufaUI is a collection of UI components. We assume you are already familiar wit
 ## Installation
 
 ```bash
-npm i @agufaui/core
+npm i @agufaui/vue
 ```
 
 > From v1.0, AgufaUI requires `vue` >= v3.2 or `@vue/composition-api` >= v1.1
@@ -14,7 +14,7 @@ npm i @agufaui/core
 
 ```html
 <script src="https://unpkg.com/@agufaui/use"></script>
-<script src="https://unpkg.com/@agufaui/core"></script>
+<script src="https://unpkg.com/@agufaui/vue"></script>
 ```
 
 It will be exposed to global as `window.AgufaUI`
@@ -24,7 +24,7 @@ It will be exposed to global as `window.AgufaUI`
 From v7.2.0, we shipped a Nuxt module to enable auto importing for Nuxt 3 and Nuxt Bridge.
 
 ```bash
-npm i -D @agufaui/nuxt @agufaui/core
+npm i -D @agufaui/nuxt @agufaui/vue
 ```
 
 Nuxt 3
@@ -47,9 +47,9 @@ And then use AgufaUI function anywhere in your Nuxt app. For example:
 
 ## Usage Example
 
-Simply importing the components you need from `@agufaui/core`
+Simply importing the components you need from `@agufaui/vue`
 
 ```ts
-import { AButton } from '@agufaui/core'
+import { AButton } from '@agufaui/vue'
 
-Refer to [components list](/core/) for more details.
+Refer to [components list](/vue/) for more details.

@@ -1,5 +1,5 @@
 {
-  "packages/core": "0.1.0",
+  "packages/vue": "0.1.0",
   "packages/use": "0.1.0",
   "packages/metadata": "0.0.1",
   ".": "0.1.0"

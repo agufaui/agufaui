@@ -3,13 +3,13 @@
 ## Installation:
 
 ```bash
-npm install @agufaui/core
+npm install @agufaui/vue
 ```
 ```bash
-yarn add @agufaui/core
+yarn add @agufaui/vue
 ```
 ```bash
-pnpm add @agufaui/core
+pnpm add @agufaui/vue
 ```
 
 ### Vue 3
@@ -19,8 +19,8 @@ pnpm add @agufaui/core
 ```
 import { createApp } from "vue";
 import App from "./App.vue";
-import VuePlugin from "@agufaui/core";
-import "@agufaui/core/dist/style.css";
+import VuePlugin from "@agufaui/vue";
+import "@agufaui/vue/dist/style.css";
 
 createApp(App).use(VuePlugin).mount("#app");
 ```
@@ -30,7 +30,7 @@ createApp(App).use(VuePlugin).mount("#app");
 -   create plugins folder, create a .js or .ts file, it will be automatically read and loaded by Nuxt:
 
 ```
-import VuePlugin from '@agufaui/core'
+import VuePlugin from '@agufaui/vue'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VuePlugin)

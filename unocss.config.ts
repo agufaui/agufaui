@@ -25,4 +25,13 @@ export default defineConfig({
     transformerVariantGroup(),
     transformerCompileClass(),
   ],
+  include: [
+    /\.[tj]sx?$/,
+    /\.vue$/,
+    /\.vue\?vue/,
+    /\.md$/,
+    /\.html?$/,
+    /\.svelte$/,
+    /\.astro$/,
+  ],
 });
