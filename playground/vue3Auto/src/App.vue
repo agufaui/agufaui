@@ -1,5 +1,7 @@
+<script setup lang="ts"></script>
+
 <template lang="pug">
-a-button(
+ab-aButton(
   type="button"
   aType="default"
   text="typescript"

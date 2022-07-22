@@ -4,9 +4,6 @@ importers:
 
   .:
     specifiers:
-      '@agufaui/metadata': workspace:^0.0.0
-      '@agufaui/use': workspace:^0.1.0
-      '@agufaui/vue': workspace:^0.1.0
       '@antfu/ni': ^0.16.3
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -49,9 +46,6 @@ importers:
       vue: ^3.2.37
       vue-tsc: ^0.38.3
     devDependencies:
-      '@agufaui/metadata': link:packages/metadata
-      '@agufaui/use': link:packages/use
-      '@agufaui/vue': link:packages/vue
       '@antfu/ni': 0.16.3
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
@@ -135,6 +129,19 @@ importers:
       vue: 3.2.37
     devDependencies:
       '@unocss/reset': 0.44.0
+
+  playground/vue3Auto:
+    specifiers:
+      '@agufaui/vue': workspace:^0.1.0
+      '@unocss/reset': ^0.44.0
+      unplugin-vue-components: ^0.21.1
+      vue: ^3.2.37
+    dependencies:
+      '@agufaui/vue': link:../../packages/vue
+      vue: 3.2.37
+    devDependencies:
+      '@unocss/reset': 0.44.0
+      unplugin-vue-components: 0.21.1_vue@3.2.37
 
 packages:
 
@@ -7573,6 +7580,35 @@ packages:
       - webpack
     dev: true
 
+  /unplugin-vue-components/0.21.1_vue@3.2.37:
+    resolution: {integrity: sha512-8MhIT323q1EUu7rz6NfQeiHqDrZKtygy6s9jzcQAuuZUM2T38SHlPT5YJjBOZmM0Bau6YuNTKfBBX4iHzeusaQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.5.2
+      '@rollup/pluginutils': 4.2.1
+      chokidar: 3.5.3
+      debug: 4.3.4
+      fast-glob: 3.2.11
+      local-pkg: 0.4.1
+      magic-string: 0.26.2
+      minimatch: 5.1.0
+      resolve: 1.22.1
+      unplugin: 0.7.2
+      vue: 3.2.37
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - vite
+      - webpack
+    dev: true
+
   /unplugin/0.6.3:
     resolution: {integrity: sha512-CoW88FQfCW/yabVc4bLrjikN9HC8dEvMU4O7B6K2jsYMPK0l6iAnd9dpJwqGcmXJKRCU9vwSsy653qg+RK0G6A==}
     peerDependencies:
@@ -7714,6 +7750,29 @@ packages:
       acorn: 8.7.1
       chokidar: 3.5.3
       vite: 2.9.13
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.4.4
+    dev: true
+
+  /unplugin/0.7.2:
+    resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
+    peerDependencies:
+      esbuild: '>=0.13'
+      rollup: ^2.50.0
+      vite: ^2.3.0 || ^3.0.0-0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      acorn: 8.7.1
+      chokidar: 3.5.3
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.4
     dev: true

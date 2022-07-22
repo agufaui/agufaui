@@ -1,55 +1,193 @@
 # Get Started
 
-AgufaUI is a collection of UI components. We assume you are already familiar with the basic ideas of Atomic/Utility First CSS before you continue.
+<!-- "@unocss-ignore" -->
 
+AgufaUI is a UI library that uses [Unocss](https://github.com/unocss/unocss) underneath.  With CSS classnames controlled configuration, it's highly customizable, and also compatible with any CSS framework, [Unocss](https://github.com/unocss/unocss), [Windicss](https://windicss.org/), [Tailwindcss](https://tailwindcss.com/), and any custom CSS class.  
+
+We assume you are already familiar with the basic ideas of Atomic/Utility First CSS before you continue.
+- [Value Auto-infer](https://windicss.org/features/value-auto-infer.html)
+```html
+<!-- sizes and positions -->
+<div class="p-5px mt-[0.3px]"></div>
+
+<!-- colors -->
+<button class="bg-hex-b2a8bb"></button>
+<button class="bg-[#b2a8bb]"></button>
+<button class="bg-[hsl(211.7,81.9%,69.6%)]"></button>
+
+<!-- grid template -->
+<div class="grid-cols-[auto,1fr,30px]"></div>
+```
+- [Variant Group](https://windicss.org/features/variant-groups.html)
+```html
+<div class="hover:(bg-gray-400 font-medium) bg-white font-light"/>
+```
+- [Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/)
+```html
+<!-- A basic anchor icon from Phosphor icons -->
+<div class="i-ph-anchor-simple-thin" />
+<!-- An orange alarm from Material Design Icons -->
+<div class="i-mdi-alarm text-orange-400" />
+<!-- A large Vue logo -->
+<div class="i-logos-vue text-3xl" />
+<!-- Sun in light mode, Moon in dark mode, from Carbon -->
+<button class="i-carbon-sun dark:i-carbon-moon" />
+<!-- Twemoji of laugh, turns to tear on hovering -->
+<div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
+```
 ## Installation
 
 ```bash
+# npm
 npm i @agufaui/vue
+# yarn
+yarn add @agufaui/vue
+# pnpm
+pnpm add @agufaui/vue
 ```
 
-> From v1.0, AgufaUI requires `vue` >= v3.2 or `@vue/composition-api` >= v1.1
-
-### CDN
+<!-- ### CDN
 
 ```html
 <script src="https://unpkg.com/@agufaui/use"></script>
 <script src="https://unpkg.com/@agufaui/vue"></script>
 ```
 
-It will be exposed to global as `window.AgufaUI`
+It will be exposed to global as `window.AgufaUI` -->
 
-### Nuxt
-
-From v7.2.0, we shipped a Nuxt module to enable auto importing for Nuxt 3 and Nuxt Bridge.
-
-```bash
-npm i -D @agufaui/nuxt @agufaui/vue
-```
-
-Nuxt 3
+### Vue 3 {#vue3}
+In `src/main.{js,ts}` file:
 ```ts
-// nuxt.config.ts
-export default {
-  modules: [
-    '@agufaui/nuxt',
-  ],
-}
+// src/main.ts
+import { createApp } from "vue";
+import App from "./App.vue";
+import { Config } from "@agufaui/vue";
+// Uncomment following line for Global Registration
+// import { VuePlugin } from "@agufaui/vue";
+import "@agufaui/vue/style.css";
+
+const app = createApp(App);
+
+// required
+app.provide<Config>(
+  "agufaUIConfig",
+  new Config()
+);
+
+// Uncomment following line for Global Registration
+// app.use(VuePlugin);
+
+app.mount("#app");
 ```
 
-And then use AgufaUI function anywhere in your Nuxt app. For example:
+#### Auto Import
+Install `unplugin-vue-components`
+```bash
+# npm
+npm i -D unplugin-vue-components
+# yarn
+yarn add -D unplugin-vue-components
+# pnpm
+pnpm add -D unplugin-vue-components
+```
+In `vite.config.{js,ts}`:
+```ts
+// vite.config.ts
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
 
-```vue
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [
+        (componentName) => {
+          /**
+           * 1. if you want to add prefix:
+           * if (componentName.startsWith("Ai"))
+           *  return { name: componentName.splice(2), from: "@agufaui/vue" };
+           * 2. in your template .vue file:
+           *  <ai-aButton text="hello world" />
+           */
+          if (componentName.startsWith("A"))
+            return { name: componentName, from: "@agufaui/vue" };
+        },
+      ],
+    }),
+  ],
+});
+```
+
+#### Manual Import {#vue3manual}
+Manually import the component you want to use per file:
+```html
+// app.vue
+<script>
+import { AButton } from "@agufaui/vue"
+</script>
+```
+
+#### Global Configuration
+If you don't mind extra bundle size, uncomment `VuePlugin` lines in `src/main.{js,ts}` file [mentioned above](/guide/#vue3)
+
+#### Usage {#vue3usage}
+In your template vue file:
+```html
 <template>
 <a-button text="hello world" />
 </template>
 ```
 
-## Usage Example
-
-Simply importing the components you need from `@agufaui/vue`
-
+### Nuxt 3 {#nuxt3}
+In Nuxt project root, create `plugins` folder, then create `agufaui.{js,ts}` file
 ```ts
-import { AButton } from '@agufaui/vue'
+// plugins/agufaui.ts
+import { Config } from "@agufaui/vue";
+// Uncomment following line for Global Registration
+// import { VuePlugin } from "@agufaui/vue";
 
-Refer to [components list](/vue/) for more details.
+export default defineNuxtPlugin((nuxtApp) => {
+  // required
+  nuxtApp.vueApp.provide<Config>(
+    "agufaUIConfig",
+    new Config()
+  );
+
+  // Uncomment following line for Global Registration
+  // nuxtApp.vueApp.use(VuePlugin);
+});
+```
+In `nuxt.config.{js,ts}` file, import style:
+```ts
+// nuxt.config.ts
+import { defineNuxtConfig } from "nuxt";
+
+export default defineNuxtConfig({
+  css: [
+    "@agufaui/vue/style.css",
+  ],
+});
+```
+
+#### Auto Import
+In `nuxt.config.{js,ts}`
+```ts
+import { defineNuxtConfig } from "nuxt";
+
+export default defineNuxtConfig({
+  components: [
+    "~/components",
+    { path: "node_modules/@agufaui/vue" }
+  ]
+});
+```
+
+#### Manual Import
+Same as Vue 3 manual import [mentioned above](/guide/#vue3manual)
+
+#### Global Configuration
+If you don't mind extra bundle size, uncomment `VuePlugin` lines in `plugins/agufaui.{js,ts}` file [mentioned above](/guide/#nuxt3)
+
+#### Usage
+Same as Vue 3 usage [mentioned above](/guide/#vue3usage)

@@ -6,6 +6,9 @@
   "description": "Vue Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
     "dev": "nr update && nr docs",
     "watch": "nr -r --parallel --filter=./packages/** watch",
@@ -27,9 +30,6 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@agufaui/metadata": "workspace:^0.0.0",
-    "@agufaui/use": "workspace:^0.1.0",
-    "@agufaui/vue": "workspace:^0.1.0",
     "@antfu/ni": "^0.16.3",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",

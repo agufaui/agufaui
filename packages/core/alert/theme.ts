@@ -1,0 +1,88 @@
+import { defaultType } from "../types";
+import type { AAlertProps } from "./types";
+
+export const aalert: Readonly<Record<string, AAlertProps>> = {
+  [defaultType]: {
+    show: true,
+    icon: "i-heroicons-solid:information-circle",
+    iconColor: "text-blue-600",
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    color: "text-gray-600",
+    size: "text-sm",
+    font: "font-medium",
+    autoCloseDelaySeconds: 5,
+    spaceX: "space-x-1.2",
+    maxWidth: "max-w-sm",
+  },
+  red: {
+    show: true,
+    icon: "i-majesticons:exclamation-circle",
+    iconColor: "text-red-400",
+    color: "text-red-600",
+    aClass: "rounded-md bg-red-50 p-4",
+    // below is same as default type values
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    size: "text-sm",
+    font: "font-medium",
+    spaceX: "space-x-1.5",
+    maxWidth: "w-full",
+  },
+  green: {
+    show: true,
+    icon: "i-material-symbols:check-circle",
+    iconColor: "text-green-400",
+    color: "text-green-600",
+    aClass: "rounded-md bg-green-50 p-4",
+    // below is same as default type values
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    size: "text-sm",
+    font: "font-medium",
+    spaceX: "space-x-1.5",
+    maxWidth: "w-full",
+  },
+  yellow: {
+    show: true,
+    icon: "i-ic:outline-warning",
+    iconColor: "text-yellow-400",
+    color: "text-yellow-600",
+    aClass: "rounded-md bg-yellow-50 p-4",
+    // below is same as default type values
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    size: "text-sm",
+    font: "font-medium",
+    spaceX: "space-x-1.5",
+    maxWidth: "w-full",
+  },
+  gray: {
+    show: true,
+    icon: "i-heroicons-solid:information-circle",
+    iconColor: "text-blue-400",
+    color: "text-gray-600",
+    aClass: "rounded-md bg-gray-50 p-4",
+    // below is same as default type values
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    size: "text-sm",
+    font: "font-medium",
+    spaceX: "space-x-1.5",
+    maxWidth: "w-full",
+  },
+  blue: {
+    show: true,
+    icon: "i-heroicons-solid:information-circle",
+    iconColor: "text-blue-400",
+    color: "text-gray-600",
+    aClass: "rounded-md bg-blue-50 p-4",
+    // below is same as default type values
+    iconMargin: "mt-0.4",
+    iconPosition: "left",
+    size: "text-sm",
+    font: "font-medium",
+    spaceX: "space-x-1.5",
+    maxWidth: "w-full",
+  },
+};

@@ -12,4 +12,5 @@ export default defineNuxtConfig({
     shim: false,
   },
   modules: ["@unocss/nuxt"],
+  plugins: [],
 });

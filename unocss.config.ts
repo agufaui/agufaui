@@ -32,6 +32,5 @@ export default defineConfig({
     /\.md$/,
     /\.html?$/,
     /\.svelte$/,
-    /\.astro$/,
   ],
 });

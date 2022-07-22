@@ -29,7 +29,7 @@ export function aUseVueComponent(): AUseVueComponentReturn {
     const { firstLetterToUpper } = aUseStringUtils();
 
     for (const propName in props) {
-      if (["aType", "text"].includes(propName)) continue;
+      if (["aType", "text", "msg"].includes(propName)) continue;
 
       const prop = toRef(props, propName as keyof T);
       const computedName = "c" + firstLetterToUpper(propName);

@@ -3,6 +3,7 @@ button(
   role="button"
   :type="cType"
   v-bind="$attrs"
+  @click.stop="click($event)"
   u-pos="relative"
   u-flex="inline"
   u-justify="center items-center"
@@ -17,13 +18,13 @@ button(
   :class="[cPx, cPy, cSize, cColor, cRound, cBg, cIfHover, cIfFocus, {'w-full': cFull}, cAClass]"
 )
   slot
-    div(class="flex justify-center justify-items-center" :class="cSpaceBetween")
-      span(v-if="text && cIconPositon==='right'") {{ text }}
+    div(class="flex justify-center justify-items-center" :class="cSpaceX")
+      span(v-if="text && cIconPosition==='right'") {{ text }}
       span(v-if="cLoading")
-        div(class="animate-spin preserve-3d text-lg" :class="[cLoadingIcon, cIconColor, cIconSize, {'h-full': text !== ''}, cLoadingClass]")
+        div(class="animate-spin preserve-3d text-lg" :class="[cLoadingIcon, {'h-full': text}, cLoadingClass]")
       span(v-else-if="cIcon")
-        div(:class="[cIcon, {'h-full': text !== ''}, cIconClass]")
-      span(v-if="text && cIconPositon==='left'") {{ text }}
+        div(:class="[cIcon, {'h-full': text}, cIconClass]")
+      span(v-if="text && cIconPosition==='left'") {{ text }}
 </template>
 
 <script lang="ts">
@@ -34,7 +35,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { AButtonProps } from "../../../core/button/types";
+import type { AButtonProps, AButtonEmits } from "../../../core/button/types";
 import type Config from "../../../core/config";
 
 const props = defineProps<AButtonProps>();
@@ -63,13 +64,17 @@ const {
   cDisabled,
   cAClass,
   cIcon,
-  cIconColor,
-  cIconSize,
-  cIconPositon,
+  cIconPosition,
   cIconClass,
   cLoading,
   cLoadingIcon,
   cLoadingClass,
-  cSpaceBetween,
+  cSpaceX,
 } = computedProperties;
+
+const emits = defineEmits<AButtonEmits>();
+
+const click = (e: MouseEvent) => {
+  emits("click", e);
+};
 </script>

@@ -45,7 +45,8 @@ export default defineConfig({
   },
   plugins: [
     Unocss({
-      // mode: "global",
+      mode: "global",
+      // mode: "per-module",
     }),
     vue({
       reactivityTransform: true,

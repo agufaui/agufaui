@@ -1,28 +1,25 @@
-import type { Theme } from "./types";
-import { defaultType } from "./types";
-import {
-  defaultThemeMap,
+import type {
+  UserConfig,
+  Theme,
   MapComponentType,
   MapComponentTypeType,
   MapFieldType,
-} from "./themeMap";
+  ConfigInterface,
+} from "./types";
+import { defaultType } from "./types";
+import { defaultThemeMap } from "./themeMap";
 import { aUseDeepClone } from "../use";
 
-export default class Config {
+export default class Config implements ConfigInterface {
   #mergedTheme: Map<string, MapComponentType> = new Map();
 
-  constructor(userTheme: Theme = {}) {
+  constructor(userConfig: UserConfig = {}) {
     this.#mergedTheme = defaultThemeMap;
 
+    const userTheme = userConfig.theme || {};
+
     if (Object.keys(userTheme).length > 0) {
-      /**
-       * {
-       *  abutton: {
-       *    ...
-       *  }
-       *  ...
-       * }
-       */
+      // for each component
       for (const componentName of Object.keys(userTheme)) {
         const componentTheme = userTheme[componentName as keyof Theme];
         let mergedComponentMap = this.#mergedTheme.get(componentName);
@@ -32,17 +29,7 @@ export default class Config {
           this.#mergedTheme.set(componentName, mergedComponentMap);
         }
 
-        /**
-         * {
-         *  abutton: {
-         *    default: {
-         *      ...
-         *    }
-         *    ...
-         *  }
-         *  ...
-         * }
-         */
+        // for each component type
         for (const type in componentTheme) {
           const propsValue = componentTheme[type];
           let propsMap: MapComponentTypeType | undefined =
@@ -62,19 +49,7 @@ export default class Config {
             mergedComponentMap.set(type, propsMap);
           }
 
-          /**
-           * {
-           *  abutton: {
-           *    default: {
-           *      color: "text-green",
-           *      size: "text-lg",
-           *      ...
-           *    }
-           *    ...
-           *  }
-           *  ...
-           * }
-           */
+          // for each field
           for (const prop of Object.keys(propsValue)) {
             const value = propsValue[prop as keyof typeof propsValue];
             propsMap.set(prop, value);

@@ -1,11 +1,21 @@
+import type {
+  ThemeShared,
+  ThemeComposeX,
+  ThemeForm,
+  ThemeIcon,
+} from "../typesShared";
+
 export type ButtonType = "button" | "submit" | "reset" | undefined;
 
-export interface AButtonProps {
+export interface AButtonProps
+  extends ThemeShared,
+    ThemeComposeX,
+    ThemeForm,
+    ThemeIcon {
   type?: ButtonType;
-  aType?: string | undefined;
+  text?: string;
   py?: string;
   px?: string;
-  text?: string;
   size?: string;
   color?: string;
   round?: string;
@@ -13,15 +23,23 @@ export interface AButtonProps {
   ifHover?: string;
   ifFocus?: string;
   full?: boolean;
-  disabled?: boolean;
-  aClass?: string;
-  icon?: string;
-  iconColor?: string;
-  iconSize?: string;
-  iconPositon?: "left" | "right";
-  iconClass?: string;
   loading?: boolean;
   loadingIcon?: string;
   loadingClass?: string;
-  spaceBetween?: string;
+
+  /**
+   * @todo: when vue 3 supports import extends interface for defineProps in SFC,
+   * remove below code.  Also remove devDeps vite-plugin-vue-type-imports in package.json.
+   */
+  aType?: string;
+  aClass?: string;
+  disabled?: boolean;
+  spaceX?: string;
+  icon?: string;
+  iconPosition?: "left" | "right";
+  iconClass?: string;
+}
+
+export interface AButtonEmits {
+  (e: "click", event: MouseEvent): void;
 }

@@ -25,7 +25,6 @@ const functionsSideBar = getFunctionsSideBar();
 
 const Guide = [
   { text: "Get Started", link: "/guide/" },
-  { text: "Best Practice", link: "/guide/best-practice" },
   { text: "Configurations", link: "/guide/config" },
   { text: "Contributing", link: "/contributing" },
   { text: "Guidelines", link: "/guidelines" },
@@ -87,8 +86,10 @@ const config = {
     repo: "agufaui/agufaui",
     docsDir: "packages",
 
-    editLinks: true,
-    editLinkText: "Edit this page",
+    editLink: {
+      pattern: "https://github.com/agufaui/agufaui/blob/main/packages/:path",
+      text: "Suggest changes to this page",
+    },
     lastUpdated: "Last Updated",
 
     algolia: {
@@ -164,7 +165,7 @@ const config = {
     },
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2022-PRESENT AgufaUI",
+      copyright: "Copyright © 2022-PRESENT Agufa.tech",
     },
   },
   head: [

@@ -1,11 +1,12 @@
-import type { Theme } from "./theme";
+import type {
+  Theme,
+  MapComponentType,
+  MapComponentTypeType,
+  MapFieldType,
+} from "./types";
 import { defaultTheme } from "./theme";
 
-export type MapComponentType = Map<string, MapComponentTypeType>;
-export type MapComponentTypeType = Map<string, MapFieldType>;
-export type MapFieldType = string | boolean | undefined;
-
-export const defaultThemeMap = new Map<string, MapComponentType>();
+const defaultThemeMap = new Map<string, MapComponentType>();
 
 for (const componentName of Object.keys(defaultTheme)) {
   const componentTheme = defaultTheme[componentName as keyof Theme];
@@ -24,3 +25,5 @@ for (const componentName of Object.keys(defaultTheme)) {
 
   defaultThemeMap.set(componentName, typesMap);
 }
+
+export { defaultThemeMap };

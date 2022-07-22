@@ -12,5 +12,6 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/no-unused-vars": "off",
+    "vue/require-explicit-emits": "off",
   },
 };
