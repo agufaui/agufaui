@@ -5,8 +5,6 @@ import { ComputedRef } from "vue";
  * @summary Shared composables for Vue components.
  */
 export interface AUseVueComponentReturn {
-  getColorCSS: (color: String) => String;
-
   /**
    * @description Get computed properties from Vue component props.  For each prop, create a computed
    * property that either use prop's value if value exist, or use default value or user defined value

@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "index.ts"),
-      name: "use",
+      name: "@agufaui/use",
       formats: ["es", "cjs", "umd"],
       fileName: (format) => {
         if (format === "es") {
@@ -19,18 +19,38 @@ export default defineConfig({
           return "index.cjs";
         }
 
-        return `index.${format}.js`;
+        return `index.js`;
       },
     },
     rollupOptions: {
       external: ["vue"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // Add external deps here
-        globals: {
-          vue: "Vue",
+      output: [
+        {
+          dir: "dist/es",
+          format: "es",
+          exports: "named",
+          preserveModules: true,
+          preserveModulesRoot: __dirname,
+          sourcemap: false,
         },
-      },
+        {
+          dir: "dist/cjs",
+          format: "cjs",
+          exports: "named",
+          preserveModules: true,
+          preserveModulesRoot: __dirname,
+          sourcemap: false,
+        },
+        {
+          globals: {
+            vue: "Vue",
+          },
+          dir: "dist/umd",
+          format: "umd",
+          exports: "named",
+          sourcemap: false,
+        },
+      ],
     },
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,

@@ -8,7 +8,7 @@ import type {
 } from "./types";
 import { defaultType } from "./types";
 import { defaultThemeMap } from "./themeMap";
-import { aUseDeepClone } from "../use";
+import { aUseDeepClone } from "../use/index";
 
 export default class Config implements ConfigInterface {
   #mergedTheme: Map<string, MapComponentType> = new Map();

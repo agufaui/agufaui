@@ -5,7 +5,7 @@ import fs from "fs";
 
 execSync("pnpm run build", { stdio: "inherit" });
 
-const packages = ["use", "vue"];
+const packages = ["metadata", "use", "vue"];
 
 for (const name of packages) {
   const dist: string = path.join("packages", name, "dist");

@@ -1,28 +1,13 @@
 import type { AUseVueComponentReturn } from "./types";
 import { ComputedRef } from "vue";
-import type Config from "../../../core/config";
+import type { ConfigInterface } from "../../../core/types";
 import { aUseStringUtils } from "../aUseStringUtils";
 
 export function aUseVueComponent(): AUseVueComponentReturn {
-  function getColorCSS(color: String): String {
-    switch (color) {
-      case "blue":
-        return "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500";
-      case "green":
-        return "bg-green-600 hover:bg-green-700 focus:ring-green-500";
-      case "gray":
-        return "bg-gray-600 hover:bg-gray-700 focus:ring-gray-500";
-      case "red":
-        return "bg-red-600 hover:bg-red-700 focus:ring-red-500";
-      default:
-        return "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500";
-    }
-  }
-
   function getComputedPropertiesFromProps<T>(
     props: Readonly<T>,
     component: string,
-    config: Config | undefined
+    config: ConfigInterface | undefined
   ): Record<string, ComputedRef> {
     const computedProperties: Record<string, ComputedRef> = {};
     const aTypeRef = toRef(props, "aType" as keyof T);
@@ -49,5 +34,5 @@ export function aUseVueComponent(): AUseVueComponentReturn {
     return computedProperties;
   }
 
-  return { getColorCSS, getComputedPropertiesFromProps };
+  return { getComputedPropertiesFromProps };
 }
