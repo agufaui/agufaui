@@ -1,7 +1,7 @@
 {
   "name": "@agufaui/vue",
   "version": "0.1.0",
-  "description": "Vue Components Library",
+  "description": "Vue UI Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
   "homepage": "https://agufaui.com",
@@ -27,36 +27,35 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/cjs/vue/index.cjs",
+  "module": "./dist/es/vue/index.mjs",
+  "unpkg": "./dist/umd/index.js",
+  "jsdelivr": "./dist/umd/index.js",
+  "types": "./dist/types/vue/index.d.ts",
+  "style": "./dist/es/style.css",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.umd.js",
-      "types": "./dist/vue/index.d.ts"
+      "import": "./dist/es/vue/index.mjs",
+      "require": "./dist/cjs/vue/index.cjs",
+      "default": "./dist/umd/index.js",
+      "types": "./dist/types/vue/index.d.ts"
     },
     "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+      "import": "./dist/es/style.css",
+      "require": "./dist/es/style.css"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "unpkg": "./dist/index.umd.js",
-  "jsdelivr": "./dist/index.umd.js",
-  "types": "./dist/vue/index.d.ts",
-  "style": "./dist/style.css",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "watch": "nr build:types && vite build --watch",
-    "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE ../../README.md",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
-    "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path ../../.eslintignore .",
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "build:types": "vue-tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .ts,.vue --ignore-path ../../.eslintignore .",
     "lintfix": "nr lint --fix",
     "typecheck": "vue-tsc --noEmit",
-    "typeconfig": "vue-tsc --showConfig",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -64,6 +63,8 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
+    "@agufaui/config": "workspace:^0.0.1",
+    "@agufaui/theme": "workspace:^0.0.1",
     "@agufaui/use": "workspace:^0.1.0"
   }
 }

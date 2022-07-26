@@ -2,9 +2,7 @@ import { defineConfig } from "vitest/config";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import Unocss from "unocss/vite";
-import Components from "unplugin-vue-components/vite";
-import AutoImport from "unplugin-auto-import/vite";
-import VueTypeImports from "vite-plugin-vue-type-imports";
+import VueTypeImports from "@zolyn/vite-plugin-vue-type-imports";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +13,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "index.ts"),
+      entry: resolve(__dirname, "./index.ts"),
       name: "agufaui",
       formats: ["es", "cjs", "umd"],
       fileName: (format) => {
@@ -27,46 +25,51 @@ export default defineConfig({
           return "index.cjs";
         }
 
-        return `index.${format}.js`;
+        return `index.js`;
       },
     },
     rollupOptions: {
       external: ["vue"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // Add external deps here
-        globals: {
-          vue: "Vue",
+      output: [
+        {
+          dir: "dist/es",
+          format: "es",
+          entryFileNames: "[name].mjs",
+          preserveModules: true,
+          preserveModulesRoot: resolve(__dirname, "../"),
+          sourcemap: false,
         },
-      },
+        {
+          dir: "dist/cjs",
+          format: "cjs",
+          entryFileNames: "[name].cjs",
+          preserveModules: true,
+          preserveModulesRoot: resolve(__dirname, "../"),
+          sourcemap: false,
+        },
+        // {
+        //   globals: {
+        //     vue: "Vue",
+        //   },
+        //   dir: "dist/umd",
+        //   format: "umd",
+        //   exports: "named",
+        //   sourcemap: false,
+        // },
+      ],
     },
-    outDir: resolve(__dirname, "dist"),
+    outDir: "dist",
     emptyOutDir: true,
+    cssCodeSplit: true,
   },
   plugins: [
     Unocss({
       mode: "global",
       // mode: "per-module",
     }),
+    VueTypeImports(),
     vue({
       reactivityTransform: true,
-    }),
-    VueTypeImports(),
-    Components({
-      dts: resolve(__dirname, "types/components.d.ts"),
-      globs: [resolve(__dirname, "components") + "/**/A*.vue"],
-      directoryAsNamespace: true,
-      transformer: "vue3",
-    }),
-    // auto import composables
-    AutoImport({
-      dts: resolve(__dirname, "types/auto-imports.d.ts"),
-      imports: [
-        "vitepress",
-        "vue",
-        { "@agufaui/use": ["aUseStringUtils", "aUseVueComponent"] },
-      ],
-      vueTemplate: true,
     }),
   ],
   test: {

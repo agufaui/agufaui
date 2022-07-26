@@ -20,19 +20,15 @@
       "@agufaui/vue": ["packages/vue/index.ts"],
       "@agufaui/vue/*": ["packages/vue/*"],
       "@agufaui/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
-      "@agufaui/core": ["packages/core"],
+      "@agufaui/core": ["packages/core"]
     }
   },
   "include": [
     "packages",
     "packages/.vitepress/components/*.vue",
-    "packages/.vitepress/*.ts", 
+    "packages/.vitepress/*.ts",
     "*.ts",
-    "meta",
+    "meta"
   ],
-  "exclude": [
-    "**/node_modules",
-    "**/**/*.md",
-    "**/dist",
-  ],
+  "exclude": ["**/node_modules", "**/**/*.md", "**/dist"]
 }

@@ -1,4 +1,9 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["components/**/Doc*.vue", "components/**/*.test.ts", "components/**/*.md", "vite.config.ts"],
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "isolatedModules": false,
+    "declaration": true
+  },
+  "exclude": ["components/**/*.test.ts", "vite.config.ts"]
 }

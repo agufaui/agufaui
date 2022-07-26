@@ -1,8 +1,8 @@
-import { defaultType } from "../types";
-import type { AButtonProps } from "./types";
+import { DefaultType } from "../default.const";
+import type { IAButtonProps } from "../types/AButton";
 
-export const abutton: Readonly<Record<string, AButtonProps>> = {
-  [defaultType]: {
+export const DAButton: Readonly<Record<string, IAButtonProps>> = {
+  [DefaultType]: {
     type: "button",
     py: "py-2",
     px: "px-4",

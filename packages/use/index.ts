@@ -1,7 +1,7 @@
 import type { App } from "vue";
 import * as composables from "./functions";
 
-const VuePlugin = {
+export const VuePlugin = {
   install(vue: App, options: any[]) {
     for (const [key, composable] of Object.entries(composables)) {
       vue.config.globalProperties[key] = composable;
@@ -20,5 +20,3 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export * from "./functions";
-
-export default VuePlugin;

@@ -7,19 +7,10 @@ export function aUseDeepClone(): AUseDeepCloneReturn {
       : obj instanceof Date
       ? new Date(obj.getTime())
       : obj instanceof Map
-      ? new Map(
-          Array.from(obj.entries()).map(([key, value]) => [
-            key,
-            deepClone(value),
-          ])
-        )
+      ? new Map(Array.from(obj.entries()).map(([key, value]) => [key, deepClone(value)]))
       : obj && typeof obj === "object"
       ? Object.getOwnPropertyNames(obj).reduce((o, prop) => {
-          Object.defineProperty(
-            o,
-            prop,
-            Object.getOwnPropertyDescriptor(obj, prop)!
-          );
+          Object.defineProperty(o, prop, Object.getOwnPropertyDescriptor(obj, prop)!);
           o[prop] = deepClone((obj as { [key: string]: any })[prop]);
           return o;
         }, Object.create(Object.getPrototypeOf(obj)))
@@ -27,3 +18,5 @@ export function aUseDeepClone(): AUseDeepCloneReturn {
   }
   return { deepClone };
 }
+
+export * from "./types";

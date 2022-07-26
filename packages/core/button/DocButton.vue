@@ -1,5 +1,5 @@
 <template lang="pug">
-a-button(id="hi" :text="text" class="m-2")
+a-button(:text="text" class="m-2")
 a-button(text="circle" size="text-xs" round="rounded-1/2" class="m-2")
 a-button(text="with icon" u-m="2" icon="i-ph-anchor")
 a-button(round="rounded-1/2" px="px-2" u-m="2" icon="i-mdi-alarm")

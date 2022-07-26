@@ -8,5 +8,4 @@ import type { AttributifyNames } from "@unocss/preset-attributify";
 
 type Prefix = "u-"; // change it to your prefix
 
-interface HTMLAttributes
-  extends Partial<Record<AttributifyNames<Prefix>, string>> {}
+interface HTMLAttributes extends Partial<Record<AttributifyNames<Prefix>, string>> {}

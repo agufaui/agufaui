@@ -2,10 +2,12 @@
 
 <!-- "@unocss-ignore" -->
 
-AgufaUI is a UI library that uses [Unocss](https://github.com/unocss/unocss) underneath.  With CSS classnames controlled configuration, it's highly customizable, and also compatible with any CSS framework, [Unocss](https://github.com/unocss/unocss), [Windicss](https://windicss.org/), [Tailwindcss](https://tailwindcss.com/), and any custom CSS class.  
+AgufaUI is a UI library that uses [Unocss](https://github.com/unocss/unocss) underneath. With CSS classnames controlled configuration, it's highly customizable, and also compatible with any CSS framework, [Unocss](https://github.com/unocss/unocss), [Windicss](https://windicss.org/), [Tailwindcss](https://tailwindcss.com/), and any custom CSS class.
 
 We assume you are already familiar with the basic ideas of Atomic/Utility First CSS before you continue.
+
 - [Value Auto-infer](https://windicss.org/features/value-auto-infer.html)
+
 ```html
 <!-- sizes and positions -->
 <div class="p-5px mt-[0.3px]"></div>
@@ -18,11 +20,15 @@ We assume you are already familiar with the basic ideas of Atomic/Utility First 
 <!-- grid template -->
 <div class="grid-cols-[auto,1fr,30px]"></div>
 ```
+
 - [Variant Group](https://windicss.org/features/variant-groups.html)
+
 ```html
-<div class="hover:(bg-gray-400 font-medium) bg-white font-light"/>
+<div class="hover:(bg-gray-400 font-medium) bg-white font-light" />
 ```
+
 - [Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/)
+
 ```html
 <!-- A basic anchor icon from Phosphor icons -->
 <div class="i-ph-anchor-simple-thin" />
@@ -35,6 +41,7 @@ We assume you are already familiar with the basic ideas of Atomic/Utility First 
 <!-- Twemoji of laugh, turns to tear on hovering -->
 <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
 ```
+
 ## Installation
 
 ```bash
@@ -56,7 +63,9 @@ pnpm add @agufaui/vue
 It will be exposed to global as `window.AgufaUI` -->
 
 ### Vue 3 {#vue3}
+
 In `src/main.{js,ts}` file:
+
 ```ts
 // src/main.ts
 import { createApp } from "vue";
@@ -69,10 +78,7 @@ import "@agufaui/vue/style.css";
 const app = createApp(App);
 
 // required
-app.provide<Config>(
-  "agufaUIConfig",
-  new Config()
-);
+app.provide<Config>("agufaUIConfig", new Config());
 
 // Uncomment following line for Global Registration
 // app.use(VuePlugin);
@@ -81,7 +87,9 @@ app.mount("#app");
 ```
 
 #### Auto Import
+
 Install `unplugin-vue-components`
+
 ```bash
 # npm
 npm i -D unplugin-vue-components
@@ -90,7 +98,9 @@ yarn add -D unplugin-vue-components
 # pnpm
 pnpm add -D unplugin-vue-components
 ```
+
 In `vite.config.{js,ts}`:
+
 ```ts
 // vite.config.ts
 import { defineConfig } from "vite";
@@ -110,8 +120,7 @@ export default defineConfig({
            * 2. in your template .vue file:
            *  <ai-aButton text="hello world" />
            */
-          if (componentName.startsWith("A"))
-            return { name: componentName, from: "@agufaui/vue" };
+          if (componentName.startsWith("A")) return { name: componentName, from: "@agufaui/vue" };
         },
       ],
     }),
@@ -120,27 +129,34 @@ export default defineConfig({
 ```
 
 #### Manual Import {#vue3manual}
+
 Manually import the component you want to use per file:
+
 ```html
 // app.vue
 <script>
-import { AButton } from "@agufaui/vue"
+  import { AButton } from "@agufaui/vue";
 </script>
 ```
 
 #### Global Configuration
+
 If you don't mind extra bundle size, uncomment `VuePlugin` lines in `src/main.{js,ts}` file [mentioned above](/guide/#vue3)
 
 #### Usage {#vue3usage}
+
 In your template vue file:
+
 ```html
 <template>
-<a-button text="hello world" />
+  <a-button text="hello world" />
 </template>
 ```
 
 ### Nuxt 3 {#nuxt3}
+
 In Nuxt project root, create `plugins` folder, then create `agufaui.{js,ts}` file
+
 ```ts
 // plugins/agufaui.ts
 import { Config } from "@agufaui/vue";
@@ -149,45 +165,44 @@ import { Config } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
   // required
-  nuxtApp.vueApp.provide<Config>(
-    "agufaUIConfig",
-    new Config()
-  );
+  nuxtApp.vueApp.provide<Config>("agufaUIConfig", new Config());
 
   // Uncomment following line for Global Registration
   // nuxtApp.vueApp.use(VuePlugin);
 });
 ```
+
 In `nuxt.config.{js,ts}` file, import style:
+
 ```ts
 // nuxt.config.ts
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  css: [
-    "@agufaui/vue/style.css",
-  ],
+  css: ["@agufaui/vue/style.css"],
 });
 ```
 
 #### Auto Import
+
 In `nuxt.config.{js,ts}`
+
 ```ts
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  components: [
-    "~/components",
-    { path: "node_modules/@agufaui/vue" }
-  ]
+  components: ["~/components", { path: "node_modules/@agufaui/vue" }],
 });
 ```
 
 #### Manual Import
+
 Same as Vue 3 manual import [mentioned above](/guide/#vue3manual)
 
 #### Global Configuration
+
 If you don't mind extra bundle size, uncomment `VuePlugin` lines in `plugins/agufaui.{js,ts}` file [mentioned above](/guide/#nuxt3)
 
 #### Usage
+
 Same as Vue 3 usage [mentioned above](/guide/#vue3usage)

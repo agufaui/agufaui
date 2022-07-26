@@ -35,19 +35,23 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { AButtonProps, AButtonEmits } from "../../../core/button/types";
-import type Config from "../../../core/config";
+import type { IAButtonProps, IAButtonEmits } from "@agufaui/theme";
+import { DAButton } from "@agufaui/theme";
+import type { IConfig } from "@agufaui/config";
+import { aUseVueComponent } from "@agufaui/use";
+import { inject } from "vue";
 
-const props = defineProps<AButtonProps>();
+const props = defineProps<IAButtonProps>();
 
-let config = inject<Config>("agufaUIConfig");
+let config = inject<IConfig>("agufaUIConfig");
 const component = "abutton";
 const { getComputedPropertiesFromProps } = aUseVueComponent();
 
-const computedProperties = getComputedPropertiesFromProps<AButtonProps>(
+const computedProperties = getComputedPropertiesFromProps<IAButtonProps>(
   props,
   component,
-  config
+  config,
+  DAButton
 );
 
 const {
@@ -72,7 +76,7 @@ const {
   cSpaceX,
 } = computedProperties;
 
-const emits = defineEmits<AButtonEmits>();
+const emits = defineEmits<IAButtonEmits>();
 
 const click = (e: MouseEvent) => {
   emits("click", e);

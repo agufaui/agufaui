@@ -3,3 +3,4 @@ dist
 components.d.ts
 auto-imports.d.ts
 .github
+pnpm-lock.yaml

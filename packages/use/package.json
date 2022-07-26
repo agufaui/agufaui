@@ -24,17 +24,20 @@
     "utils"
   ],
   "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/es/index.mjs",
   "unpkg": "./dist/umd/index.js",
   "jsdelivr": "./dist/umd/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/es/index.mjs",
       "require": "./dist/cjs/index.cjs",
       "default": "./dist/umd/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/types/index.d.ts"
     }
   },
   "publishConfig": {
@@ -42,18 +45,17 @@
   },
   "scripts": {
     "watch": "nr build:types && vite build --watch",
-    "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE ./README.md",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outFile dist/index.d.ts",
-    "clean": "rimraf dist types/auto-imports.d.ts types/components.d.ts",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path ../../.eslintignore .",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:types": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
     "lintfix": "nr lint --fix",
-    "typecheck": "vue-tsc --noEmit -p tsconfig.build.json",
-    "typeconfig": "vue-tsc --showConfig",
-    "typehelp": "vue-tsc --help",
+    "typecheck": "tsc --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
-  "peerDependencies": {
-    "vue": "^3.2.37"
+  "dependencies": {
+    "@agufaui/config": "workspace:^0.0.1",
+    "@agufaui/theme": "workspace:^0.0.1"
   }
 }

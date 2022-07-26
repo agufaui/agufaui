@@ -5,7 +5,7 @@ export function aUseStringUtils(): AUseStringUtilsReturn {
     return word
       .replace(/([a-z])([A-Z])/g, "$1 $2")
       .replace(/\b([A-Z]+)([A-Z])([a-z])/, "$1 $2$3")
-      .replace(/^./, (s) => s.toUpperCase())
+      .replace(/^./, (s: string) => s.toUpperCase())
       .trim();
   }
 
@@ -15,3 +15,5 @@ export function aUseStringUtils(): AUseStringUtilsReturn {
 
   return { pascalCaseToSpace, firstLetterToUpper };
 }
+
+export * from "./types";

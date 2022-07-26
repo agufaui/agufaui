@@ -5,15 +5,13 @@ import fs from "fs";
 
 execSync("pnpm run build", { stdio: "inherit" });
 
-const packages = ["metadata", "use", "vue"];
+const packages = ["config", "theme", "metadata", "use", "vue"];
 
 for (const name of packages) {
   const dist: string = path.join("packages", name, "dist");
   const packageRoot: string = path.join("packages", name);
 
-  const packageJson = JSON.parse(
-    fs.readFileSync(path.join(packageRoot, "package.json"), "utf8")
-  );
+  const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, "package.json"), "utf8"));
 
   const version = packageJson.version;
 

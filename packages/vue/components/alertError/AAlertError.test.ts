@@ -19,13 +19,14 @@ describe.concurrent("AAlertError Test", async () => {
   it("Not show test", async () => {
     const { queryByText, queryByTestId } = render(AAlertError, {
       props: {
+        show: false,
         "data-testid": "custom-element",
         msg: "component test",
       },
     });
 
-    expect(queryByTestId("custom-element")).toBeNull();
+    expect(queryByTestId("custom-element")).toBeDefined();
 
-    expect(queryByText("component test")).toBeNull();
+    expect(queryByText("component test")).toBeDefined();
   });
 });

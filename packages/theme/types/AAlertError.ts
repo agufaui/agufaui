@@ -1,6 +1,6 @@
-import type { ThemeShared, ThemeComposeX } from "../typesShared";
+import type { IPropsShared, IPropsComposeX } from "../prop.type";
 
-export interface AAlertErrorProps extends ThemeShared, ThemeComposeX {
+export interface IAAlertErrorProps extends IPropsShared, IPropsComposeX {
   show?: boolean;
   error?: boolean;
   msg?: string;
@@ -10,6 +10,6 @@ export interface AAlertErrorProps extends ThemeShared, ThemeComposeX {
   aClass?: string;
 }
 
-export interface AAlertErrorEmits {
+export interface IAAlertErrorEmits {
   (e: "closea", show: boolean): void;
 }

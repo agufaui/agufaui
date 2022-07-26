@@ -12,28 +12,31 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type {
-  AAlertErrorProps,
-  AAlertErrorEmits,
-} from "../../../core/alertError/types";
-import type Config from "../../../core/config";
+import AAlert from "../alert/AAlert.vue";
+import type { IAAlertErrorProps, IAAlertErrorEmits } from "@agufaui/theme";
+import { DAAlertError } from "@agufaui/theme";
+import type { IConfig } from "@agufaui/config";
+import { aUseVueComponent } from "@agufaui/use";
+import { inject } from "vue";
 
-const props = defineProps<AAlertErrorProps>();
+const props = defineProps<IAAlertErrorProps>();
 
-let config = inject<Config>("agufaUIConfig");
+let config = inject<IConfig>("agufaUIConfig");
+
 const component = "aalertError";
 
 const { getComputedPropertiesFromProps } = aUseVueComponent();
 
-const computedProperties = getComputedPropertiesFromProps<AAlertErrorProps>(
+const computedProperties = getComputedPropertiesFromProps<IAAlertErrorProps>(
   props,
   component,
-  config
+  config,
+  DAAlertError
 );
 
 const { cShow, cError, cAClass } = computedProperties;
 
-const emits = defineEmits<AAlertErrorEmits>();
+const emits = defineEmits<IAAlertErrorEmits>();
 
 const closea = (show: boolean) => {
   emits("closea", show);

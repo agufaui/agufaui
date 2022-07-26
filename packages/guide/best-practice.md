@@ -4,7 +4,7 @@
 
 ```vue
 <script setup>
-import { AButton } from '@agufaui/vue'
+import { AButton } from "@agufaui/vue";
 </script>
 
 <template>

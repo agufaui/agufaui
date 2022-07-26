@@ -1,17 +1,8 @@
-import type {
-  ThemeShared,
-  ThemeComposeX,
-  ThemeForm,
-  ThemeIcon,
-} from "../typesShared";
+import type { IPropsShared, IPropsComposeX, IPropsForm, IPropsIcon } from "../prop.type";
 
 export type ButtonType = "button" | "submit" | "reset" | undefined;
 
-export interface AButtonProps
-  extends ThemeShared,
-    ThemeComposeX,
-    ThemeForm,
-    ThemeIcon {
+export interface IAButtonProps extends IPropsShared, IPropsComposeX, IPropsForm, IPropsIcon {
   type?: ButtonType;
   text?: string;
   py?: string;
@@ -40,6 +31,6 @@ export interface AButtonProps
   iconClass?: string;
 }
 
-export interface AButtonEmits {
+export interface IAButtonEmits {
   (e: "click", event: MouseEvent): void;
 }

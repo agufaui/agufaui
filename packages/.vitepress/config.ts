@@ -97,9 +97,7 @@ const config = {
       indexName: "agufaui",
     },
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/agufaui/agufaui" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/agufaui/agufaui" }],
 
     nav: [
       {
@@ -174,10 +172,7 @@ const config = {
     ["link", { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     ["meta", { name: "author", content: "Agufa.tech" }],
     ["meta", { property: "og:title", content: "AgufaUI" }],
-    [
-      "meta",
-      { property: "og:image", content: "https://agufaui.com/favicon.svg" },
-    ],
+    ["meta", { property: "og:image", content: "https://agufaui.com/favicon.svg" }],
     [
       "meta",
       {
@@ -187,10 +182,7 @@ const config = {
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:creator", content: "@agufatech" }],
-    [
-      "meta",
-      { name: "twitter:image", content: "https://agufaui.com/favicon.svg" },
-    ],
+    ["meta", { name: "twitter:image", content: "https://agufaui.com/favicon.svg" }],
   ],
 };
 
@@ -200,9 +192,7 @@ function getComponentsSideBar() {
   for (const name of categoryNames) {
     if (name.startsWith("_")) continue;
 
-    const components = metadata.components.filter(
-      (i) => i.category === name && !i.internal
-    );
+    const components = metadata.components.filter((i) => i.category === name && !i.internal);
 
     links.push({
       text: name,
@@ -225,9 +215,7 @@ function getFunctionsSideBar() {
   for (const name of fncategoryNames) {
     if (name.startsWith("_")) continue;
 
-    const functions = metadata.functions.filter(
-      (i) => i.category === name && !i.internal
-    );
+    const functions = metadata.functions.filter((i) => i.category === name && !i.internal);
 
     links.push({
       text: name,

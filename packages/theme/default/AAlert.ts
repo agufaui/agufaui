@@ -1,8 +1,8 @@
-import { defaultType } from "../types";
-import type { AAlertProps } from "./types";
+import { DefaultType } from "../default.const";
+import type { IAAlertProps } from "../types/AAlert";
 
-export const aalert: Readonly<Record<string, AAlertProps>> = {
-  [defaultType]: {
+export const DAAlert: Readonly<Record<string, IAAlertProps>> = {
+  [DefaultType]: {
     show: true,
     icon: "i-heroicons-solid:information-circle",
     iconColor: "text-blue-600",

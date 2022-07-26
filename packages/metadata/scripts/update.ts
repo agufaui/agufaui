@@ -62,10 +62,8 @@ export async function readMetadata() {
           //   +(await git.raw(["log", "-1", "--format=%at", filePath])) * 1000,
         };
 
-        if (fs.existsSync(join(dirPath, elName, "component.ts")))
-          el.component = true;
-        if (fs.existsSync(join(dirPath, elName, "directive.ts")))
-          el.directive = true;
+        if (fs.existsSync(join(dirPath, elName, "component.ts"))) el.component = true;
+        if (fs.existsSync(join(dirPath, elName, "directive.ts"))) el.directive = true;
 
         if (!fs.existsSync(mdPath)) {
           el.internal = true;
@@ -94,17 +92,13 @@ export async function readMetadata() {
             .filter(Boolean);
 
         let description =
-          (md
-            .replace(/\r\n/g, "\n")
-            .match(/# \w+.*[\s\n]+(.+?)(?:, |\. |\n|\.\n)/m) || [])[1] || "";
+          (md.replace(/\r\n/g, "\n").match(/# \w+.*[\s\n]+(.+?)(?:, |\. |\n|\.\n)/m) || [])[1] ||
+          "";
 
         description = description.trim();
-        description =
-          description.charAt(0).toLowerCase() + description.slice(1);
+        description = description.charAt(0).toLowerCase() + description.slice(1);
 
-        el.category = ["core", "use"].includes(pkg.name)
-          ? category
-          : `@${pkg.display}`;
+        el.category = ["core", "use"].includes(pkg.name) ? category : `@${pkg.display}`;
         el.description = description;
 
         if (description.includes("DEPRECATED")) el.deprecated = true;

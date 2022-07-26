@@ -1,4 +1,4 @@
-import type Config from "../../../core/config";
+import type { IConfig, TFieldValue } from "@agufaui/config";
 import { ComputedRef } from "vue";
 
 /**
@@ -17,6 +17,7 @@ export interface AUseVueComponentReturn {
   getComputedPropertiesFromProps: <T>(
     props: Readonly<T>,
     component: string,
-    config: Config | undefined
+    config: IConfig | undefined,
+    defaultPropValues: Readonly<Record<string, T>>
   ) => Record<string, ComputedRef>;
 }

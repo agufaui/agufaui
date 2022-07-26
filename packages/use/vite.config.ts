@@ -1,7 +1,5 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "path";
-import vue from "@vitejs/plugin-vue";
-import AutoImport from "unplugin-auto-import/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,7 +26,7 @@ export default defineConfig({
         {
           dir: "dist/es",
           format: "es",
-          exports: "named",
+          entryFileNames: "[name].mjs",
           preserveModules: true,
           preserveModulesRoot: __dirname,
           sourcemap: false,
@@ -36,7 +34,7 @@ export default defineConfig({
         {
           dir: "dist/cjs",
           format: "cjs",
-          exports: "named",
+          entryFileNames: "[name].cjs",
           preserveModules: true,
           preserveModulesRoot: __dirname,
           sourcemap: false,
@@ -47,7 +45,6 @@ export default defineConfig({
           },
           dir: "dist/umd",
           format: "umd",
-          exports: "named",
           sourcemap: false,
         },
       ],
@@ -55,19 +52,6 @@ export default defineConfig({
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-  plugins: [
-    vue({
-      reactivityTransform: true,
-    }),
-    // auto import composables
-    AutoImport({
-      dts: resolve(__dirname, "types/auto-imports.d.ts"),
-      include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      dirs: [resolve(__dirname, "./functions")],
-      imports: ["vitepress", "vue"],
-      vueTemplate: true,
-    }),
-  ],
   test: {
     globals: true,
     environment: "happy-dom",

@@ -5,7 +5,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import Inspect from "vite-plugin-inspect";
 import { NavbarTitleFix } from "./.vitepress/plugins/navbarTitle";
-import VueTypeImports from "vite-plugin-vue-type-imports";
+import VueTypeImports from "@zolyn/vite-plugin-vue-type-imports";
 
 // https://vitejs.dev/config/
 export default defineConfig({

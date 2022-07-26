@@ -19,6 +19,26 @@
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
     },
+    "packages/theme": {
+      "releaseType": "node",
+      "skip-github-release": true,
+      "draft": false,
+      "prerelease": false,
+      "bumpMinorPreMajor": true,
+      "bumpPatchForMinorPreMajor": true,
+      "changelogPath": "CHANGELOG.md",
+      "versioning": "default"
+    },
+    "packages/config": {
+      "releaseType": "node",
+      "skip-github-release": true,
+      "draft": false,
+      "prerelease": false,
+      "bumpMinorPreMajor": true,
+      "bumpPatchForMinorPreMajor": true,
+      "changelogPath": "CHANGELOG.md",
+      "versioning": "default"
+    },
     "packages/metadata": {
       "releaseType": "node",
       "skip-github-release": true,

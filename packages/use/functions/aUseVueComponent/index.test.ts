@@ -1,5 +1,5 @@
 import { aUseVueComponent } from ".";
-import Config from "../../../core/config";
+import { Config } from "@agufaui/config";
 
 describe.concurrent("Component Test", async () => {
   it("Props ifHover validation", async () => {

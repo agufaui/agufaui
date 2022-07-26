@@ -1,10 +1,10 @@
 {
   "name": "@agufaui/metadata",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Metadata for AgufaUI",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
-  "homepage": "https://www.agufaui.com",
+  "homepage": "https://agufaui.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agufaui/agufaui.git",
@@ -16,26 +16,28 @@
   "keywords": [
     "agufa-ui",
     "agufaui",
-    "agufa"
+    "agufa",
+    "metadata"
   ],
   "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "require": "./index.cjs",
-      "import": "./index.mjs"
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
     },
     "./*": "./*"
   },
   "main": "./index.cjs",
   "module": "./index.mjs",
   "types": "./index.d.ts",
-  "files": [
-    "index.*"
-  ],
   "scripts": {
-    "build": "vite build && nr build:types && cp -t dist/ ./package.json ../../LICENSE",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:types": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
     "update": "tsx scripts/update.ts"
   }
 }

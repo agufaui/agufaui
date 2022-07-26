@@ -1,6 +1,6 @@
-import type { ThemeShared, ThemeComposeX, ThemeIcon } from "../typesShared";
+import type { IPropsShared, IPropsComposeX, IPropsIcon } from "../prop.type";
 
-export interface AAlertProps extends ThemeShared, ThemeComposeX, ThemeIcon {
+export interface IAAlertProps extends IPropsShared, IPropsComposeX, IPropsIcon {
   show?: boolean;
   msg?: string;
   iconColor?: string;
@@ -24,6 +24,6 @@ export interface AAlertProps extends ThemeShared, ThemeComposeX, ThemeIcon {
   iconClass?: string;
 }
 
-export interface AAlertEmits {
+export interface IAAlertEmits {
   (e: "closea", show: boolean): void;
 }

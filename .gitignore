@@ -29,10 +29,8 @@ index.json
 indexes.json
 packages/*/LICENSE
 packages/contributing.md
-packages/vue/README.md
 packages/public/badge-*
 playgrounds/*/pnpm-lock.yaml
-types
 .DS_Store
 *.pem
 .temp

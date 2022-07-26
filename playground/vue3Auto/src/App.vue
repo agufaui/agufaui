@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { AButton } from "@agufaui/vue";
+</script>
 
 <template lang="pug">
-ab-aButton(
+a-button(
   type="button"
-  aType="default"
   text="typescript"
   if-hover="hover:bg-pink-600"
   if-focus="focus:ring-red-500"
@@ -13,11 +14,10 @@ ab-aButton(
 )
 a-button(
   type="button"
-  aType="primary"
   text="typescript"
-  if-hover="hover:bg-pink-600"
-  if-focus="focus:ring-red-500"
-  u-m="2"
+  aType="primary"
+  ifHover="hover:bg-pink-600"
+  ifFocus="focus:ring-red-500"
   :loading="true"
   px="px-4"
 )

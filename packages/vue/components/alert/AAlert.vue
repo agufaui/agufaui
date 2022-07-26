@@ -20,20 +20,25 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { AAlertProps, AAlertEmits } from "../../../core/alert/types";
-import type Config from "../../../core/config";
+import type { IAAlertProps, IAAlertEmits } from "@agufaui/theme";
+import { DAAlert } from "@agufaui/theme";
+import type { IConfig } from "@agufaui/config";
+import { aUseVueComponent } from "@agufaui/use";
+import { inject } from "vue";
 
-const props = defineProps<AAlertProps>();
+const props = defineProps<IAAlertProps>();
 
-let config = inject<Config>("agufaUIConfig");
+let config = inject<IConfig>("agufaUIConfig");
+
 const component = "aalert";
 
 const { getComputedPropertiesFromProps } = aUseVueComponent();
 
-const computedProperties = getComputedPropertiesFromProps<AAlertProps>(
+const computedProperties = getComputedPropertiesFromProps<IAAlertProps>(
   props,
   component,
-  config
+  config,
+  DAAlert
 );
 
 const {
@@ -53,7 +58,7 @@ const {
   cMaxWidth,
 } = computedProperties;
 
-const emits = defineEmits<AAlertEmits>();
+const emits = defineEmits<IAAlertEmits>();
 
 const click = (show: boolean) => {
   emits("closea", show);

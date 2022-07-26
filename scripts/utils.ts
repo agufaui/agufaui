@@ -87,10 +87,7 @@ export function replacer(
   return code.replace(regex, target);
 }
 
-export async function updatePackageREADME({
-  packages,
-  functions,
-}: PackageIndexes) {
+export async function updatePackageREADME({ packages, functions }: PackageIndexes) {
   for (const { name, dir } of Object.values(packages)) {
     const readmePath = join(dir, "README.md");
 
@@ -107,10 +104,7 @@ export async function updatePackageREADME({
   }
 }
 
-export async function updateIndexREADME({
-  packages,
-  components,
-}: PackageIndexes) {
+export async function updateIndexREADME({ packages, components }: PackageIndexes) {
   let readme = await fs.readFile("README.md", "utf-8");
 
   const elCount = components.filter((i) => !i.internal).length;
@@ -127,11 +121,7 @@ export async function updateCountBadge(indexes: PackageIndexes) {
   const elCount = indexes.components.filter((i) => !i.internal).length;
   const url = `https://img.shields.io/badge/-${elCount}%20components-13708a`;
   const data = await $fetch(url, { responseType: "text" });
-  await fs.writeFile(
-    join(DIR_ROOT, "packages/public/badge-function-count.svg"),
-    data,
-    "utf-8"
-  );
+  await fs.writeFile(join(DIR_ROOT, "packages/public/badge-function-count.svg"), data, "utf-8");
 }
 
 async function fetchContributors(page = 1) {
@@ -149,18 +139,15 @@ async function fetchContributors(page = 1) {
       }
     )) || [];
   collaborators.push(...data.map((i) => i.login));
-  if (data.length === 100)
-    collaborators.push(...(await fetchContributors(page + 1)));
+  if (data.length === 100) collaborators.push(...(await fetchContributors(page + 1)));
 
   return Array.from(
     new Set([
       ...collaborators.filter(
         (collaborator) =>
-          ![
-            "github-actions[bot]",
-            "dependabot[bot]",
-            "release-please-action[bot]",
-          ].includes(collaborator)
+          !["github-actions[bot]", "dependabot[bot]", "release-please-action[bot]"].includes(
+            collaborator
+          )
       ),
       ...additional,
     ])

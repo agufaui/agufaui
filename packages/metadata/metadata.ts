@@ -32,21 +32,12 @@ export const functionNames = functions.map((f) => f.name);
 export const categoryNames = Array.from(categories)
   .sort((a, b) => categoriesOrder.indexOf(a) - categoriesOrder.indexOf(b))
   .sort((a, b) => (a.startsWith("@") ? 1 : b.startsWith("@") ? -1 : 0));
-export const coreCategoryNames = categoryNames.filter(
-  (c) => !c.startsWith("@")
-);
+export const coreCategoryNames = categoryNames.filter((c) => !c.startsWith("@"));
 export const fncategoryNames = Array.from(fncategories)
   .sort((a, b) => fncategoriesOrder.indexOf(a) - fncategoriesOrder.indexOf(b))
   .sort((a, b) => (a.startsWith("@") ? 1 : b.startsWith("@") ? -1 : 0));
-export const coreFnCategoryNames = fncategoryNames.filter(
-  (c) => !c.startsWith("@")
-);
-export const addonCategoryNames = categoryNames.filter((f) =>
-  f.startsWith("@")
-);
-export const addonFnCategoryNames = fncategoryNames.filter((f) =>
-  f.startsWith("@")
-);
+export const coreFnCategoryNames = fncategoryNames.filter((c) => !c.startsWith("@"));
+export const addonCategoryNames = categoryNames.filter((f) => f.startsWith("@"));
+export const addonFnCategoryNames = fncategoryNames.filter((f) => f.startsWith("@"));
 
-export const getFunction = (name: string) =>
-  metadata.functions.find((f) => f.name === name);
+export const getFunction = (name: string) => metadata.functions.find((f) => f.name === name);

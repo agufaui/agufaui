@@ -20,17 +20,6 @@ export default defineConfig({
     presetIcons(),
   ],
   extractors: [extractorPug(), extractorSplit],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-    transformerCompileClass(),
-  ],
-  include: [
-    /\.[tj]sx?$/,
-    /\.vue$/,
-    /\.vue\?vue/,
-    /\.md$/,
-    /\.html?$/,
-    /\.svelte$/,
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup(), transformerCompileClass()],
+  include: [/\.tsx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/, /\.html?$/, /\.svelte$/],
 });
