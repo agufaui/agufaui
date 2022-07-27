@@ -8,18 +8,6 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "index.ts"),
       name: "@agufaui/theme",
-      formats: ["es", "cjs", "umd"],
-      fileName: (format) => {
-        if (format === "es") {
-          return "index.mjs";
-        }
-
-        if (format === "cjs") {
-          return "index.cjs";
-        }
-
-        return `index.js`;
-      },
     },
     rollupOptions: {
       output: [
@@ -27,6 +15,7 @@ export default defineConfig({
           dir: "dist/es",
           format: "es",
           entryFileNames: "[name].mjs",
+          assetFileNames: "assets/theme.css",
           preserveModules: true,
           preserveModulesRoot: __dirname,
           sourcemap: false,
@@ -39,15 +28,17 @@ export default defineConfig({
           preserveModulesRoot: __dirname,
           sourcemap: false,
         },
-        // {
-        //   dir: "dist/umd",
-        //   format: "umd",
-        //   sourcemap: false,
-        // },
+        {
+          dir: "dist/umd",
+          format: "umd",
+          name: "AgufaUITheme",
+          sourcemap: false,
+        },
       ],
     },
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
+    cssCodeSplit: false,
   },
-  // plugins: [Unocss({ mode: "per-module" })],
+  plugins: [Unocss({ mode: "global", include: [/\.ts$/] })],
 });

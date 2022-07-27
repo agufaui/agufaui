@@ -20,20 +20,26 @@
     "theme"
   ],
   "sideEffects": false,
+  "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/es/index.mjs",
-  "unpkg": "./dist/umd/index.js",
-  "jsdelivr": "./dist/umd/index.js",
+  "unpkg": "./dist/umd/theme.umd.cjs",
+  "jsdelivr": "./dist/umd/theme.umd.cjs",
   "types": "./dist/types/index.d.ts",
+  "style": "./dist/es/assets/theme.css",
   "exports": {
     ".": {
       "import": "./dist/es/index.mjs",
       "require": "./dist/cjs/index.cjs",
-      "default": "./dist/umd/index.js",
+      "default": "./dist/umd/theme.umd.cjs",
       "types": "./dist/types/index.d.ts"
+    },
+    "./theme.css": {
+      "import": "./dist/es/assets/theme.css",
+      "require": "./dist/es/assets/theme.css"
     }
   },
   "publishConfig": {

@@ -1,8 +1,8 @@
-import { DefaultType } from "../default.const";
+import { ThemeDefaultType } from "../default.const";
 import type { IAAlertProps } from "../types/AAlert";
 
 export const DAAlert: Readonly<Record<string, IAAlertProps>> = {
-  [DefaultType]: {
+  [ThemeDefaultType]: {
     show: true,
     icon: "i-heroicons-solid:information-circle",
     iconColor: "text-blue-600",

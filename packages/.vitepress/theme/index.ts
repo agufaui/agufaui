@@ -1,8 +1,7 @@
 import { handleRedirects } from "./redirects";
 import DefaultTheme from "vitepress/theme";
 import type { Theme, EnhanceAppContext } from "vitepress/types";
-import { Config } from "@agufaui/config";
-import type { IConfig } from "@agufaui/config";
+import { Config, IConfig } from "@agufaui/config";
 
 import "./styles/code.css";
 import "./styles/demo.css";

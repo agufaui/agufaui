@@ -1,17 +1,20 @@
-import { VuePlugin, Config } from "@agufaui/vue";
+import VuePlugin from "@agufaui/vue";
+import { Config } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.provide<Config>(
     "agufaUIConfig",
     new Config({
-      abutton: {
-        default: {
-          color: "text-green",
-          size: "text-lg",
-        },
-        primary: {
-          color: "text-white",
-          bg: "bg-sky",
+      theme: {
+        abutton: {
+          default: {
+            color: "text-green",
+            size: "text-lg",
+          },
+          primary: {
+            color: "text-white",
+            bg: "bg-sky",
+          },
         },
       },
     })

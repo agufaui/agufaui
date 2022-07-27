@@ -1,1 +1,1 @@
-export const DefaultType = "default";
+export const ThemeDefaultType = "default";

@@ -7,7 +7,6 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "index.ts"),
       name: "@agufaui/config",
-      formats: ["es", "cjs", "umd"],
       fileName: (format) => {
         if (format === "es") {
           return "index.mjs";

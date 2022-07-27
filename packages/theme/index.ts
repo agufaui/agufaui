@@ -1,3 +1,5 @@
+import "uno:icons.css";
+import "uno.css";
 export * from "./default.const";
 export * from "./default/AAlert";
 export * from "./default/AAlertError";

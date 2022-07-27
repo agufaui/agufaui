@@ -15,18 +15,6 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "./index.ts"),
       name: "agufaui",
-      formats: ["es", "cjs", "umd"],
-      fileName: (format) => {
-        if (format === "es") {
-          return "index.mjs";
-        }
-
-        if (format === "cjs") {
-          return "index.cjs";
-        }
-
-        return `index.js`;
-      },
     },
     rollupOptions: {
       external: ["vue"],
@@ -35,6 +23,7 @@ export default defineConfig({
           dir: "dist/es",
           format: "es",
           entryFileNames: "[name].mjs",
+          assetFileNames: "assets/agufaui.css",
           preserveModules: true,
           preserveModulesRoot: resolve(__dirname, "../"),
           sourcemap: false,
@@ -47,20 +36,20 @@ export default defineConfig({
           preserveModulesRoot: resolve(__dirname, "../"),
           sourcemap: false,
         },
-        // {
-        //   globals: {
-        //     vue: "Vue",
-        //   },
-        //   dir: "dist/umd",
-        //   format: "umd",
-        //   exports: "named",
-        //   sourcemap: false,
-        // },
+        {
+          globals: {
+            vue: "Vue",
+          },
+          dir: "dist/umd",
+          format: "umd",
+          name: "AgufaUI",
+          sourcemap: false,
+        },
       ],
     },
     outDir: "dist",
     emptyOutDir: true,
-    cssCodeSplit: true,
+    cssCodeSplit: false,
   },
   plugins: [
     Unocss({

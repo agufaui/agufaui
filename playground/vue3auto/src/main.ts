@@ -1,10 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import VuePlugin from "@agufaui/vue";
 import { Config } from "@agufaui/vue";
 import "@unocss/reset/tailwind.css";
 import "uno:icons.css";
-import "@agufaui/vue/agufaui.css";
+// import "@agufaui/vue/style.css";
 import "uno.css";
 
 const app = createApp(App);
@@ -15,10 +14,8 @@ app.provide<Config>(
     theme: {
       abutton: {
         default: {
-          type: "submit",
+          color: "text-green",
           size: "text-lg",
-          bg: "bg-green",
-          aClass: "w-full",
         },
         primary: {
           color: "text-white",
@@ -28,7 +25,5 @@ app.provide<Config>(
     },
   })
 );
-
-app.use(VuePlugin);
 
 app.mount("#app");

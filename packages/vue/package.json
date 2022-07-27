@@ -1,6 +1,6 @@
 {
   "name": "@agufaui/vue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue UI Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
@@ -24,26 +24,28 @@
     "nuxt"
   ],
   "sideEffects": false,
+  "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/cjs/vue/index.cjs",
   "module": "./dist/es/vue/index.mjs",
-  "unpkg": "./dist/umd/index.js",
-  "jsdelivr": "./dist/umd/index.js",
-  "types": "./dist/types/vue/index.d.ts",
-  "style": "./dist/es/style.css",
+  "unpkg": "./dist/umd/vue.umd.cjs",
+  "jsdelivr": "./dist/umd/vue.umd.cjs",
+  "types": "./dist/types/index.d.ts",
+  "style": "./dist/es/assets/agufaui.css",
   "exports": {
     ".": {
       "import": "./dist/es/vue/index.mjs",
       "require": "./dist/cjs/vue/index.cjs",
-      "default": "./dist/umd/index.js",
-      "types": "./dist/types/vue/index.d.ts"
+      "default": "./dist/umd/vue.umd.cjs",
+      "types": "./dist/types/index.d.ts"
     },
-    "./style.css": {
-      "import": "./dist/es/style.css",
-      "require": "./dist/es/style.css"
-    }
+    "./agufaui.css": {
+      "import": "./dist/es/assets/agufaui.css",
+      "require": "./dist/es/assets/agufaui.css"
+    },
+    "./types": "./dist/types/index.d.ts"
   },
   "publishConfig": {
     "access": "public"
@@ -63,7 +65,7 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@agufaui/config": "workspace:^0.0.1",
+    "@agufaui/config": "workspace:^0.0.2",
     "@agufaui/theme": "workspace:^0.0.1",
     "@agufaui/use": "workspace:^0.1.0"
   }

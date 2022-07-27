@@ -11,10 +11,6 @@ export class Config implements IConfig {
   }
 
   getDefault(componentName: string, type: string | undefined, field: string): TFieldReturn {
-    if (type === undefined) {
-      return undefined;
-    }
-
-    return this.#userTheme[componentName]?.[type]?.[field];
+    return this.#userTheme[componentName]?.[type ?? DefaultType]?.[field];
   }
 }

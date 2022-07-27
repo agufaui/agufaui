@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     NavbarTitleFix(),
     Unocss({
-      // mode: "global",
+      mode: "global",
     }),
     VueTypeImports(),
     // auto import components
