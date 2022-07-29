@@ -4,24 +4,19 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import Inspect from "vite-plugin-inspect";
-import { NavbarTitleFix } from "./.vitepress/plugins/navbarTitle";
 import VueTypeImports from "@zolyn/vite-plugin-vue-type-imports";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@agufaui/vue": resolve(__dirname, "vue"),
-      "@agufaui/docs-utils": resolve(__dirname, ".vitepress/plugins/utils.ts"),
+      "@agufaui/vue": resolve(__dirname, "vue/index.ts"),
       "@components": resolve(__dirname, "vue/components"),
     },
+    dedupe: ["vue"],
   },
 
   plugins: [
-    NavbarTitleFix(),
-    Unocss({
-      mode: "global",
-    }),
     VueTypeImports(),
     // auto import components
     Components({
@@ -41,6 +36,9 @@ export default defineConfig({
       dirs: [resolve(__dirname, "use/functions")],
       imports: ["vitepress", "vue"],
       vueTemplate: true,
+    }),
+    Unocss({
+      mode: "global",
     }),
     Inspect(),
   ],

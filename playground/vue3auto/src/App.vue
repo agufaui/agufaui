@@ -14,8 +14,8 @@ a-button(
   type="button"
   text="typescript"
   aType="primary"
-  ifHover="hover:bg-pink-600"
-  ifFocus="focus:ring-red-500"
+  hover="hover:bg-pink-600"
+  focus="focus:ring-red-500"
   :loading="true"
   px="px-4"
 )

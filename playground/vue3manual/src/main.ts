@@ -3,7 +3,7 @@ import App from "./App.vue";
 import { Config } from "@agufaui/vue";
 import "@unocss/reset/tailwind.css";
 import "uno:icons.css";
-// import "@agufaui/vue/style.css";
+import "@agufaui/vue/agufaui.css";
 import "uno.css";
 
 const app = createApp(App);

@@ -5,5 +5,5 @@
     "isolatedModules": false,
     "declaration": true
   },
-  "exclude": ["vite.config.ts"]
+  "exclude": ["dist", "node_modules", "vite.config.ts"]
 }

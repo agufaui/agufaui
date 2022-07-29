@@ -1,13 +1,8 @@
 import { join, resolve } from "path";
 import fs from "fs-extra";
-import matter from "gray-matter";
-import parser from "prettier/parser-typescript";
-import prettier from "prettier";
-import YAML from "js-yaml";
 import Git from "simple-git";
 import type { PackageIndexes, AgufaUIElement } from "../packages/metadata";
 import { $fetch } from "ohmyfetch";
-import { packages } from "../packages/metadata/packages";
 import { getCategories } from "../packages/metadata/utils";
 
 export const git = Git();
@@ -26,7 +21,7 @@ export async function updateImport({ packages, functions }: PackageIndexes) {
     if (manualImport) continue;
 
     let imports: string[];
-    if (!["core", "vue"].includes(name)) {
+    if (["use"].includes(name)) {
       imports = functions
         .filter((i) => i.package === name)
         .map((f) => f.name)
@@ -122,43 +117,4 @@ export async function updateCountBadge(indexes: PackageIndexes) {
   const url = `https://img.shields.io/badge/-${elCount}%20components-13708a`;
   const data = await $fetch(url, { responseType: "text" });
   await fs.writeFile(join(DIR_ROOT, "packages/public/badge-function-count.svg"), data, "utf-8");
-}
-
-async function fetchContributors(page = 1) {
-  const additional = [];
-
-  const collaborators: string[] = [];
-  const data =
-    (await $fetch<{ login: string }[]>(
-      `https://api.github.com/repos/agufaui/agufaui/contributors?per_page=100&page=${page}`,
-      {
-        method: "get",
-        headers: {
-          "content-type": "application/json",
-        },
-      }
-    )) || [];
-  collaborators.push(...data.map((i) => i.login));
-  if (data.length === 100) collaborators.push(...(await fetchContributors(page + 1)));
-
-  return Array.from(
-    new Set([
-      ...collaborators.filter(
-        (collaborator) =>
-          !["github-actions[bot]", "dependabot[bot]", "release-please-action[bot]"].includes(
-            collaborator
-          )
-      ),
-      ...additional,
-    ])
-  );
-}
-
-export async function updateContributors() {
-  const collaborators = await fetchContributors();
-  await fs.writeFile(
-    join(DIR_SRC, "./contributors.json"),
-    `${JSON.stringify(collaborators, null, 2)}\n`,
-    "utf8"
-  );
 }

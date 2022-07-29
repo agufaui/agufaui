@@ -11,7 +11,6 @@ export const DAAlert: Readonly<Record<string, IAAlertProps>> = {
     color: "text-gray-600",
     size: "text-sm",
     font: "font-medium",
-    autoCloseDelaySeconds: 5,
     spaceX: "space-x-1.2",
     maxWidth: "max-w-sm",
   },

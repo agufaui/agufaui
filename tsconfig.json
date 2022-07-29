@@ -19,7 +19,6 @@
     "paths": {
       "@agufaui/vue": ["packages/vue/index.ts"],
       "@agufaui/vue/*": ["packages/vue/*"],
-      "@agufaui/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
       "@agufaui/core": ["packages/core"]
     }
   },

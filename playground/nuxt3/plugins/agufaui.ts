@@ -1,5 +1,4 @@
-import VuePlugin from "@agufaui/vue";
-import { Config } from "@agufaui/vue";
+import { VuePlugin, Config } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.provide<Config>(

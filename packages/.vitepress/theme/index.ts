@@ -1,20 +1,17 @@
-import { handleRedirects } from "./redirects";
 import DefaultTheme from "vitepress/theme";
 import type { Theme, EnhanceAppContext } from "vitepress/types";
 import { Config, IConfig } from "@agufaui/config";
 
-import "./styles/code.css";
-import "./styles/demo.css";
-import "./styles/utils.css";
+import "../../vue/dist/es/assets/agufaui.css";
 import "uno:icons.css";
 import "uno.css";
-import "./styles/overrides.css";
+import "./styles/home.css";
+import "./styles/doc.css";
 
 const theme: Theme = {
   ...DefaultTheme,
   enhanceApp(ctx: EnhanceAppContext) {
     ctx.app.provide<IConfig>("agufaUIConfig", new Config());
-    // if (typeof window !== "undefined") handleRedirects(ctx.router);
   },
 };
 

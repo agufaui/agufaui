@@ -51,6 +51,7 @@ export interface PackageIndexes {
 }
 
 export interface CommitInfo {
+  components: string[];
   functions: string[];
   version?: string;
   hash: string;

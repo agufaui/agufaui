@@ -1,9 +1,17 @@
 import "uno:icons.css";
 import "@agufaui/theme/theme.css";
 import "uno.css";
-import VuePlugin from "./vuePlugin";
+import type { App } from "vue";
+import * as components from "./components";
 
-export default VuePlugin;
+export const VuePlugin = {
+  install(vue: App, options: any[]) {
+    for (const [key, component] of Object.entries(components)) {
+      vue.component(component.name, component);
+    }
+  },
+};
+
 export * from "./components";
 export * from "@agufaui/config";
 export * from "@agufaui/theme";

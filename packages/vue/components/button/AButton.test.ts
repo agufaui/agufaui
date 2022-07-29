@@ -7,8 +7,8 @@ describe.concurrent("AButton Test", async () => {
     props: {
       "data-testid": "custom-element",
       text: "component test",
-      ifHover: "hover:bg-pink-400",
-      ifFocus: "focus:bg-red-600",
+      hover: "hover:bg-pink-400",
+      focus: "focus:bg-red-600",
     },
   });
   const button = getByTestId("custom-element");

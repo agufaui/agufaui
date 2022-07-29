@@ -1,4 +1,4 @@
-import type { PackageManifest } from ".";
+import type { PackageManifest } from "./types";
 
 export const packages: PackageManifest[] = [
   {
@@ -17,7 +17,7 @@ export const packages: PackageManifest[] = [
   {
     name: "use",
     display: "Use",
-    description: "Composables for AgufaUI Components",
+    description: "Functions (composables) for AgufaUI Components",
     path: "use/functions",
   },
 ];

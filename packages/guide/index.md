@@ -42,6 +42,8 @@ We assume you are already familiar with the basic ideas of Atomic/Utility First 
 <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
 ```
 
+> **Make sure you read [Configuration](./config) for components customization before you jump ahead**
+
 ## Installation
 
 ```bash
@@ -53,14 +55,50 @@ yarn add @agufaui/vue
 pnpm add @agufaui/vue
 ```
 
-<!-- ### CDN
+### CDN
 
-```html
-<script src="https://unpkg.com/@agufaui/use"></script>
-<script src="https://unpkg.com/@agufaui/vue"></script>
+::: details Click to see Vue example
+```vue
+<html lang="en">
+  <head>
+    <!-- Import style -->
+    <link rel="stylesheet" href="//unpkg.com/agufaui/vue/agufaui.css" />
+    <!-- Import Vue 3 -->
+    <script src="//unpkg.com/vue@next"></script>
+    <!-- Import component library -->
+    <script src="//unpkg.com/agufaui/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <a-button>Click me</a-button>
+    </div>
+    <script>
+        const app = Vue.createApp();
+        app.provide('agufaUIConfig', new AgufaUI.Config())
+        app.use(AgufaUI.VuePlugin);
+        app.mount("#app");
+    </script>
+  </body>
+</html>
 ```
+:::
 
-It will be exposed to global as `window.AgufaUI` -->
+> It will be exposed to global as `window.AgufaUI`
+
+### Tree Shaking
+
+**Auto Import** and **Manual Import** provide [Tree Shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) out of box.
+
+### CSS Layering
+AgufaUI CSS needs to have lower priority so it won't override user CSS when there is overlapping.  Just position it before user layer of your css framework.
+
+For example, if you are using Unocss
+
+```ts
+import "@agufaui/vue/agufaui.css";
+import "uno:icon.css"
+import "uno.css"
+```
 
 ### Vue 3 {#vue3}
 
@@ -73,7 +111,7 @@ import App from "./App.vue";
 import { Config } from "@agufaui/vue";
 // Uncomment following line for Global Registration
 // import { VuePlugin } from "@agufaui/vue";
-import "@agufaui/vue/style.css";
+import "@agufaui/vue/agufaui.css";
 
 const app = createApp(App);
 
@@ -88,7 +126,7 @@ app.mount("#app");
 
 #### Auto Import
 
-Install `unplugin-vue-components`
+Install [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 
 ```bash
 # npm
@@ -132,7 +170,7 @@ export default defineConfig({
 
 Manually import the component you want to use per file:
 
-```html
+```vue
 // app.vue
 <script>
   import { AButton } from "@agufaui/vue";
@@ -147,7 +185,7 @@ If you don't mind extra bundle size, uncomment `VuePlugin` lines in `src/main.{j
 
 In your template vue file:
 
-```html
+```vue
 <template>
   <a-button text="hello world" />
 </template>
@@ -179,7 +217,7 @@ In `nuxt.config.{js,ts}` file, import style:
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  css: ["@agufaui/vue/style.css"],
+  css: ["@agufaui/vue/agufaui.css"],
 });
 ```
 
@@ -188,6 +226,7 @@ export default defineNuxtConfig({
 In `nuxt.config.{js,ts}`
 
 ```ts
+// nuxt.config.ts
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({

@@ -1,29 +1,20 @@
-import type { IPropsShared, IPropsComposeX, IPropsIcon } from "../prop.type";
+import type { IProps, IPropsComposeX, IPropsIcon } from "../prop.type";
 
-export interface IAAlertProps extends IPropsShared, IPropsComposeX, IPropsIcon {
-  show?: boolean;
-  msg?: string;
-  iconColor?: string;
-  iconMargin?: string;
-  color?: string;
-  size?: string;
-  font?: string;
-  msgClass?: string;
-  closeable?: boolean;
-  autoClose?: boolean;
-  autoCloseDelaySeconds?: number;
-  autoCloseAnime?: string;
-  maxWidth?: string;
-
-  //@todo: remove below code, reference core/button/types.ts
-  aType?: string;
-  aClass?: string;
-  spaceX?: string;
-  icon?: string;
-  iconPosition?: "left" | "right";
-  iconClass?: string;
+// #region props
+export interface IAAlertProps extends IProps, IPropsComposeX, IPropsIcon {
+  show?: boolean; // show alert
+  msg?: string; // message
+  iconColor?: string; // icon color eg. text-red-4
+  iconMargin?: string; // icon margin eg. mt-0.5
+  font?: string; // font of component eg. font-medium
+  msgClass?: string; // css classes for message element
+  closeable?: boolean; // is component closeable
+  maxWidth?: string; // max width eg. max-w-md
 }
+// #endregion props
 
+// #region emits
 export interface IAAlertEmits {
-  (e: "closea", show: boolean): void;
+  (e: "closea", show: boolean): void; // close alert event
 }
+// #endregion emits

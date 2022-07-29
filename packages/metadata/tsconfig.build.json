@@ -5,5 +5,5 @@
     "isolatedModules": false,
     "declaration": true
   },
-  "exclude": ["**/*.md", "vite.config.ts", "packages.ts"]
+  "exclude": ["**/*.md", "vite.config.ts", "packages.ts", "dist", "scripts"]
 }

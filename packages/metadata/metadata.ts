@@ -40,4 +40,5 @@ export const coreFnCategoryNames = fncategoryNames.filter((c) => !c.startsWith("
 export const addonCategoryNames = categoryNames.filter((f) => f.startsWith("@"));
 export const addonFnCategoryNames = fncategoryNames.filter((f) => f.startsWith("@"));
 
+export const getComponent = (name: string) => metadata.components.find((c) => c.name === name);
 export const getFunction = (name: string) => metadata.functions.find((f) => f.name === name);

@@ -9,14 +9,6 @@ import {
   metadata,
 } from "../../packages/metadata/metadata";
 import { aUseStringUtils } from "../use";
-// import base from "@vue/theme/config"
-import highlight from "./plugins/highlight";
-
-// const themeConfig = async () => {
-//   const config = await base();
-//   config.markdown.highlight = await highlight();
-//   return config;
-// };
 
 const { pascalCaseToSpace } = aUseStringUtils();
 
@@ -26,8 +18,8 @@ const functionsSideBar = getFunctionsSideBar();
 const Guide = [
   { text: "Get Started", link: "/guide/" },
   { text: "Configurations", link: "/guide/config" },
-  { text: "Contributing", link: "/contributing" },
-  { text: "Guidelines", link: "/guidelines" },
+  { text: "Icons", link: "/guide/icon" },
+  { text: "I18n", link: "/guide/i18n" },
 ];
 
 const coreCategories = coreCategoryNames.map((c) => ({
@@ -59,13 +51,12 @@ const AddonFnCategories = [
 ];
 
 const Links = [
-  { text: "Export Size", link: "/export-size" },
-  { text: "Recent Updated", link: "/recent-updated" },
+  { text: "Contributing", link: "/contributing" },
 ];
 
 const DefaultSideBar = [
   { text: "Guide", items: Guide },
-  { text: "Links", items: Links },
+  { text: "Community", items: Links },
 ];
 
 /**
@@ -75,7 +66,7 @@ const config = {
   // extends: themeConfig,
 
   title: "AgufaUI",
-  description: "Vue, React and Svelte UI Library",
+  description: "Vue UI Library",
   appearance: true,
   base: "/",
   lang: "en-US",
@@ -104,7 +95,7 @@ const config = {
         text: "Guide",
         items: [
           { text: "Guide", items: Guide },
-          { text: "Links", items: Links },
+          { text: "Community", items: Links },
         ],
       },
       {
@@ -159,7 +150,7 @@ const config = {
       "/recent-updated": DefaultSideBar,
 
       "/core/": componentsSideBar,
-      "/use/": functionsSideBar,
+      // "/use/": functionsSideBar,
     },
     footer: {
       message: "Released under the MIT License.",
@@ -177,7 +168,7 @@ const config = {
       "meta",
       {
         property: "og:description",
-        content: "Vue, React and Svelte UI Library",
+        content: "Vue and Svelte UI Library",
       },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],

@@ -27,6 +27,7 @@ export function aUseVueComponent(): AUseVueComponentReturn {
             prop.value ??
             (config?.getDefault(component, aTypeRef.value, propName) as typeof prop.value) ??
             (defaultPropValues[aTypeRef.value]?.[propName] as typeof prop.value) ??
+            (config?.getDefault(component, DefaultType, propName) as typeof prop.value) ??
             (defaultPropValues[DefaultType]?.[propName] as typeof prop.value)
           );
         }

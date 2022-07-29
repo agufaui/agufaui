@@ -1,36 +1,18 @@
-import type { IPropsShared, IPropsComposeX, IPropsForm, IPropsIcon } from "../prop.type";
+import type { IProps, IPropsComposeX, IPropsForm, IPropsLoading } from "../prop.type";
 
+// #region props
 export type ButtonType = "button" | "submit" | "reset" | undefined;
 
-export interface IAButtonProps extends IPropsShared, IPropsComposeX, IPropsForm, IPropsIcon {
-  type?: ButtonType;
-  text?: string;
-  py?: string;
-  px?: string;
-  size?: string;
-  color?: string;
-  round?: string;
-  bg?: string;
-  ifHover?: string;
-  ifFocus?: string;
-  full?: boolean;
-  loading?: boolean;
-  loadingIcon?: string;
-  loadingClass?: string;
-
-  /**
-   * @todo: when vue 3 supports import extends interface for defineProps in SFC,
-   * remove below code.  Also remove devDeps vite-plugin-vue-type-imports in package.json.
-   */
-  aType?: string;
-  aClass?: string;
-  disabled?: boolean;
-  spaceX?: string;
-  icon?: string;
-  iconPosition?: "left" | "right";
-  iconClass?: string;
+export interface IAButtonProps extends IProps, IPropsForm, IPropsComposeX, IPropsLoading {
+  type?: ButtonType; // html element button type
+  text?: string; // button text
+  loadingIcon?: string; // loading icon eg. i-eos-icons:loading
+  loadingClass?: string; // css classes for loading icon element
 }
+// #endregion props
 
+// #region emits
 export interface IAButtonEmits {
-  (e: "click", event: MouseEvent): void;
+  (e: "click", event: MouseEvent): void; // click event
 }
+// #endregion emits

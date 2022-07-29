@@ -6,7 +6,8 @@ button(
   @click.stop="click($event)"
   u-pos="relative"
   u-flex="inline"
-  u-justify="center items-center"
+  u-justify="center"
+  u-items="center"
   u-border="~ transparent"
   u-font="medium"
   u-outline="focus:none"
@@ -15,7 +16,7 @@ button(
   u-select="none"
   u-cursor="pointer"
   :disabled="cDisabled || cLoading"
-  :class="[cPx, cPy, cSize, cColor, cRound, cBg, cIfHover, cIfFocus, {'w-full': cFull}, cAClass]"
+  :class="[cPx, cPy, cSize, cColor, cRound, cBg, cHover, cFocus, {'w-full': cFull}, cAClass]"
 )
   slot
     div(class="flex justify-center justify-items-center" :class="cSpaceX")
@@ -62,8 +63,8 @@ const {
   cColor,
   cRound,
   cBg,
-  cIfHover,
-  cIfFocus,
+  cHover,
+  cFocus,
   cFull,
   cDisabled,
   cAClass,

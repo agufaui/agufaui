@@ -1,0 +1,23 @@
+<html lang="en">
+    <head>
+        <!-- Import style -->
+        <link rel="stylesheet" href="./agufaui.css" />
+        <!-- Import Vue 3 -->
+        <script src="//unpkg.com/vue@next"></script>
+        
+    </head>
+    <body>
+        <h1>CDN</h1>
+        <div id="app">
+            <a-button>Click me</a-button>
+        </div>
+        <!-- Import component library -->
+        <script src="./vue.umd.cjs"></script>
+        <script>
+            const app = Vue.createApp();
+            app.provide('agufaUIConfig', new AgufaUI.Config())
+            app.use(AgufaUI.VuePlugin);
+            app.mount("#app");
+        </script>
+    </body>
+</html>
