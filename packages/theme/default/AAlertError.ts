@@ -1,6 +1,6 @@
-import { ThemeDefaultType } from "../default.const";
+import { CDefaultType } from "@agufaui/config";
 import type { IAAlertErrorProps } from "../types/AAlertError";
 
 export const DAAlertError: Readonly<Record<string, IAAlertErrorProps>> = {
-  [ThemeDefaultType]: {},
+  [CDefaultType]: {},
 };

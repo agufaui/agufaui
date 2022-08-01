@@ -1,7 +1,11 @@
+export const CDefaultType = "default";
+export const CUseType = "useType";
+export const CBase = "base:";
+
 /**
- * @example "hello" | true
+ * @example "hello" | true | undefined
  */
-export type TFieldValue = string | boolean;
+export type TFieldValue = string | boolean | undefined;
 
 /**
  * @example { text: "hello", show: true }
@@ -17,7 +21,7 @@ export type TComponent = Record<string, TComponentType>;
  * @summary The theme object.
  */
 export interface ITheme {
-  [componentName: string]: Readonly<TComponent>;
+  [componentName: string]: TComponent;
 }
 
 /**
@@ -25,7 +29,18 @@ export interface ITheme {
  */
 export interface IUserConfig {
   /**
-   * @description User configured Theme
+   * Base theme
+   */
+  baseTheme?: ITheme;
+
+  /**
+   * Replace or override same specificity configured classes
+   * @default false
+   */
+  // replace?: boolean;
+
+  /**
+   * User configured Theme.  If base theme is provided, will be merged.
    */
   theme?: ITheme;
 }

@@ -24,16 +24,16 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/cjs/index.cjs",
-  "module": "./dist/es/index.mjs",
+  "main": "./dist/cjs/theme/index.cjs",
+  "module": "./dist/es/theme/index.mjs",
   "unpkg": "./dist/umd/theme.umd.cjs",
   "jsdelivr": "./dist/umd/theme.umd.cjs",
   "types": "./dist/types/index.d.ts",
   "style": "./dist/es/assets/theme.css",
   "exports": {
     ".": {
-      "import": "./dist/es/index.mjs",
-      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/es/theme/index.mjs",
+      "require": "./dist/cjs/theme/index.cjs",
       "default": "./dist/umd/theme.umd.cjs",
       "types": "./dist/types/index.d.ts"
     },
@@ -53,5 +53,8 @@
     "lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
     "lintfix": "nr lint --fix",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@agufaui/config": "workspace:^0.0.1"
   }
 }

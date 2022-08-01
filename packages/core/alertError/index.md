@@ -21,7 +21,7 @@ component name for configuration: `aalertError`
 <doc-alertError />
 
 ## Types and Default Values
-`ThemeDefaultType` is just string "default"
+`ThemeCDefaultType` is just string "default"
 
 <<< @/theme/default/AAlertError.ts
 

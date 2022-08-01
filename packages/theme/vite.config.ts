@@ -17,7 +17,7 @@ export default defineConfig({
           entryFileNames: "[name].mjs",
           assetFileNames: "assets/theme.css",
           preserveModules: true,
-          preserveModulesRoot: __dirname,
+          preserveModulesRoot: resolve(__dirname, "../"),
           sourcemap: false,
         },
         {
@@ -25,7 +25,7 @@ export default defineConfig({
           format: "cjs",
           entryFileNames: "[name].cjs",
           preserveModules: true,
-          preserveModulesRoot: __dirname,
+          preserveModulesRoot: resolve(__dirname, "../"),
           sourcemap: false,
         },
         {

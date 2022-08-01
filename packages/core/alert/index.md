@@ -18,10 +18,14 @@ component name for configuration: `aalert`
 
 ## Showcase
 
-<doc-alert />
+<a-alert msg="text" atype="red" />
+<a-alert msg="text" atype="green" />
+<a-alert msg="text" atype="yellow" />
+<a-alert msg="text" atype="gray" />
+<a-alert msg="text" atype="blue" />
 
 ## Types and Default Values
-`ThemeDefaultType` is just string "default"
+`ThemeCDefaultType` is just string "default"
 
 <<< @/theme/default/AAlert.ts
 

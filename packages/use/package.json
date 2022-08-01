@@ -54,8 +54,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
-  "dependencies": {
-    "@agufaui/config": "workspace:^0.0.2",
-    "@agufaui/theme": "workspace:^0.0.1"
+  "devDependencies": {
+    "@agufaui/config": "workspace:^0.0.1"
   }
 }

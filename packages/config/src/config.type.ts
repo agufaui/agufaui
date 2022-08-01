@@ -1,10 +1,14 @@
-// types of the components configuration map
-export type ComponentsMapType = Map<string, TypesMapType>;
-export type TypesMapType = Map<string, FieldsMap>;
-export type FieldsMap = Map<string, TFieldReturn>;
-export type TFieldReturn = string | boolean | undefined;
+import type { IUserConfig, TFieldValue } from "./theme.type";
 
-import type { IUserConfig } from "./theme.type";
+export type TMatchedRules = {
+  raw: string;
+  variant: string;
+  rules: string[];
+  util: string;
+  isIcon: boolean;
+};
+
+export const CConfigProvideName = "agufaUIConfig";
 
 /**
  * @summary The configuration object
@@ -21,11 +25,11 @@ export interface ConfigConstructor {
  */
 export interface IConfig {
   /**
-   * @description get field configured value
+   * Get field configured value
    * @param {string} componentName component name
    * @param {string | undefined} type component type
    * @param {string} fieldName field name
    * @returns {TFieldValue} field value
    */
-  getDefault: (componentName: string, type: string | undefined, field: string) => TFieldReturn;
+  getFieldValue: (componentName: string, type: string | undefined, field: string) => TFieldValue;
 }

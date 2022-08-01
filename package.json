@@ -2,7 +2,7 @@
   "name": "@agufaui/monorepo",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@7.5.1",
+  "packageManager": "pnpm@7.7.1",
   "description": "Vue Components Library",
   "author": "Agufa.tech <https://agufa.tech>",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@agufaui/config": "^0.0.2",
+    "@agufaui/config": "workspace:^0.0.1",
     "@agufaui/theme": "workspace:^0.0.1",
     "@antfu/ni": "^0.16.3",
     "@commitlint/cli": "^17.0.3",
@@ -49,6 +49,7 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@zolyn/vite-plugin-vue-type-imports": "^0.3.1",
+    "c8": "^7.12.0",
     "debug": "^4.3.4",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
@@ -64,6 +65,7 @@
     "rimraf": "^3.0.2",
     "shiki": "^0.10.1",
     "simple-git": "^3.10.0",
+    "tacocss": "link:../../community/github.com/unocss/packages/unocss",
     "tsup": "^6.1.3",
     "tsx": "^3.8.0",
     "typescript": "^4.7.4",

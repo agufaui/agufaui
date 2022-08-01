@@ -84,7 +84,7 @@ const aConfig = new Config(userConfig)
 <<< @/theme/default/AButton.ts
 :::
 
-> **ThemeDefaultType** is just string "default"
+> **ThemeCDefaultType** is just string "default"
 
 - Before above configuration applied, to achieve "**red**" type effect
 

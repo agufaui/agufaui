@@ -1,5 +1,5 @@
 <template lang="pug">
-a-alert(:show="cShow" v-bind="$attrs" :a-Type="cError? 'red' : 'green'" :closeable="true" :a-class="cAClass" @closea="closea(false)")
+a-alert(:show="cshow" v-bind="$attrs" :atype="cerror? 'red' : 'green'" :closeable="true" :aclass="caclass" @closea="closea(false)")
   template(#default)
     slot {{ msg }}
 </template>
@@ -14,27 +14,25 @@ export default {
 <script setup lang="ts">
 import AAlert from "../alert/AAlert.vue";
 import type { IAAlertErrorProps, IAAlertErrorEmits } from "@agufaui/theme";
-import { DAAlertError } from "@agufaui/theme";
+import { CAAlertErrorName } from "@agufaui/theme";
 import type { IConfig } from "@agufaui/config";
+import { CConfigProvideName } from "@agufaui/config";
 import { aUseVueComponent } from "@agufaui/use";
 import { inject } from "vue";
 
 const props = defineProps<IAAlertErrorProps>();
 
-let config = inject<IConfig>("agufaUIConfig");
-
-const component = "aalertError";
+let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedPropertiesFromProps } = aUseVueComponent();
 
 const computedProperties = getComputedPropertiesFromProps<IAAlertErrorProps>(
   props,
-  component,
-  config,
-  DAAlertError
+  CAAlertErrorName,
+  config
 );
 
-const { cShow, cError, cAClass } = computedProperties;
+const { cshow, cerror, caclass } = computedProperties;
 
 const emits = defineEmits<IAAlertErrorEmits>();
 

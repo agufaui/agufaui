@@ -6,8 +6,8 @@ export type ButtonType = "button" | "submit" | "reset" | undefined;
 export interface IAButtonProps extends IProps, IPropsForm, IPropsComposeX, IPropsLoading {
   type?: ButtonType; // html element button type
   text?: string; // button text
-  loadingIcon?: string; // loading icon eg. i-eos-icons:loading
-  loadingClass?: string; // css classes for loading icon element
+  licon?: string; // loading icon eg. i-eos-icons:loading
+  lclass?: string; // css classes for loading icon element
 }
 // #endregion props
 

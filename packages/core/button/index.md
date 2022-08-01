@@ -20,14 +20,15 @@ component name for configuration: `abutton`
 
 ## Showcase
   
-<a-button text="Button" class="m-2" />
+<a-button text="Button" aclass="m-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500" />
 <a-button text="circle" size="text-xs" round="rounded-1/2" bg="bg-red-600/60" hover="hover:bg-red-600" focus="focus:ring-red-400" a-class="m-2 h-2.5rem w-2.5rem" />
+<a-button text="Button" icon="i-ph-anchor" aclass="m-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500" />
 
 ### Hover and Focus
 <a-button text="Hello" hover="" aClass="hover:(border-2 border-blue)"></a-button>
 
 ## Types and Default Values
-`ThemeDefaultType` is just string "default"
+`ThemeCDefaultType` is just string "default"
 
 <<< @/theme/default/AButton.ts
 

@@ -1,7 +1,7 @@
 <template lang="pug">
 button(
   role="button"
-  :type="cType"
+  :type="ctype ?? 'button'"
   v-bind="$attrs"
   @click.stop="click($event)"
   u-pos="relative"
@@ -15,17 +15,17 @@ button(
   u-opacity="disabled:70"
   u-select="none"
   u-cursor="pointer"
-  :disabled="cDisabled || cLoading"
-  :class="[cPx, cPy, cSize, cColor, cRound, cBg, cHover, cFocus, {'w-full': cFull}, cAClass]"
+  :disabled="cdisabled || cloading"
+  :class="caclass"
 )
   slot
-    div(class="flex justify-center justify-items-center" :class="cSpaceX")
-      span(v-if="text && cIconPosition==='right'") {{ text }}
-      span(v-if="cLoading")
-        div(class="animate-spin preserve-3d text-lg" :class="[cLoadingIcon, {'h-full': text}, cLoadingClass]")
-      span(v-else-if="cIcon")
-        div(:class="[cIcon, {'h-full': text}, cIconClass]")
-      span(v-if="text && cIconPosition==='left'") {{ text }}
+    div(class="flex justify-center items-center" :class="cicon || cloading ? cspacex : ''")
+      span(v-if="text && cipos==='right'") {{ text }}
+      span(v-if="cloading")
+        div(class="animate-spin preserve-3d text-lg" :class="[clicon ?? 'i-eos-icons:loading', clclass]")
+      span(v-else-if="cicon")
+        div(:class="[cicon, ciclass]")
+      span(v-if="text && cipos==='left'") {{ text }}
 </template>
 
 <script lang="ts">
@@ -37,45 +37,26 @@ export default {
 
 <script setup lang="ts">
 import type { IAButtonProps, IAButtonEmits } from "@agufaui/theme";
-import { DAButton } from "@agufaui/theme";
+import { CAButtonName } from "@agufaui/theme";
 import type { IConfig } from "@agufaui/config";
+import { CConfigProvideName } from "@agufaui/config";
 import { aUseVueComponent } from "@agufaui/use";
 import { inject } from "vue";
 
 const props = defineProps<IAButtonProps>();
 
-let config = inject<IConfig>("agufaUIConfig");
-const component = "abutton";
+let config = inject<IConfig>(CConfigProvideName);
+
 const { getComputedPropertiesFromProps } = aUseVueComponent();
 
 const computedProperties = getComputedPropertiesFromProps<IAButtonProps>(
   props,
-  component,
-  config,
-  DAButton
+  CAButtonName,
+  config
 );
 
-const {
-  cType,
-  cPx,
-  cPy,
-  cSize,
-  cColor,
-  cRound,
-  cBg,
-  cHover,
-  cFocus,
-  cFull,
-  cDisabled,
-  cAClass,
-  cIcon,
-  cIconPosition,
-  cIconClass,
-  cLoading,
-  cLoadingIcon,
-  cLoadingClass,
-  cSpaceX,
-} = computedProperties;
+const { ctype, cdisabled, caclass, cicon, cipos, ciclass, cloading, clicon, clclass, cspacex } =
+  computedProperties;
 
 const emits = defineEmits<IAButtonEmits>();
 

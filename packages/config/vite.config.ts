@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { resolve } from "path";
 
 // https://vitejs.dev/config/
@@ -46,5 +46,10 @@ export default defineConfig({
     },
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
+  },
+  test: {
+    globals: true,
+    environment: "happy-dom",
+    reporters: "dot",
   },
 });

@@ -64,9 +64,9 @@
   "peerDependencies": {
     "vue": "^3.2.37"
   },
-  "dependencies": {
-    "@agufaui/config": "workspace:^0.0.2",
+  "devDependencies": {
+    "@agufaui/config": "workspace:^0.0.1",
     "@agufaui/theme": "workspace:^0.0.1",
-    "@agufaui/use": "workspace:^0.1.0"
+    "@agufaui/use": "workspace:^0.1.1"
   }
 }

@@ -46,6 +46,8 @@
     "clean": "rimraf dist",
     "lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
     "lintfix": "nr lint --fix",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit"
   }
 }
