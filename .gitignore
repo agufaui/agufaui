@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+dist
+dist-ssr
+*.local
+
+components.d.ts
+auto-imports.d.ts
+
+# testing
+coverage
+test
+
+# nuxt.js
+.nuxt
+.output
+build
+.nitro
+.cache
+
+# sveltekit
+.svelte-kit
+package
+
+# misc
+CHANGELOG.md
+index.json
+indexes.json
+packages/*/LICENSE
+packages/contributing.md
+packages/public/badge-*
+playgrounds/*/pnpm-lock.yaml
+.DS_Store
+*.pem
+.temp
+
+# debug
+logs
+*.log*
+
+# local env files
+.env
+.env.*
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

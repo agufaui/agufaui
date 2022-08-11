@@ -1,0 +1,14 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"emitDeclarationOnly": true,
+		"isolatedModules": false,
+		"declaration": true
+	},
+	"exclude": [
+		"functions/**/Doc*.vue",
+		"functions/**/*.test.ts",
+		"functions/**/*.md",
+		"vite.config.ts"
+	]
+}

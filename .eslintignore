@@ -1,0 +1,12 @@
+node_modules
+dist
+components.d.ts
+auto-imports.d.ts
+.github
+pnpm-lock.yaml
+coverage
+package
+.svelte-kit
+.output
+!packages/.vitepress/theme/index.ts
+!packages/.vitepress/config.ts

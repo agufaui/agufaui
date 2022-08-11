@@ -1,0 +1,70 @@
+---
+category: Composed
+---
+
+<script setup>
+import { CAAlertErrorName } from '@agufaui/theme'
+</script>
+
+# AlertError
+
+Alert message if there is error or show success message.
+
+#### Child Components
+
+- [Alert](/core/alert/)
+
+## Usage
+
+#### Import
+
+```ts
+import { AAlertError } from "@agufaui/${framework name}";
+```
+
+#### Html
+
+`<a-alertError />` or `<AAlertError />` or `<a-alert-error />`
+
+#### Configuration
+
+Theme component name: `{{ CAAlertErrorName }}`
+
+## Showcase
+
+- Self-closable
+- Examples are using AgufaUI provided theme and Vue
+
+<doc-alert-error />
+
+::: details Click to see code
+<<< @/core/alertError/DocAlertError.vue#showcase
+:::
+
+## Slot
+
+One default slot
+
+## AgufaUI provided Theme Types
+
+`CDefaultType` is just string constant "default"
+
+<<< @/theme/default/AAlertError.ts
+
+## Attributes (Properties)
+
+### Unique
+
+<<< @/theme/types/AAlertError.ts#props
+
+### Inherit from IProps
+
+<<< @/theme/prop.type.ts#iprops
+
+### Inherit from IPropsComposeX
+
+<<< @/theme/prop.type.ts#ipropscomposex
+
+## Events
+
+<<< @/theme/types/AAlertError.ts#emits

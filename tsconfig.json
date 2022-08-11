@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"useDefineForClassFields": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"strict": true,
+		"jsx": "preserve",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"declaration": true,
+		"skipLibCheck": true,
+		"lib": ["esnext", "dom"],
+		"types": ["node", "vitest/globals", "@unocss/extractor-pug", "rollup"],
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@agufaui/vue": ["packages/vue/index.ts"],
+			"@agufaui/vue/*": ["packages/vue/*"],
+			"@agufaui/core": ["packages/core"]
+		}
+	},
+	"include": [
+		"packages",
+		"packages/.vitepress/components/*.vue",
+		"packages/.vitepress/*.ts",
+		"*.ts",
+		"meta"
+	],
+	"exclude": ["**/node_modules", "**/**/*.md", "**/dist", "**/package"]
+}

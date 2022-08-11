@@ -1,0 +1,29 @@
+.vp-doc h2 {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: darkgreen;
+}
+
+.vp-doc h3 {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: rgb(47, 86, 203);
+}
+
+.vp-doc h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: chocolate;
+}
+
+.vp-doc h5 {
+	font-size: 1em;
+	font-weight: bold;
+	color: rgb(25, 150, 58);
+}
+
+.vp-doc h6 {
+	font-size: 0.8em;
+	font-weight: bold;
+	color: rgb(136, 20, 122);
+}

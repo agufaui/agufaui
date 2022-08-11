@@ -1,0 +1,93 @@
+{
+	"packages": {
+		"packages/vue": {
+			"releaseType": "node",
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/svelte": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/use": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/usevue": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/theme": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/config": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/metadata": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/transform": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		".": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		}
+	}
+}

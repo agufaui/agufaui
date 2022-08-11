@@ -1,0 +1,75 @@
+{
+	"name": "@agufaui/svelte",
+	"version": "0.1.0",
+	"description": "Svelte UI Components Library",
+	"author": "Agufa.tech <https://agufa.tech>",
+	"license": "MIT",
+	"homepage": "https://agufaui.com",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/agufaui/agufaui",
+		"directory": "packages/svelte"
+	},
+	"bugs": {
+		"url": "https://github.com/agufaui/agufaui/issues"
+	},
+	"keywords": [
+		"agufa-ui",
+		"agufaui",
+		"agufa",
+		"component library",
+		"ui framework",
+		"ui",
+		"svelte",
+		"sveltekit",
+		"svelte-kit"
+	],
+	"sideEffects": false,
+	"type": "module",
+	"files": [
+		"package"
+	],
+	"svelte": "./package/index.js",
+	"main": "./package/index.js",
+	"module": "./package/index.js",
+	"unpkg": "./package/index.js",
+	"jsdelivr": "./package/index.js",
+	"types": "./package/index.d.ts",
+	"style": "./package/agufaui.css",
+	"exports": {
+		".": "./package/index.js",
+		"./agufaui.css": "./package/agufaui.css",
+		"./theme.css": "./package/theme.css",
+		"./types": "./package/index.d.ts",
+		"./**/*.svelte": "./package/**/*.svelte",
+		"./config": "./config.js",
+		"./package.json": "./package.json"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"dev": "svelte-kit package -w",
+		"build": "svelte-kit package && rm package/package.json package/README.md && cp -t package ../vue/dist/es/assets/agufaui.css ../theme/dist/es/assets/theme.css",
+		"clean": "rimraf package",
+		"lint": "eslint --ext .ts,.js,.svelte --ignore-path ../../.eslintignore .",
+		"lintfix": "nr lint --fix",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.6",
+		"svelte2tsx": "^0.5.13",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.4",
+		"vite": "^3.0.0"
+	},
+	"dependencies": {
+		"@agufaui/config": "workspace:^0.1.0",
+		"@agufaui/theme": "workspace:^0.1.0"
+	}
+}

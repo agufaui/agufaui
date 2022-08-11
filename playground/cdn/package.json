@@ -1,0 +1,13 @@
+{
+	"private": "true",
+	"scripts": {
+		"dev": "vite",
+		"build": "nr type-check && nr build-only",
+		"preview": "vite preview --port 4173",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --noEmit",
+		"clean": "rimraf dist",
+		"lint": "eslint . --ext .html --ignore-path ../../.eslintignore .",
+		"lintfix": "nr lint --fix"
+	}
+}

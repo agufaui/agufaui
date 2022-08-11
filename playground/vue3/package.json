@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "nr type-check && nr build-only",
+		"preview": "vite preview --port 4173",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --noEmit",
+		"clean": "rimraf dist",
+		"lint": "eslint . --ext .vue,.js,.ts --ignore-path ../../.eslintignore .",
+		"lintfix": "nr lint --fix"
+	},
+	"dependencies": {
+		"@agufaui/config": "workspace:^0.1.0",
+		"@agufaui/vue": "workspace:^0.1.0",
+		"vue": "^3.2.37"
+	},
+	"devDependencies": {
+		"@unocss/reset": "^0.44.0"
+	}
+}

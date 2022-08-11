@@ -1,0 +1,54 @@
+{
+	"name": "@agufaui/transform",
+	"version": "0.1.0",
+	"description": "Transform Vue to Svelte for Agufaui",
+	"author": "Agufa.tech <https://agufa.tech>",
+	"license": "MIT",
+	"homepage": "https://agufaui.com",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/agufaui/agufaui",
+		"directory": "packages/transform"
+	},
+	"bugs": {
+		"url": "https://github.com/agufaui/agufaui/issues"
+	},
+	"keywords": [
+		"agufa-ui",
+		"agufaui-transform",
+		"agufaui",
+		"agufa",
+		"utils"
+	],
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/es/index.mjs",
+	"unpkg": "./dist/umd/index.js",
+	"jsdelivr": "./dist/umd/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/es/index.mjs",
+			"require": "./dist/cjs/index.cjs",
+			"default": "./dist/umd/index.js",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"watch": "nr build:types && vite build --watch",
+		"build": "vite build && tsc -p tsconfig.build.json",
+		"build:types": "tsc -p tsconfig.build.json",
+		"clean": "rimraf dist",
+		"lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
+		"lintfix": "nr lint --fix",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
+	}
+}

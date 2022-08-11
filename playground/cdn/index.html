@@ -1,0 +1,33 @@
+<html lang="en">
+	<head>
+		<!-- Import style -->
+		<link rel="stylesheet" href="//unpkg.com/@unocss/reset/tailwind.css" />
+		<link rel="stylesheet" href="//unpkg.com/@agufaui/vue/dist/es/assets/agufaui.css" />
+		<link rel="stylesheet" href="//unpkg.com/@agufaui/vue/dist/es/assets/theme.css" />
+		<!-- Import Vue 3 -->
+		<script src="//unpkg.com/vue@next"></script>
+
+		<!-- Import component library -->
+		<script crossorigin="anonymous" type="text/javascript" src="//unpkg.com/@agufaui/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<a-button
+				text="click me"
+				aclass="m-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
+			></a-button>
+		</div>
+
+		<script>
+			const app = Vue.createApp();
+			app.provide(
+				"agufaUIConfig",
+				new AgufaUI.Config({
+					baseTheme: AgufaUI.Theme,
+				})
+			);
+			app.use(AgufaUI.VuePlugin);
+			app.mount("#app");
+		</script>
+	</body>
+</html>

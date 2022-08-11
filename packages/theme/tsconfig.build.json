@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"emitDeclarationOnly": true,
+		"isolatedModules": false,
+		"declaration": true
+	},
+	"exclude": ["dist", "node_modules", "vite.config.ts"]
+}

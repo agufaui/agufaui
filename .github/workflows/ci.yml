@@ -1,0 +1,83 @@
+on:
+  push:
+    branches:
+      - main
+      - next
+
+  pull_request:
+    branches:
+      - main
+      - next
+
+name: CI
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Set node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Lint
+        run: nr lint
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [16.x]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+      - name: Typecheck
+        run: nr typecheck
+
+      - name: Test
+        run: nr test
+
+  release-please:
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          command: manifest
+          token: ${{secrets.WORKFLOW_TOKEN}}
+          monorepo-tags: true
+          signoff: 'release-please-action[bot] <release-please-action[bot]@users.noreply.github.com>'
+          extra-files: packages/svelte/package.json

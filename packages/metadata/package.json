@@ -1,0 +1,45 @@
+{
+	"name": "@agufaui/metadata",
+	"version": "0.1.0",
+	"description": "Metadata for AgufaUI",
+	"author": "Agufa.tech <https://agufa.tech>",
+	"license": "MIT",
+	"homepage": "https://agufaui.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/agufaui/agufaui.git",
+		"directory": "packages/metadata"
+	},
+	"bugs": {
+		"url": "https://github.com/agufaui/agufaui/issues"
+	},
+	"keywords": [
+		"agufa-ui",
+		"agufaui",
+		"agufa",
+		"metadata"
+	],
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/es/index.mjs",
+	"unpkg": "./dist/iife/index.js",
+	"jsdelivr": "./dist/iife/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/es/index.mjs",
+			"require": "./dist/cjs/index.cjs",
+			"default": "./dist/umd/index.js"
+		},
+		"./types": "./dist/types/index.d.ts"
+	},
+	"scripts": {
+		"build": "vite build && tsc -p tsconfig.build.json",
+		"build:types": "tsc -p tsconfig.build.json",
+		"clean": "rimraf dist",
+		"update": "tsx scripts/update.ts"
+	}
+}
