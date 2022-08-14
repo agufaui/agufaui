@@ -1,4 +1,3 @@
-import "uno:icons.css";
 import "uno.css";
 export * from "./default.theme";
 export * from "./default/AAlert";

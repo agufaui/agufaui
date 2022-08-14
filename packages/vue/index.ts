@@ -1,4 +1,3 @@
-import "uno:icons.css";
 import "uno.css";
 import type { App } from "vue";
 import * as components from "./components";

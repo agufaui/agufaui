@@ -3,7 +3,6 @@ import type { Theme, EnhanceAppContext } from "vitepress/types";
 import { Config, IConfig, CConfigProvideName } from "@agufaui/config";
 import { Theme as ATheme } from "../../theme/default.theme";
 
-import "uno:icons.css";
 import "uno.css";
 import "./styles/home.css";
 import "./styles/doc.css";
