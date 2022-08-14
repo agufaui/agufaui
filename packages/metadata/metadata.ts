@@ -9,6 +9,7 @@ import _metadata, {
 
 const categoriesOrder = [
 	"Basic",
+	"Utility",
 	"Composed",
 	"Form",
 	"Data",

@@ -1,9 +1,11 @@
-export const regexClassGroup = /([!\w+:_/-]+?)([:-])\(((?:[~!\w\s:/\\,%#.$-]|\[.*?\])*?)\)/g;
+export const regexClassGroup =
+	/((?:[!\w+:_/-]|\[&?>?:.+?\])+?)([:-])\(((?:[~!\w\s:/\\,%#.$-]|\[.*?\])*?)\)/gm;
 
 export function expandVariantGroup(str: string, separators: ("-" | ":")[] = ["-", ":"]) {
 	regexClassGroup.lastIndex = 0;
 	let hasChanged = false;
 	let content = str;
+
 	do {
 		const before = content;
 

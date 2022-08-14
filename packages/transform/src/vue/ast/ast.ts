@@ -16,7 +16,7 @@ import {
 } from "@babel/types";
 import fs from "fs";
 import {
-	getAst,
+	getFileAst,
 	groupImports,
 	insertString,
 	intersect,
@@ -262,7 +262,7 @@ export async function extractTypesFromSource(
 	const {
 		relativePath,
 		aliases,
-		ast = getAst(source),
+		ast = getFileAst(source).program,
 		isInternal = false,
 		cleanInterface = false,
 		extractedTypes = new Map<string, string>(),

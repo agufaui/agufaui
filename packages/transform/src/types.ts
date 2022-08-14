@@ -8,5 +8,15 @@ export interface ITransform {
 	 * @param from Vue file to transform from
 	 * @param to Svelte file to transform to
 	 */
-	vueToSvelte: (from: string, toDir: string, toFile: string) => Promise<void>;
+	vueToSvelte: (
+		from: string,
+		toDir: string,
+		toFile: string,
+		options: ITransformOptions
+	) => Promise<void>;
+}
+
+export interface ITransformOptions {
+	noComputed?: Set<string>;
+	noImport?: Set<string>;
 }

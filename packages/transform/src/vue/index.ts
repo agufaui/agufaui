@@ -1,14 +1,19 @@
 import { parse } from "@vue/compiler-sfc";
-import { extractTypesFromSource, getUsedInterfacesFromAst } from "./ast";
-import type { Program } from "@babel/types";
-import { getAst, replaceAtIndexes } from "./utils";
+import type { Program, File } from "@babel/types";
+import type { ParseResult } from "@babel/parser";
+import type { ITransformOptions } from "src/types";
+import type { IContext, IBlock } from "./types";
+import { getFileAst } from "./ast/utils";
 import pugLex from "pug-lexer";
 import pugParse from "pug-parser";
-import type { IBlock } from "./svelte/genTemplate";
 import { getSvelteTemplate } from "./svelte/genTemplate";
 import { getSvelteScript } from "./svelte/genScript";
 
-export async function transformVue(code: string, from: string): Promise<string> {
+export async function transformVue(
+	code: string,
+	from: string,
+	options: ITransformOptions
+): Promise<string> {
 	const {
 		descriptor: { template, scriptSetup },
 	} = parse(code);
@@ -17,74 +22,22 @@ export async function transformVue(code: string, from: string): Promise<string> 
 
 	const templateAst = pugParse(pugLex(template.content)) as IBlock;
 	// console.log(templateAst);
-	const scriptAst = getAst(scriptSetup.content) as Program;
+	const scriptFile: ParseResult<File> = getFileAst(scriptSetup.content);
+	const scriptAst: Program = scriptFile.program;
 	// console.log("script", scriptAst);
-	const svelteTemplate = getSvelteTemplate(templateAst);
 
-	const svelteScript = await getSvelteScript(scriptAst, {
+	const context: IContext = {
 		scriptContent: scriptSetup.content,
 		path: from,
-		ast: scriptAst,
-	});
+		scriptFile,
+		scriptAst,
+		templateAst,
+		...options,
+	};
 
-	// const { result, importNodes, extraSpecifiers, extraReplacements } = await extractTypesFromSource(
-	// 	scriptSetup.content,
-	// 	interfaces,
-	// 	{
-	// 		relativePath: from,
-	// 		ast: program,
-	// 		isInternal: true,
-	// 	}
-	// );
-	// // Skip
-	// if (!result.size) {
-	// 	return code;
-	// }
-	// const resolvedTypes = [...result].reverse();
-	// const replacements = extraReplacements;
-	// // Clean up imports
-	// importNodes.forEach((i) => {
-	// 	const firstStart = i.specifiers[0].start!;
-	// 	const lastEnd = i.specifiers[i.specifiers.length - 1].end!;
-	// 	const savedSpecifiers = i.specifiers
-	// 		.map((specifier) => {
-	// 			if (specifier.type === "ImportSpecifier" && specifier.imported.type === "Identifier") {
-	// 				const name = specifier.imported.name;
-	// 				const shouldSave = !resolvedTypes.some((x) => x[0] === name);
-	// 				if (shouldSave && !extraSpecifiers.includes(name)) {
-	// 					return name;
-	// 				}
-	// 				return null;
-	// 			}
-	// 			return null;
-	// 		})
-	// 		.filter((s): s is string => s !== null);
-	// 	// Clean the whole import statement if no specifiers are saved.
-	// 	if (!savedSpecifiers.length) {
-	// 		replacements.push({
-	// 			start: i.start!,
-	// 			end: i.end!,
-	// 			replacement: "",
-	// 		});
-	// 	} else {
-	// 		replacements.push({
-	// 			start: firstStart,
-	// 			end: lastEnd,
-	// 			replacement: savedSpecifiers.join(", "),
-	// 		});
-	// 	}
-	// });
-	// const inlinedTypes = resolvedTypes.map((x) => x[1]).join("\n");
-	// const transformedCode = [
-	// 	// Tag head
-	// 	code.slice(0, scriptSetup.loc.start.offset),
-	// 	// Script setup content
-	// 	inlinedTypes,
-	// 	// Replace import statements
-	// 	replaceAtIndexes(scriptSetup.content, replacements),
-	// 	// Tag end
-	// 	code.slice(scriptSetup.loc.end.offset),
-	// ].join("\n");
-	// return transformedCode;
+	const svelteTemplate = getSvelteTemplate(context);
+
+	const svelteScript = await getSvelteScript(context);
+
 	return svelteTemplate + "\n" + svelteScript;
 }

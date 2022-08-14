@@ -1,5 +1,5 @@
 ---
-category: Composed
+category: Utility
 ---
 
 <script setup>
@@ -33,7 +33,6 @@ Theme component name: `{{ CAAlertErrorName }}`
 ## Showcase
 
 - Self-closable
-- Examples are using AgufaUI provided theme and Vue
 
 <doc-alert-error />
 
@@ -45,7 +44,7 @@ Theme component name: `{{ CAAlertErrorName }}`
 
 One default slot
 
-## AgufaUI provided Theme Types
+## AgufaUI provided Theme
 
 `CDefaultType` is just string constant "default"
 

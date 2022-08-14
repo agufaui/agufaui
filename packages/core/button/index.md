@@ -1,6 +1,5 @@
 ---
 category: Basic
-available: Vue
 ---
 
 <script setup>
@@ -30,7 +29,6 @@ Theme component name: `{{ CAButtonName }}`
 ## Showcase
 
 - Loading button is disabled automatically
-- Examples are using AgufaUI provided theme and Vue
 - Hover and click button to see different effects
 
 <DocButton />
@@ -43,13 +41,17 @@ Theme component name: `{{ CAButtonName }}`
 
 One default slot
 
-## AgufaUI provided Theme Types
+## AgufaUI provided Theme
 
 `CDefaultType` is just string constant "default"
 
 <<< @/theme/default/AButton.ts
 
 ## Attributes (Properties)
+
+#### Default Values
+
+<<< @/vue/components/button/AButton.vue#props
 
 ### Unique
 

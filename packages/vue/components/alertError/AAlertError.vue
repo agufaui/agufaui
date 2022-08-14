@@ -1,5 +1,5 @@
 <template lang="pug">
-a-alert(:show="show" v-bind="$attrs" :atype="error? 'red' : 'green'" :closable="true" :aclass="caclass" @closea="closea")
+a-alert(:show="show" v-bind="$attrs" :atype="error? cerrorAAlertType : csuccessAAlertType" :closable="true" :aclass="caclass" @closea="closea")
   template(#default)
     slot {{ msg }}
 </template>
@@ -28,7 +28,7 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAAlertErrorProps>(props, CAAlertErrorName, config);
 
-const { caclass } = computedProperties;
+const { caclass, cerrorAAlertType, csuccessAAlertType } = computedProperties;
 
 const emits = defineEmits<IAAlertErrorEmits>();
 

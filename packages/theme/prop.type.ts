@@ -1,8 +1,9 @@
+// @unocss-ignore
 import type { TComponentType } from "@agufaui/config";
 
 // #region iprops
 export interface IProps extends TComponentType {
-	atype?: string; // user defined or AgufaUI provided component type
+	atype?: string; // user defined or AgufaUI provided component type.  Not configurable
 	aclass?: string; // css classes for html element button
 }
 // #endregion iprops

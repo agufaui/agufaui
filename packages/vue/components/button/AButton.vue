@@ -32,10 +32,12 @@ import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
 const props = withDefaults(defineProps<IAButtonProps>(), {
+	// #region props
 	type: "button",
 	ipos: "left",
 	licon: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
+	// #endregion props
 });
 
 let config = inject<IConfig>(CConfigProvideName);

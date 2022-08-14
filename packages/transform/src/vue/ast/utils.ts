@@ -5,7 +5,8 @@ import { dirname, extname, join } from "path";
 import { Alias, AliasOptions } from "vite";
 import { babelParse } from "@vue/compiler-sfc";
 import { IImport } from "./ast";
-import type { Program } from "@babel/types";
+import type { Program, File } from "@babel/types";
+import type { ParseResult } from "@babel/parser";
 
 type Pkg = Partial<Record<"types" | "typings", string>>;
 
@@ -13,11 +14,11 @@ export type StringMap = Map<string, string>;
 
 export type MaybeAliases = ((AliasOptions | undefined) & Alias[]) | undefined;
 
-export function getAst(content: string): Program {
+export function getFileAst(content: string): ParseResult<File> {
 	return babelParse(content, {
 		sourceType: "module",
 		plugins: ["typescript", "topLevelAwait"],
-	}).program;
+	});
 }
 
 /**

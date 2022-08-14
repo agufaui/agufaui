@@ -9,7 +9,7 @@ There are two ways to customize components:
 ### Component Instance Level
 
 ```html
-<a-button text="Hello World" aclass="text-red hover:bg-blue-200" />
+<a-button text="Hello World" aclass="text-red hover:bg-blue-2" />
 ```
 
 ### Component Level through Configuration
@@ -40,8 +40,10 @@ theme: {
 4. **default** type will be applied when no `atype` property is specified for that component.
 5. You can specify `useType: ${type_name}` in each component type declaration to use that type as base to merge. AgufaUI will look for that type in current theme component scope, then in baseTheme component scope if you are using custom theme.
 6. If you are using custom theme as baseTheme, you can specify `useType: base:${type_name}` to use base type directly.
-7. There is no need to specify **boolean** type properties in configuration, because javascript will default boolean type properties to **false**.
-8. You can split Theme to smaller files then import and combine them. For example, abutton.ts, aalert.ts, etc.
+7. Configuration values will only apply if property is undefined, aka user didn't specify that property (attribute) in html tag.
+8. There is no need to configure **boolean** type properties, because javascript will default boolean type properties to **false**.
+9. `atype` property is not configurable.  For properties that are not configurable, you'll see "Not configurable" in comment for that property in type definition of component.
+10. You can split Theme to smaller files then import and combine them. For example, abutton.ts, aalert.ts, etc.
 
 Here's an example, suppose you are using AgufaUI provided theme as baseTheme:
 
@@ -64,13 +66,13 @@ const userConfig: IUserConfig = {
 			[CDefaultType]: {
 				// user defined default type, replace default type in baseTheme
 				[CUseType]: CDefaultType, // merge with default type in baseTheme
-				aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+				aclass: "bg-red-5 hover:(bg-red-6 text-white)",
 				lclass: "text-green",
 			},
 			blue: {
 				// user defined blue type
 				[CUseType]: CBase + CDefaultType, // merge with default type in baseTheme
-				aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+				aclass: "bg-red-5 hover:(bg-red-6 text-white)",
 				lclass: "text-blue",
 			},
 			green: {
@@ -102,7 +104,7 @@ theme: {
   abutton: {
     default: {
       useType: "default", // or "base:default"
-      aclass: "bg-red-500 hover:bg-red-600",
+      aclass: "bg-red-5 hover:bg-red-6",
       lclass: "text-green",
     },
   }
@@ -294,6 +296,32 @@ configStore.set(
 );
 ```
 
+- If you are programming with **unstyled components**, you need to specify child components types for composed components.
+
+For example, `AALertError` has child component `AAlert`.  In AgufaUI provided theme, `AAlertError` default type is:
+
+```ts
+theme: {
+  aalertError: {
+    default: {
+      errorAAlertType: "red",
+      successAAlertType: "green",
+    }
+  }
+}
+```
+
+"red" is `AAlert` red type, and "green" is `AAlert` green type in AgufaUI provided theme:
+
+```ts
+theme: {
+  aalert: {
+    red: { ... },
+    green: { ... },
+  }
+}
+```
+
 ## Component Instance Level Customization with Configuration defined
 
 1. For duplicate component properties with name ends with "class", values will be concatenated:
@@ -304,7 +332,7 @@ new Config({
 	theme: {
 		abutton: {
 			default: {
-				aclass: "text-white bg-blue-500 hover:bg-blue-600",
+				aclass: "text-white bg-blue-5 hover:bg-blue-6",
 			},
 		},
 	},
@@ -312,13 +340,13 @@ new Config({
 ```
 
 ```html
-<a-button text="Hello World" aclass="focus:ring-blue-400" />
+<a-button text="Hello World" aclass="focus:ring-blue-4" />
 ```
 
 will compile to
 
 ```html
-<button class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-blue-400">Hello World</button>
+<button class="text-white bg-blue-5 hover:bg-blue-6 focus:ring-blue-4">Hello World</button>
 ```
 
 2. For duplicate component properties with name not ends with "class", values will be overrided:
@@ -414,18 +442,18 @@ You can apply different classes to different elements. Hover and click on below 
 <a-button
 	text="Hello"
 	tclass="animate-pulse"
-	aclass="animate-spin text-white bg-blue-600 hover:(animate-fade-in bg-blue-700) focus:(animate-fade-out ring-blue-500)"
+	aclass="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)"
 	icon="i-ph-anchor"
 	iclass="animate-spin text-green-3"
 />
 ```
 
 <br />
-<a-button text="Hello" tclass="animate-pulse" aclass="animate-spin text-white bg-blue-600 hover:(animate-fade-in bg-blue-700) focus:(animate-fade-out ring-blue-500)" icon="i-ph-anchor" iclass="animate-spin text-green-3" /><br /><br /><br />
+<a-button text="Hello" tclass="animate-pulse" aclass="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)" icon="i-ph-anchor" iclass="animate-spin text-green-3" /><br /><br /><br />
 
-- `aclass` is applied last in order, so it will override any overlapping classes for that component. It's useful in rare cases if you want to override AgufaUI default positional CSS. However, whether it works depends on your CSS framework's order of rules. For example:
+- `aclass` is applied last in order, so it will override any overlapping classes for that component. It's useful in rare cases if you want to override AgufaUI default positional and browser reset CSS. However, whether it works depends on your CSS framework's order of rules. For example:
 
-  1. Suppose AgufaUI positional CSS has `cursor-wait` rule, if you import `agufaui.css`, it will be in its own css layer.
+  1. Suppose agufaui.css has `cursor-wait` rule, if you import `agufaui.css`, it will be in its own css layer.
   2. You used `cursor-wait` somewhere in your own code.
   3. Then you want to override `cursor-wait` with `cursor-pointer`, resulting class is `class="cursor-wait cursor-pointer"`
   4. If your CSS framework order of rules is Alphabetic, your own code css layer will be

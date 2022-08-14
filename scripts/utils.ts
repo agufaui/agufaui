@@ -126,6 +126,8 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 	const sveltePath = join(DIR_ROOT, "packages/svelte/src/lib/");
 	const { firstLetterToUpper } = useString();
 	const { vueToSvelte } = transform();
+	const noComputed = new Set(["atype", "text", "msg", "value", "modelValue", "label"]);
+	const noImport = new Set(["vue", "@agufaui/usevue", "@agufaui/config"]);
 
 	for (const { name } of Object.values(packages)) {
 		if (name !== "core") continue;
@@ -139,7 +141,10 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 					const varName = "A" + firstLetterToUpper(name);
 					const vueName = varName + ".vue";
 					const svelteName = varName + ".svelte";
-					await vueToSvelte(vuePath + name + "/" + vueName, sveltePath + name, svelteName);
+					await vueToSvelte(vuePath + name + "/" + vueName, sveltePath + name, svelteName, {
+						noComputed,
+						noImport,
+					});
 					return `export { default as ${varName} } from "./${name}/${svelteName}";`;
 				})
 		);

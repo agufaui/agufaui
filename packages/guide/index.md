@@ -24,11 +24,11 @@ We assume you are already familiar with the basic ideas of Atomic/Utility First 
 - [Variant Group](https://windicss.org/features/variant-groups.html)
 
 ```html
-<div class="hover:(bg-gray-400 font-medium) bg-white font-light" />
+<div class="hover:(bg-gray-4 font-medium) bg-white font-light" />
 ```
 
-::: warning This site's examples
-You will not see variant group syntax in this site's examples, even though the actual code is written in variant group syntax, because this site is using Unocss, and Unocss auto splits variant group syntax because it scans whole file. There is no way for Unocss to ignore single lines for now.
+::: warning Site Examples
+You will not see variant group syntax in this site's examples, even though the actual code is written in variant group syntax, because this site is using Unocss, and Unocss auto splits variant group syntax when scanning whole file. There is no way for Unocss to ignore single lines for now.
 :::
 
 - [Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/)
@@ -37,7 +37,7 @@ You will not see variant group syntax in this site's examples, even though the a
 <!-- A basic anchor icon from Phosphor icons -->
 <div class="i-ph-anchor-simple-thin" />
 <!-- An orange alarm from Material Design Icons -->
-<div class="i-mdi-alarm text-orange-400" />
+<div class="i-mdi-alarm text-orange-4" />
 <!-- A large Vue logo -->
 <div class="i-logos-vue text-3xl" />
 <!-- Sun in light mode, Moon in dark mode, from Carbon -->
@@ -101,6 +101,10 @@ import "uno.css";
 
 **Make sure you read [Configuration](./config) for components customization before you jump to coding.**
 
+#### Site Examples
+
+Site examples are using AgufaUI provided theme, Vue and Unocss.
+
 ## Installation
 
 #### Vue/Nuxt
@@ -147,7 +151,7 @@ pnpm add @agufaui/svelte @agufaui/config @agufaui/theme
 		<div id="app">
 			<a-button
 				text="click me"
-				aclass="m-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
+				aclass="m-2 text-white bg-blue-6 hover:bg-blue-7 focus:ring-blue-5"
 			></a-button>
 		</div>
 

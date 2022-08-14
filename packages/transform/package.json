@@ -50,5 +50,9 @@
 		"typecheck": "tsc --noEmit",
 		"test": "vitest",
 		"coverage": "vitest run --coverage"
+	},
+	"devDependencies": {
+		"@types/babel__generator": "^7.6.4",
+		"@types/babel__traverse": "^7.18.0"
 	}
 }

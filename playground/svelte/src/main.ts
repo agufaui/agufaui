@@ -1,5 +1,7 @@
+import "@unocss/reset/tailwind.css";
 import "@agufaui/svelte/agufaui.css";
 import "@agufaui/svelte/theme.css";
+import "uno.css";
 import App from "./App.svelte";
 import { configStore } from "@agufaui/svelte";
 import { Config } from "@agufaui/config";
