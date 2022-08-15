@@ -12,7 +12,8 @@ export function useVue(): IUseVue {
 		const aTypeRef = toRef(props, "atype" as keyof T);
 
 		for (const propName in props) {
-			if (["atype", "text", "msg", "value", "modelValue", "label"].includes(propName)) continue;
+			if (["atype", "text", "msg", "value", "modelValue", "v", "label"].includes(propName))
+				continue;
 
 			const prop = toRef(props, propName as keyof T);
 
