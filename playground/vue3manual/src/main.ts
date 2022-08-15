@@ -2,7 +2,6 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { Config } from "@agufaui/vue";
 import "@unocss/reset/tailwind.css";
-import "uno:icons.css";
 import "@agufaui/vue/agufaui.css";
 import "uno.css";
 

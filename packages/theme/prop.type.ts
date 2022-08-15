@@ -1,9 +1,7 @@
-import type { TComponentType } from "@agufaui/config";
-
 // #region iprops
-export interface IProps extends TComponentType {
-	atype?: string; // user defined or AgufaUI provided component type
-	aclass?: string; // css classes for html element button
+export interface IProps {
+	atype?: string; // user defined or AgufaUI provided component type.  Not configurable
+	aclass?: string; // css classes for component root html element
 }
 // #endregion iprops
 

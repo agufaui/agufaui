@@ -1,40 +1,34 @@
-interface IAttr {
-	name: string;
-	val: string;
-	line: number;
-	column: number;
-	mustEscape: boolean;
-}
-interface ITag {
-	type: string;
-	name: string;
-	selfClosing: boolean;
-	block: IBlock;
-	attrs: IAttr[];
-	attributeBlocks: [];
-	isInline: boolean;
-	line: number;
-	column: number;
-}
-interface IText {
-	type: string;
-	val: string;
-	line: number;
-	column: number;
-}
-export interface IBlock {
-	type: string;
-	nodes: (ITag | IText)[];
-	line: number;
-}
+import type { IContext, IBlock, ITag, IText } from "../types";
 
-export function getSvelteTemplate(templateAst: IBlock): string {
-	let template = genSvelteTemplate(templateAst);
+export const noClosingTags = new Set([
+	"input",
+	"img",
+	"br",
+	"hr",
+	"link",
+	"meta",
+	"area",
+	"base",
+	"col",
+	"embed",
+	"keygen",
+	"param",
+	"source",
+	"track",
+	"wbr",
+]);
+
+export function getSvelteTemplate(context: IContext = {}): string {
+	let template = genSvelteTemplate(context.templateAst!, context);
 	template += "\n";
 	return template.slice(1);
 }
 
-export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): string {
+export function genSvelteTemplate(
+	templateAst: IBlock,
+	context: IContext = {},
+	indent: string = ""
+): string {
 	return templateAst.nodes.reduce((code, node) => {
 		switch (node.type) {
 			case "Text":
@@ -55,7 +49,7 @@ export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): strin
 
 					if (attr.name === "role") {
 						return final;
-					} else if (attr.name.startsWith(":")) {
+					} else if (attr.name.startsWith(":") || attr.name.startsWith("v-bind:")) {
 						name = attr.name.substring(1);
 						val = val.replace(/^"|"$/g, "");
 
@@ -92,8 +86,9 @@ export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): strin
 								final += ` ${name}="${val}"`;
 							}
 						}
-					} else if (attr.name.startsWith("@")) {
-						name = "on:" + attr.name.substring(1);
+					} else if (attr.name.startsWith("@") || attr.name.startsWith("v-on:")) {
+						const subName = attr.name.substring(1); // 'click.stop.prevent'
+						name = "on:" + subName;
 						name = name
 							.replace(".stop", "|stopPropagation")
 							.replace(".prevent", "|preventDefault")
@@ -112,6 +107,14 @@ export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): strin
 							}
 						}
 						final += ` ${name}="{${val}}"`;
+
+						context.hasEmits = true;
+						const nameModifiers = subName.split("."); // ['click', 'stop', 'prevent']
+						if (context.emits) {
+							context.emits.push(nameModifiers[0]);
+						} else {
+							context.emits = [nameModifiers[0]];
+						}
 					} else if (attr.name.startsWith("#")) {
 						const slotName = attr.name.substring(1);
 						final += ` slot="${slotName}"`;
@@ -162,7 +165,8 @@ export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): strin
 				}, "");
 
 				attrs = attrs.trim();
-				attrs = attrs ? " " + attrs + ">" : ">";
+
+				attrs = attrs ? " " + attrs + (noClosingTags.has(tagNode.name) ? " />" : ">") : ">";
 
 				if (tagNode.name.startsWith("a-")) {
 					const tagName = tagNode.name.substring(2);
@@ -173,23 +177,28 @@ export function genSvelteTemplate(templateAst: IBlock, tags: string = ""): strin
 				}
 
 				if (pre) {
-					code += "\n" + tags + pre + "\n\t" + tags + "<" + tagNode.name + attrs;
+					code += "\n" + indent + pre + "\n\t" + indent + "<" + tagNode.name + attrs;
 
-					code += genSvelteTemplate(tagNode.block, tags + "\t\t");
+					code += genSvelteTemplate(tagNode.block, context, indent + "\t\t");
 
-					code += "\n\t" + tags + "</" + tagNode.name + ">";
+					if (!noClosingTags.has(tagNode.name)) {
+						code += "\n\t" + indent + "</" + tagNode.name + ">";
+					}
 
 					if (pre.includes("{#if")) {
-						code += "\n" + tags + "{/if}";
+						code += "\n" + indent + "{/if}";
 					} else if (pre.includes("{:else")) {
-						code += "\n" + tags + "{/if}";
+						code += "\n" + indent + "{/if}";
 					} else if (pre.includes("{#each")) {
-						code += "\n" + tags + "{/each}";
+						code += "\n" + indent + "{/each}";
 					}
 				} else {
-					code += "\n" + tags + "<" + tagNode.name + attrs;
-					code += genSvelteTemplate(tagNode.block, tags + "\t");
-					code += "\n" + tags + "</" + tagNode.name + ">";
+					code += "\n" + indent + "<" + tagNode.name + attrs;
+					code += genSvelteTemplate(tagNode.block, context, indent + "\t");
+
+					if (!noClosingTags.has(tagNode.name)) {
+						code += "\n" + indent + "</" + tagNode.name + ">";
+					}
 				}
 				break;
 			default:

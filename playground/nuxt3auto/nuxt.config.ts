@@ -7,7 +7,6 @@ export default defineNuxtConfig({
 		"@unocss/reset/tailwind.css",
 		"@agufaui/vue/agufaui.css",
 		"@agufaui/vue/theme.css",
-		"uno:icons.css",
 		"uno.css",
 	],
 	typescript: {

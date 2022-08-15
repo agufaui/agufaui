@@ -27,12 +27,12 @@ features:
   - icon: 📋
     title: Customization is Easy
     details: We do the layout, you do the design
-  - icon: ⚡️
+  - icon: 🏝️
     title: Unstyled Components Enabled
     details: You can program with unstyled components.
   - icon: ⚡️
     title: Nuxt Compatible
-  - icon: ⚡️
+  - icon: ✨
     title: SvelteKit Compatible
   - icon: 🖖
     title: TypeScript Support

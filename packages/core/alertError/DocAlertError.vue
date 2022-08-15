@@ -1,8 +1,10 @@
 <template>
-	<!-- #region showcase -->
-	<a-alert-error msg="Alert" :show="true" :error="true" aclass="my-2" />
-	<a-alert-error msg="Success" :show="true" :error="false" aclass="my-2" />
-	<!-- #endregion showcase -->
+	<div class="flex flex-col gap-y-2">
+		<!-- #region showcase -->
+		<a-alert-error msg="Alert" :show="true" :error="true" />
+		<a-alert-error msg="Success" :show="true" :error="false" />
+		<!-- #endregion showcase -->
+	</div>
 </template>
 
 <script lang="ts">

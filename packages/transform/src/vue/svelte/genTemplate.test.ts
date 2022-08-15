@@ -1,4 +1,4 @@
-import type { IBlock } from "./genTemplate";
+import type { IBlock } from "../types";
 import { genSvelteTemplate } from "./genTemplate";
 import pugLex from "pug-lexer";
 import pugParse from "pug-parser";

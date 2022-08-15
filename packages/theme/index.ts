@@ -1,10 +1,11 @@
-import "uno:icons.css";
 import "uno.css";
 export * from "./default.theme";
 export * from "./default/AAlert";
 export * from "./default/AAlertError";
 export * from "./default/AButton";
+export * from "./default/AInput";
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits } from "./types/AAlert";
 export type { IAAlertErrorProps, IAAlertErrorEmits } from "./types/AAlertError";
 export type { IAButtonProps, IAButtonEmits, ButtonType } from "./types/AButton";
+export type { IAInputProps, IAInputEmits } from "./types/AInput";

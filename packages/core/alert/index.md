@@ -29,8 +29,8 @@ Theme component name: `{{ CAAlertName }}`
 ## Showcase
 
 - Self-closable
-- Examples are using AgufaUI provided theme and Vue
-- Last "Password doesn't meet requirements" example is using slot
+- 2nd example is wrapped in `div` because the `div` container of these examples is styled "flex flex-col", which makes direct children full width.   
+- The last "Password doesn't meet requirements" example is using slot
 - This component can be used for "Accept Cookie" alert (Cookie Consent Notification) by using slot
 
 <DocAlert />
@@ -41,15 +41,19 @@ Theme component name: `{{ CAAlertName }}`
 
 ## Slot
 
-One default slot
+One default slot for message `span` html element
 
-## AgufaUI provided Theme Types
+## AgufaUI provided Theme
 
 `CDefaultType` is just string constant "default"
 
 <<< @/theme/default/AAlert.ts
 
 ## Attributes (Properties)
+
+#### Default Values
+
+<<< @/vue/components/alert/AAlert.vue#props
 
 ### Unique
 

@@ -3,17 +3,16 @@ button(
   role="button"
   :type="ctype"
   v-bind="$attrs"
-  class="flex-inline justify-center items-center select-none cursor-pointer"
+  class="select-none cursor-pointer"
   :disabled="disabled || loading"
-  :class="caclass"
+  :class="[caclass]"
   @click.stop="click($event)"
 )
   slot
-    div(class="flex justify-center items-center" :class="cicon || loading ? cspacex : ''")
-      span(v-if="text && cipos === 'right'" :class="ctclass") {{ text }}
+    div(class="flex justify-center items-center" :class="[cicon || loading ? cspacex : '', cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '']")
       div(v-if="loading" class="animate-spin preserve-3d" :class="[clicon, clclass]")
       div(v-else-if="cicon" :class="[cicon, ciclass]")
-      span(v-if="text && cipos === 'left'" :class="ctclass") {{ text }}
+      span(v-if="text" :class="ctclass") {{ text }}
 </template>
 
 <script lang="ts">
@@ -32,10 +31,11 @@ import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
 const props = withDefaults(defineProps<IAButtonProps>(), {
+	// #region props
 	type: "button",
-	ipos: "left",
 	licon: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
+	// #endregion props
 });
 
 let config = inject<IConfig>(CConfigProvideName);
