@@ -7,7 +7,7 @@ export const CAInputLabelError = "peer-invalid:text-red-4";
 export const CAInputLabelFocus =
 	"peer-focus-within:(scale-90 -translate-y-3 z-0 ml-3 px-1 py-0 text-indigo-4)";
 export const CAInputLabelPlaceholder =
-	"[&:not(peer-placeholder-shown)]:(scale-90 -translate-y-3 z-0 ml-3 px-1 py-0 text-indigo-4)";
+	"peer-not-placeholder-shown:(scale-90 -translate-y-3 z-0 ml-3 px-1 py-0 text-indigo-4)";
 
 export const DAInputDefault = {
 	iclass:
