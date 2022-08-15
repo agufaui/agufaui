@@ -85,6 +85,11 @@
 			aclass="group h-2.5rem text-violet-4 hover:bg-violet-2 focus:ring-violet-2"
 			aria-label="Email"
 		/>
+		<a-button
+			text="Button"
+			atype="focusblock"
+			aclass="text-white bg-sky-5 hover:bg-sky-6 focus:ring-sky-5"
+		/>
 		<!-- #endregion showcase -->
 	</div>
 </template>

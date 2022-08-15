@@ -42,7 +42,7 @@ Theme component name: `{{ CAAlertErrorName }}`
 
 ## Slot
 
-One default slot
+One default slot for message `span` html element
 
 ## AgufaUI provided Theme
 

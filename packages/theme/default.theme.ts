@@ -1,3 +1,4 @@
+import type { TComponent } from "@agufaui/config";
 import { ITheme } from "@agufaui/config";
 import { DAAlert } from "./default/AAlert";
 import { DAAlertError } from "./default/AAlertError";
@@ -10,8 +11,8 @@ export const CAAlertErrorName = "aalertError";
 export const CAInputName = "ainput";
 
 export const Theme: ITheme = {
-	[CAButtonName]: DAButton,
-	[CAAlertName]: DAAlert,
-	[CAAlertErrorName]: DAAlertError,
-	[CAInputName]: DAInput,
+	[CAButtonName]: DAButton as TComponent,
+	[CAAlertName]: DAAlert as TComponent,
+	[CAAlertErrorName]: DAAlertError as TComponent,
+	[CAInputName]: DAInput as TComponent,
 };

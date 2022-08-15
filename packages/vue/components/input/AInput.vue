@@ -1,6 +1,6 @@
 <template lang="pug">
-div(class="relative select-none" :class="[ccdisplay, ccclass]")
-  input(:value="modelValue"
+div(class="relative select-none" :class="[cdisplay, caclass]")
+  input(:value="v"
 				:type="ctype"
 				:id="cid"
 				:name="cid"
@@ -8,7 +8,7 @@ div(class="relative select-none" :class="[ccdisplay, ccclass]")
 				maxlength="255"
 				:disabled="disabled"
         v-bind="$attrs"
-				:class="caclass"
+				:class="ciclass"
         @input="input($event)")
   label(:for="id"
 				v-if="label"
@@ -34,7 +34,7 @@ import { inject } from "vue";
 const props = withDefaults(defineProps<IAInputProps>(), {
 	// #region props
 	type: "text",
-	cdisplay: "block",
+	display: "block",
 	// #endregion props
 });
 
@@ -44,12 +44,12 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAInputProps>(props, CAInputName, config);
 
-const { ctype, cid, ccdisplay, ccclass, caclass, clclass } = computedProperties;
+const { ctype, cid, cdisplay, ciclass, caclass, clclass } = computedProperties;
 
 const emits = defineEmits<IAInputEmits>();
 
 const input = (e: Event) => {
 	const target = e.target as HTMLInputElement;
-	emits("update:modelValue", target.value);
+	emits("update:v", target.value);
 };
 </script>

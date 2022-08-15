@@ -4,52 +4,52 @@ import type { IAAlertProps } from "../types/AAlert";
 export const DAAlertDefault = {
 	icon: "i-heroicons-solid:information-circle",
 	iclass: "text-blue-6 mt-0.4",
-	aclass: "text-gray-6 text-sm font-medium max-w-sm",
+	mclass: "text-gray-6 text-sm font-medium max-w-sm",
 };
 
 export const DAAlertClclass = "text-xs text-gray-4 hover:text-gray-6 mt-1";
 
 export const DAAlertRed = {
 	icon: "i-majesticons:exclamation-circle",
-	cclass: "rounded-md bg-red-50 p-4",
+	aclass: "rounded-md bg-red-50 p-4",
 	iclass: "text-red-4 mt-0.4",
-	aclass: "text-red-6 text-sm font-medium w-full",
+	mclass: "text-red-6 text-sm font-medium w-full",
 	spacex: "space-x-1.5",
 	clclass: DAAlertClclass,
 };
 
 export const DAAlertGreen = {
 	icon: "i-material-symbols:check-circle",
-	cclass: "rounded-md bg-green-50 p-4",
+	aclass: "rounded-md bg-green-50 p-4",
 	iclass: "text-green-4 mt-0.4",
-	aclass: "text-green-6 text-sm font-medium w-full",
+	mclass: "text-green-6 text-sm font-medium w-full",
 	spacex: "space-x-1.5",
 	clclass: DAAlertClclass,
 };
 
 export const DAAlertYellow = {
 	icon: "i-ic:outline-warning",
-	cclass: "rounded-md bg-yellow-50 p-4",
+	aclass: "rounded-md bg-yellow-50 p-4",
 	iclass: "text-yellow-4 mt-0.4",
-	aclass: "text-yellow-6 text-sm font-medium w-full",
+	mclass: "text-yellow-6 text-sm font-medium w-full",
 	spacex: "space-x-1.5",
 	clclass: DAAlertClclass,
 };
 
 export const DAAlertGray = {
 	icon: "i-heroicons-solid:information-circle",
-	cclass: "rounded-md bg-gray-50 p-4",
+	aclass: "rounded-md bg-gray-50 p-4",
 	iclass: "text-blue-4 mt-0.4",
-	aclass: "text-gray-6 text-sm font-medium w-full",
+	mclass: "text-gray-6 text-sm font-medium w-full",
 	spacex: "space-x-1.5",
 	clclass: DAAlertClclass,
 };
 
 export const DAAlertBlue = {
 	icon: "i-heroicons-solid:information-circle",
-	cclass: "rounded-md bg-blue-50 p-4",
+	aclass: "rounded-md bg-blue-50 p-4",
 	iclass: "text-blue-4 mt-0.4",
-	aclass: "text-gray-6 text-sm font-medium w-full",
+	mclass: "text-gray-6 text-sm font-medium w-full",
 	spacex: "space-x-1.5",
 	clclass: DAAlertClclass,
 };

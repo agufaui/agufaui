@@ -16,4 +16,5 @@ export default defineConfig({
 	extractors: [extractorPug(), extractorSplit],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 	include: [/\.tsx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/, /\.html?$/, /\.svelte$/],
+	exclude: [/node_modules/, /dist/, /types/, /type/, /core.*\.md$/],
 });

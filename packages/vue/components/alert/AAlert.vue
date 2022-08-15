@@ -2,12 +2,11 @@
 div(
   v-if="showAlert"
   v-bind="$attrs"
-  class="flex items-start"
-  :class="[cspacex, ccclass]")
-  div(v-if="cipos === 'left'" :class="[cicon, ciclass]")
-  span(class="block" :class="caclass")
+  class="items-start"
+  :class="[cdisplay, cspacex, cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '', caclass]")
+  div(:class="[cicon, ciclass]")
+  span(class="block" :class="cmclass")
     slot {{ msg }}
-  div(v-if="cipos === 'right'" :class="[cicon, ciclass]")
   div(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[cclicon, cclclass]" @click="click")
 </template>
 
@@ -28,7 +27,7 @@ import { watch, ref, inject } from "vue";
 
 const props = withDefaults(defineProps<IAAlertProps>(), {
 	// #region props
-	ipos: "left",
+	display: "flex",
 	spacex: "space-x-1.2",
 	clicon: "i-iwwa:delete",
 	// #endregion props
@@ -42,7 +41,8 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAAlertProps>(props, CAAlertName, config);
 
-const { caclass, ccclass, cicon, cipos, ciclass, cspacex, cclicon, cclclass } = computedProperties;
+const { cdisplay, caclass, cmclass, cicon, cipos, ciclass, cspacex, cclicon, cclclass } =
+	computedProperties;
 
 const emits = defineEmits<IAAlertEmits>();
 

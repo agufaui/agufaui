@@ -15,10 +15,10 @@
 	<AAlertError msg="text" show={true} error={true} on:closea={() => alert("hi")} />
 	<AAlertError msg="text" show={true} error={false} />
 	<AInput
-		modelValue={text}
+		v={text}
 		label="text"
-		on:update:modelValue={(e) => (text = e.detail)}
-		cclass="my-2"
+		on:update:v={(e) => (text = e.detail)}
+		aclass="my-2"
 		atype="inlineblock"
 	/>
 	<!-- {#if AButton}

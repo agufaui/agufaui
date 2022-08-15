@@ -28,6 +28,7 @@ Theme component name: `{{ CAInputName }}`
 
 ## Showcase
 - default `maxlength` is 255
+- For Vue `v-model`, need to use `v-model:v="variable"`
 - 3rd example disabled `atype` and styling **unstyled component**.  `px-1` is used to override default positional css `px-3`
 
 <DocInput />

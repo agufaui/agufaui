@@ -1,20 +1,29 @@
 <template>
 	<div class="flex flex-col gap-y-2">
 		<!-- #region showcase -->
-		<a-alert msg="Info" :show="true" aclass="dark:text-white" />
-		<a-alert msg="Info" :show="true" ipos="right" aclass="dark:text-white" />
+		<a-alert msg="Info" :show="true" mclass="dark:text-white" />
+		<div>
+			<a-alert
+				msg="Info"
+				:show="true"
+				ipos="right"
+				display="inline-flex"
+				mclass="dark:text-white"
+			/>
+		</div>
+		<a-alert msg="Info" :show="true" ipos="right" mclass="dark:text-white" />
 		<a-alert
 			:msg="text"
 			:show="true"
 			iclass="text-red-6 dark:text-red-5"
-			aclass="text-red-6 dark:text-red-5"
+			mclass="text-red-6 dark:text-red-5"
 		/>
 		<a-alert
 			:msg="text"
 			:show="true"
 			iclass="text-red-6 dark:text-red-5"
-			aclass="text-red-6 dark:text-red-5"
-			cclass="border border-red p-4"
+			mclass="text-red-6 dark:text-red-5"
+			aclass="border border-red p-4"
 		/>
 		<a-alert :msg="text" :show="true" atype="red" />
 		<a-alert msg="Success" :show="true" atype="green" />

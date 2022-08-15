@@ -10,7 +10,7 @@ export const CAInputLabelPlaceholder =
 	"[&:not(peer-placeholder-shown)]:(scale-90 -translate-y-3 z-0 ml-3 px-1 py-0 text-indigo-4)";
 
 export const DAInputDefault = {
-	aclass:
+	iclass:
 		"block peer bg-transparent p-2 max-h-12 text-4 text-gray-7 border border-gray-3 rounded-md shadow-md disabled:text-gray-4 focus:(outline-none ring ring-indigo-2/50 shadow-indigo)",
 	lclass: CAInputLabel.concat(
 		" ",
@@ -26,7 +26,7 @@ export const DAInputDefault = {
 
 export const DAInputInlineBlock = {
 	[CUseType]: CDefaultType,
-	cdisplay: "inline-block",
+	display: "inline-block",
 };
 
 export const DAInput: Readonly<Record<string, IAInputProps>> = {

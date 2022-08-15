@@ -43,7 +43,7 @@ theme: {
 7. Configuration values will only apply if property is undefined, aka user didn't specify that property (attribute) in html tag.
 8. There is no need to configure **boolean** type properties, because javascript will default boolean type properties to **false**.
 9. `atype` property is not configurable.  For properties that are not configurable, you'll see "Not configurable" in comment for that property in type definition of component.
-10. You can split Theme to smaller files then import and combine them. For example, abutton.ts, aalert.ts, etc.
+10. You can split Theme to smaller files then import and combine them. For example, abutton.ts, aalert.ts, etc..  For Typescript, you'll need to `import { TComponent } from '@agufaui/config'`, then do a Type Assertion `theme: { abutton: AButtonConfig as TComponent }` 
 
 Here's an example, suppose you are using AgufaUI provided theme as baseTheme:
 

@@ -39,7 +39,7 @@ Theme component name: `{{ CAButtonName }}`
 
 ## Slot
 
-One default slot
+One default slot replace button content including icon and loading icon.
 
 ## AgufaUI provided Theme
 
