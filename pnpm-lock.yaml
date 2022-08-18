@@ -4,8 +4,8 @@ importers:
 
   .:
     specifiers:
-      '@agufaui/config': workspace:^0.1.0
-      '@agufaui/theme': workspace:^0.1.0
+      '@agufaui/config': workspace:^0.2.0
+      '@agufaui/theme': workspace:^0.2.0
       '@antfu/ni': ^0.16.3
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -121,8 +121,8 @@ importers:
 
   packages/svelte:
     specifiers:
-      '@agufaui/config': workspace:^0.1.0
-      '@agufaui/theme': workspace:^0.1.0
+      '@agufaui/config': workspace:^0.2.0
+      '@agufaui/theme': workspace:^0.2.0
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
       svelte: ^3.44.0
@@ -137,7 +137,7 @@ importers:
       '@agufaui/theme': link:../theme
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.64
-      '@sveltejs/kit': 1.0.0-next.405_svelte@3.49.0+vite@3.0.5
+      '@sveltejs/kit': 1.0.0-next.420_svelte@3.49.0+vite@3.0.5
       svelte: 3.49.0
       svelte-check: 2.8.0_svelte@3.49.0
       svelte-preprocess: 4.10.7_uslzfc62di2n2otc2tvfklnwji
@@ -148,7 +148,7 @@ importers:
 
   packages/theme:
     specifiers:
-      '@agufaui/config': workspace:^0.1.0
+      '@agufaui/config': workspace:^0.2.0
     devDependencies:
       '@agufaui/config': link:../config
 
@@ -165,16 +165,16 @@ importers:
 
   packages/usevue:
     specifiers:
-      '@agufaui/config': workspace:^0.1.0
+      '@agufaui/config': workspace:^0.2.0
     devDependencies:
       '@agufaui/config': link:../config
 
   packages/vue:
     specifiers:
-      '@agufaui/config': workspace:^0.1.0
-      '@agufaui/theme': workspace:^0.1.0
-      '@agufaui/use': workspace:^0.1.0
-      '@agufaui/usevue': workspace:^0.1.0
+      '@agufaui/config': workspace:^0.2.0
+      '@agufaui/theme': workspace:^0.2.0
+      '@agufaui/use': workspace:^0.2.0
+      '@agufaui/usevue': workspace:^0.2.0
     devDependencies:
       '@agufaui/config': link:../config
       '@agufaui/theme': link:../theme
@@ -1539,8 +1539,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.405_svelte@3.49.0+vite@3.0.5:
-    resolution: {integrity: sha512-jHSa74F7k+hC+0fof75g/xm/+1M5sM66Qt6v8eLLMSgjkp36Lb5xOioBhbl6w0NYoE5xysLsBWuu+yHytfvCBA==}
+  /@sveltejs/kit/1.0.0-next.420_svelte@3.49.0+vite@3.0.5:
+    resolution: {integrity: sha512-9m/uWbd7Osj474TrkjRZ2x784PZzO6akxDFGfaEoFS5AsRUnDFRJ0HWHHdymy170aJsvlu20ZpLTNbbS5a95+g==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true
@@ -1549,10 +1549,18 @@ packages:
       vite: ^3.0.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.1_svelte@3.49.0+vite@3.0.5
-      chokidar: 3.5.3
+      cookie: 0.5.0
+      devalue: 2.0.1
+      kleur: 4.1.5
+      magic-string: 0.26.2
+      mime: 3.0.0
+      node-fetch: 3.2.10
       sade: 1.8.1
+      set-cookie-parser: 2.5.1
+      sirv: 2.0.2
       svelte: 3.49.0
       tiny-glob: 0.2.9
+      undici: 5.9.1
       vite: 3.0.5
     transitivePeerDependencies:
       - diff-match-patch
@@ -3344,6 +3352,11 @@ packages:
     resolution: {integrity: sha512-RyZrFi6PNpBFbIaQjXDlFIhFVqV42QeKSZX1yQIl6ihImq6vcHNGMtqQ/QzY3RMPuYSkvsRwtnt5M9NeYxKt0g==}
     dev: true
 
+  /cookie/0.5.0:
+    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
@@ -3650,6 +3663,10 @@ packages:
   /detect-libc/2.0.1:
     resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
     engines: {node: '>=8'}
+    dev: true
+
+  /devalue/2.0.1:
+    resolution: {integrity: sha512-I2TiqT5iWBEyB8GRfTDP0hiLZ0YeDJZ+upDxjBfOC2lebO5LezQMv7QvIUTzdb64jQyAKLf1AHADtGN+jw6v8Q==}
     dev: true
 
   /diff/4.0.2:
@@ -8314,6 +8331,11 @@ packages:
 
   /undici/5.8.2:
     resolution: {integrity: sha512-3KLq3pXMS0Y4IELV045fTxqz04Nk9Ms7yfBBHum3yxsTR4XNn+ZCaUbf/mWitgYDAhsplQ0B1G4S5D345lMO3A==}
+    engines: {node: '>=12.18'}
+    dev: true
+
+  /undici/5.9.1:
+    resolution: {integrity: sha512-6fB3a+SNnWEm4CJbgo0/CWR8RGcOCQP68SF4X0mxtYTq2VNN8T88NYrWVBAeSX+zb7bny2dx2iYhP3XHi00omg==}
     engines: {node: '>=12.18'}
     dev: true
 
