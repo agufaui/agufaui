@@ -1,7 +1,7 @@
 // #region iprops
 export interface IProps {
-	atype?: string; // user defined or AgufaUI provided component type.  Not configurable
-	aclass?: string; // css classes for component root html element
+	t?: string; // user defined or AgufaUI provided component type.  Not configurable
+	c?: string; // css classes for component root html element
 }
 // #endregion iprops
 
@@ -28,9 +28,9 @@ export interface IPropsForm {
 export type TLRPosition = "left" | "right";
 
 export interface IPropsIcon {
-	icon?: string; // icon eg. i-eos-icons:loading
+	i?: string; // icon eg. i-eos-icons:loading
 	ipos?: TLRPosition; // icon position
-	iclass?: string; // css classes for icon element
+	ic?: string; // css classes for icon element
 }
 // #endregion ipropsicon
 

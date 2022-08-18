@@ -1,22 +1,20 @@
 <script setup lang="ts"></script>
 
 <template lang="pug">
-a-button(
+abutton(
   type="button"
-  text="typescript"
-  if-hover="hover:bg-pink-600"
-  if-focus="focus:ring-red-500"
+  t="default"
+  v="typescript"
+  c="hover:bg-pink-600 focus:ring-red-500 px-4"
   u-m="2"
   :loading="true"
-  px="px-4"
 )
-a-button(
+abutton(
   type="button"
-  text="typescript"
-  aType="primary"
-  hover="hover:bg-pink-600"
-  focus="focus:ring-red-500"
+  t="primary"
+  v="typescript"
+  c="hover:bg-pink-600 focus:ring-red-500 px-4"
+  u-m="2"
   :loading="true"
-  px="px-4"
 )
 </template>

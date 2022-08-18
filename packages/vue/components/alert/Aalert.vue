@@ -3,16 +3,16 @@ div(
   v-if="showAlert"
   v-bind="$attrs"
   class="items-start"
-  :class="[cdisplay, cspacex, cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '', caclass]")
-  div(:class="[cicon, ciclass]")
-  span(class="block" :class="cmclass")
-    slot {{ msg }}
-  div(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[cclicon, cclclass]" @click="click")
+  :class="[cdisplay, cspacex, cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '', cc]")
+  span(:class="[ci, cic]")
+  span(class="block" :class="cvc")
+    slot {{ v }}
+  span(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[ccloseicon, cclosec]" @click.stop="click")
 </template>
 
 <script lang="ts">
 export default {
-	name: "AAlert",
+	name: "Aalert",
 	inheritAttrs: false,
 };
 </script>
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<IAAlertProps>(), {
 	// #region props
 	display: "flex",
 	spacex: "space-x-1.2",
-	clicon: "i-iwwa:delete",
+	closeicon: "i-iwwa:delete",
 	// #endregion props
 });
 
@@ -41,14 +41,13 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAAlertProps>(props, CAAlertName, config);
 
-const { cdisplay, caclass, cmclass, cicon, cipos, ciclass, cspacex, cclicon, cclclass } =
-	computedProperties;
+const { cdisplay, cc, cvc, ci, cipos, cic, cspacex, ccloseicon, cclosec } = computedProperties;
 
 const emits = defineEmits<IAAlertEmits>();
 
 const click = () => {
 	showAlert.value = false;
-	emits("closea");
+	emits("close");
 };
 
 watch(

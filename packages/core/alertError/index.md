@@ -19,12 +19,12 @@ Alert message if there is error or show success message.
 #### Import
 
 ```ts
-import { AAlertError } from "@agufaui/${framework name}";
+import { AalertError } from "@agufaui/${framework name}";
 ```
 
 #### Html
 
-`<a-alertError />` or `<AAlertError />` or `<a-alert-error />`
+`<aalert-error />` or `<AalertError />`
 
 #### Configuration
 

@@ -1,37 +1,31 @@
 <template>
 	<div class="flex flex-col gap-y-2">
 		<!-- #region showcase -->
-		<a-alert msg="Info" :show="true" mclass="dark:text-white" />
+		<aalert v="Info" :show="true" vc="dark:text-white" />
 		<div>
-			<a-alert
-				msg="Info"
-				:show="true"
-				ipos="right"
-				display="inline-flex"
-				mclass="dark:text-white"
-			/>
+			<aalert v="Info" :show="true" ipos="right" display="inline-flex" vc="dark:text-white" />
 		</div>
-		<a-alert msg="Info" :show="true" ipos="right" mclass="dark:text-white" />
-		<a-alert
-			:msg="text"
+		<aalert v="Info" :show="true" ipos="right" vc="dark:text-white" />
+		<aalert
+			:v="text"
 			:show="true"
-			iclass="text-red-6 dark:text-red-5"
-			mclass="text-red-6 dark:text-red-5"
+			ic="text-red-6 dark:text-red-5"
+			vc="text-red-6 dark:text-red-5"
 		/>
-		<a-alert
-			:msg="text"
+		<aalert
+			:v="text"
 			:show="true"
-			iclass="text-red-6 dark:text-red-5"
-			mclass="text-red-6 dark:text-red-5"
-			aclass="border border-red p-4"
+			ic="text-red-6 dark:text-red-5"
+			vc="text-red-6 dark:text-red-5"
+			c="border border-red p-4"
 		/>
-		<a-alert :msg="text" :show="true" atype="red" />
-		<a-alert msg="Success" :show="true" atype="green" />
-		<a-alert msg="Warning" :show="true" atype="yellow" />
-		<a-alert msg="Info" :show="true" atype="gray" />
-		<a-alert msg="Info" :show="true" atype="blue" />
-		<a-alert :msg="text" :show="true" atype="red" :closable="true" />
-		<a-alert :show="true" atype="red" :closable="true" spacex="space-x-2">
+		<aalert :v="text" :show="true" t="red" />
+		<aalert v="Success" :show="true" t="green" />
+		<aalert v="Warning" :show="true" t="yellow" />
+		<aalert v="Info" :show="true" t="gray" />
+		<aalert v="Info" :show="true" t="blue" />
+		<aalert :v="text" :show="true" t="red" :closable="true" />
+		<aalert :show="true" t="red" :closable="true" spacex="space-x-2">
 			<template #default>
 				<span> Password doesn't meet requirements </span>
 				<ul>
@@ -41,7 +35,7 @@
 					<li>At least 1 number</li>
 				</ul>
 			</template>
-		</a-alert>
+		</aalert>
 		<!-- #endregion showcase -->
 	</div>
 </template>

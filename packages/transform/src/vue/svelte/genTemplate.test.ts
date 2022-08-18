@@ -56,7 +56,15 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 	it("v-model test", async () => {
 		const vueTemplate = 'button(v-model="value")';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
-		const svelteTemplate = '\n<button bind:value="{value}">\n</button>';
+		const svelteTemplate = '\n<button bind:v="{value}">\n</button>';
+		const genTemplate = genSvelteTemplate(ast);
+		expect(genTemplate).toBe(svelteTemplate);
+	});
+
+	it("v-model: test", async () => {
+		const vueTemplate = 'button(v-model:model="value")';
+		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
+		const svelteTemplate = '\n<button bind:model="{value}">\n</button>';
 		const genTemplate = genSvelteTemplate(ast);
 		expect(genTemplate).toBe(svelteTemplate);
 	});

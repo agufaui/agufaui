@@ -15,12 +15,12 @@ Basic alert
 #### Import
 
 ```ts
-import { AAlert } from "@agufaui/${framework name}";
+import { Aalert } from "@agufaui/${framework name}";
 ```
 
 #### Html
 
-`<a-alert />` or `<AAlert />`
+`<aalert />` or `<Aalert />`
 
 #### Configuration
 
@@ -53,7 +53,7 @@ One default slot for message `span` html element
 
 #### Default Values
 
-<<< @/vue/components/alert/AAlert.vue#props
+<<< @/vue/components/alert/Aalert.vue#props
 
 ### Unique
 

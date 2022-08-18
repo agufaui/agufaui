@@ -1,3 +1,3 @@
 # AgufaUI Metadata
 
-Documentations: [agufaui.com](https://agufaui.com)
+Documentations: [ui.agufa.tech](https://ui.agufa.tech)

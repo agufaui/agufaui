@@ -2,6 +2,45 @@
 
 AgufaUI configuration is solely for customizing components.
 
+## Shorthand Properties
+
+There are a few common properties in AgufaUI components, we use shorthand to avoid repetitive typing, save time and energy:
+
+- **`t`** stands for "type" - component type defined in configuration.  Every component has `t` property.
+- **`c`** stands for "class" - css classes apply to root html element of a component.  For "basic" category components, it usually is the main html element itself, like `abutton`, `c` applies to `<button>` element, but for `ainput`, it's actually `<div>` container element.  For others, it usually is the container `<div>` or `<span>` element.  Every component has `c` property.
+- **`v`** stands for "value" - main data input of a component.  For user input html elements, it's the input value; for content display html elements, it's the content to be displayed.
+- **`vc`** stands for "value class" - css classes apply to html element that contains `v` value.  For user input html elements, it's the element itself; for content display html elements, it's usually `<div>` or `<span>` elements.
+- **`i`** stands for "icon"
+- **`ic`** stands for "icon class" - css classes apply to `<div>` or `<span>` element that contains icon.
+- Property name ends with character `c` - css classes apply to html element that contains that property.  Like "loadc" means "load class", apply to `<div>` or `<span>` element that contains loading icon.
+
+There will be different `*c` properties for different elements of a component.
+
+::: info Abutton Elements
+Abutton has 4 html elements,
+
+- `c` property for `<button>`
+- `vc` property for text `<span>`
+- `ic` property for icon `<div>`
+- `loadc` property for loading icon `<div>`
+:::
+
+You can apply different classes to different elements. Hover and click on below button to see effect
+
+```html
+<abutton
+  t="focus" // component type "focus" 
+  v="Hello" // display text "hello"
+  vc="animate-pulse" // css class for html element that contains "hello"
+  c="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)" // css class for button html element
+  i="i-ph-anchor" // icon
+  ic="animate-spin text-green-3" // css class for html element that contains icon
+/>
+```
+
+<br />
+<abutton v="Hello" vc="animate-pulse" c="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)" i="i-ph-anchor" ic="animate-spin text-green-3" /><br />
+
 ## Customization
 
 There are two ways to customize components:
@@ -9,7 +48,7 @@ There are two ways to customize components:
 ### Component Instance Level
 
 ```html
-<a-button text="Hello World" aclass="text-red hover:bg-blue-2" />
+<abutton v="Hello World" c="text-red hover:bg-blue-2" />
 ```
 
 ### Component Level through Configuration
@@ -37,12 +76,12 @@ theme: {
 1. You can find **[component name]** under "Usage" section of each component page.
 2. **[component type name]** is user defined.
 3. You should provide at least a type called **default** for each component.
-4. **default** type will be applied when no `atype` property is specified for that component.
+4. **default** type will be applied when no `t` property is specified for that component.
 5. You can specify `useType: ${type_name}` in each component type declaration to use that type as base to merge. AgufaUI will look for that type in current theme component scope, then in baseTheme component scope if you are using custom theme.
 6. If you are using custom theme as baseTheme, you can specify `useType: base:${type_name}` to use base type directly.
 7. Configuration values will only apply if property is undefined, aka user didn't specify that property (attribute) in html tag.
 8. There is no need to configure **boolean** type properties, because javascript will default boolean type properties to **false**.
-9. `atype` property is not configurable.  For properties that are not configurable, you'll see "Not configurable" in comment for that property in type definition of component.
+9. `t` property is not configurable.  For properties that are not configurable, you'll see "Not configurable" in comment for that property in type definition of component.
 10. You can split Theme to smaller files then import and combine them. For example, abutton.ts, aalert.ts, etc..  For Typescript, you'll need to `import { TComponent } from '@agufaui/config'`, then do a Type Assertion `theme: { abutton: AButtonConfig as TComponent }` 
 
 Here's an example, suppose you are using AgufaUI provided theme as baseTheme:
@@ -66,24 +105,24 @@ const userConfig: IUserConfig = {
 			[CDefaultType]: {
 				// user defined default type, replace default type in baseTheme
 				[CUseType]: CDefaultType, // merge with default type in baseTheme
-				aclass: "bg-red-5 hover:(bg-red-6 text-white)",
-				lclass: "text-green",
+				c: "bg-red-5 hover:(bg-red-6 text-white)",
+				loadc: "text-green",
 			},
 			blue: {
 				// user defined blue type
 				[CUseType]: CBase + CDefaultType, // merge with default type in baseTheme
-				aclass: "bg-red-5 hover:(bg-red-6 text-white)",
-				lclass: "text-blue",
+				c: "bg-red-5 hover:(bg-red-6 text-white)",
+				loadc: "text-blue",
 			},
 			green: {
 				// user defined green type
 				[CUseType]: CDefaultType, // merge with above user defined default type
-				aclass: "text-white",
+				c: "text-white",
 			},
 			yellow: {
 				// user defined yellow type
 				[CUseType]: "green", // merge with above user defined green type
-				aclass: "text-white",
+				c: "text-white",
 			},
 		},
 	},
@@ -104,8 +143,8 @@ theme: {
   abutton: {
     default: {
       useType: "default", // or "base:default"
-      aclass: "bg-red-5 hover:bg-red-6",
-      lclass: "text-green",
+      c: "bg-red-5 hover:bg-red-6",
+      loadc: "text-green",
     },
   }
 }
@@ -119,7 +158,7 @@ theme: {
   baseTheme: {
     abutton: {
       default: {
-        lclass: "text-white",
+        loadc: "text-white",
       },
     },
   },
@@ -127,7 +166,7 @@ theme: {
     abutton: {
       default: {
         useType: "default",
-        aclass: "text-green",
+        c: "text-green",
       },
     }
   }
@@ -140,22 +179,22 @@ will become
 theme: {
   abutton: {
     default: {
-      lclass: "text-white",
-      aclass: "text-green",
+      loadc: "text-white",
+      c: "text-green",
     },
   }
 }
 ```
 
-5. Duplicate properties with name ends with "class" will be concatenated:
+5. Duplicate properties with name ends with character "c" (class) will be concatenated:
 
 ```ts
 {
   baseTheme: {
     abutton: {
       default: {
-        lclass: "text-red",
-        aclass: "text-white",
+        loadc: "text-red",
+        c: "text-white",
       },
     },
   },
@@ -163,8 +202,8 @@ theme: {
     abutton: {
       default: {
         useType: "default",
-        lclass: "text-red",
-        aclass: "text-green",
+        loadc: "text-red",
+        c: "text-green",
       },
     }
   }
@@ -177,16 +216,16 @@ will become
 theme: {
   abutton: {
     default: {
-      lclass: "text-red text-red",
-      aclass: "text-white text-green",
+      loadc: "text-red text-red",
+      c: "text-white text-green",
     },
   }
 }
 ```
 
-> **Simple concatenation of classnames is chosen over replacement for performance reasons. It's up to you to avoid duplicate classnames like above example `lclass: "text-red text-red"` or duplicate utility specificity classnames like `lclass: "text-green text-red"`.**
+> **Simple concatenation of classnames is chosen over replacement for performance reasons. It's up to you to avoid duplicate classnames like above example `loadc: "text-red text-red"` or duplicate utility specificity classnames like `loadc: "text-green text-red"`.**
 
-6. Duplicate properties with name not ends with "class" will be overrided:
+6. Duplicate properties with name not ends with character "c" (not class) will be overrided:
 
 ```ts
 {
@@ -298,7 +337,7 @@ configStore.set(
 
 - If you are programming with **unstyled components**, you need to specify child components types for composed components.
 
-For example, `AALertError` has child component `AAlert`.  In AgufaUI provided theme, `AAlertError` default type is:
+For example, `AaLertError` has child component `Aalert`.  In AgufaUI provided theme, `AalertError` default type is:
 
 ```ts
 theme: {
@@ -311,7 +350,7 @@ theme: {
 }
 ```
 
-"red" is `AAlert` red type, and "green" is `AAlert` green type in AgufaUI provided theme:
+"red" is `Aalert` red type, and "green" is `Aalert` green type in AgufaUI provided theme:
 
 ```ts
 theme: {
@@ -324,7 +363,7 @@ theme: {
 
 ## Component Instance Level Customization with Configuration defined
 
-1. For duplicate component properties with name ends with "class", values will be concatenated:
+1. For duplicate component properties with name ends with character "c" (class), values will be concatenated:
 
 ```ts
 // configuration without baseTheme
@@ -332,7 +371,7 @@ new Config({
 	theme: {
 		abutton: {
 			default: {
-				aclass: "text-white bg-blue-5 hover:bg-blue-6",
+				c: "text-white bg-blue-5 hover:bg-blue-6",
 			},
 		},
 	},
@@ -340,7 +379,7 @@ new Config({
 ```
 
 ```html
-<a-button text="Hello World" aclass="focus:ring-blue-4" />
+<abutton v="Hello World" c="focus:ring-blue-4" />
 ```
 
 will compile to
@@ -349,7 +388,7 @@ will compile to
 <button class="text-white bg-blue-5 hover:bg-blue-6 focus:ring-blue-4">Hello World</button>
 ```
 
-2. For duplicate component properties with name not ends with "class", values will be overrided:
+2. For duplicate component properties with name not ends with character "c" (not class), values will be overrided:
 
 ```ts
 // configuration without baseTheme
@@ -365,7 +404,7 @@ new Config({
 ```
 
 ```html
-<a-button text="Hello World" icon="i-ph-anchor" spacex="space-x-1.2" />
+<abutton v="Hello World" i="i-ph-anchor" spacex="space-x-1.2" />
 ```
 
 will compile to
@@ -378,11 +417,11 @@ will compile to
 
 3. For non-duplicate component properties, both component instance level and component configuration level values will apply.
 
-::: tip Disable configuration value for property names not ends with "class"
-To disable configuration value for a property with name not ends with "class", simply assign its value to empty string
+::: tip Disable configuration value for property names not ends with character "c" (not class)
+To disable configuration value for a property with name not ends with character "c", simply assign its value to empty string
 
 ```html
-<a-button text="Hello World" spacex="" />
+<abutton v="Hello World" spacex="" />
 ```
 
 or disable it in configuration
@@ -398,19 +437,7 @@ abutton: {
 
 :::
 
-### `atype` and `aclass` properties
-
-Every component will have `atype` and `aclass` properties
-
-#### atype
-
-Component type property. For user defined "**red**" type for `abutton` in configuration:
-
-```html
-<a-button text="Hello" atype="red" />
-```
-
-#### aclass
+### `c` Property
 
 - Behaves the same as `class` attribute of a html element
 
@@ -421,37 +448,10 @@ Component type property. For user defined "**red**" type for `abutton` in config
 is same as
 
 ```html
-<a-button aclass=""></a-button>
+<abutton c=""></abutton>
 ```
 
-- `aclass` applies to root element of an AgufaUI component. There will also be different `*class` properties for different elements of a component.
-
-::: info AButton Elements
-AButton contains 4 html elements,
-
-- `aclass` property for `<button>`
-- `tclass` property for text `<span>`
-- `iclass` property for icon `<div>`
-- `lclass` property for loading icon `<div>`
-  :::
-
-You can apply different classes to different elements. Hover and click on below button to see effect
-
-```html
-// using AgufaUI provided theme
-<a-button
-	text="Hello"
-	tclass="animate-pulse"
-	aclass="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)"
-	icon="i-ph-anchor"
-	iclass="animate-spin text-green-3"
-/>
-```
-
-<br />
-<a-button text="Hello" tclass="animate-pulse" aclass="animate-spin text-white bg-blue-6 hover:(animate-fade-in bg-blue-7) focus:(animate-fade-out ring-blue-5)" icon="i-ph-anchor" iclass="animate-spin text-green-3" /><br /><br /><br />
-
-- `aclass` is applied last in order, so it will override any overlapping classes for that component. It's useful in rare cases if you want to override AgufaUI default positional and browser reset CSS. However, whether it works depends on your CSS framework's order of rules. For example:
+- `c` is applied last in order, so it will override any overlapping classes for that component. It's useful in very rare cases if you want to override AgufaUI default positional and browser reset CSS. You might need to mark classes as **important** depending on your CSS framework's order of rules. For example:
 
   1. Suppose agufaui.css has `cursor-wait` rule, if you import `agufaui.css`, it will be in its own css layer.
   2. You used `cursor-wait` somewhere in your own code.
@@ -467,13 +467,12 @@ You can apply different classes to different elements. Hover and click on below 
   }
   ```
 
-  because you have used `cursor-wait` somewhere in your code, it will be scanned and included in your own code css layer <br /> 5. Now `cursor-wait` will be applied because it comes after `cursor-pointer` in generated css code
+  because you have used `cursor-wait` somewhere in your code, it will be scanned and included in your own code css layer <br /> 
+  5. Now `cursor-wait` will be applied because it comes after `cursor-pointer` in generated css code
 
-However, if you don't use `cursor-wait` in your own code, `cursor-pointer` will override `cursor-wait` correctly.
+However, if you don't use `cursor-wait` in your own code, `cursor-pointer` will override `cursor-wait` correctly.  Or just simply mark it important `class="!cursor-pointer"`.
 
-::: tip
-"text-xs" will always override "text-sm" according to Alphabetic order of rules. So you can put least privileged css classname in your configuration, then you can override it easily later on.
-:::
+If mark it important can't solve your problem, create a new component type in configuration.
 
 - You can use your CSS framework features instead of configuration
 
@@ -499,7 +498,7 @@ or
 then
 
 ```html
-<a-button text="Hello" aclass="btn"></a-button>
+<abutton v="Hello" c="btn"></abutton>
 ```
 
 ::: warning Not Recommended
@@ -517,7 +516,7 @@ If your framework supports [Fallthrough Attributes](https://vuejs.org/guide/comp
 is same as
 
 ```html
-<a-button width="10px" height="10px" ... />
+<abutton width="10px" height="10px" ... />
 ```
 
-These attributes will only fall through to the top element of AgufaUI component, not applicable to other elements of the component, and can only fall through one level down from parent to child.
+These attributes will only fall through to the main element of a component, not applicable to other elements of the component, and can only fall through one level down from parent to child.

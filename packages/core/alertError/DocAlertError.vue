@@ -1,8 +1,8 @@
 <template>
 	<div class="flex flex-col gap-y-2">
 		<!-- #region showcase -->
-		<a-alert-error msg="Alert" :show="true" :error="true" />
-		<a-alert-error msg="Success" :show="true" :error="false" />
+		<aalert-error v="Alert" :show="true" :error="true" />
+		<aalert-error v="Success" :show="true" :error="false" />
 		<!-- #endregion showcase -->
 	</div>
 </template>

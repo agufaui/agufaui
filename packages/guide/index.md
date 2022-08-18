@@ -59,8 +59,8 @@ For example, for ESM Vue components, in tailwindcss or windicss config file:
 ```bash
 module.exports = {
 	content: [
-		"node_modules/@agufaui/vue/dist/es/vue/components/button/AButton.mjs",
-		"node_modules/@agufaui/vue/dist/es/vue/components/alert/AAlert.mjs",
+		"node_modules/@agufaui/vue/dist/es/vue/components/button/Abutton.mjs",
+		"node_modules/@agufaui/vue/dist/es/vue/components/alert/Aalert.mjs",
 		...
 	]
 }
@@ -91,7 +91,6 @@ import "@unocss/reset/tailwind.css";
 import "@agufaui/vue/agufaui.css";
 // AgufaUI provided theme CSS
 import "@agufaui/vue/theme.css";
-import "uno:icon.css";
 import "uno.css";
 ```
 
@@ -103,7 +102,7 @@ import "uno.css";
 
 #### Site Examples
 
-Site examples are using AgufaUI provided theme, Vue and Unocss.
+Site examples are using AgufaUI provided theme, Vue and Unocss.  CSS that are marked as important `!text-white` are mainly used to override vitepress default css.
 
 ## Installation
 
@@ -149,10 +148,10 @@ pnpm add @agufaui/svelte @agufaui/config @agufaui/theme
 	</head>
 	<body>
 		<div id="app">
-			<a-button
-				text="click me"
-				aclass="m-2 text-white bg-blue-6 hover:bg-blue-7 focus:ring-blue-5"
-			></a-button>
+			<abutton
+				v="click me"
+				c="m-2 text-white bg-blue-6 hover:bg-blue-7 focus:ring-blue-5"
+			></abutton>
 		</div>
 
 		<script>
@@ -260,7 +259,7 @@ Manually import the component you want to use per file:
 ```vue
 // *.vue
 <script>
-import { AButton } from "@agufaui/vue";
+import { Abutton } from "@agufaui/vue";
 </script>
 ```
 
@@ -269,7 +268,7 @@ or in `src/main.ts`
 ```ts
 import { createApp } from "vue";
 import App from "./App.vue";
-import { Config, CConfigProvideName, AButton, AAlert } from "@agufaui/vue";
+import { Config, CConfigProvideName, Abutton, Aalert } from "@agufaui/vue";
 // Replace following line for your css framework Browser Reset CSS
 import "@unocss/reset/tailwind.css";
 import "@agufaui/vue/agufaui.css";
@@ -279,8 +278,8 @@ const app = createApp(App);
 // required
 app.provide<Config>(CConfigProvideName, new Config());
 
-app.component(AButton.name, AButton);
-app.component(AAlert.name, AAlert);
+app.component(Abutton.name, Abutton);
+app.component(Aalert.name, Aalert);
 ...
 
 app.mount("#app");
@@ -296,7 +295,7 @@ In your template vue file:
 
 ```vue
 <template>
-	<a-button text="hello world" />
+	<abutton text="hello world" />
 </template>
 ```
 
@@ -365,21 +364,21 @@ Manually import the component you want to use per file:
 ```vue
 // *.vue
 <script>
-import { AButton } from "@agufaui/vue";
+import { Abutton } from "@agufaui/vue";
 </script>
 ```
 
 or in `plugins/agufaui.{js,ts}`
 
 ```ts
-import { Config, CConfigProvideName, AButton, AAlert } from "@agufaui/vue";
+import { Config, CConfigProvideName, Abutton, Aalert } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
 	// required
 	nuxtApp.vueApp.provide<Config>(CConfigProvideName, new Config());
 
-	nuxtApp.vueApp.component(AButton.name, AButton);
-	nuxtApp.vueApp.component(AAlert.name, AAlert);
+	nuxtApp.vueApp.component(Abutton.name, Abutton);
+	nuxtApp.vueApp.component(Aalert.name, Aalert);
 	...
 });
 ```
@@ -444,7 +443,7 @@ Manually import the component you want to use per file:
 ```html
 // *.svelte
 <script>
-	import { AButton } from "@agufaui/svelte";
+	import { Abutton } from "@agufaui/svelte";
 </script>
 ```
 
@@ -453,5 +452,5 @@ Manually import the component you want to use per file:
 In your template .svelte file:
 
 ```html
-<AButton text="hello world" />
+<Abutton text="hello world" />
 ```

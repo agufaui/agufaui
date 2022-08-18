@@ -15,12 +15,12 @@ Basic input.
 #### Import
 
 ```ts
-import { AInput } from "@agufaui/${framework name}";
+import { Ainput } from "@agufaui/${framework name}";
 ```
 
 #### Html
 
-`<a-input />` or `<AInput />`
+`<ainput />` or `<Ainput />`
 
 #### Configuration
 
@@ -29,7 +29,7 @@ Theme component name: `{{ CAInputName }}`
 ## Showcase
 - default `maxlength` is 255
 - For Vue `v-model`, need to use `v-model:v="variable"`
-- 3rd example disabled `atype` and styling **unstyled component**.  `px-1` is used to override default positional css `px-3`
+- 3rd example disabled `t` and styling **unstyled component**.  `px-1` is used to override default positional css `px-3`
 
 <DocInput />
 
@@ -47,7 +47,7 @@ Theme component name: `{{ CAInputName }}`
 
 #### Default Values
 
-<<< @/vue/components/input/AInput.vue#props
+<<< @/vue/components/input/Ainput.vue#props
 
 ### Unique
 

@@ -13,18 +13,18 @@ describe.concurrent("Config Test", async () => {
 					[CDefaultType]: {
 						[CUseType]: CDefaultType,
 						color: "text-white",
-						aclass: "cursor-pointer",
+						c: "cursor-pointer",
 					},
 					red: {
 						[CUseType]: CDefaultType,
 						color: "text-red",
-						aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+						c: "bg-red-500 hover:(bg-red-600 text-white)",
 					},
 				},
 				aalert: {
 					[CDefaultType]: {
 						color: "text-white",
-						aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+						c: "bg-red-500 hover:(bg-red-600 text-white)",
 					},
 				},
 			},
@@ -33,20 +33,20 @@ describe.concurrent("Config Test", async () => {
 					[CDefaultType]: {
 						[CUseType]: CDefaultType,
 						color: "text-green",
-						aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+						c: "bg-red-500 hover:(bg-red-600 text-white)",
 					},
 					blue: {
 						[CUseType]: CBase + CDefaultType,
 						color: "text-blue",
-						aclass: "bg-red-500 hover:(bg-red-600 text-white)",
+						c: "bg-red-500 hover:(bg-red-600 text-white)",
 					},
 					green: {
 						[CUseType]: CDefaultType,
-						aclass: "text-white",
+						c: "text-white",
 					},
 					yellow: {
 						[CUseType]: "green",
-						aclass: "text-white",
+						c: "text-white",
 					},
 				},
 			},
@@ -56,30 +56,29 @@ describe.concurrent("Config Test", async () => {
 			abutton: {
 				default: {
 					color: "text-green",
-					aclass: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
+					c: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
 				},
 				red: {
 					color: "text-red",
-					aclass: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
+					c: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
 				},
 				blue: {
 					color: "text-blue",
-					aclass: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
+					c: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white",
 				},
 				green: {
 					color: "text-green",
-					aclass: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white text-white",
+					c: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white text-white",
 				},
 				yellow: {
 					color: "text-green",
-					aclass:
-						"cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white text-white text-white",
+					c: "cursor-pointer bg-red-500 hover:bg-red-600 hover:text-white text-white text-white",
 				},
 			},
 			aalert: {
 				default: {
 					color: "text-white",
-					aclass: "bg-red-500 hover:bg-red-600 hover:text-white",
+					c: "bg-red-500 hover:bg-red-600 hover:text-white",
 				},
 			},
 		});

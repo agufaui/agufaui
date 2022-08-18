@@ -9,7 +9,7 @@ import { useString } from "../packages/use/index";
 
 export const git = Git();
 
-export const DOCS_URL = "https://agufaui.com";
+export const DOCS_URL = "https://ui.agufa.tech";
 
 export const DIR_ROOT = resolve(__dirname, "..");
 export const DIR_SRC = resolve(__dirname, "../packages");
@@ -124,9 +124,10 @@ export async function updateCountBadge(indexes: PackageIndexes) {
 export async function updateSvelte({ packages, components }: PackageIndexes) {
 	const vuePath = join(DIR_ROOT, "packages/vue/components/");
 	const sveltePath = join(DIR_ROOT, "packages/svelte/src/lib/");
-	const { firstLetterToUpper } = useString();
 	const { vueToSvelte } = transform();
-	const noComputed = new Set(["atype", "text", "msg", "value", "modelValue", "v", "label"]);
+
+	const noComputed = new Set(["t", "v", "tabindex", "label"]);
+
 	const noImport = new Set(["vue", "@agufaui/usevue", "@agufaui/config"]);
 
 	for (const { name } of Object.values(packages)) {
@@ -138,7 +139,17 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 				.map((f) => f.name)
 				.sort()
 				.map(async (name) => {
-					const varName = "A" + firstLetterToUpper(name);
+					let fname = name;
+
+					if (name === "hyperlink") {
+						fname = "a";
+					} else if (name === "superscript") {
+						fname = "sup";
+					} else if (name === "subscript") {
+						fname = "sub";
+					}
+
+					const varName = "A" + fname;
 					const vueName = varName + ".vue";
 					const svelteName = varName + ".svelte";
 					await vueToSvelte(vuePath + name + "/" + vueName, sveltePath + name, svelteName, {

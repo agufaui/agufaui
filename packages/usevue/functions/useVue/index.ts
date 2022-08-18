@@ -9,11 +9,10 @@ export function useVue(): IUseVue {
 		config: IConfig | undefined
 	): Record<string, ComputedRef> {
 		const computedProperties: Record<string, ComputedRef> = {};
-		const aTypeRef = toRef(props, "atype" as keyof T);
+		const typeRef = toRef(props, "t" as keyof T);
 
 		for (const propName in props) {
-			if (["atype", "text", "msg", "value", "modelValue", "v", "label"].includes(propName))
-				continue;
+			if (["t", "v", "tabindex", "label"].includes(propName)) continue;
 
 			const prop = toRef(props, propName as keyof T);
 
@@ -21,12 +20,12 @@ export function useVue(): IUseVue {
 
 			const computedName = "c" + propName;
 
-			if (propName.endsWith("class")) {
+			if (propName.endsWith("c")) {
 				computedProperties[computedName as keyof typeof computedProperties] = computed<
 					typeof prop.value
 				>(() => {
 					return (
-						((config?.getFieldValue(component, aTypeRef.value, propName) as typeof prop.value) ??
+						((config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value) ??
 							"") + (prop.value ? " " + prop.value : "")
 					);
 				});
@@ -36,7 +35,7 @@ export function useVue(): IUseVue {
 				>(() => {
 					return (
 						prop.value ??
-						(config?.getFieldValue(component, aTypeRef.value, propName) as typeof prop.value)
+						(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value)
 					);
 				});
 			}

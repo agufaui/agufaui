@@ -4,7 +4,7 @@
 	"description": "Vue UI Components Library",
 	"author": "Agufa.tech <https://agufa.tech>",
 	"license": "MIT",
-	"homepage": "https://agufaui.com",
+	"homepage": "https://ui.agufa.tech",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/agufaui/agufaui",
@@ -68,9 +68,9 @@
 		"vue": "^3.2.37"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.1.0",
-		"@agufaui/theme": "workspace:^0.1.0",
-		"@agufaui/use": "workspace:^0.1.0",
-		"@agufaui/usevue": "workspace:^0.1.0"
+		"@agufaui/config": "workspace:^0.2.0",
+		"@agufaui/theme": "workspace:^0.2.0",
+		"@agufaui/use": "workspace:^0.2.0",
+		"@agufaui/usevue": "workspace:^0.2.0"
 	}
 }

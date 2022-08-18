@@ -6,9 +6,9 @@ export interface IAInputProps extends IProps, IPropsForm {
 	type?: string; // html element input type
 	id?: string; // html element input 'id' and 'name' value, html element label 'for' value
 	display?: string; // display class for root div html element
-	iclass?: string; // css classes for input html element
+	vc?: string; // css classes for input html element
 	label?: string; // label text.  Not configurable
-	lclass?: string; // css classes for label html element
+	labelc?: string; // css classes for label html element
 }
 // #endregion props
 

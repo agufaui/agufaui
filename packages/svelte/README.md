@@ -1,3 +1,3 @@
 # AgufaUI For Svelte Framework
 
-Documentations: [agufaui.com](https://agufaui.com)
+Documentations: [ui.agufa.tech](https://ui.agufa.tech)

@@ -33,7 +33,7 @@ export class Config implements IConfig {
 					if (loop === 1) {
 						// for each field
 						for (const [field, value] of Object.entries(typeObj)) {
-							if (field.endsWith("class")) {
+							if (field.endsWith("c")) {
 								typeObj[field] = expandVariantGroup(value as string);
 							}
 						}
@@ -61,7 +61,7 @@ export class Config implements IConfig {
 								for (const [field, value] of Object.entries(useTypeObj)) {
 									if (typeObj[field] === undefined) {
 										typeObj[field] = value;
-									} else if (field.endsWith("class")) {
+									} else if (field.endsWith("c")) {
 										typeObj[field] = value + " " + typeObj[field];
 									}
 								}
@@ -96,7 +96,7 @@ export class Config implements IConfig {
 					// expand variant groups
 					if (loop === 1) {
 						for (const [field, value] of Object.entries(typeObj)) {
-							if (field.endsWith("class")) {
+							if (field.endsWith("c")) {
 								typeObj[field] = expandVariantGroup(value as string);
 							}
 						}
@@ -133,7 +133,7 @@ export class Config implements IConfig {
 								for (const [field, value] of Object.entries(useTypeObj)) {
 									if (typeObj[field] === undefined) {
 										typeObj[field] = value;
-									} else if (field.endsWith("class")) {
+									} else if (field.endsWith("c")) {
 										typeObj[field] = value + " " + typeObj[field];
 									}
 								}

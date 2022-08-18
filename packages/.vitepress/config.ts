@@ -126,7 +126,7 @@ const config = {
 			// },
 			// {
 			//   text: "Playground",
-			//   link: "https://play.agufaui.com",
+			//   link: "https://play.ui.agufa.tech",
 			// },
 			{
 				text: currentVersion,
@@ -171,7 +171,7 @@ const config = {
 			},
 		],
 		["meta", { property: "og:title", content: "AgufaUI" }],
-		["meta", { property: "og:image", content: "https://agufaui.com/favicon.svg" }],
+		["meta", { property: "og:image", content: "https://ui.agufa.tech/favicon.svg" }],
 		[
 			"meta",
 			{
@@ -181,7 +181,7 @@ const config = {
 		],
 		["meta", { name: "twitter:card", content: "summary_large_image" }],
 		["meta", { name: "twitter:creator", content: "@agufatech" }],
-		["meta", { name: "twitter:image", content: "https://agufaui.com/favicon.svg" }],
+		["meta", { name: "twitter:image", content: "https://ui.agufa.tech/favicon.svg" }],
 	],
 };
 

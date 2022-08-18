@@ -267,6 +267,10 @@ export function transformMemberExpression(path: NodePath<t.MemberExpression>, co
 	if (property === "value" && context.refs?.includes(name)) {
 		path.replaceWith(node.object);
 	}
+
+	if (name === "props") {
+		path.replaceWith(node.property);
+	}
 }
 
 function getWithDefaults(callExpression: t.CallExpression): [string, Record<string, string>] {
@@ -351,14 +355,14 @@ function getTypeDef(
 				if (context.noComputed?.has(prop)) continue;
 				if (propType === "boolean") continue;
 
-				if (prop.endsWith("class")) {
+				if (prop.endsWith("c")) {
 					const memberExp = t.memberExpression(
 						t.identifier("$configStore"),
 						t.identifier("getFieldValue")
 					);
 					const callExp = t.callExpression(memberExp, [
 						t.identifier(context.componentName!),
-						t.identifier("atype"),
+						t.identifier("t"),
 						t.stringLiteral(prop),
 					]);
 					const logicalExp = t.logicalExpression("??", callExp, t.stringLiteral(""));
@@ -381,7 +385,7 @@ function getTypeDef(
 					);
 					const callExp = t.callExpression(memberExp, [
 						t.identifier(context.componentName!),
-						t.identifier("atype"),
+						t.identifier("t"),
 						t.stringLiteral(prop),
 					]);
 					const logicalExp = t.logicalExpression("??", t.identifier(prop), callExp);

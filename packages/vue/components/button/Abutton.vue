@@ -3,16 +3,16 @@ button(
   role="button"
   :type="ctype"
   v-bind="$attrs"
-  class="select-none cursor-pointer"
+  class="inline-flex justify-center items-center cursor-pointer"
   :disabled="disabled || loading"
-  :class="[caclass]"
+  :aria-disabled="disabled || loading"
+  :class="[(ci || loading) && v ? cspacex : '', cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '', cc]"
   @click.stop="click($event)"
 )
   slot
-    div(class="flex justify-center items-center" :class="[cicon || loading ? cspacex : '', cipos === 'right' ? 'flex-row-reverse space-x-reverse' : '']")
-      div(v-if="loading" class="animate-spin preserve-3d" :class="[clicon, clclass]")
-      div(v-else-if="cicon" :class="[cicon, ciclass]")
-      span(v-if="text" :class="ctclass") {{ text }}
+    span(v-if="loading" class="animate-spin preserve-3d" :class="[cloadicon, cloadc]")
+    span(v-else-if="ci" :class="[ci, cic]")
+    span(v-if="v" :class="cvc") {{ v }}
 </template>
 
 <script lang="ts">
@@ -33,7 +33,7 @@ import { inject } from "vue";
 const props = withDefaults(defineProps<IAButtonProps>(), {
 	// #region props
 	type: "button",
-	licon: "i-eos-icons:loading",
+	loadicon: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
 	// #endregion props
 });
@@ -44,8 +44,7 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAButtonProps>(props, CAButtonName, config);
 
-const { ctype, caclass, ctclass, cicon, cipos, ciclass, clicon, clclass, cspacex } =
-	computedProperties;
+const { ctype, cc, cvc, ci, cipos, cic, cloadicon, cloadc, cspacex } = computedProperties;
 
 const emits = defineEmits<IAButtonEmits>();
 
