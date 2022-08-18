@@ -267,6 +267,10 @@ export function transformMemberExpression(path: NodePath<t.MemberExpression>, co
 	if (property === "value" && context.refs?.includes(name)) {
 		path.replaceWith(node.object);
 	}
+
+	if (name === "props") {
+		path.replaceWith(node.property);
+	}
 }
 
 function getWithDefaults(callExpression: t.CallExpression): [string, Record<string, string>] {
