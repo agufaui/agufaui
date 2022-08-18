@@ -9,7 +9,7 @@ import { useString } from "../packages/use/index";
 
 export const git = Git();
 
-export const DOCS_URL = "https://agufaui.com";
+export const DOCS_URL = "https://ui.agufa.tech";
 
 export const DIR_ROOT = resolve(__dirname, "..");
 export const DIR_SRC = resolve(__dirname, "../packages");

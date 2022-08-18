@@ -7,7 +7,7 @@ import Git from "simple-git";
 import { packages } from "../packages";
 import { getCategories } from "../utils";
 
-export const DOCS_URL = "https://agufaui.com";
+export const DOCS_URL = "https://ui.agufa.tech";
 export const DIR_PACKAGE = resolve(__dirname, "..");
 export const DIR_ROOT = resolve(__dirname, "../../..");
 export const DIR_SRC = resolve(DIR_ROOT, "packages");
