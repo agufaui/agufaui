@@ -9,6 +9,7 @@ export * from "./default/ABadge";
 export * from "./default/ATag";
 export * from "./default/ASup";
 export * from "./default/ASub";
+
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits } from "./types/AAlert";
 export type { IAAlertErrorProps, IAAlertErrorEmits } from "./types/AAlertError";

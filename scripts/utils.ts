@@ -125,7 +125,9 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 	const vuePath = join(DIR_ROOT, "packages/vue/components/");
 	const sveltePath = join(DIR_ROOT, "packages/svelte/src/lib/");
 	const { vueToSvelte } = transform();
+
 	const noComputed = new Set(["t", "v", "tabindex", "label"]);
+
 	const noImport = new Set(["vue", "@agufaui/usevue", "@agufaui/config"]);
 
 	for (const { name } of Object.values(packages)) {

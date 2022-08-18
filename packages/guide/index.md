@@ -149,7 +149,7 @@ pnpm add @agufaui/svelte @agufaui/config @agufaui/theme
 	<body>
 		<div id="app">
 			<abutton
-				text="click me"
+				v="click me"
 				c="m-2 text-white bg-blue-6 hover:bg-blue-7 focus:ring-blue-5"
 			></abutton>
 		</div>
