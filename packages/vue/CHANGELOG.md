@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/agufaui/agufaui/compare/vue-v0.2.0...vue-v0.3.0) (2022-08-18)
+
+
+### Features
+
+* badge, hyperlink, subscript, superscript, tag components ([#4](https://github.com/agufaui/agufaui/issues/4)) ([3cea373](https://github.com/agufaui/agufaui/commit/3cea373247489e9f9a3c38822a058f3c440cc33f))
+
 ## [0.2.0](https://github.com/agufaui/agufaui/compare/vue-v0.1.0...vue-v0.2.0) (2022-08-15)
 
 
