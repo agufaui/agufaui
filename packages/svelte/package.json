@@ -50,7 +50,7 @@
 	},
 	"scripts": {
 		"dev": "svelte-kit package -w",
-		"build": "svelte-kit package && rm package/package.json package/README.md && cp -t package ../vue/dist/es/assets/agufaui.css ../theme/dist/es/assets/theme.css",
+		"build": "svelte-package && rm package/package.json package/README.md && cp -t package ../vue/dist/es/assets/agufaui.css ../theme/dist/es/assets/theme.css",
 		"clean": "rimraf package",
 		"lint": "eslint --ext .ts,.js,.svelte --ignore-path ../../.eslintignore .",
 		"lintfix": "nr lint --fix",
@@ -60,6 +60,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@sveltejs/package": "1.0.0-next.1",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
