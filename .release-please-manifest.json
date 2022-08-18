@@ -1,11 +1,11 @@
 {
-	"packages/vue": "0.2.0",
-	"packages/svelte": "0.2.0",
-	"packages/use": "0.2.0",
-	"packages/usevue": "0.2.0",
-	"packages/theme": "0.2.0",
-	"packages/config": "0.2.0",
-	"packages/metadata": "0.2.0",
-	"packages/transform": "0.2.0",
-	".": "0.2.0"
+	"packages/vue": "0.3.0",
+	"packages/svelte": "0.3.0",
+	"packages/use": "0.3.0",
+	"packages/usevue": "0.3.0",
+	"packages/theme": "0.3.0",
+	"packages/config": "0.3.0",
+	"packages/metadata": "0.3.0",
+	"packages/transform": "0.3.0",
+	".": "0.3.0"
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/agufaui/agufaui/compare/use-v0.2.0...use-v0.3.0) (2022-08-18)
+
+
+### Features
+
+* badge, hyperlink, subscript, superscript, tag components ([#4](https://github.com/agufaui/agufaui/issues/4)) ([3cea373](https://github.com/agufaui/agufaui/commit/3cea373247489e9f9a3c38822a058f3c440cc33f))
+* button alert alertError ([23b1361](https://github.com/agufaui/agufaui/commit/23b1361e99c21a35276e3210b9c1ec0c2f5190c0))
+
 ## [0.2.0](https://github.com/agufaui/agufaui/compare/use-v0.1.0...use-v0.2.0) (2022-08-15)
 
 
