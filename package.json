@@ -12,7 +12,7 @@
 	"scripts": {
 		"dev": "nr update && nr docs",
 		"watch": "nr --filter=./packages/** -- watch",
-		"build": "nr clean && nr update && nr --filter=./packages/** --filter=!./packages/svelte -- build && nr post && nr --filter=./packages/svelte -- build && nr docs:build",
+		"build": "nr clean && nr update && nr postdep && nr --filter=./packages/** --filter=!./packages/svelte -- build && nr post && nr --filter=./packages/svelte -- build && nr docs:build",
 		"build:pkg": "nr --filter=./packages/** -- build",
 		"build:types": "nr -r --parallel --filter=./packages/** build:types",
 		"clean": "rimraf dist types packages/.*/dist packages/auto-imports.d.ts packages/.vitepress/components.d.ts && nr -r --parallel --filter=./packages/** clean && nr -r --parallel --filter=./playground/** clean",
@@ -33,12 +33,13 @@
 		"update": "nr -C packages/metadata update && tsx scripts/update.ts",
 		"update:full": "nr update && nr build:types",
 		"post": "tsx scripts/post.ts",
+		"postdep": "tsx scripts/postdep.ts",
 		"publish:ci": "tsx scripts/publish.ts",
 		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.2.0",
-		"@agufaui/theme": "workspace:^0.2.0",
+		"@agufaui/config": "workspace:^0.3.0",
+		"@agufaui/theme": "workspace:^0.3.0",
 		"@antfu/ni": "^0.16.3",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
@@ -68,6 +69,7 @@
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"pug": "^3.0.2",
+		"release-please": "^14.0.0",
 		"rimraf": "^3.0.2",
 		"shiki": "^0.10.1",
 		"simple-git": "^3.10.0",

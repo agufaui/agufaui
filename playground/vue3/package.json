@@ -11,8 +11,8 @@
 		"lintfix": "nr lint --fix"
 	},
 	"dependencies": {
-		"@agufaui/config": "workspace:^0.1.0",
-		"@agufaui/vue": "workspace:^0.1.0",
+		"@agufaui/config": "workspace:^0.3.0",
+		"@agufaui/vue": "workspace:^0.3.0",
 		"vue": "^3.2.37"
 	},
 	"devDependencies": {
