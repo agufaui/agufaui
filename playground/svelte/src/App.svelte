@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { AButton, AAlert, AAlertError, AInput } from "@agufaui/svelte";
+	import { Abutton, Aalert, AalertError, Ainput, Asup, Atag, Aa } from "@agufaui/svelte";
 	// let AButton;
 	// onMount(async () => {
 	// 	AButton = (await import('https://unpkg.com/@agufaui/svelte')).default
@@ -10,17 +10,14 @@
 </script>
 
 <main>
-	<AButton text="click me" on:click={(e) => console.log(e.detail)} />
-	<AAlert msg="text" show={true} atype="red" />
-	<AAlertError msg="text" show={true} error={true} on:closea={() => alert("hi")} />
-	<AAlertError msg="text" show={true} error={false} />
-	<AInput
-		v={text}
-		label="text"
-		on:update:v={(e) => (text = e.detail)}
-		aclass="my-2"
-		atype="inlineblock"
-	/>
+	<Abutton v="click me" on:click={(e) => console.log(e.detail)} />
+	<Aalert v="Text" show={true} t="red" />
+	<AalertError v="text" show={true} error={true} on:close={() => alert("hi")} />
+	<AalertError v="text" show={true} error={false} />
+	<Ainput v={text} label="text" on:update:v={(e) => (text = e.detail)} c="my-2" t="inlineblock" />
+	<Aa v="text" />
+	<Asup v="text" />
+	<Atag v="text" />
 	<!-- {#if AButton}
 	 <svelte:component this={AButton} text="cick me" />
 {:else}

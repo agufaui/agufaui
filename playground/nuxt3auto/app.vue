@@ -1,14 +1,14 @@
 <template lang="pug">
-a-button(
-  atype="default"
-  text="typescript"
+abutton(
+  t="default"
+  v="typescript"
   :loading="true"
-  aclass="hover:bg-pink-600 focus:ring-red-500 m-2"
+  c="hover:bg-pink-600 focus:ring-red-500 m-2"
 )
-a-button(
-  atype="primary"
-  text="typescript"
+abutton(
+  t="primary"
+  v="typescript"
   :loading="true"
-  aclass="hover:bg-pink-600 focus:ring-red-500 m-2"
+  c="hover:bg-pink-600 focus:ring-red-500 m-2"
 )
 </template>

@@ -15,13 +15,10 @@ app.provide<Config>(
 			abutton: {
 				default: {
 					type: "submit",
-					size: "text-lg",
-					bg: "bg-green",
-					aClass: "w-full",
+					c: "w-full bg-green text-lg",
 				},
 				primary: {
-					color: "text-white",
-					bg: "bg-sky",
+					c: "bg-sky text-white",
 				},
 			},
 		},

@@ -1,13 +1,13 @@
 import { render } from "@testing-library/vue";
-import AAlert from "./AAlert.vue";
+import Aalert from "./Aalert.vue";
 
 describe.concurrent("AAlert Test", async () => {
 	it("Show test", async () => {
-		const { getByText, getByTestId } = render(AAlert, {
+		const { getByText, getByTestId } = render(Aalert, {
 			props: {
 				show: true,
 				"data-testid": "custom-element",
-				msg: "component test",
+				v: "component test",
 			},
 		});
 
@@ -17,10 +17,10 @@ describe.concurrent("AAlert Test", async () => {
 	});
 
 	it("Not show test", async () => {
-		const { queryByText, queryByTestId } = render(AAlert, {
+		const { queryByText, queryByTestId } = render(Aalert, {
 			props: {
 				"data-testid": "custom-element",
-				msg: "component test",
+				v: "component test",
 			},
 		});
 

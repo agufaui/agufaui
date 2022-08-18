@@ -127,9 +127,13 @@ export function genSvelteTemplate(
 							val = val.replace(/^"|"$/g, "");
 							final += ` {...${val}}`;
 						}
+					} else if (attr.name.startsWith("v-model:")) {
+						val = val.replace(/^"|"$/g, "");
+						name = attr.name.replace("v-model", "bind");
+						final += ` ${name}="{${val}}"`;
 					} else if (attr.name.startsWith("v-model")) {
 						val = val.replace(/^"|"$/g, "");
-						final += ` bind:value="{${val}}"`;
+						final += ` bind:v="{${val}}"`;
 					} else if (attr.name.startsWith("v-show")) {
 						val = val.replace(/^"|"$/g, "");
 						final += ` class:hidden="{!${val}}"`;
@@ -168,12 +172,8 @@ export function genSvelteTemplate(
 
 				attrs = attrs ? " " + attrs + (noClosingTags.has(tagNode.name) ? " />" : ">") : ">";
 
-				if (tagNode.name.startsWith("a-")) {
-					const tagName = tagNode.name.substring(2);
-					tagNode.name =
-						tagNode.name.charAt(0).toUpperCase() +
-						tagName.charAt(0).toUpperCase() +
-						tagName.slice(1);
+				if (tagNode.name.startsWith("a") && tagNode.name.length > 1) {
+					tagNode.name = tagNode.name.charAt(0).toUpperCase() + tagNode.name.substring(1);
 				}
 
 				if (pre) {

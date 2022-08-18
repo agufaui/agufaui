@@ -1,13 +1,13 @@
 import { render, fireEvent } from "@testing-library/vue";
-import AButton from "./AButton.vue";
+import Abutton from "./Abutton.vue";
 
 describe.concurrent("AButton Test", async () => {
 	// The render method returns a collection of utilities to query your component
-	const { getByTestId } = render(AButton, {
+	const { getByTestId } = render(Abutton, {
 		props: {
 			"data-testid": "custom-element",
-			text: "component test",
-			aclass: "hover:bg-pink-400 focus:bg-red-600",
+			v: "component test",
+			c: "hover:bg-pink-400 focus:bg-red-600",
 		},
 	});
 	const button = getByTestId("custom-element");

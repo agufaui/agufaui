@@ -15,12 +15,12 @@ Basic button with icon and loading.
 #### Import
 
 ```ts
-import { AButton } from "@agufaui/${framework name}";
+import { Abutton } from "@agufaui/${framework name}";
 ```
 
 #### Html
 
-`<a-button />` or `<AButton />`
+`<abutton />` or `<Abutton />`
 
 #### Configuration
 
@@ -51,7 +51,7 @@ One default slot replace button content including icon and loading icon.
 
 #### Default Values
 
-<<< @/vue/components/button/AButton.vue#props
+<<< @/vue/components/button/Abutton.vue#props
 
 ### Unique
 

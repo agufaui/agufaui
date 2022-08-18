@@ -1,18 +1,18 @@
 <template lang="pug">
-a-alert(:show="show" v-bind="$attrs" :atype="error? cerrorAAlertType : csuccessAAlertType" :closable="true" :aclass="caclass" @closea="closea")
+aalert(:show="show" v-bind="$attrs" :t="error? cerrorAAlertType : csuccessAAlertType" :closable="true" :c="cc" @close="close")
   template(#default)
-    slot {{ msg }}
+    slot {{ v }}
 </template>
 
 <script lang="ts">
 export default {
-	name: "AAlertError",
+	name: "AalertError",
 	inheritAttrs: false,
 };
 </script>
 
 <script setup lang="ts">
-import AAlert from "../alert/AAlert.vue";
+import Aalert from "../alert/Aalert.vue";
 import type { IAAlertErrorProps, IAAlertErrorEmits } from "@agufaui/theme";
 import { CAAlertErrorName } from "@agufaui/theme";
 import type { IConfig } from "@agufaui/config";
@@ -28,11 +28,11 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAAlertErrorProps>(props, CAAlertErrorName, config);
 
-const { caclass, cerrorAAlertType, csuccessAAlertType } = computedProperties;
+const { cc, cerrorAAlertType, csuccessAAlertType } = computedProperties;
 
 const emits = defineEmits<IAAlertErrorEmits>();
 
-const closea = () => {
-	emits("closea");
+const close = () => {
+	emits("close");
 };
 </script>

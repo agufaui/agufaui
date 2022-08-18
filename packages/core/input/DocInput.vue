@@ -1,34 +1,42 @@
 <template>
 	<div class="flex flex-col gap-y-4">
 		<!-- #region showcase -->
-		<a-input
+		<ainput
 			v-model:v="text"
 			label="Username"
-			atype="inlineblock"
-			iclass="dark:text-white"
-			lclass="dark:(bg-#242424 text-white)"
+			t="inlineblock"
+			vc="dark:text-white"
+			labelc="dark:(bg-#242424 text-white)"
 			@update:v="notify"
-		></a-input>
-		<a-input
+		></ainput>
+		<ainput
 			label="Username"
-			atype="inlineblock"
-			aclass="mt-3"
-			iclass="dark:text-white"
-			lclass="dark:(bg-#242424 text-white) peer-focus-within:(-translate-y-100% ml-0 bg-transparent) peer-not-placeholder-shown:(-translate-y-100% ml-0 bg-transparent)"
-		></a-input>
-		<a-input
+			t="inlineblock"
+			c="mt-3"
+			vc="dark:text-white"
+			labelc="dark:(bg-#242424 text-white) !peer-focus-within:(-translate-y-100% ml-0 bg-transparent) !peer-not-placeholder-shown:(-translate-y-100% ml-0 bg-transparent)"
+		></ainput>
+		<ainput
 			label="Username"
-			atype=""
-			aclass="mt-3"
-			iclass="dark:text-white block peer bg-transparent p-2 max-h-12 text-4 text-gray-7 border-b-1 border-gray-5 rounded-md disabled:text-gray-4 focus:outline-none"
-			lclass="dark:(bg-#242424 text-white) text-4 text-gray-7 duration-300 peer-disabled:text-gray-4 peer-invalid:text-red-4 peer-focus-within:(scale-90 -translate-y-55% z-0 px-1 text-indigo-4) peer-not-placeholder-shown:(scale-90 -translate-y-55% z-0 px-1 text-indigo-4)"
-		></a-input>
-		<a-input atype="inlineblock" iclass="dark:text-white"></a-input>
-		<a-input
+			t=""
+			c="mt-3"
+			vc="dark:text-white block peer bg-transparent p-2 max-h-12 text-4 text-gray-7 border-b-1 border-gray-5 rounded-md disabled:text-gray-4 focus:outline-none"
+			labelc="dark:(bg-#242424 text-white) text-4 text-gray-7 duration-300 peer-disabled:text-gray-4 peer-invalid:text-red-4 peer-focus-within:(scale-90 -translate-y-55% z-0 px-1 text-indigo-4) peer-not-placeholder-shown:(scale-90 -translate-y-55% z-0 px-1 text-indigo-4)"
+		></ainput>
+		<ainput t="inlineblock" vc="dark:text-white"></ainput>
+		<ainput
+			v="disabled"
 			label="Username"
-			iclass="w-full dark:text-white"
-			lclass="dark:(bg-#242424 text-white)"
-		></a-input>
+			t="inlineblock"
+			:disabled="true"
+			vc="dark:text-white"
+			labelc="dark:(bg-#242424 text-white)"
+		></ainput>
+		<ainput
+			label="Username"
+			vc="w-full dark:text-white"
+			labelc="dark:(bg-#242424 text-white)"
+		></ainput>
 		<!-- #endregion showcase -->
 	</div>
 </template>
@@ -36,6 +44,9 @@
 <script lang="ts">
 export default {
 	name: "DocInput",
+	// mounted() {
+	// 	this.$refs.input.focus();
+	// },
 };
 </script>
 

@@ -8,8 +8,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 			theme: {
 				abutton: {
 					primary: {
-						color: "text-white",
-						aclass: "bg-sky",
+						ic: "text-white",
+						c: "bg-sky",
 					},
 				},
 			},
