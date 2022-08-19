@@ -9,6 +9,7 @@ import { DABadge } from "./default/ABadge";
 import { DATag } from "./default/ATag";
 import { DASup } from "./default/ASup";
 import { DASub } from "./default/ASub";
+import { DAMobile } from "./default/AMobile";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
@@ -19,6 +20,7 @@ export const CABadgeName = "abadge";
 export const CATagName = "atag";
 export const CASupName = "asup";
 export const CASubName = "asub";
+export const CAMobileName = "amobile";
 
 export const Theme: ITheme = {
 	[CAButtonName]: DAButton as TComponent,
@@ -30,4 +32,5 @@ export const Theme: ITheme = {
 	[CATagName]: DATag as TComponent,
 	[CASupName]: DASup as TComponent,
 	[CASubName]: DASub as TComponent,
+	[CAMobileName]: DAMobile as TComponent,
 };

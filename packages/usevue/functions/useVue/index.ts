@@ -6,7 +6,8 @@ export function useVue(): IUseVue {
 	function getComputedFromProps<T>(
 		props: Readonly<T>,
 		component: string,
-		config: IConfig | undefined
+		config: IConfig | undefined,
+		defaultValues: Record<string, any>
 	): Record<string, ComputedRef> {
 		const computedProperties: Record<string, ComputedRef> = {};
 		const typeRef = toRef(props, "t" as keyof T);
@@ -30,14 +31,28 @@ export function useVue(): IUseVue {
 					);
 				});
 			} else {
-				computedProperties[computedName as keyof typeof computedProperties] = computed<
-					typeof prop.value
-				>(() => {
-					return (
-						prop.value ??
-						(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value)
-					);
-				});
+				const defaultValue = defaultValues[propName];
+
+				if (defaultValue) {
+					computedProperties[computedName as keyof typeof computedProperties] = computed<
+						typeof prop.value
+					>(() => {
+						return (
+							prop.value ??
+							(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value) ??
+							defaultValue
+						);
+					});
+				} else {
+					computedProperties[computedName as keyof typeof computedProperties] = computed<
+						typeof prop.value
+					>(() => {
+						return (
+							prop.value ??
+							(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value)
+						);
+					});
+				}
 			}
 		}
 

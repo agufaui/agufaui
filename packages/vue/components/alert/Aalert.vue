@@ -25,13 +25,15 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { watch, ref, inject } from "vue";
 
-const props = withDefaults(defineProps<IAAlertProps>(), {
+const defaultPropValues = {
 	// #region props
 	display: "flex",
 	spacex: "space-x-1.2",
 	closeicon: "i-iwwa:delete",
 	// #endregion props
-});
+};
+
+const props = defineProps<IAAlertProps>();
 
 let showAlert = ref(false);
 
@@ -39,7 +41,12 @@ let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAAlertProps>(props, CAAlertName, config);
+const computedProperties = getComputedFromProps<IAAlertProps>(
+	props,
+	CAAlertName,
+	config,
+	defaultPropValues
+);
 
 const { cdisplay, cc, cvc, ci, cipos, cic, cspacex, ccloseicon, cclosec } = computedProperties;
 

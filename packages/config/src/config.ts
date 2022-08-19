@@ -155,7 +155,7 @@ export class Config implements IConfig {
 		return this.#userTheme;
 	}
 
-	getFieldValue(componentName: string, type: string | undefined, field: string): TFieldValue {
+	getFieldValue(componentName: string, type: string | undefined, field: string): any {
 		return this.#userTheme[componentName]?.[type ?? CDefaultType]?.[field];
 	}
 }

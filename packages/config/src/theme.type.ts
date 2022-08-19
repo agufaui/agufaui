@@ -10,7 +10,7 @@ export type TFieldValue = string | boolean | undefined;
 /**
  * @example { text: "hello", show: true }
  */
-export type TComponentType = Record<string, TFieldValue>;
+export type TComponentType = Record<string, any>;
 
 /**
  * @example { "default": { text: "hello", show: true }, "primary": { text: "world", show: false } }

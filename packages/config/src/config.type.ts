@@ -29,7 +29,7 @@ export interface IConfig {
 	 * @param {string} componentName component name
 	 * @param {string | undefined} type component type
 	 * @param {string} fieldName field name
-	 * @returns {TFieldValue} field value
+	 * @returns {any} field value
 	 */
-	getFieldValue: (componentName: string, type: string | undefined, field: string) => TFieldValue;
+	getFieldValue: (componentName: string, type: string | undefined, field: string) => any;
 }

@@ -17,6 +17,7 @@ export interface IUseVue {
 	getComputedFromProps: <T>(
 		props: Readonly<T>,
 		component: string,
-		config: IConfig | undefined
+		config: IConfig | undefined,
+		defaultValues: Record<string, any>
 	) => Record<string, ComputedRef>;
 }

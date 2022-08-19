@@ -32,18 +32,25 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
-const props = withDefaults(defineProps<IAInputProps>(), {
+const defaultPropValues = {
 	// #region props
 	type: "text",
 	display: "block",
 	// #endregion props
-});
+};
+
+const props = defineProps<IAInputProps>();
 
 let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAInputProps>(props, CAInputName, config);
+const computedProperties = getComputedFromProps<IAInputProps>(
+	props,
+	CAInputName,
+	config,
+	defaultPropValues
+);
 
 const { ctype, cid, cdisplay, cvc, cc, clabelc } = computedProperties;
 

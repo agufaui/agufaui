@@ -28,18 +28,25 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
-const props = withDefaults(defineProps<IAAProps>(), {
+const defaultPropValues = {
 	// #region props
 	loadicon: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
 	// #endregion props
-});
+};
+
+const props = defineProps<IAAProps>();
 
 let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAAProps>(props, CAAName, config);
+const computedProperties = getComputedFromProps<IAAProps>(
+	props,
+	CAAName,
+	config,
+	defaultPropValues
+);
 
 const { cc, cvc, ci, cipos, cic, cloadicon, cloadc, cspacex, cdisablec } = computedProperties;
 

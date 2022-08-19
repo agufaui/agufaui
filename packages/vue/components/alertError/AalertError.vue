@@ -20,13 +20,20 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
+const defaultPropValues = {};
+
 const props = defineProps<IAAlertErrorProps>();
 
 let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAAlertErrorProps>(props, CAAlertErrorName, config);
+const computedProperties = getComputedFromProps<IAAlertErrorProps>(
+	props,
+	CAAlertErrorName,
+	config,
+	defaultPropValues
+);
 
 const { cc, cerrorAAlertType, csuccessAAlertType } = computedProperties;
 

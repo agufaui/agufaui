@@ -24,17 +24,24 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
-const props = withDefaults(defineProps<IABadgeProps>(), {
+const defaultPropValues = {
 	// #region props
 	spacex: "space-x-1.5",
 	// #endregion props
-});
+};
+
+const props = defineProps<IABadgeProps>();
 
 let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IABadgeProps>(props, CABadgeName, config);
+const computedProperties = getComputedFromProps<IABadgeProps>(
+	props,
+	CABadgeName,
+	config,
+	defaultPropValues
+);
 
 const { cc, cvc, ci, cipos, cic, cspacex } = computedProperties;
 </script>

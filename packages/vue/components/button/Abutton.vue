@@ -17,7 +17,7 @@ button(
 
 <script lang="ts">
 export default {
-	name: "AButton", // name field must be specified for plugin (global component registration) to work
+	name: "Abutton", // name field must be specified for plugin (global component registration) to work
 	inheritAttrs: false,
 };
 </script>
@@ -30,19 +30,26 @@ import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { inject } from "vue";
 
-const props = withDefaults(defineProps<IAButtonProps>(), {
+const defaultPropValues = {
 	// #region props
 	type: "button",
 	loadicon: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
 	// #endregion props
-});
+};
+
+const props = defineProps<IAButtonProps>();
 
 let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAButtonProps>(props, CAButtonName, config);
+const computedProperties = getComputedFromProps<IAButtonProps>(
+	props,
+	CAButtonName,
+	config,
+	defaultPropValues
+);
 
 const { ctype, cc, cvc, ci, cipos, cic, cloadicon, cloadc, cspacex } = computedProperties;
 

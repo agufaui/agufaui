@@ -9,6 +9,7 @@ export * from "./default/ABadge";
 export * from "./default/ATag";
 export * from "./default/ASup";
 export * from "./default/ASub";
+export * from "./default/AMobile";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits } from "./types/AAlert";
@@ -20,3 +21,4 @@ export type { IABadgeProps } from "./types/ABadge";
 export type { IATagProps, IATagEmits } from "./types/ATag";
 export type { IASupProps } from "./types/ASup";
 export type { IASubProps } from "./types/ASub";
+export type { IAMobileProps, IAMobileEmits } from "./types/AMobile";
