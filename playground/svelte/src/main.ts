@@ -6,9 +6,13 @@ import App from "./App.svelte";
 import { configStore } from "@agufaui/svelte";
 import { Config } from "@agufaui/config";
 import { Theme } from "@agufaui/theme";
+import { en, zhCn } from "@agufaui/locale";
+import { writable } from "svelte/store";
 
 configStore.set(
 	new Config({
+		locale: writable<string>("en"),
+		locales: [en, zhCn],
 		baseTheme: Theme,
 	})
 );

@@ -13,7 +13,32 @@ export function useString(): IUseString {
 		return s.charAt(0).toUpperCase() + s.slice(1);
 	}
 
-	return { pascalCaseToSpace, firstLetterToUpper };
+	function camelCaseToSpace(word: string): string {
+		return word.replace(/([a-z])([A-Z])/g, "$1 $2");
+	}
+
+	function camelCaseToPascalCase(word: string): string {
+		return firstLetterToUpper(word);
+	}
+
+	function camelCaseToHyphen(word: string): string {
+		return word.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+	}
+
+	function hyphenToCamelCase(word: string): string {
+		return word.replace(/-([a-z])/g, (s: string, d: string) => {
+			return d.toUpperCase();
+		});
+	}
+
+	return {
+		pascalCaseToSpace,
+		firstLetterToUpper,
+		camelCaseToSpace,
+		camelCaseToPascalCase,
+		camelCaseToHyphen,
+		hyphenToCamelCase,
+	};
 }
 
 export * from "./types";

@@ -17,3 +17,8 @@ export interface IAInputEmits {
 	(e: "update:v", modelValue: string): void; // input event
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAInputEmitsS {
+	"update:v": string; // click event
+}

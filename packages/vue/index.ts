@@ -14,3 +14,4 @@ export * from "./components";
 export * from "@agufaui/config";
 export * from "@agufaui/theme";
 export * from "@agufaui/use";
+export * from "@agufaui/locale";

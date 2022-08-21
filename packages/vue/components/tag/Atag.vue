@@ -20,25 +20,23 @@ export default {
 <script setup lang="ts">
 import type { IATagProps, IATagEmits } from "@agufaui/theme";
 import { CATagName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { ref, inject } from "vue";
+import { ref } from "vue";
 
-const props = withDefaults(defineProps<IATagProps>(), {
+const defaultPropValues = {
 	// #region props
 	spacex: "space-x-1.5",
 	closeicon: "i-iwwa:delete",
 	// #endregion props
-});
+};
+
+const props = defineProps<IATagProps>();
 
 let show = ref(true);
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IATagProps>(props, CATagName, config);
+const computedProperties = getComputedFromProps<IATagProps>(props, CATagName, defaultPropValues);
 
 const { cc, cvc, cpos, ccloseicon, cclosec, cspacex } = computedProperties;
 

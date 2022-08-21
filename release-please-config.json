@@ -79,6 +79,26 @@
 			"changelogPath": "CHANGELOG.md",
 			"versioning": "default"
 		},
+		"packages/translate": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
+		"packages/locale": {
+			"releaseType": "node",
+			"skip-github-release": true,
+			"draft": false,
+			"prerelease": false,
+			"bumpMinorPreMajor": true,
+			"bumpPatchForMinorPreMajor": true,
+			"changelogPath": "CHANGELOG.md",
+			"versioning": "default"
+		},
 		".": {
 			"releaseType": "node",
 			"skip-github-release": true,

@@ -121,11 +121,11 @@ pnpm add @agufaui/vue
 
 ```bash
 # npm
-npm i @agufaui/svelte @agufaui/config @agufaui/theme
+npm i @agufaui/svelte @agufaui/config @agufaui/theme @agufaui/locale
 # yarn
-yarn add @agufaui/svelte @agufaui/config @agufaui/theme
+yarn add @agufaui/svelte @agufaui/config @agufaui/theme @agufaui/locale
 # pnpm
-pnpm add @agufaui/svelte @agufaui/config @agufaui/theme
+pnpm add @agufaui/svelte @agufaui/config @agufaui/theme @agufaui/locale
 ```
 
 #### CDN
@@ -181,6 +181,7 @@ In `src/main.{js,ts}` file:
 // src/main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
+import type { IConfig } from "@agufaui/vue";
 import { Config, CConfigProvideName } from "@agufaui/vue";
 // Uncomment following line for Global Registration
 // import { VuePlugin } from "@agufaui/vue";
@@ -196,7 +197,7 @@ import "@agufaui/vue/agufaui.css";
 const app = createApp(App);
 
 // required
-app.provide<Config>(
+app.provide<IConfig>(
 	CConfigProvideName,
 	new Config({
 		// Uncomment following line for AgufaUI provided theme
@@ -268,6 +269,7 @@ or in `src/main.ts`
 ```ts
 import { createApp } from "vue";
 import App from "./App.vue";
+import type { IConfig } from "@agufaui/vue";
 import { Config, CConfigProvideName, Abutton, Aalert } from "@agufaui/vue";
 // Replace following line for your css framework Browser Reset CSS
 import "@unocss/reset/tailwind.css";
@@ -276,7 +278,7 @@ import "@agufaui/vue/agufaui.css";
 const app = createApp(App);
 
 // required
-app.provide<Config>(CConfigProvideName, new Config());
+app.provide<IConfig>(CConfigProvideName, new Config());
 
 app.component(Abutton.name, Abutton);
 app.component(Aalert.name, Aalert);
@@ -305,6 +307,7 @@ In Nuxt project root, create `plugins` folder, then create `agufaui.{js,ts}` fil
 
 ```ts
 // plugins/agufaui.ts
+import type { IConfig } from "@agufaui/vue";
 import { Config, CConfigProvideName } from "@agufaui/vue";
 // Uncomment following line for Global Registration
 // import { VuePlugin } from "@agufaui/vue";
@@ -314,7 +317,7 @@ import { Config, CConfigProvideName } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
 	// required
-	nuxtApp.vueApp.provide<Config>(
+	nuxtApp.vueApp.provide<IConfig>(
 		CConfigProvideName,
 		new Config({
 			// Uncomment following line for AgufaUI provided theme
@@ -371,11 +374,12 @@ import { Abutton } from "@agufaui/vue";
 or in `plugins/agufaui.{js,ts}`
 
 ```ts
+import type { IConfig } from "@agufaui/vue";
 import { Config, CConfigProvideName, Abutton, Aalert } from "@agufaui/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
 	// required
-	nuxtApp.vueApp.provide<Config>(CConfigProvideName, new Config());
+	nuxtApp.vueApp.provide<IConfig>(CConfigProvideName, new Config());
 
 	nuxtApp.vueApp.component(Abutton.name, Abutton);
 	nuxtApp.vueApp.component(Aalert.name, Aalert);

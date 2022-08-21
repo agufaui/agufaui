@@ -101,4 +101,13 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 		const genTemplate = genSvelteTemplate(ast);
 		expect(genTemplate).toBe(svelteTemplate);
 	});
+
+	it("v-bind test", async () => {
+		const vueTemplate = 'span {{open? tr("amobile", "Open) : tr("amobile", "Close")}}';
+		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
+		const svelteTemplate =
+			'\n<span> {open? $tr("amobile", "Open) : $tr("amobile", "Close")}\n</span>';
+		const genTemplate = genSvelteTemplate(ast);
+		expect(genTemplate).toBe(svelteTemplate);
+	});
 });

@@ -17,3 +17,8 @@ export interface IAButtonEmits {
 	(e: "click", event: MouseEvent): void; // click event
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAButtonEmitsS {
+	click: MouseEvent; // click event
+}

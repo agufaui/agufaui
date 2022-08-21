@@ -33,7 +33,7 @@ export function genSvelteTemplate(
 		switch (node.type) {
 			case "Text":
 				const textNode = node as IText;
-				const val = textNode.val.replace(/{{/g, "{").replace(/}}/g, "}");
+				const val = textNode.val.replace(/{{/g, "{").replace(/}}/g, "}").replace(/tr\(/g, "$tr(");
 				code += " " + val;
 				break;
 			case "Tag":

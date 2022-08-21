@@ -1,4 +1,3 @@
-import type { IConfig } from "@agufaui/config";
 import { ComputedRef } from "vue";
 
 /**
@@ -17,6 +16,6 @@ export interface IUseVue {
 	getComputedFromProps: <T>(
 		props: Readonly<T>,
 		component: string,
-		config: IConfig | undefined
+		defaultValues: Record<string, any>
 	) => Record<string, ComputedRef>;
 }

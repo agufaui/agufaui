@@ -1,15 +1,17 @@
 import type { IUseVue } from "./types";
 import { ComputedRef, toRef, computed } from "vue";
-import type { IConfig } from "@agufaui/config";
+import { useGlobalConfig } from "../useGlobalConfig";
 
 export function useVue(): IUseVue {
 	function getComputedFromProps<T>(
 		props: Readonly<T>,
 		component: string,
-		config: IConfig | undefined
+		defaultValues: Record<string, any>
 	): Record<string, ComputedRef> {
 		const computedProperties: Record<string, ComputedRef> = {};
 		const typeRef = toRef(props, "t" as keyof T);
+		const { getConfig } = useGlobalConfig();
+		const config = getConfig();
 
 		for (const propName in props) {
 			if (["t", "v", "tabindex", "label"].includes(propName)) continue;
@@ -30,14 +32,28 @@ export function useVue(): IUseVue {
 					);
 				});
 			} else {
-				computedProperties[computedName as keyof typeof computedProperties] = computed<
-					typeof prop.value
-				>(() => {
-					return (
-						prop.value ??
-						(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value)
-					);
-				});
+				const defaultValue = defaultValues[propName];
+
+				if (defaultValue) {
+					computedProperties[computedName as keyof typeof computedProperties] = computed<
+						typeof prop.value
+					>(() => {
+						return (
+							prop.value ??
+							(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value) ??
+							defaultValue
+						);
+					});
+				} else {
+					computedProperties[computedName as keyof typeof computedProperties] = computed<
+						typeof prop.value
+					>(() => {
+						return (
+							prop.value ??
+							(config?.getFieldValue(component, typeRef.value, propName) as typeof prop.value)
+						);
+					});
+				}
 			}
 		}
 
