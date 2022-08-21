@@ -69,6 +69,7 @@
 	},
 	"devDependencies": {
 		"@agufaui/config": "workspace:^0.3.0",
+		"@agufaui/locale": "workspace:^0.0.1",
 		"@agufaui/theme": "workspace:^0.3.0",
 		"@agufaui/use": "workspace:^0.3.0",
 		"@agufaui/usevue": "workspace:^0.3.0"

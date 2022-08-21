@@ -1,16 +1,17 @@
 import type { IUseVue } from "./types";
 import { ComputedRef, toRef, computed } from "vue";
-import type { IConfig } from "@agufaui/config";
+import { useGlobalConfig } from "../useGlobalConfig";
 
 export function useVue(): IUseVue {
 	function getComputedFromProps<T>(
 		props: Readonly<T>,
 		component: string,
-		config: IConfig | undefined,
 		defaultValues: Record<string, any>
 	): Record<string, ComputedRef> {
 		const computedProperties: Record<string, ComputedRef> = {};
 		const typeRef = toRef(props, "t" as keyof T);
+		const { getConfig } = useGlobalConfig();
+		const config = getConfig();
 
 		for (const propName in props) {
 			if (["t", "v", "tabindex", "label"].includes(propName)) continue;

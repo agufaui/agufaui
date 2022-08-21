@@ -1,11 +1,10 @@
-import { extractTypesFromSource, getUsedInterfacesFromAst } from "../ast/ast";
+import { extractTypesFromSource } from "../ast/ast";
 import traverse from "@babel/traverse";
 import generate from "@babel/generator";
 import * as t from "@babel/types";
 import type { NodePath } from "@babel/traverse";
 import type { IContext } from "../types";
 import { getAvailableImportsFromAst } from "../ast/ast";
-import { isContext } from "vm";
 
 export async function getSvelteScript(context: IContext): Promise<string> {
 	let template = '<script lang="ts">';
@@ -82,7 +81,7 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 		source.value = value.replace(".vue", ".svelte");
 	}
 
-	for (const name of specifiers
+	for (const [i, name] of specifiers
 		.map((s) =>
 			t.isImportSpecifier(s)
 				? t.isIdentifier((s as t.ImportSpecifier).imported)
@@ -90,7 +89,8 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 					: ""
 				: ""
 		)
-		.filter(Boolean)) {
+		.filter(Boolean)
+		.entries()) {
 		if (value === "@agufaui/theme" && name.startsWith("C") && name.endsWith("Name")) {
 			context.componentName = name;
 		}
@@ -107,7 +107,26 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 				t.stringLiteral("svelte")
 			);
 			path.insertBefore(disptchImport);
+
+			// replace "*Emits" to "*EmitsS"
+			const specificier = specifiers[i];
+			const imported = (specificier as t.ImportSpecifier).imported as t.Identifier;
+			const local = (specificier as t.ImportSpecifier).local as t.Identifier;
+			imported.name = imported.name + "S";
+			local.name = local.name + "S";
 		}
+
+		if (name === "useLocale") {
+			const localeImport = t.importDeclaration(
+				[t.importSpecifier(t.identifier("tr"), t.identifier("tr"))],
+				t.stringLiteral("../locale")
+			);
+			path.insertBefore(localeImport);
+		}
+	}
+
+	if (value === "@agufaui/usevue") {
+		path.remove();
 	}
 }
 
@@ -163,20 +182,24 @@ export function transformVariableDeclaration(
 						break;
 					case "defineEmits":
 						const iemits = getTSDefine(callExpression);
-						path.insertBefore(
-							t.tsTypeAliasDeclaration(
-								t.identifier("$$Events"),
-								undefined,
-								t.tsTypeReference(t.identifier(iemits))
-							)
-						);
+						// path.insertBefore(
+						// 	t.tsTypeAliasDeclaration(
+						// 		t.identifier("$$Events"),
+						// 		undefined,
+						// 		t.tsTypeReference(t.identifier(iemits))
+						// 	)
+						// );
 
+						const dispatchCallExpression = t.callExpression(
+							t.identifier("createEventDispatcher"),
+							[]
+						);
+						dispatchCallExpression.typeParameters = t.tsTypeParameterInstantiation([
+							t.tsTypeReference(t.identifier(iemits + "S")),
+						]);
 						path.insertBefore(
 							t.variableDeclaration("const", [
-								t.variableDeclarator(
-									t.identifier("dispatch"),
-									t.callExpression(t.identifier("createEventDispatcher"), [])
-								),
+								t.variableDeclarator(t.identifier("dispatch"), dispatchCallExpression),
 							])
 						);
 
@@ -184,6 +207,7 @@ export function transformVariableDeclaration(
 						break;
 					case "inject":
 					case "useVue":
+					case "useLocale":
 					case "getComputedFromProps":
 						path.remove();
 						break;

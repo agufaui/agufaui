@@ -23,10 +23,7 @@ export default {
 <script setup lang="ts">
 import type { IAAProps, IAAEmits } from "@agufaui/theme";
 import { CAAName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {
 	// #region props
@@ -37,16 +34,9 @@ const defaultPropValues = {
 
 const props = defineProps<IAAProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAAProps>(
-	props,
-	CAAName,
-	config,
-	defaultPropValues
-);
+const computedProperties = getComputedFromProps<IAAProps>(props, CAAName, defaultPropValues);
 
 const { cc, cvc, ci, cipos, cic, cloadicon, cloadc, cspacex, cdisablec } = computedProperties;
 

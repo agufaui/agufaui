@@ -12,6 +12,7 @@
 	},
 	"devDependencies": {
 		"@agufaui/config": "workspace:^0.3.0",
+		"@agufaui/locale": "workspace:^0.0.1",
 		"@agufaui/svelte": "workspace:^0.3.0",
 		"@agufaui/theme": "workspace:^0.3.0",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",

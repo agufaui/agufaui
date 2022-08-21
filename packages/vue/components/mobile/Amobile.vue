@@ -8,7 +8,7 @@ button(
   @click.stop="click($event)"
 )
   slot
-    span(class="sr-only") {{ open? 'Close menu' : 'Open menu' }}
+    span(class="sr-only") {{ open? tr(CAMobileName, "close") : tr(CAMobileName, "open") }}
     span(v-if="open" :class="[ccloseicon, cclosec]")
     span(v-else :class="[ci, cic]")
 </template>
@@ -23,10 +23,7 @@ export default {
 <script setup lang="ts">
 import type { IAMobileProps, IAMobileEmits } from "@agufaui/theme";
 import { CAMobileName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
-import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
+import { useVue, useLocale } from "@agufaui/usevue";
 
 const defaultPropValues = {
 	// #region props
@@ -37,14 +34,11 @@ const defaultPropValues = {
 
 const props = defineProps<IAMobileProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAMobileProps>(
 	props,
 	CAMobileName,
-	config,
 	defaultPropValues
 );
 
@@ -55,4 +49,6 @@ const emits = defineEmits<IAMobileEmits>();
 const click = (e: MouseEvent) => {
 	emits("click", e);
 };
+
+const { tr } = useLocale();
 </script>

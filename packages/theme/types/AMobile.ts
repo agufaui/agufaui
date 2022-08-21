@@ -15,3 +15,8 @@ export interface IAMobileEmits {
 	(e: "click", event: MouseEvent): void; // click event
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAMobileEmitsS {
+	click: MouseEvent; // click event
+}

@@ -19,10 +19,7 @@ export default {
 <script setup lang="ts">
 import type { IABadgeProps } from "@agufaui/theme";
 import { CABadgeName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {
 	// #region props
@@ -32,14 +29,11 @@ const defaultPropValues = {
 
 const props = defineProps<IABadgeProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IABadgeProps>(
 	props,
 	CABadgeName,
-	config,
 	defaultPropValues
 );
 

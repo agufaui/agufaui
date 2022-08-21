@@ -50,7 +50,7 @@
 	},
 	"scripts": {
 		"dev": "svelte-package -w",
-		"build": "svelte-package && rm package/package.json package/README.md && cp -t package ../vue/dist/es/assets/agufaui.css ../theme/dist/es/assets/theme.css",
+		"build": "svelte-package && rm package/package.json package/*.md && cp -t package ../vue/dist/es/assets/agufaui.css ../theme/dist/es/assets/theme.css",
 		"clean": "rimraf package",
 		"lint": "eslint --ext .ts,.js,.svelte --ignore-path ../../.eslintignore .",
 		"lintfix": "nr lint --fix",
@@ -67,6 +67,7 @@
 	},
 	"dependencies": {
 		"@agufaui/config": "workspace:^0.3.0",
+		"@agufaui/locale": "workspace:^0.0.1",
 		"@agufaui/theme": "workspace:^0.3.0"
 	}
 }

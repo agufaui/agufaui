@@ -7,3 +7,4 @@ export { default as Abadge } from "./badge/Abadge.vue";
 export { default as Atag } from "./tag/Atag.vue";
 export { default as Asup } from "./superscript/Asup.vue";
 export { default as Asub } from "./subscript/Asub.vue";
+export { default as Amobile } from "./mobile/Amobile.vue";

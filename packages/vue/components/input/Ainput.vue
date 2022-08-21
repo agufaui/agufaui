@@ -27,10 +27,7 @@ export default {
 <script setup lang="ts">
 import type { IAInputProps, IAInputEmits } from "@agufaui/theme";
 import { CAInputName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {
 	// #region props
@@ -41,14 +38,11 @@ const defaultPropValues = {
 
 const props = defineProps<IAInputProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAInputProps>(
 	props,
 	CAInputName,
-	config,
 	defaultPropValues
 );
 

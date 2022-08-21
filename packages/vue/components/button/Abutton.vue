@@ -25,10 +25,7 @@ export default {
 <script setup lang="ts">
 import type { IAButtonProps, IAButtonEmits } from "@agufaui/theme";
 import { CAButtonName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {
 	// #region props
@@ -40,14 +37,11 @@ const defaultPropValues = {
 
 const props = defineProps<IAButtonProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAButtonProps>(
 	props,
 	CAButtonName,
-	config,
 	defaultPropValues
 );
 

@@ -1,0 +1,53 @@
+{
+	"name": "@agufaui/translate",
+	"version": "0.0.1",
+	"description": "AgufaUI Translate",
+	"author": "Agufa.tech <https://agufa.tech>",
+	"license": "MIT",
+	"homepage": "https://ui.agufa.tech",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/agufaui/agufaui",
+		"directory": "packages/translate"
+	},
+	"bugs": {
+		"url": "https://github.com/agufaui/agufaui/issues"
+	},
+	"keywords": [
+		"agufa-ui",
+		"agufaui",
+		"agufa",
+		"translate"
+	],
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/es/index.mjs",
+	"unpkg": "./dist/iife/index.js",
+	"jsdelivr": "./dist/iife/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/es/index.mjs",
+			"require": "./dist/cjs/index.cjs",
+			"default": "./dist/umd/index.js"
+		},
+		"./types": "./dist/types/index.d.ts"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"watch": "nr build:types && vite build --watch",
+		"build": "vite build && tsc -p tsconfig.build.json",
+		"build:types": "tsc -p tsconfig.build.json",
+		"clean": "rimraf dist",
+		"lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
+		"lintfix": "nr lint --fix",
+		"test": "vitest",
+		"coverage": "vitest run --coverage",
+		"typecheck": "tsc --noEmit"
+	}
+}

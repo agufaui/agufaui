@@ -30,6 +30,9 @@ features:
   - icon: 🏝️
     title: Unstyled Components Enabled
     details: You can program with unstyled components.
+  - icon: 🌎
+    title: I18n Support
+    details: 109 languages
   - icon: ⚡️
     title: Nuxt Compatible
   - icon: ✨

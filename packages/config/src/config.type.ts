@@ -1,4 +1,5 @@
-import type { IUserConfig, TFieldValue } from "./theme.type";
+import type { IUserConfig, ITheme } from "./theme.type";
+import type { TLang } from "@agufaui/locale";
 
 export type TMatchedRules = {
 	raw: string;
@@ -24,6 +25,7 @@ export interface ConfigConstructor {
  * @summary The configuration object
  */
 export interface IConfig {
+	setTheme(baseTheme: ITheme | undefined, userTheme: ITheme | undefined): void;
 	/**
 	 * Get field configured value
 	 * @param {string} componentName component name
@@ -32,4 +34,9 @@ export interface IConfig {
 	 * @returns {any} field value
 	 */
 	getFieldValue: (componentName: string, type: string | undefined, field: string) => any;
+	get locale(): string | object;
+	set locale(value: string | object);
+	get locales(): TLang[];
+	set locales(langs: TLang[]);
+	getLang(locale: string): TLang;
 }

@@ -19,10 +19,7 @@ export default {
 <script setup lang="ts">
 import type { IASupProps } from "@agufaui/theme";
 import { CASupName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {
 	// #region props
@@ -32,16 +29,9 @@ const defaultPropValues = {
 
 const props = defineProps<IASupProps>();
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IASupProps>(
-	props,
-	CASupName,
-	config,
-	defaultPropValues
-);
+const computedProperties = getComputedFromProps<IASupProps>(props, CASupName, defaultPropValues);
 
 const { cc, cvc, ci, cipos, cic, cspacex } = computedProperties;
 </script>

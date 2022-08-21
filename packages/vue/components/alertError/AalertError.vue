@@ -15,23 +15,17 @@ export default {
 import Aalert from "../alert/Aalert.vue";
 import type { IAAlertErrorProps, IAAlertErrorEmits } from "@agufaui/theme";
 import { CAAlertErrorName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
 const defaultPropValues = {};
 
 const props = defineProps<IAAlertErrorProps>();
-
-let config = inject<IConfig>(CConfigProvideName);
 
 const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IAAlertErrorProps>(
 	props,
 	CAAlertErrorName,
-	config,
 	defaultPropValues
 );
 

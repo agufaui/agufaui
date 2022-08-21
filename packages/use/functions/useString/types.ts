@@ -17,4 +17,8 @@ export interface IUseString {
 	 * @returns First Letter of String converted to Upper Case
 	 */
 	firstLetterToUpper: (s: string) => string;
+	camelCaseToSpace: (word: string) => string;
+	camelCaseToPascalCase: (word: string) => string;
+	camelCaseToHyphen: (word: string) => string;
+	hyphenToCamelCase: (word: string) => string;
 }

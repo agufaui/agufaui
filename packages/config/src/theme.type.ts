@@ -1,3 +1,5 @@
+import type { TLang } from "@agufaui/locale";
+
 export const CDefaultType = "default";
 export const CUseType = "useType";
 export const CBase = "base:";
@@ -29,12 +31,28 @@ export interface ITheme {
  */
 export interface IUserConfig {
 	/**
+	 * ISO 639-1 code
+	 * @type {string|object} string or Ref<string> for vue or Writable<string> for svelte
+	 * @default "en"
+	 */
+	locale?: string | object;
+
+	/**
+	 * Language objects
+	 * @type {TLang[]} Locale objects imported from language files
+	 * @default [en] import { en } from "@agufaui/locale";
+	 */
+	locales?: TLang[];
+
+	/**
 	 * Base theme
+	 * @default undefined
 	 */
 	baseTheme?: ITheme;
 
 	/**
 	 * User configured Theme.  If base theme is provided, will be merged.
+	 * @default undefined
 	 */
 	theme?: ITheme;
 }

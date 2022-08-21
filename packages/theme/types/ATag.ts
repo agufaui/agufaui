@@ -15,3 +15,8 @@ export interface IATagEmits {
 	(e: "close", v: string): void; // close event, will emit v property
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IATagEmitsS {
+	close: string; // click event
+}

@@ -6,6 +6,8 @@ importers:
     specifiers:
       '@agufaui/config': workspace:^0.3.0
       '@agufaui/theme': workspace:^0.3.0
+      '@agufaui/translate': workspace:^0.0.1
+      '@agufaui/use': workspace:^0.3.0
       '@antfu/ni': ^0.16.3
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -14,6 +16,7 @@ importers:
       '@types/debug': ^4.1.7
       '@types/fs-extra': ^9.0.13
       '@types/node': ^18.0.3
+      '@types/node-fetch': ^2.6.2
       '@typescript-eslint/parser': ^5.32.0
       '@unocss/extractor-pug': ^0.44.0
       '@unocss/reset': ^0.44.0
@@ -55,6 +58,8 @@ importers:
     devDependencies:
       '@agufaui/config': link:packages/config
       '@agufaui/theme': link:packages/theme
+      '@agufaui/translate': link:packages/translate
+      '@agufaui/use': link:packages/use
       '@antfu/ni': 0.16.3
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
@@ -63,6 +68,7 @@ importers:
       '@types/debug': 4.1.7
       '@types/fs-extra': 9.0.13
       '@types/node': 18.7.1
+      '@types/node-fetch': 2.6.2
       '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
       '@unocss/extractor-pug': 0.44.7_pug@3.0.2
       '@unocss/reset': 0.44.7
@@ -103,7 +109,10 @@ importers:
       vue-tsc: 0.39.5_typescript@4.7.4
 
   packages/config:
-    specifiers: {}
+    specifiers:
+      '@agufaui/locale': workspace:^0.0.1
+    devDependencies:
+      '@agufaui/locale': link:../locale
 
   packages/metadata:
     specifiers: {}
@@ -124,6 +133,7 @@ importers:
   packages/svelte:
     specifiers:
       '@agufaui/config': workspace:^0.3.0
+      '@agufaui/locale': workspace:^0.0.1
       '@agufaui/theme': workspace:^0.3.0
       '@sveltejs/package': 1.0.0-next.1
       svelte: ^3.44.0
@@ -133,6 +143,7 @@ importers:
       vite: ^3.0.0
     dependencies:
       '@agufaui/config': link:../config
+      '@agufaui/locale': link:../locale
       '@agufaui/theme': link:../theme
     devDependencies:
       '@sveltejs/package': 1.0.0-next.1_uslzfc62di2n2otc2tvfklnwji
@@ -156,6 +167,9 @@ importers:
       '@types/babel__generator': 7.6.4
       '@types/babel__traverse': 7.18.0
 
+  packages/translate:
+    specifiers: {}
+
   packages/use:
     specifiers: {}
 
@@ -168,11 +182,13 @@ importers:
   packages/vue:
     specifiers:
       '@agufaui/config': workspace:^0.3.0
+      '@agufaui/locale': workspace:^0.0.1
       '@agufaui/theme': workspace:^0.3.0
       '@agufaui/use': workspace:^0.3.0
       '@agufaui/usevue': workspace:^0.3.0
     devDependencies:
       '@agufaui/config': link:../config
+      '@agufaui/locale': link:../locale
       '@agufaui/theme': link:../theme
       '@agufaui/use': link:../use
       '@agufaui/usevue': link:../usevue
@@ -205,6 +221,7 @@ importers:
   playground/svelte:
     specifiers:
       '@agufaui/config': workspace:^0.3.0
+      '@agufaui/locale': workspace:^0.0.1
       '@agufaui/svelte': workspace:^0.3.0
       '@agufaui/theme': workspace:^0.3.0
       '@sveltejs/vite-plugin-svelte': ^1.0.1
@@ -220,6 +237,7 @@ importers:
       vite: ^3.0.0
     devDependencies:
       '@agufaui/config': link:../../packages/config
+      '@agufaui/locale': link:../../packages/locale
       '@agufaui/svelte': link:../../packages/svelte
       '@agufaui/theme': link:../../packages/theme
       '@sveltejs/vite-plugin-svelte': 1.0.1_svelte@3.49.0+vite@3.0.5
@@ -236,12 +254,10 @@ importers:
 
   playground/vue3:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
       '@agufaui/vue': workspace:^0.3.0
       '@unocss/reset': ^0.44.0
       vue: ^3.2.37
     dependencies:
-      '@agufaui/config': link:../../packages/config
       '@agufaui/vue': link:../../packages/vue
       vue: 3.2.37
     devDependencies:
@@ -1072,7 +1088,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.1.2
       '@jridgewell/sourcemap-codec': 1.4.14
-      '@jridgewell/trace-mapping': 0.3.14
+      '@jridgewell/trace-mapping': 0.3.15
     dev: true
 
   /@jridgewell/resolve-uri/3.1.0:
@@ -1864,6 +1880,13 @@ packages:
 
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
+    dev: true
+
+  /@types/node-fetch/2.6.2:
+    resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
+    dependencies:
+      '@types/node': 18.7.3
+      form-data: 3.0.1
     dev: true
 
   /@types/node/10.17.60:
@@ -4927,6 +4950,15 @@ packages:
   /form-data/2.5.1:
     resolution: {integrity: sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==}
     engines: {node: '>= 0.12'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: true
+
+  /form-data/3.0.1:
+    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+    engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8

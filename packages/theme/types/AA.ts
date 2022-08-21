@@ -16,3 +16,8 @@ export interface IAAEmits {
 	(e: "click", event: MouseEvent): void; // click event
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAAEmitsS {
+	click: MouseEvent; // click event
+}

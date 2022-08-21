@@ -128,7 +128,7 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 
 	const noComputed = new Set(["t", "v", "tabindex", "label"]);
 
-	const noImport = new Set(["vue", "@agufaui/usevue", "@agufaui/config"]);
+	const noImport = new Set(["vue", "@agufaui/config"]);
 
 	for (const { name } of Object.values(packages)) {
 		if (name !== "core") continue;
