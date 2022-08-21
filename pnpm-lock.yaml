@@ -4,10 +4,10 @@ importers:
 
   .:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
-      '@agufaui/theme': workspace:^0.3.0
-      '@agufaui/translate': workspace:^0.0.1
-      '@agufaui/use': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
+      '@agufaui/theme': workspace:^0.4.0
+      '@agufaui/translate': workspace:^0.1.0
+      '@agufaui/use': workspace:^0.4.0
       '@antfu/ni': ^0.16.3
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -110,7 +110,7 @@ importers:
 
   packages/config:
     specifiers:
-      '@agufaui/locale': workspace:^0.0.1
+      '@agufaui/locale': workspace:^0.1.0
     devDependencies:
       '@agufaui/locale': link:../locale
 
@@ -132,9 +132,9 @@ importers:
 
   packages/svelte:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
-      '@agufaui/locale': workspace:^0.0.1
-      '@agufaui/theme': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
+      '@agufaui/locale': workspace:^0.1.0
+      '@agufaui/theme': workspace:^0.4.0
       '@sveltejs/package': 1.0.0-next.1
       svelte: ^3.44.0
       svelte-preprocess: ^4.10.6
@@ -155,7 +155,7 @@ importers:
 
   packages/theme:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
     devDependencies:
       '@agufaui/config': link:../config
 
@@ -175,17 +175,17 @@ importers:
 
   packages/usevue:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
     devDependencies:
       '@agufaui/config': link:../config
 
   packages/vue:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
-      '@agufaui/locale': workspace:^0.0.1
-      '@agufaui/theme': workspace:^0.3.0
-      '@agufaui/use': workspace:^0.3.0
-      '@agufaui/usevue': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
+      '@agufaui/locale': workspace:^0.1.0
+      '@agufaui/theme': workspace:^0.4.0
+      '@agufaui/use': workspace:^0.4.0
+      '@agufaui/usevue': workspace:^0.4.0
     devDependencies:
       '@agufaui/config': link:../config
       '@agufaui/locale': link:../locale
@@ -198,7 +198,7 @@ importers:
 
   playground/nuxt3:
     specifiers:
-      '@agufaui/vue': workspace:^0.3.0
+      '@agufaui/vue': workspace:^0.4.0
       '@unocss/nuxt': ^0.43.2
       nuxt: 3.0.0-rc.6
     dependencies:
@@ -209,7 +209,7 @@ importers:
 
   playground/nuxt3auto:
     specifiers:
-      '@agufaui/vue': workspace:^0.3.0
+      '@agufaui/vue': workspace:^0.4.0
       '@unocss/nuxt': ^0.43.2
       nuxt: 3.0.0-rc.6
     dependencies:
@@ -220,10 +220,10 @@ importers:
 
   playground/svelte:
     specifiers:
-      '@agufaui/config': workspace:^0.3.0
-      '@agufaui/locale': workspace:^0.0.1
-      '@agufaui/svelte': workspace:^0.3.0
-      '@agufaui/theme': workspace:^0.3.0
+      '@agufaui/config': workspace:^0.4.0
+      '@agufaui/locale': workspace:^0.1.0
+      '@agufaui/svelte': workspace:^0.4.0
+      '@agufaui/theme': workspace:^0.4.0
       '@sveltejs/vite-plugin-svelte': ^1.0.1
       '@tsconfig/svelte': ^3.0.0
       '@unocss/reset': ^0.44.0
@@ -254,7 +254,7 @@ importers:
 
   playground/vue3:
     specifiers:
-      '@agufaui/vue': workspace:^0.3.0
+      '@agufaui/vue': workspace:^0.4.0
       '@unocss/reset': ^0.44.0
       vue: ^3.2.37
     dependencies:
@@ -265,7 +265,7 @@ importers:
 
   playground/vue3auto:
     specifiers:
-      '@agufaui/vue': workspace:^0.3.0
+      '@agufaui/vue': workspace:^0.4.0
       '@unocss/reset': ^0.44.0
       unplugin-vue-components: ^0.21.1
       vue: ^3.2.37
@@ -278,7 +278,7 @@ importers:
 
   playground/vue3manual:
     specifiers:
-      '@agufaui/vue': workspace:^0.3.0
+      '@agufaui/vue': workspace:^0.4.0
       '@unocss/reset': ^0.44.0
       unplugin-vue-components: ^0.21.1
       vue: ^3.2.37
