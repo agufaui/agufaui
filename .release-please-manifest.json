@@ -1,13 +1,13 @@
 {
-	"packages/vue": "0.3.0",
-	"packages/svelte": "0.3.0",
-	"packages/use": "0.3.0",
-	"packages/usevue": "0.3.0",
-	"packages/theme": "0.3.0",
-	"packages/config": "0.3.0",
-	"packages/metadata": "0.3.0",
-	"packages/transform": "0.3.0",
-	"packages/translate": "0.0.1",
-	"packages/locale": "0.0.1",
-	".": "0.3.0"
+	"packages/vue": "0.4.0",
+	"packages/svelte": "0.4.0",
+	"packages/use": "0.4.0",
+	"packages/usevue": "0.4.0",
+	"packages/theme": "0.4.0",
+	"packages/config": "0.4.0",
+	"packages/metadata": "0.4.0",
+	"packages/transform": "0.4.0",
+	"packages/translate": "0.1.0",
+	"packages/locale": "0.1.0",
+	".": "0.4.0"
 }
