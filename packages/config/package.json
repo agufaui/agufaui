@@ -49,5 +49,8 @@
 		"test": "vitest",
 		"coverage": "vitest run --coverage",
 		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@agufaui/locale": "workspace:^0.0.1"
 	}
 }

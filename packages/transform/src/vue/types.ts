@@ -17,6 +17,7 @@ export interface IContext extends ITransformOptions {
 	templateAst?: IBlock;
 	noImport?: Set<string>;
 	result?: StringMap;
+	defaultValues?: Record<string, any>;
 }
 
 export interface IAttr {

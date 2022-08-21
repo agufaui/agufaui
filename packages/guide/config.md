@@ -1,6 +1,11 @@
+<script setup>
+import { langs } from "../translate/languages/index";
+delete langs["auto"]
+</script>
+
 # Configuration
 
-AgufaUI configuration is solely for customizing components.
+AgufaUI configuration is mainly for customizing components.
 
 ## Shorthand Properties
 
@@ -71,7 +76,14 @@ theme: {
 }
 ```
 
+::: details Click to see IUserConfig definition
+<<< @/config/src/theme.type.ts
+:::
+
 #### Theme
+
+**Type:** ITheme <br />
+**Default:** undefined
 
 1. You can find **[component name]** under "Usage" section of each component page.
 2. **[component type name]** is user defined.
@@ -128,10 +140,6 @@ const userConfig: IUserConfig = {
 	},
 };
 ```
-
-::: details Click to see IUserConfig definition
-<<< @/config/src/theme.type.ts
-:::
 
 ##### Merge Rules
 
@@ -261,6 +269,9 @@ theme: {
 
 #### baseTheme
 
+**Type:** ITheme <br />
+**Default:** undefined
+
 Specify custom theme you want to use. If baseTheme is not set, you are programming with **unstyled components** with only positional and browser reset CSS.
 
 - AgufaUI provides a minimum style theme.
@@ -360,6 +371,20 @@ theme: {
   }
 }
 ```
+
+#### locale
+
+**Type:** string | object (`string` or `Ref<string>` for Vue or `Writable<string>` for Svelte) <br />
+**Default:** "en"
+
+[ISO 639-1 Codes](i18n#supported).  If you only need 1 language, just specify string value.  If you need more than 1 language, need to make field reactive.  For Vue, `locale: ref<string>("en")`; for Svelte, `locale: writable<string>("en")`.  For usage, see [I18n](i18n).
+
+#### locales
+
+**Type:** TLang[] (`TLang` type is imported from `@agufaui/vue` for Vue or `@agufaui/locale` for Svelte) <br />
+**Default:** [en] (`en` TLang is imported from `@agufaui/vue` for Vue or `@agufaui/locale` for Svelte)
+
+`locales` field is required when you need more than 1 language or want to use another language other than `en` as default.  Manually import and input language files is required because it doesn't make sense to bundle all {{ Object.keys(langs).length }} language files.  For usage, see [I18n](i18n).
 
 ## Component Instance Level Customization with Configuration defined
 

@@ -20,3 +20,8 @@ export interface IAAlertEmits {
 	(e: "close"): void; // close alert event
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAAlertEmitsS {
+	close: void; // click event
+}

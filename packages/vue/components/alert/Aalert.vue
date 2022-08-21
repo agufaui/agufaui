@@ -20,26 +20,28 @@ export default {
 <script setup lang="ts">
 import type { IAAlertProps, IAAlertEmits } from "@agufaui/theme";
 import { CAAlertName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { watch, ref, inject } from "vue";
+import { watch, ref } from "vue";
 
-const props = withDefaults(defineProps<IAAlertProps>(), {
+const defaultPropValues = {
 	// #region props
 	display: "flex",
 	spacex: "space-x-1.2",
 	closeicon: "i-iwwa:delete",
 	// #endregion props
-});
+};
+
+const props = defineProps<IAAlertProps>();
 
 let showAlert = ref(false);
 
-let config = inject<IConfig>(CConfigProvideName);
-
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAAlertProps>(props, CAAlertName, config);
+const computedProperties = getComputedFromProps<IAAlertProps>(
+	props,
+	CAAlertName,
+	defaultPropValues
+);
 
 const { cdisplay, cc, cvc, ci, cipos, cic, cspacex, ccloseicon, cclosec } = computedProperties;
 

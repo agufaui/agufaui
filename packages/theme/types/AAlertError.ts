@@ -15,3 +15,8 @@ export interface IAAlertErrorEmits {
 	(e: "close"): void; // close alert error component
 }
 // #endregion emits
+
+// Svelte events interface
+export interface IAAlertErrorEmitsS {
+	close: void; // click event
+}

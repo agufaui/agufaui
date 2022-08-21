@@ -27,23 +27,24 @@ export default {
 <script setup lang="ts">
 import type { IAInputProps, IAInputEmits } from "@agufaui/theme";
 import { CAInputName } from "@agufaui/theme";
-import type { IConfig } from "@agufaui/config";
-import { CConfigProvideName } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
-import { inject } from "vue";
 
-const props = withDefaults(defineProps<IAInputProps>(), {
+const defaultPropValues = {
 	// #region props
 	type: "text",
 	display: "block",
 	// #endregion props
-});
+};
 
-let config = inject<IConfig>(CConfigProvideName);
+const props = defineProps<IAInputProps>();
 
 const { getComputedFromProps } = useVue();
 
-const computedProperties = getComputedFromProps<IAInputProps>(props, CAInputName, config);
+const computedProperties = getComputedFromProps<IAInputProps>(
+	props,
+	CAInputName,
+	defaultPropValues
+);
 
 const { ctype, cid, cdisplay, cvc, cc, clabelc } = computedProperties;
 

@@ -1,8 +1,9 @@
 import type { IConfig } from "./config.type";
+import type { TLang } from "@agufaui/locale";
+import { en } from "@agufaui/locale";
 import {
 	ITheme,
 	IUserConfig,
-	TFieldValue,
 	CDefaultType,
 	CUseType,
 	CBase,
@@ -13,12 +14,19 @@ import { expandVariantGroup } from "./variantGroup";
 
 export class Config implements IConfig {
 	// #replace: boolean = false;
-	#userTheme: ITheme;
+	#locale: string | object = "en";
+	#locales: Record<string, TLang> = { [en.locale]: en };
+	#userTheme: ITheme = {};
 
 	constructor(userConfig: IUserConfig = {}) {
 		// this.#replace = userConfig.replace ?? this.#replace;
-		this.#userTheme = userConfig.baseTheme || {};
-		const userTheme = userConfig.theme || {};
+		this.#locale = userConfig.locale ?? this.#locale;
+		this.locales = userConfig.locales;
+		this.setTheme(userConfig.baseTheme, userConfig.theme);
+	}
+
+	#setBaseTheme(theme: ITheme | undefined): void {
+		this.#userTheme = theme || {};
 
 		// iterate base theme, for each component
 		for (const [_, componentObj] of Object.entries(this.#userTheme)) {
@@ -73,6 +81,10 @@ export class Config implements IConfig {
 				}
 			} while (again);
 		}
+	}
+
+	#setUserTheme(theme: ITheme | undefined): void {
+		const userTheme = theme || {};
 
 		// iterate user theme, for each component
 		for (const [componentName, componentObj] of Object.entries(userTheme)) {
@@ -151,11 +163,41 @@ export class Config implements IConfig {
 		}
 	}
 
+	setTheme(baseTheme: ITheme | undefined, userTheme: ITheme | undefined): void {
+		this.#setBaseTheme(baseTheme);
+		this.#setUserTheme(userTheme);
+	}
+
 	get theme(): ITheme {
 		return this.#userTheme;
 	}
 
-	getFieldValue(componentName: string, type: string | undefined, field: string): TFieldValue {
+	get locale(): string | object {
+		return this.#locale;
+	}
+
+	set locale(value: string | object) {
+		this.#locale = value;
+	}
+
+	get locales(): TLang[] {
+		return Object.values(this.#locales);
+	}
+
+	set locales(langs: TLang[] | undefined) {
+		if (langs && langs.length > 0) {
+			this.#locales = {};
+			for (const lang of langs) {
+				this.#locales[lang.locale] = lang;
+			}
+		}
+	}
+
+	getLang(locale: string): TLang {
+		return this.#locales[locale];
+	}
+
+	getFieldValue(componentName: string, type: string | undefined, field: string): any {
 		return this.#userTheme[componentName]?.[type ?? CDefaultType]?.[field];
 	}
 }

@@ -1,4 +1,4 @@
-import { extractTypesFromSource, getUsedInterfacesFromAst } from "../ast/ast";
+import { extractTypesFromSource } from "../ast/ast";
 import traverse from "@babel/traverse";
 import generate from "@babel/generator";
 import * as t from "@babel/types";
@@ -81,7 +81,7 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 		source.value = value.replace(".vue", ".svelte");
 	}
 
-	for (const name of specifiers
+	for (const [i, name] of specifiers
 		.map((s) =>
 			t.isImportSpecifier(s)
 				? t.isIdentifier((s as t.ImportSpecifier).imported)
@@ -89,7 +89,8 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 					: ""
 				: ""
 		)
-		.filter(Boolean)) {
+		.filter(Boolean)
+		.entries()) {
 		if (value === "@agufaui/theme" && name.startsWith("C") && name.endsWith("Name")) {
 			context.componentName = name;
 		}
@@ -106,7 +107,26 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 				t.stringLiteral("svelte")
 			);
 			path.insertBefore(disptchImport);
+
+			// replace "*Emits" to "*EmitsS"
+			const specificier = specifiers[i];
+			const imported = (specificier as t.ImportSpecifier).imported as t.Identifier;
+			const local = (specificier as t.ImportSpecifier).local as t.Identifier;
+			imported.name = imported.name + "S";
+			local.name = local.name + "S";
 		}
+
+		if (name === "useLocale") {
+			const localeImport = t.importDeclaration(
+				[t.importSpecifier(t.identifier("tr"), t.identifier("tr"))],
+				t.stringLiteral("../locale")
+			);
+			path.insertBefore(localeImport);
+		}
+	}
+
+	if (value === "@agufaui/usevue") {
+		path.remove();
 	}
 }
 
@@ -135,7 +155,7 @@ export function transformVariableDeclaration(
 				const identifier = callExpression.callee as t.Identifier;
 				switch (identifier.name) {
 					case "withDefaults":
-						const [iprops, dprops] = getWithDefaults(callExpression);
+						const iprops = getWithDefaults(callExpression, context);
 						path.insertBefore(
 							t.tsTypeAliasDeclaration(
 								t.identifier("$$Props"),
@@ -144,7 +164,7 @@ export function transformVariableDeclaration(
 							)
 						);
 
-						getTypeDef(path, iprops, dprops, context);
+						getTypeDef(path, iprops, context);
 						path.remove();
 						break;
 					case "defineProps":
@@ -157,25 +177,29 @@ export function transformVariableDeclaration(
 							)
 						);
 
-						getTypeDef(path, idprops, {}, context);
+						getTypeDef(path, idprops, context);
 						path.remove();
 						break;
 					case "defineEmits":
 						const iemits = getTSDefine(callExpression);
-						path.insertBefore(
-							t.tsTypeAliasDeclaration(
-								t.identifier("$$Events"),
-								undefined,
-								t.tsTypeReference(t.identifier(iemits))
-							)
-						);
+						// path.insertBefore(
+						// 	t.tsTypeAliasDeclaration(
+						// 		t.identifier("$$Events"),
+						// 		undefined,
+						// 		t.tsTypeReference(t.identifier(iemits))
+						// 	)
+						// );
 
+						const dispatchCallExpression = t.callExpression(
+							t.identifier("createEventDispatcher"),
+							[]
+						);
+						dispatchCallExpression.typeParameters = t.tsTypeParameterInstantiation([
+							t.tsTypeReference(t.identifier(iemits + "S")),
+						]);
 						path.insertBefore(
 							t.variableDeclaration("const", [
-								t.variableDeclarator(
-									t.identifier("dispatch"),
-									t.callExpression(t.identifier("createEventDispatcher"), [])
-								),
+								t.variableDeclarator(t.identifier("dispatch"), dispatchCallExpression),
 							])
 						);
 
@@ -183,10 +207,33 @@ export function transformVariableDeclaration(
 						break;
 					case "inject":
 					case "useVue":
+					case "useLocale":
 					case "getComputedFromProps":
 						path.remove();
 						break;
 				}
+			}
+		}
+
+		if (t.isObjectExpression(declaration.init)) {
+			const identifier = declaration.id as t.Identifier;
+			switch (identifier.name) {
+				case "defaultPropValues":
+					for (const prop of (declaration.init as t.ObjectExpression)
+						.properties as t.ObjectProperty[]) {
+						const { key, value } = prop;
+						if (key.type !== "Identifier") {
+							throw new Error("Second argument must be ObjectExpression with Identifier keys");
+						}
+
+						if (!context.defaultValues) {
+							context.defaultValues = {};
+						}
+
+						context.defaultValues[(key as t.Identifier).name] = (value as t.StringLiteral).value;
+					}
+					path.remove();
+					break;
 			}
 		}
 	}
@@ -273,7 +320,7 @@ export function transformMemberExpression(path: NodePath<t.MemberExpression>, co
 	}
 }
 
-function getWithDefaults(callExpression: t.CallExpression): [string, Record<string, string>] {
+function getWithDefaults(callExpression: t.CallExpression, context: IContext): string {
 	const args = callExpression.arguments;
 	if (args.length !== 2) {
 		throw new Error("withDefaults takes exactly 2 arguments");
@@ -292,19 +339,20 @@ function getWithDefaults(callExpression: t.CallExpression): [string, Record<stri
 			.typeName as t.Identifier
 	).name;
 
-	const dprops: Record<string, string> = {};
 	for (const prop of (defaultValues as t.ObjectExpression).properties as t.ObjectProperty[]) {
 		const { key, value } = prop;
 		if (key.type !== "Identifier") {
 			throw new Error("withDefaults second argument must be ObjectExpression with Identifier keys");
 		}
 
-		if (value.type === "StringLiteral") {
-			dprops[(key as t.Identifier).name] = (value as t.StringLiteral).value;
+		if (!context.defaultValues) {
+			context.defaultValues = {};
 		}
+
+		context.defaultValues[(key as t.Identifier).name] = (value as t.StringLiteral).value;
 	}
 
-	return [iprops, dprops];
+	return iprops;
 }
 
 function getTSDefine(callExpression: t.CallExpression): string {
@@ -318,12 +366,7 @@ function getTSDefine(callExpression: t.CallExpression): string {
 	return iprops;
 }
 
-function getTypeDef(
-	path: NodePath<t.VariableDeclaration>,
-	iprops: string,
-	dprops: Record<string, string>,
-	context: IContext
-) {
+function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, context: IContext) {
 	const icode = context.result?.get(iprops);
 	if (icode) {
 		const matchArray = icode.match(/(\w+)\??:\s*(\w+)/g);
@@ -344,10 +387,7 @@ function getTypeDef(
 				path.insertBefore(
 					t.exportNamedDeclaration(
 						t.variableDeclaration("let", [
-							t.variableDeclarator(
-								identityProp,
-								dprops[prop] ? t.stringLiteral(dprops[prop]) : t.identifier("undefined")
-							),
+							t.variableDeclarator(identityProp, t.identifier("undefined")),
 						])
 					)
 				);
@@ -379,6 +419,8 @@ function getTypeDef(
 					const labelStatement = t.labeledStatement(t.identifier("$"), expStatement);
 					path.insertBefore(labelStatement);
 				} else {
+					const defaultValue = context.defaultValues?.[prop];
+
 					const memberExp = t.memberExpression(
 						t.identifier("$configStore"),
 						t.identifier("getFieldValue")
@@ -388,7 +430,19 @@ function getTypeDef(
 						t.identifier("t"),
 						t.stringLiteral(prop),
 					]);
-					const logicalExp = t.logicalExpression("??", t.identifier(prop), callExp);
+
+					let logicalExp;
+					if (defaultValue) {
+						const defaultLogicalExp = t.logicalExpression(
+							"??",
+							callExp,
+							t.stringLiteral(defaultValue)
+						);
+						logicalExp = t.logicalExpression("??", t.identifier(prop), defaultLogicalExp);
+					} else {
+						logicalExp = t.logicalExpression("??", t.identifier(prop), callExp);
+					}
+
 					const assignmentExp = t.assignmentExpression("=", t.identifier("c" + prop), logicalExp);
 					const expStatement = t.expressionStatement(assignmentExp);
 					const labelStatement = t.labeledStatement(t.identifier("$"), expStatement);
