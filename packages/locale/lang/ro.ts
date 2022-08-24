@@ -1,6 +1,6 @@
 export default {
 	locale: "ro",
-	amobile: {
+	amtoggle: {
 		open: "Deschide meniul",
 		close: "Închide meniul",
 	},

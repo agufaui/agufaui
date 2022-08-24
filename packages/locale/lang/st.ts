@@ -1,6 +1,6 @@
 export default {
 	locale: "st",
-	amobile: {
+	amtoggle: {
 		open: "Bula lenane",
 		close: "Kwala lenane",
 	},

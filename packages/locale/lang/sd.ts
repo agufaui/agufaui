@@ -1,6 +1,6 @@
 export default {
 	locale: "sd",
-	amobile: {
+	amtoggle: {
 		open: "اوپن مينيو",
 		close: "مينيو بند ڪريو",
 	},

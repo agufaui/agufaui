@@ -1,6 +1,6 @@
 export default {
 	locale: "yo",
-	amobile: {
+	amtoggle: {
 		open: "Ṣii akojọ aṣayan",
 		close: "Pa akojọ aṣayan",
 	},

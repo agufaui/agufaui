@@ -1,6 +1,6 @@
 export default {
 	locale: "mk",
-	amobile: {
+	amtoggle: {
 		open: "Отворете го менито",
 		close: "Затворете го менито",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "bg",
-	amobile: {
+	amtoggle: {
 		open: "Отворете менюто",
 		close: "Затваряне на менюто",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "ca",
-	amobile: {
+	amtoggle: {
 		open: "Obre el menú",
 		close: "Tanca el menú",
 	},

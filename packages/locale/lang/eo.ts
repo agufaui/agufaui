@@ -1,6 +1,6 @@
 export default {
 	locale: "eo",
-	amobile: {
+	amtoggle: {
 		open: "Malfermu menuon",
 		close: "Fermu menuon",
 	},

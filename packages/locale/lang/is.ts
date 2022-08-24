@@ -1,6 +1,6 @@
 export default {
 	locale: "is",
-	amobile: {
+	amtoggle: {
 		open: "Opna valmynd",
 		close: "Loka valmynd",
 	},

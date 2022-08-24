@@ -1,6 +1,6 @@
 export default {
 	locale: "su",
-	amobile: {
+	amtoggle: {
 		open: "Buka ménu",
 		close: "Tutup ménu",
 	},

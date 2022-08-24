@@ -1,6 +1,6 @@
 export default {
 	locale: "ceb",
-	amobile: {
+	amtoggle: {
 		open: "Bukas nga menu",
 		close: "Isira ang menu",
 	},

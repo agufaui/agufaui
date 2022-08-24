@@ -1,6 +1,6 @@
 export default {
 	locale: "bn",
-	amobile: {
+	amtoggle: {
 		open: "মেনু খুলুন",
 		close: "মেনু বন্ধ করুন",
 	},

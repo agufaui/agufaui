@@ -1,6 +1,6 @@
 export default {
 	locale: "hr",
-	amobile: {
+	amtoggle: {
 		open: "Otvori izbornik",
 		close: "Zatvori izbornik",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "gd",
-	amobile: {
+	amtoggle: {
 		open: "Clàr-taice fosgailte",
 		close: "Dùin an clàr-taice",
 	},

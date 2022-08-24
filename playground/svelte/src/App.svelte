@@ -10,8 +10,10 @@
 		Asup,
 		Atag,
 		Aa,
-		Amobile,
+		Amtoggle,
 		configStore,
+		Ampanel,
+		Amflyout,
 	} from "@agufaui/svelte";
 	// let AButton;
 	// onMount(async () => {
@@ -29,6 +31,20 @@
 		}
 		configStore.set($configStore);
 	};
+	let links = [
+		{
+			title: "Google",
+			href: "https://google.com",
+			icon: "i-logos:google-icon",
+			subtitle: "Google Site",
+		},
+		{
+			title: "Github",
+			href: "https://github.com",
+			icon: "i-logos:github-icon",
+			subtitle: "Github Site",
+		},
+	];
 </script>
 
 <main>
@@ -41,7 +57,11 @@
 	<Aa v="text" />
 	<Asup v="text" />
 	<Atag v="text" />
-	<Amobile {open} on:click={() => (open = !open)} />
+	<Amtoggle {open} on:click={() => (open = !open)} />
+	<Ampanel {links} t="flyout" c="dark:bg-white" titlec="dark:text-gray-900" />
+	<div class="flex h-sm">
+		<Amflyout v="Sites" {links} vc="dark:text-white dark:hover:text-gray-900" />
+	</div>
 	<!-- {#if AButton}
 	 <svelte:component this={AButton} text="cick me" />
 {:else}

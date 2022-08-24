@@ -1,6 +1,6 @@
 export default {
 	locale: "yi",
-	amobile: {
+	amtoggle: {
 		open: "עפֿענען מעניו",
 		close: "נאָענט מעניו",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "my",
-	amobile: {
+	amtoggle: {
 		open: "Menu ကိုဖွင့်ပါ။",
 		close: "မီနူးကိုပိတ်ပါ။",
 	},

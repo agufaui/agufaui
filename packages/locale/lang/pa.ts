@@ -1,6 +1,6 @@
 export default {
 	locale: "pa",
-	amobile: {
+	amtoggle: {
 		open: "ਮੀਨੂ ਖੋਲ੍ਹੋ",
 		close: "ਮੀਨੂ ਬੰਦ ਕਰੋ",
 	},

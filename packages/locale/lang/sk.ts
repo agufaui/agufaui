@@ -1,7 +1,7 @@
 export default {
 	locale: "sk",
-	amobile: {
+	amtoggle: {
 		open: "Otvoriť menu",
-		close: "Zatvoriť ponuku",
+		close: "Zavrieť menu",
 	},
 };

@@ -1,6 +1,6 @@
 export default {
 	locale: "fi",
-	amobile: {
+	amtoggle: {
 		open: "Avaa valikko",
 		close: "Sulje valikko",
 	},

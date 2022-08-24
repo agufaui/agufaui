@@ -1,6 +1,6 @@
 export default {
 	locale: "mi",
-	amobile: {
+	amtoggle: {
 		open: "Tuwhera te tahua",
 		close: "Katia te tahua",
 	},

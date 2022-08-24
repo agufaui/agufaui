@@ -1,6 +1,6 @@
 export default {
 	locale: "ne",
-	amobile: {
+	amtoggle: {
 		open: "मेनु खोल्नुहोस्",
 		close: "मेनु बन्द गर्नुहोस्",
 	},

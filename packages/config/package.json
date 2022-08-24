@@ -51,6 +51,6 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@agufaui/locale": "workspace:^0.0.1"
+		"@agufaui/locale": "workspace:^0.1.0"
 	}
 }

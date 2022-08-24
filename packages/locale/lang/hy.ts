@@ -1,6 +1,6 @@
 export default {
 	locale: "hy",
-	amobile: {
+	amtoggle: {
 		open: "Բացեք ընտրացանկը",
 		close: "Փակել ընտրացանկը",
 	},

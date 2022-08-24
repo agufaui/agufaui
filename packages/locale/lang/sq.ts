@@ -1,6 +1,6 @@
 export default {
 	locale: "sq",
-	amobile: {
+	amtoggle: {
 		open: "Hap menunë",
 		close: "Mbyll menunë",
 	},

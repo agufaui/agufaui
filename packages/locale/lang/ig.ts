@@ -1,6 +1,6 @@
 export default {
 	locale: "ig",
-	amobile: {
+	amtoggle: {
 		open: "Mepee menu",
 		close: "Mechie menu",
 	},

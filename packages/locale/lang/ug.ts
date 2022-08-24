@@ -1,6 +1,6 @@
 export default {
 	locale: "ug",
-	amobile: {
+	amtoggle: {
 		open: "تىزىملىكنى ئېچىڭ",
 		close: "تىزىملىكنى تاقاش",
 	},
