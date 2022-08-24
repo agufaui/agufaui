@@ -1,6 +1,6 @@
 export default {
 	locale: "tk",
-	amobile: {
+	amtoggle: {
 		open: "Açyk menýu",
 		close: "Menýu ýapyň",
 	},

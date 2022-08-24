@@ -1,6 +1,6 @@
 export default {
 	locale: "am",
-	amobile: {
+	amtoggle: {
 		open: "ምናሌን ክፈት",
 		close: "ምናሌን ዝጋ",
 	},

@@ -9,7 +9,9 @@ export * from "./default/ABadge";
 export * from "./default/ATag";
 export * from "./default/ASup";
 export * from "./default/ASub";
-export * from "./default/AMobile";
+export * from "./default/AMtoggle";
+export * from "./default/AMpanel";
+export * from "./default/AMflyout";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/AAlert";
@@ -21,4 +23,6 @@ export type { IABadgeProps } from "./types/ABadge";
 export type { IATagProps, IATagEmits, IATagEmitsS } from "./types/ATag";
 export type { IASupProps } from "./types/ASup";
 export type { IASubProps } from "./types/ASub";
-export type { IAMobileProps, IAMobileEmits, IAMobileEmitsS } from "./types/AMobile";
+export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/AMtoggle";
+export type { IAMpanelProps, IAMpanelLink } from "./types/AMpanel";
+export type { IAMflyoutProps } from "./types/AMflyout";

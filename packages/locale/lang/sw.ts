@@ -1,6 +1,6 @@
 export default {
 	locale: "sw",
-	amobile: {
+	amtoggle: {
 		open: "Fungua menyu",
 		close: "Funga menyu",
 	},

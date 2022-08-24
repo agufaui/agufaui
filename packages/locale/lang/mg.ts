@@ -1,6 +1,6 @@
 export default {
 	locale: "mg",
-	amobile: {
+	amtoggle: {
 		open: "Sokafy ny sakafo",
 		close: "Akatona ny sakafo",
 	},

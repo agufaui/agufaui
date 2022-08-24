@@ -1,6 +1,6 @@
 export default {
 	locale: "ps",
-	amobile: {
+	amtoggle: {
 		open: "مینو خلاص کړئ",
 		close: "مینو بند کړئ",
 	},

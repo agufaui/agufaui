@@ -1,6 +1,6 @@
 export default {
 	locale: "lv",
-	amobile: {
+	amtoggle: {
 		open: "Atvērt izvēlni",
 		close: "Aizvērt izvēlni",
 	},

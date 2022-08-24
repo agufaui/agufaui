@@ -1,6 +1,6 @@
 export default {
 	locale: "ur",
-	amobile: {
+	amtoggle: {
 		open: "مینو کھولیں۔",
 		close: "مینو بند کریں۔",
 	},

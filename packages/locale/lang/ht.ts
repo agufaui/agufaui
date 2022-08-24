@@ -1,6 +1,6 @@
 export default {
 	locale: "ht",
-	amobile: {
+	amtoggle: {
 		open: "Louvri meni",
 		close: "Fèmen meni an",
 	},

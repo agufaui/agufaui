@@ -27,3 +27,19 @@
 	font-weight: bold;
 	color: rgb(136, 20, 122);
 }
+
+.doc p {
+	line-height: initial;
+	margin: initial;
+}
+
+.doc a {
+	font-weight: initial;
+	color: initial;
+	text-decoration-style: initial;
+	transition: initial;
+}
+
+.doc a:hover {
+	color: initial;
+}

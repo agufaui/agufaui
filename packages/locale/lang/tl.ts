@@ -1,6 +1,6 @@
 export default {
 	locale: "tl",
-	amobile: {
+	amtoggle: {
 		open: "Buksan ang menu",
 		close: "Isara ang menu",
 	},

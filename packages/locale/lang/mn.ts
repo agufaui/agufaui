@@ -1,6 +1,6 @@
 export default {
 	locale: "mn",
-	amobile: {
+	amtoggle: {
 		open: "Цэсийг нээх",
 		close: "Цэсийг хаах",
 	},

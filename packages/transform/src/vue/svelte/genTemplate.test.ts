@@ -19,11 +19,11 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 			'button(v-for="str in strs" :key="str")\n\tspan(v-for="(str, i) in strs" :key="str+i")\n\t\tspan(v-for="({intro, test}, i) in strs" :key="intro+i")';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =
-			"\n{#each strs as str (str)}" +
+			"\n{#each strs ?? [] as str (str)}" +
 			"\n\t<button>" +
-			"\n\t\t{#each strs as str, i (str+i)}" +
+			"\n\t\t{#each strs ?? [] as str, i (str+i)}" +
 			"\n\t\t\t<span>" +
-			"\n\t\t\t\t{#each strs as {intro, test}, i (intro+i)}" +
+			"\n\t\t\t\t{#each strs ?? [] as {intro, test}, i (intro+i)}" +
 			"\n\t\t\t\t\t<span>" +
 			"\n\t\t\t\t\t</span>" +
 			"\n\t\t\t\t{/each}" +
@@ -70,10 +70,11 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 	});
 
 	it("v-on test", async () => {
-		const vueTemplate = 'button(@click.stop.prevent.once.capture.self.passive="value(false)")';
+		const vueTemplate =
+			'button(@click.stop.prevent.once.capture.self.passive="value(false)" @close="show=true" @input="input($event)" @change="change")';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =
-			'\n<button on:click|stopPropagation|preventDefault|once|capture|self|passive="{() => value(false)}">\n</button>';
+			'\n<button on:click|stopPropagation|preventDefault|once|capture|self|passive="{() => value(false)}" on:close="{() => show=true}" on:input="{(e) => input(e)}" on:change="{change}">\n</button>';
 		const genTemplate = genSvelteTemplate(ast);
 		expect(genTemplate).toBe(svelteTemplate);
 	});
@@ -103,10 +104,10 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 	});
 
 	it("v-bind test", async () => {
-		const vueTemplate = 'span {{open? tr("amobile", "Open) : tr("amobile", "Close")}}';
+		const vueTemplate = 'span {{open? tr("amtoggle", "Open) : tr("amtoggle", "Close")}}';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =
-			'\n<span> {open? $tr("amobile", "Open) : $tr("amobile", "Close")}\n</span>';
+			'\n<span> {open? $tr("amtoggle", "Open) : $tr("amtoggle", "Close")}\n</span>';
 		const genTemplate = genSvelteTemplate(ast);
 		expect(genTemplate).toBe(svelteTemplate);
 	});

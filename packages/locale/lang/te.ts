@@ -1,6 +1,6 @@
 export default {
 	locale: "te",
-	amobile: {
+	amtoggle: {
 		open: "మెనుని తెరవండి",
 		close: "మెనుని మూసివేయండి",
 	},

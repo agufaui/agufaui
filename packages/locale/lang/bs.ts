@@ -1,6 +1,6 @@
 export default {
 	locale: "bs",
-	amobile: {
+	amtoggle: {
 		open: "Otvorite meni",
 		close: "Zatvori meni",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "fa",
-	amobile: {
+	amtoggle: {
 		open: "منو را باز کنید",
 		close: "بستن منو",
 	},

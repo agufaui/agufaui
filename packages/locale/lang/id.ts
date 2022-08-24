@@ -1,6 +1,6 @@
 export default {
 	locale: "id",
-	amobile: {
+	amtoggle: {
 		open: "Buka menu",
 		close: "Tutup menu",
 	},

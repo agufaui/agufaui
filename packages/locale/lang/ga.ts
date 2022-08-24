@@ -1,6 +1,6 @@
 export default {
 	locale: "ga",
-	amobile: {
+	amtoggle: {
 		open: "Roghchlár a oscailt",
 		close: "Dún an roghchlár",
 	},

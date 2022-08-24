@@ -1,6 +1,6 @@
 export default {
 	locale: "rw",
-	amobile: {
+	amtoggle: {
 		open: "Fungura menu",
 		close: "Funga menu",
 	},

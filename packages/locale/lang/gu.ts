@@ -1,6 +1,6 @@
 export default {
 	locale: "gu",
-	amobile: {
+	amtoggle: {
 		open: "મેનુ ખોલો",
 		close: "મેનુ બંધ કરો",
 	},

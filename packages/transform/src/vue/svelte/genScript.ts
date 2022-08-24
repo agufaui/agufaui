@@ -369,7 +369,7 @@ function getTSDefine(callExpression: t.CallExpression): string {
 function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, context: IContext) {
 	const icode = context.result?.get(iprops);
 	if (icode) {
-		const matchArray = icode.match(/(\w+)\??:\s*(\w+)/g);
+		const matchArray = icode.match(/(\w+)\??:\s*(\w+\[?\]?)/g);
 
 		if (matchArray) {
 			for (const match of matchArray) {
@@ -394,6 +394,7 @@ function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, conte
 
 				if (context.noComputed?.has(prop)) continue;
 				if (propType === "boolean") continue;
+				if (propType.includes("[]")) continue;
 
 				if (prop.endsWith("c")) {
 					const memberExp = t.memberExpression(

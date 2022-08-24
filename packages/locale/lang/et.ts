@@ -1,6 +1,6 @@
 export default {
 	locale: "et",
-	amobile: {
+	amtoggle: {
 		open: "Ava menüü",
 		close: "Sule menüü",
 	},

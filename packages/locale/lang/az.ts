@@ -1,6 +1,6 @@
 export default {
 	locale: "az",
-	amobile: {
+	amtoggle: {
 		open: "Menyu açın",
 		close: "Menyunu bağlayın",
 	},

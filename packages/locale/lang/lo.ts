@@ -1,6 +1,6 @@
 export default {
 	locale: "lo",
-	amobile: {
+	amtoggle: {
 		open: "ເປີດເມນູ",
 		close: "ປິດເມນູ",
 	},

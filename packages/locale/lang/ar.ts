@@ -1,6 +1,6 @@
 export default {
 	locale: "ar",
-	amobile: {
+	amtoggle: {
 		open: "فتح القائمة",
 		close: "إغلاق القائمة",
 	},

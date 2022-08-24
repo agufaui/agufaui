@@ -1,6 +1,6 @@
 export default {
 	locale: "cy",
-	amobile: {
+	amtoggle: {
 		open: "Dewislen agored",
 		close: "Cau'r ddewislen",
 	},
