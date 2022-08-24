@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/agufaui/agufaui/compare/vue-v0.4.0...vue-v0.5.0) (2022-08-24)
+
+
+### Features
+
+* menuPanel, menuFlyout components ([#9](https://github.com/agufaui/agufaui/issues/9)) ([d183689](https://github.com/agufaui/agufaui/commit/d18368930a1f57c87aa6d0e5a70583deffba2188))
+
 ## [0.4.0](https://github.com/agufaui/agufaui/compare/vue-v0.3.0...vue-v0.4.0) (2022-08-21)
 
 

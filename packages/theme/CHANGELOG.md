@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0](https://github.com/agufaui/agufaui/compare/theme-v0.4.0...theme-v0.5.0) (2022-08-24)
+
+
+### Features
+
+* badge, hyperlink, subscript, superscript, tag components ([#4](https://github.com/agufaui/agufaui/issues/4)) ([3cea373](https://github.com/agufaui/agufaui/commit/3cea373247489e9f9a3c38822a058f3c440cc33f))
+* button alert alertError ([23b1361](https://github.com/agufaui/agufaui/commit/23b1361e99c21a35276e3210b9c1ec0c2f5190c0))
+* input component ([#2](https://github.com/agufaui/agufaui/issues/2)) ([ca2cde0](https://github.com/agufaui/agufaui/commit/ca2cde07932e6eb2e9457b9c26675ebf72440132))
+* menuPanel, menuFlyout components ([#9](https://github.com/agufaui/agufaui/issues/9)) ([d183689](https://github.com/agufaui/agufaui/commit/d18368930a1f57c87aa6d0e5a70583deffba2188))
+* mobile toggle menu component, i18n support ([#6](https://github.com/agufaui/agufaui/issues/6)) ([692458e](https://github.com/agufaui/agufaui/commit/692458ebf4f3b3b158d62de81f9c6db16369e59e))
+
 ## [0.4.0](https://github.com/agufaui/agufaui/compare/theme-v0.3.0...theme-v0.4.0) (2022-08-21)
 
 
