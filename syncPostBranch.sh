@@ -10,3 +10,7 @@ if [ -n "$1" ]
     git push origin --delete $1
     git branch -D $1
 fi
+if [ -n "$2" ]
+  then
+    git checkout -b $2 next
+fi

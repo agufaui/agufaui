@@ -55,6 +55,6 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.4.0"
+		"@agufaui/config": "workspace:^0.5.0"
 	}
 }
