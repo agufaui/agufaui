@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.1](https://github.com/agufaui/agufaui/compare/vue-v0.4.0...vue-v0.4.1) (2022-08-24)
+## [0.5.0](https://github.com/agufaui/agufaui/compare/vue-v0.4.0...vue-v0.5.0) (2022-08-24)
 
 
 ### Features
