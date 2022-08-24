@@ -1,6 +1,6 @@
 export default {
 	locale: "ny",
-	amobile: {
+	amtoggle: {
 		open: "Tsegulani menyu",
 		close: "Tsekani menyu",
 	},

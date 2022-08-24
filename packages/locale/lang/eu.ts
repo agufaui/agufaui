@@ -1,6 +1,6 @@
 export default {
 	locale: "eu",
-	amobile: {
+	amtoggle: {
 		open: "Ireki menua",
 		close: "Itxi menua",
 	},

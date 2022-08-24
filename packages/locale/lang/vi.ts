@@ -1,6 +1,6 @@
 export default {
 	locale: "vi",
-	amobile: {
+	amtoggle: {
 		open: "Mở thực đơn",
 		close: "Đóng menu",
 	},

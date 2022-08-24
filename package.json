@@ -39,10 +39,10 @@
 		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.3.0",
-		"@agufaui/theme": "workspace:^0.3.0",
-		"@agufaui/translate": "workspace:^0.0.1",
-		"@agufaui/use": "workspace:^0.3.0",
+		"@agufaui/config": "workspace:^0.4.0",
+		"@agufaui/theme": "workspace:^0.4.0",
+		"@agufaui/translate": "workspace:^0.1.0",
+		"@agufaui/use": "workspace:^0.4.0",
 		"@antfu/ni": "^0.16.3",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",

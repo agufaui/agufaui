@@ -1,6 +1,6 @@
 export default {
 	locale: "cs",
-	amobile: {
+	amtoggle: {
 		open: "Otevřít nabídku",
 		close: "Zavřít nabídku",
 	},

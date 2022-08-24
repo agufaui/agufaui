@@ -1,3 +1,4 @@
+// @unocss-ignore
 import { join, resolve } from "path";
 import fs from "fs-extra";
 import Git from "simple-git";
@@ -141,12 +142,25 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 				.map(async (name) => {
 					let fname = name;
 
-					if (name === "hyperlink") {
-						fname = "a";
-					} else if (name === "superscript") {
-						fname = "sup";
-					} else if (name === "subscript") {
-						fname = "sub";
+					switch (name) {
+						case "hyperlink":
+							fname = "a";
+							break;
+						case "superscript":
+							fname = "sup";
+							break;
+						case "subscript":
+							fname = "sub";
+							break;
+						case "menuToggle":
+							fname = "mtoggle";
+							break;
+						case "menuPanel":
+							fname = "mpanel";
+							break;
+						case "menuFlyout":
+							fname = "mflyout";
+							break;
 					}
 
 					const varName = "A" + fname;

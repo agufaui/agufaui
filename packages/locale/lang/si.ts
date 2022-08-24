@@ -1,6 +1,6 @@
 export default {
 	locale: "si",
-	amobile: {
+	amtoggle: {
 		open: "විවෘත මෙනුව",
 		close: "මෙනුව වසන්න",
 	},

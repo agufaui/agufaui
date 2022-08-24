@@ -1,6 +1,6 @@
 export default {
 	locale: "mt",
-	amobile: {
+	amtoggle: {
 		open: "Iftaħ il-menu",
 		close: "Agħlaq il-menu",
 	},

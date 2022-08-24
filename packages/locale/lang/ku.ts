@@ -1,6 +1,6 @@
 export default {
 	locale: "ku",
-	amobile: {
+	amtoggle: {
 		open: "Menu veke",
 		close: "Menuyê bigire",
 	},

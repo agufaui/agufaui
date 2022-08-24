@@ -1,6 +1,6 @@
 export default {
 	locale: "hu",
-	amobile: {
+	amtoggle: {
 		open: "Menü megnyitása",
 		close: "Menü bezárása",
 	},

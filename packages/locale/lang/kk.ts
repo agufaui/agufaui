@@ -1,6 +1,6 @@
 export default {
 	locale: "kk",
-	amobile: {
+	amtoggle: {
 		open: "Мәзірді ашу",
 		close: "Мәзірді жабу",
 	},

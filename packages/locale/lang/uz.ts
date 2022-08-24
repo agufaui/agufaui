@@ -1,6 +1,6 @@
 export default {
 	locale: "uz",
-	amobile: {
+	amtoggle: {
 		open: "Menyuni oching",
 		close: "Menyuni yopish",
 	},

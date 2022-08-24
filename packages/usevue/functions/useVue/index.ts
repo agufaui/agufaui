@@ -19,6 +19,7 @@ export function useVue(): IUseVue {
 			const prop = toRef(props, propName as keyof T);
 
 			if (typeof prop.value === "boolean") continue;
+			if (Array.isArray(prop.value)) continue;
 
 			const computedName = "c" + propName;
 

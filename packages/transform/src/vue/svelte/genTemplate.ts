@@ -97,9 +97,9 @@ export function genSvelteTemplate(
 							.replace(".self", "|self")
 							.replace(".passive", "|passive");
 						val = val.replace(/^"|"$/g, "");
-						const match = val.match(/\((.*)\)/);
+						const match = val.match(/\((.*)\)|=/);
 						if (match) {
-							if (match[1].includes("$event")) {
+							if (match[1] && match[1].includes("$event")) {
 								val = "(e) => " + val;
 								val = val.replace("$event", "e");
 							} else {
@@ -157,9 +157,9 @@ export function genSvelteTemplate(
 						}
 
 						if (matches[2]) {
-							pre = `{#each ${matches[3]} as ${matches[1]}, ${matches[2]}}`;
+							pre = `{#each ${matches[3]} ?? [] as ${matches[1]}, ${matches[2]}}`;
 						} else {
-							pre = `{#each ${matches[3]} as ${matches[1]}}`;
+							pre = `{#each ${matches[3]} ?? [] as ${matches[1]}}`;
 						}
 					} else {
 						final += ` ${attr.name}=${val}`;

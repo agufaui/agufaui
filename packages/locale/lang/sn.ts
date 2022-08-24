@@ -1,6 +1,6 @@
 export default {
 	locale: "sn",
-	amobile: {
+	amtoggle: {
 		open: "Vhura menyu",
 		close: "Vhara menyu",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "km",
-	amobile: {
+	amtoggle: {
 		open: "បើកម៉ឺនុយ",
 		close: "បិទម៉ឺនុយ",
 	},

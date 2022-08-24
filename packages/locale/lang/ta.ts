@@ -1,6 +1,6 @@
 export default {
 	locale: "ta",
-	amobile: {
+	amtoggle: {
 		open: "மெனுவைத் திற",
 		close: "மெனுவை மூடு",
 	},

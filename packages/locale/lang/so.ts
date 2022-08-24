@@ -1,6 +1,6 @@
 export default {
 	locale: "so",
-	amobile: {
+	amtoggle: {
 		open: "Fur menu",
 		close: "Xir liiska",
 	},

@@ -1,6 +1,6 @@
 export default {
 	locale: "tg",
-	amobile: {
+	amtoggle: {
 		open: "Менюро кушоед",
 		close: "Менюро пӯшед",
 	},

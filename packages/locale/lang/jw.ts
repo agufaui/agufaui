@@ -1,6 +1,6 @@
 export default {
 	locale: "jw",
-	amobile: {
+	amtoggle: {
 		open: "Bukak menu",
 		close: "Nutup menu",
 	},

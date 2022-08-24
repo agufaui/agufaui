@@ -38,5 +38,5 @@ abutton(
   u-m="2"
   :loading="true"
 )
-<amobile :open="open" @click="open = !open" />
+<amtoggle :open="open" @click="open = !open" />
 </template>

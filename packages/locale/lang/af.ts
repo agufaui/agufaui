@@ -1,6 +1,6 @@
 export default {
 	locale: "af",
-	amobile: {
+	amtoggle: {
 		open: "Maak spyskaart oop",
 		close: "Maak spyskaart toe",
 	},

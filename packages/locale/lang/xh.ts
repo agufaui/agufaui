@@ -1,6 +1,6 @@
 export default {
 	locale: "xh",
-	amobile: {
+	amtoggle: {
 		open: "Vula imenyu",
 		close: "Vala imenyu",
 	},

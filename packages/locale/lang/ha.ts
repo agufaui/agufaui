@@ -1,6 +1,6 @@
 export default {
 	locale: "ha",
-	amobile: {
+	amtoggle: {
 		open: "Buɗe menu",
 		close: "Rufe menu",
 	},

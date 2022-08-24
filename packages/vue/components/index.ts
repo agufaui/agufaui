@@ -7,4 +7,6 @@ export { default as Abadge } from "./badge/Abadge.vue";
 export { default as Atag } from "./tag/Atag.vue";
 export { default as Asup } from "./superscript/Asup.vue";
 export { default as Asub } from "./subscript/Asub.vue";
-export { default as Amobile } from "./mobile/Amobile.vue";
+export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";
+export { default as Ampanel } from "./menuPanel/Ampanel.vue";
+export { default as Amflyout } from "./menuFlyout/Amflyout.vue";

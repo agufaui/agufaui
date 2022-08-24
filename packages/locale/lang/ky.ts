@@ -1,6 +1,6 @@
 export default {
 	locale: "ky",
-	amobile: {
+	amtoggle: {
 		open: "Менюну ачуу",
 		close: "Менюну жабуу",
 	},
