@@ -65,7 +65,7 @@ const DefaultSideBar = [
 ];
 
 const PWA = VitePWA({
-	outDir: "./packages/.vitepress/dist",
+	outDir: "packages/.vitepress/dist",
 });
 
 export default defineConfig({
@@ -105,7 +105,7 @@ export default defineConfig({
 		sitemap({
 			hostname: "https://ui.agufa.tech/",
 			exclude: ["/use"],
-			outDir: "./packages/.vitepress/dist",
+			outDir: "packages/.vitepress/dist",
 			extentions: ["html"],
 		});
 	},

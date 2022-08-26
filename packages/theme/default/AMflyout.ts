@@ -3,11 +3,11 @@ import type { IAMflyoutProps } from "../types/AMflyout";
 
 export const DAMflyoutDefault = {
 	vc: "text-gray-900 rounded-md py-2 px-3 text-sm font-medium cursor-pointer hover:(bg-blue-100 text-gray-900) ",
-	linksContainerc:
+	linksc:
 		"z-10 -translate-x-1 w-screen max-w-xs px-2 sm:px-0 animate-fade-in-left animate-duration-200",
-	mpanelType: "flyout",
+	mpanelt: "flyout",
 };
 
-export const DAMflyout: Readonly<Record<string, IAMflyoutProps>> = {
+export const DAMflyout: Readonly<Record<string, Partial<IAMflyoutProps>>> = {
 	[CDefaultType]: DAMflyoutDefault,
 };

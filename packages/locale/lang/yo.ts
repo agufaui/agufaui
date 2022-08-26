@@ -4,4 +4,7 @@ export default {
 		open: "Ṣii akojọ aṣayan",
 		close: "Pa akojọ aṣayan",
 	},
+	ammsidebar: {
+		close: "Padebar ẹgbẹ",
+	},
 };

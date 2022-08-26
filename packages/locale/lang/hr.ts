@@ -4,4 +4,7 @@ export default {
 		open: "Otvori izbornik",
 		close: "Zatvori izbornik",
 	},
+	ammsidebar: {
+		close: "Zatvori bočnu traku",
+	},
 };

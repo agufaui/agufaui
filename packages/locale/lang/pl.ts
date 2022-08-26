@@ -4,4 +4,7 @@ export default {
 		open: "Otwórz menu",
 		close: "Zamknij menu",
 	},
+	ammsidebar: {
+		close: "Zamknij pasek boczny",
+	},
 };

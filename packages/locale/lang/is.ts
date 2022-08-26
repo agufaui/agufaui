@@ -4,4 +4,7 @@ export default {
 		open: "Opna valmynd",
 		close: "Loka valmynd",
 	},
+	ammsidebar: {
+		close: "Lokaðu hliðarstikunni",
+	},
 };

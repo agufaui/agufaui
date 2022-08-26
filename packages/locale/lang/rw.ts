@@ -4,4 +4,7 @@ export default {
 		open: "Fungura menu",
 		close: "Funga menu",
 	},
+	ammsidebar: {
+		close: "Funga kuruhande",
+	},
 };

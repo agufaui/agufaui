@@ -4,4 +4,7 @@ export default {
 		open: "Iftaħ il-menu",
 		close: "Agħlaq il-menu",
 	},
+	ammsidebar: {
+		close: "Agħlaq il-sidebar",
+	},
 };

@@ -12,6 +12,9 @@ export * from "./default/ASub";
 export * from "./default/AMtoggle";
 export * from "./default/AMpanel";
 export * from "./default/AMflyout";
+export * from "./default/AMdropdown";
+export * from "./default/AMsidebar";
+export * from "./default/AMmsidebar";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/AAlert";
@@ -26,3 +29,6 @@ export type { IASubProps } from "./types/ASub";
 export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/AMtoggle";
 export type { IAMpanelProps, IAMpanelLink } from "./types/AMpanel";
 export type { IAMflyoutProps } from "./types/AMflyout";
+export type { IAMdropdownProps } from "./types/AMdropdown";
+export type { IAMsidebarProps, IAMsidebarItem, IAMsidebarLink } from "./types/AMsidebar";
+export type { IAMmsidebarProps, IAMmsidebarEmits, IAMmsidebarEmitsS } from "./types/AMmsidebar";

@@ -1,12 +1,15 @@
 <template lang="pug">
 div(:class="cc")
-	a(class="flex items-center"
-		:class="[clinkc, link.hrefClass]"
-		v-for="link, i in links" :href="link.href" :key="i")
-		span(class="flex-shrink-0" v-if="link.icon" :class="[ciconc, link.icon, link.iconClass]")
-		span(:class="ctitlesContainerc")
-			p(:class="[ctitlec, link.titleClass]") {{link.title}}
-			p(v-if="link.subtitle" :class="[csubtitlec, link.subtitleClass]") {{link.subtitle}}
+	a(v-bind="$attrs"
+		class="flex items-center"
+		v-for="link, i in links"
+		:class="[clinkc, link.hrefc]"
+		:href="link.href"
+		:key="i")
+		span(class="flex-shrink-0" v-if="link.i" :class="[cic, link.i, link.ic]")
+		span(:class="ctitlesc")
+			p(:class="[cvc, link.vc]") {{link.v}}
+			p(v-if="link.subtitle" :class="[csubtitlec, link.subtitlec]") {{link.subtitle}}
 </template>
 
 <script lang="ts">
@@ -36,5 +39,5 @@ const computedProperties = getComputedFromProps<IAMpanelProps>(
 	defaultPropValues
 );
 
-const { cc, clinkc, ciconc, ctitlesContainerc, ctitlec, csubtitlec } = computedProperties;
+const { cc, clinkc, cic, ctitlesc, cvc, csubtitlec } = computedProperties;
 </script>

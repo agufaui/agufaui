@@ -4,4 +4,7 @@ export default {
 		open: "Менюну ачуу",
 		close: "Менюну жабуу",
 	},
+	ammsidebar: {
+		close: "Каптал тилкесин жабуу",
+	},
 };

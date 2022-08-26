@@ -4,4 +4,7 @@ export default {
 		open: "Άνοιγμα μενού",
 		close: "Κλείσιμο μενού",
 	},
+	ammsidebar: {
+		close: "Κλείσιμο πλαϊνής γραμμής",
+	},
 };

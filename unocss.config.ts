@@ -17,5 +17,5 @@ export default defineConfig({
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 	blocklist: ["container"],
 	include: [/\.tsx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/, /\.html?$/, /\.svelte$/],
-	exclude: [/node_modules/, /dist/, /types/, /type/, /core.*\.md$/],
+	exclude: [/node_modules/, /dist/, /types/, /type/, /transform/, /translate/, /core.*\.md$/],
 });

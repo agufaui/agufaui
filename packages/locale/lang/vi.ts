@@ -4,4 +4,7 @@ export default {
 		open: "Mở thực đơn",
 		close: "Đóng menu",
 	},
+	ammsidebar: {
+		close: "Đóng thanh bên",
+	},
 };

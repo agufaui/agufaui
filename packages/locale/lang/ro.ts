@@ -4,4 +4,7 @@ export default {
 		open: "Deschide meniul",
 		close: "Închide meniul",
 	},
+	ammsidebar: {
+		close: "Închideți bara laterală",
+	},
 };

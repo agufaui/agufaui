@@ -6,10 +6,10 @@ import pugParse from "pug-parser";
 describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 	it("v-bind test", async () => {
 		const vueTemplate =
-			'button(:type="ctype" :class="[test, try]" v-bind="$attrs")\n\tspan(v-bind="blockObject")';
+			'button(:type="ctype" :class="[test, try]" v-bind="$attrs")\n\tspan(v-bind="blockObject")\n\tspan(v-bind="{...item, ...$attrs}")';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =
-			'\n<button type="{ctype}" class="{test} {try}" {...$$restProps}>\n\t<span {...blockObject}>\n\t</span>\n</button>';
+			'\n<button type="{ctype}" class="{test} {try}" {...$$restProps}>\n\t<span {...blockObject}>\n\t</span>\n\t<span {...item} {...$$restProps}>\n\t</span>\n</button>';
 		const genTemplate = genSvelteTemplate(ast);
 		expect(genTemplate).toBe(svelteTemplate);
 	});
@@ -19,11 +19,11 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 			'button(v-for="str in strs" :key="str")\n\tspan(v-for="(str, i) in strs" :key="str+i")\n\t\tspan(v-for="({intro, test}, i) in strs" :key="intro+i")';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =
-			"\n{#each strs ?? [] as str (str)}" +
+			"\n{#each strs as str (str)}" +
 			"\n\t<button>" +
-			"\n\t\t{#each strs ?? [] as str, i (str+i)}" +
+			"\n\t\t{#each strs as str, i (str+i)}" +
 			"\n\t\t\t<span>" +
-			"\n\t\t\t\t{#each strs ?? [] as {intro, test}, i (intro+i)}" +
+			"\n\t\t\t\t{#each strs as {intro, test}, i (intro+i)}" +
 			"\n\t\t\t\t\t<span>" +
 			"\n\t\t\t\t\t</span>" +
 			"\n\t\t\t\t{/each}" +
@@ -103,7 +103,7 @@ describe.concurrent("Generate Svelet code from Vue code Test", async () => {
 		expect(genTemplate).toBe(svelteTemplate);
 	});
 
-	it("v-bind test", async () => {
+	it("tr test", async () => {
 		const vueTemplate = 'span {{open? tr("amtoggle", "Open) : tr("amtoggle", "Close")}}';
 		const ast = pugParse(pugLex(vueTemplate)) as IBlock;
 		const svelteTemplate =

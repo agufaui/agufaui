@@ -4,4 +4,7 @@ export default {
 		open: "Atvērt izvēlni",
 		close: "Aizvērt izvēlni",
 	},
+	ammsidebar: {
+		close: "Aizvērt sānjoslu",
+	},
 };

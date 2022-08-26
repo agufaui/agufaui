@@ -1,7 +1,7 @@
 <!-- #region showcase -->
 <template>
 	<div class="flex items-center flex-wrap gap-2 doc">
-		<ampanel :links="links" t="flyout" c="dark:bg-white" titlec="dark:text-gray-900" />
+		<ampanel :links="links" t="flyout" c="dark:bg-white w-14em" vc="dark:text-gray-900" />
 	</div>
 </template>
 
@@ -14,15 +14,15 @@ export default {
 <script setup lang="ts">
 const links = [
 	{
-		title: "Google",
+		v: "Google",
 		href: "https://google.com",
-		icon: "i-logos:google-icon",
+		i: "i-logos:google-icon",
 		subtitle: "Google Site",
 	},
 	{
-		title: "Github",
+		v: "Github",
 		href: "https://github.com",
-		icon: "i-logos:github-icon",
+		i: "i-logos:github-icon",
 		subtitle: "Github Site",
 	},
 ];

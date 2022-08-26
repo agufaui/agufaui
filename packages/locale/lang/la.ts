@@ -4,4 +4,7 @@ export default {
 		open: "Open menu",
 		close: "Close menu",
 	},
+	ammsidebar: {
+		close: "Prope pars",
+	},
 };

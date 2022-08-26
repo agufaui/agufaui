@@ -4,4 +4,7 @@ export default {
 		open: "Dewislen agored",
 		close: "Cau'r ddewislen",
 	},
+	ammsidebar: {
+		close: "Caewch y bar ochr",
+	},
 };

@@ -4,4 +4,7 @@ export default {
 		open: "मेनू उघडा",
 		close: "मेनू बंद करा",
 	},
+	ammsidebar: {
+		close: "साइडबार बंद करा",
+	},
 };

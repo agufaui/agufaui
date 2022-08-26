@@ -4,4 +4,7 @@ export default {
 		open: "Menüyü aç",
 		close: "Menüyü kapat",
 	},
+	ammsidebar: {
+		close: "Kenar çubuğunu kapat",
+	},
 };
