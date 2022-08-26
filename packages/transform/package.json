@@ -1,6 +1,6 @@
 {
 	"name": "@agufaui/transform",
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"description": "Transform Vue to Svelte for Agufaui",
 	"author": "Agufa.tech <https://agufa.tech>",
 	"license": "MIT",

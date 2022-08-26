@@ -1,6 +1,6 @@
 {
 	"name": "@agufaui/usevue",
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"description": "Vue Composables Library",
 	"author": "Agufa.tech <https://agufa.tech>",
 	"license": "MIT",

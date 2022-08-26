@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/agufaui/agufaui/compare/vue-v0.5.0...vue-v0.6.0) (2022-08-26)
+
+
+### Features
+
+* menu components ([#12](https://github.com/agufaui/agufaui/issues/12)) ([b9ed8dc](https://github.com/agufaui/agufaui/commit/b9ed8dce84ca3219e92562b832fff6621ab67ad6))
+
 ## [0.5.0](https://github.com/agufaui/agufaui/compare/vue-v0.4.0...vue-v0.5.0) (2022-08-24)
 
 
