@@ -4,4 +4,7 @@ export default {
 		open: "Atidaryti meniu",
 		close: "Uždaryti meniu",
 	},
+	ammsidebar: {
+		close: "Uždaryti šoninę juostą",
+	},
 };

@@ -4,4 +4,7 @@ export default {
 		open: "મેનુ ખોલો",
 		close: "મેનુ બંધ કરો",
 	},
+	ammsidebar: {
+		close: "સાઇડબાર બંધ કરો",
+	},
 };

@@ -53,6 +53,8 @@ watch(
 const functionVariable = (...) => {...}
 ```
 
+- always use shorthand, use `:` instead of `v-bind:`, use `@` instead of `v-on:`, etc..
+
 #### Adding new components or functions
 
 - Before you start working, it's better to open an issue to discuss first.
@@ -127,6 +129,19 @@ pnpm run translate
 ```
 
 This step is not included in "pnpm run build" command.
+
+### Places to check when adding new components
+
+1. `packages/vue/components` folder to add new component
+2. `packages/vue/compnents/index.ts` file to export new component
+3. `packages/theme/types` folder to add interface for props and emits
+4. `packages/theme/default` folder to add default theme configuration new component types
+5. `packages/theme/default.theme.ts` file to add new component types to default theme
+6. `packages/theme/index.ts` file to export default theme new component types and Interfaces, note that interfaces need to be named export for vue to pickup interface definition
+7. `packages/core` folder to add docs for new Component
+8. `scripts/utils.ts` file `updateSvelte(...)` function to map folder name to file name if they are different (`button` folder and `Abutton.vue` are considered same name, `superscript` folder and `Asup.vue` are considered different name).  And update `noComputed` and `noImport` variables if needed, `noComputed` means don't generate computed properties for these variable names, `noImport` means don't generate import statement for these library names.
+9. `packges/transform/src/vue/svelte` folder `genScript.ts` file and `genTemplate.ts` file, if rules needs to be added or updated for generating svelte component.
+10. `packages/locale/lang/en.ts` file if needs to add i18n for new component, then run `pnpm run translate` to generate other language files.  New component name should be defined in `packages/theme/default.theme.ts` file.
 
 ## Code Style
 

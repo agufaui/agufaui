@@ -4,4 +4,7 @@ export default {
 		open: "Buka ménu",
 		close: "Tutup ménu",
 	},
+	ammsidebar: {
+		close: "Tutup sidebar",
+	},
 };

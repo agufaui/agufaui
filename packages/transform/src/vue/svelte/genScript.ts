@@ -230,7 +230,7 @@ export function transformVariableDeclaration(
 							context.defaultValues = {};
 						}
 
-						context.defaultValues[(key as t.Identifier).name] = (value as t.StringLiteral).value;
+						context.defaultValues[(key as t.Identifier).name] = value;
 					}
 					path.remove();
 					break;
@@ -349,7 +349,7 @@ function getWithDefaults(callExpression: t.CallExpression, context: IContext): s
 			context.defaultValues = {};
 		}
 
-		context.defaultValues[(key as t.Identifier).name] = (value as t.StringLiteral).value;
+		context.defaultValues[(key as t.Identifier).name] = value;
 	}
 
 	return iprops;
@@ -369,7 +369,7 @@ function getTSDefine(callExpression: t.CallExpression): string {
 function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, context: IContext) {
 	const icode = context.result?.get(iprops);
 	if (icode) {
-		const matchArray = icode.match(/(\w+)\??:\s*(\w+\[?\]?)/g);
+		const matchArray = icode.match(/(\w+)(\?)?:\s*(\w+\[?\]?)/g);
 
 		if (matchArray) {
 			for (const match of matchArray) {
@@ -387,7 +387,9 @@ function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, conte
 				path.insertBefore(
 					t.exportNamedDeclaration(
 						t.variableDeclaration("let", [
-							t.variableDeclarator(identityProp, t.identifier("undefined")),
+							match.includes("?")
+								? t.variableDeclarator(identityProp, t.identifier("undefined"))
+								: t.variableDeclarator(identityProp),
 						])
 					)
 				);
@@ -434,11 +436,7 @@ function getTypeDef(path: NodePath<t.VariableDeclaration>, iprops: string, conte
 
 					let logicalExp;
 					if (defaultValue) {
-						const defaultLogicalExp = t.logicalExpression(
-							"??",
-							callExp,
-							t.stringLiteral(defaultValue)
-						);
+						const defaultLogicalExp = t.logicalExpression("??", callExp, defaultValue);
 						logicalExp = t.logicalExpression("??", t.identifier(prop), defaultLogicalExp);
 					} else {
 						logicalExp = t.logicalExpression("??", t.identifier(prop), callExp);

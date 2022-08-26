@@ -4,4 +4,7 @@ export default {
 		open: "Ava menüü",
 		close: "Sule menüü",
 	},
+	ammsidebar: {
+		close: "Sule külgriba",
+	},
 };

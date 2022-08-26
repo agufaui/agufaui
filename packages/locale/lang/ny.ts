@@ -4,4 +4,7 @@ export default {
 		open: "Tsegulani menyu",
 		close: "Tsekani menyu",
 	},
+	ammsidebar: {
+		close: "Tsekani kambali",
+	},
 };

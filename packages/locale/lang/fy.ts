@@ -4,4 +4,7 @@ export default {
 		open: "Menu iepenje",
 		close: "Menu slute",
 	},
+	ammsidebar: {
+		close: "Slút sydbalke",
+	},
 };

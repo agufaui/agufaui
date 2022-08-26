@@ -1,8 +1,8 @@
 <template lang="pug">
 div(class="relative" :class="cc" @mouseover="show=true" @mouseleave="show=false" @focus="show=true" @focusout="show=false" @click="show=!show")
 	p(class="inline-flex items-center" :class="cvc") {{ v }}
-	div(class="absolute" :class="[show ? '' : 'hidden', clinksContainerc]")
-		Ampanel(:links="links" :t="cmpanelType")
+	div(class="absolute" :class="[show ? '' : 'hidden', clinksc]")
+		ampanel(:links="links" v-bind="$attrs" :t="cmpanelt")
 </template>
 
 <script lang="ts">
@@ -15,6 +15,7 @@ export default {
 <script setup lang="ts">
 import type { IAMflyoutProps } from "@agufaui/theme";
 import { CAMflyoutName } from "@agufaui/theme";
+import { CDefaultType } from "@agufaui/config";
 import { useVue } from "@agufaui/usevue";
 import { ref } from "vue";
 import Ampanel from "../menuPanel/Ampanel.vue";
@@ -23,7 +24,7 @@ let show = ref(false);
 
 const defaultPropValues = {
 	// #region props
-	mpanelType: "default",
+	mpanelt: CDefaultType,
 	// #endregion props
 };
 
@@ -37,5 +38,5 @@ const computedProperties = getComputedFromProps<IAMflyoutProps>(
 	defaultPropValues
 );
 
-const { cc, cvc, clinksContainerc, cmpanelType } = computedProperties;
+const { cc, cvc, clinksc, cmpanelt } = computedProperties;
 </script>

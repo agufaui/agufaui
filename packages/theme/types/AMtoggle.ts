@@ -2,7 +2,7 @@ import type { IProps } from "../prop.type";
 
 // #region props
 export interface IAMtoggleProps extends IProps {
-	open?: boolean; // open/close state of menu
+	open: boolean; // open/close state of menu
 	v?: string; // menu text, not configurable
 	vc?: string; // css classes for menu text 'span' html element
 	i?: string; // menu icon

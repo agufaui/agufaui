@@ -4,4 +4,7 @@ export default {
 		open: "Bukak menu",
 		close: "Nutup menu",
 	},
+	ammsidebar: {
+		close: "Nutup sidebar",
+	},
 };

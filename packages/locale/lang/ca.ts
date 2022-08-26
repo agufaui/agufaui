@@ -4,4 +4,7 @@ export default {
 		open: "Obre el menú",
 		close: "Tanca el menú",
 	},
+	ammsidebar: {
+		close: "Tanca la barra lateral",
+	},
 };

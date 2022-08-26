@@ -4,4 +4,7 @@ export default {
 		open: "Menyu açın",
 		close: "Menyunu bağlayın",
 	},
+	ammsidebar: {
+		close: "Yan paneli bağlayın",
+	},
 };

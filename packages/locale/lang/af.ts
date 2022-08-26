@@ -4,4 +4,7 @@ export default {
 		open: "Maak spyskaart oop",
 		close: "Maak spyskaart toe",
 	},
+	ammsidebar: {
+		close: "Maak sybalk toe",
+	},
 };

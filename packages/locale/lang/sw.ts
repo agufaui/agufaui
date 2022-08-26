@@ -4,4 +4,7 @@ export default {
 		open: "Fungua menyu",
 		close: "Funga menyu",
 	},
+	ammsidebar: {
+		close: "Funga utepe",
+	},
 };

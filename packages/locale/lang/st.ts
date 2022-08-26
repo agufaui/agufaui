@@ -4,4 +4,7 @@ export default {
 		open: "Bula lenane",
 		close: "Kwala lenane",
 	},
+	ammsidebar: {
+		close: "Koala barathoko",
+	},
 };

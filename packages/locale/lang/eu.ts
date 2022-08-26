@@ -4,4 +4,7 @@ export default {
 		open: "Ireki menua",
 		close: "Itxi menua",
 	},
+	ammsidebar: {
+		close: "Itxi alboko barra",
+	},
 };

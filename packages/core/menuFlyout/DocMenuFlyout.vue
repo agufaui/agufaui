@@ -14,17 +14,17 @@ export default {
 <script setup lang="ts">
 const links = [
 	{
-		title: "Google",
-		titleClass: "dark:text-gray-900",
+		v: "Google",
+		vc: "dark:text-gray-900",
 		href: "https://google.com",
-		icon: "i-logos:google-icon",
+		i: "i-logos:google-icon",
 		subtitle: "Google Site",
 	},
 	{
-		title: "Github",
-		titleClass: "dark:text-gray-900",
+		v: "Github",
+		vc: "dark:text-gray-900",
 		href: "https://github.com",
-		icon: "i-logos:github-icon",
+		i: "i-logos:github-icon",
 		subtitle: "Github Site",
 	},
 ];

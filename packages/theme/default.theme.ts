@@ -1,4 +1,3 @@
-import type { TComponent } from "@agufaui/config";
 import { ITheme } from "@agufaui/config";
 import { DAAlert } from "./default/AAlert";
 import { DAAlertError } from "./default/AAlertError";
@@ -12,6 +11,9 @@ import { DASub } from "./default/ASub";
 import { DAMtoggle } from "./default/AMtoggle";
 import { DAMpanel } from "./default/AMpanel";
 import { DAMflyout } from "./default/AMflyout";
+import { DAMdropdown } from "./default/AMdropdown";
+import { DAMsidebar } from "./default/AMsidebar";
+import { DAMmsidebar } from "./default/AMmsidebar";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
@@ -25,18 +27,24 @@ export const CASubName = "asub";
 export const CAMtoggleName = "amtoggle";
 export const CAMpanelName = "ampanel";
 export const CAMflyoutName = "amflyout";
+export const CAMdropdownName = "amdropdown";
+export const CAMsidebarName = "amsidebar";
+export const CAMmsidebarName = "ammsidebar";
 
 export const Theme: ITheme = {
-	[CAButtonName]: DAButton as TComponent,
-	[CAAlertName]: DAAlert as TComponent,
-	[CAAlertErrorName]: DAAlertError as TComponent,
-	[CAInputName]: DAInput as TComponent,
-	[CAAName]: DAA as TComponent,
-	[CABadgeName]: DABadge as TComponent,
-	[CATagName]: DATag as TComponent,
-	[CASupName]: DASup as TComponent,
-	[CASubName]: DASub as TComponent,
-	[CAMtoggleName]: DAMtoggle as TComponent,
-	[CAMpanelName]: DAMpanel as TComponent,
-	[CAMflyoutName]: DAMflyout as TComponent,
+	[CAButtonName]: DAButton,
+	[CAAlertName]: DAAlert,
+	[CAAlertErrorName]: DAAlertError,
+	[CAInputName]: DAInput,
+	[CAAName]: DAA,
+	[CABadgeName]: DABadge,
+	[CATagName]: DATag,
+	[CASupName]: DASup,
+	[CASubName]: DASub,
+	[CAMtoggleName]: DAMtoggle,
+	[CAMpanelName]: DAMpanel,
+	[CAMflyoutName]: DAMflyout,
+	[CAMdropdownName]: DAMdropdown,
+	[CAMsidebarName]: DAMsidebar,
+	[CAMmsidebarName]: DAMmsidebar,
 };

@@ -4,4 +4,7 @@ export default {
 		open: "Мәзірді ашу",
 		close: "Мәзірді жабу",
 	},
+	ammsidebar: {
+		close: "Бүйірлік тақтаны жабыңыз",
+	},
 };

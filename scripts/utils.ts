@@ -129,7 +129,7 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 
 	const noComputed = new Set(["t", "v", "tabindex", "label"]);
 
-	const noImport = new Set(["vue", "@agufaui/config"]);
+	const noImport = new Set(["vue"]);
 
 	for (const { name } of Object.values(packages)) {
 		if (name !== "core") continue;
@@ -160,6 +160,15 @@ export async function updateSvelte({ packages, components }: PackageIndexes) {
 							break;
 						case "menuFlyout":
 							fname = "mflyout";
+							break;
+						case "menuDropdown":
+							fname = "mdropdown";
+							break;
+						case "menuSidebar":
+							fname = "msidebar";
+							break;
+						case "menuMobileSidebar":
+							fname = "mmsidebar";
 							break;
 					}
 

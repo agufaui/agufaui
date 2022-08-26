@@ -4,4 +4,7 @@ export default {
 		open: "Цэсийг нээх",
 		close: "Цэсийг хаах",
 	},
+	ammsidebar: {
+		close: "Хажуугийн самбарыг хаах",
+	},
 };

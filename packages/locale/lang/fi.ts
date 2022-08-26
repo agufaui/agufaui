@@ -4,4 +4,7 @@ export default {
 		open: "Avaa valikko",
 		close: "Sulje valikko",
 	},
+	ammsidebar: {
+		close: "Sulje sivupalkki",
+	},
 };

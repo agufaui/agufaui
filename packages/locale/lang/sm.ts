@@ -4,4 +4,7 @@ export default {
 		open: "Tatala le lisi",
 		close: "Tapuni le lisi",
 	},
+	ammsidebar: {
+		close: "Tapuni le itu pito",
+	},
 };

@@ -4,4 +4,7 @@ export default {
 		open: "Mepee menu",
 		close: "Mechie menu",
 	},
+	ammsidebar: {
+		close: "Mechie sidebar",
+	},
 };

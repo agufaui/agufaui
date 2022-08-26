@@ -1,7 +1,10 @@
 export default {
 	locale: "yi",
 	amtoggle: {
-		open: "עפֿענען מעניו",
+		open: "עפענען מעניו",
 		close: "נאָענט מעניו",
+	},
+	ammsidebar: {
+		close: "נאָענט סיידבאַר",
 	},
 };

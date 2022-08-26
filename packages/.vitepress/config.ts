@@ -1,3 +1,8 @@
+import { defineConfig } from "vitepress";
+import { resolveConfig } from "vite";
+import type { VitePluginPWAAPI } from "vite-plugin-pwa";
+import { VitePWA } from "vite-plugin-pwa";
+import { generateSitemap as sitemap } from "sitemap-ts";
 import { currentVersion } from "../../meta/versions";
 import {
 	addonCategoryNames,
@@ -7,7 +12,7 @@ import {
 	coreCategoryNames,
 	coreFnCategoryNames,
 	metadata,
-} from "../../packages/metadata/metadata";
+} from "../metadata";
 import { useString } from "../use";
 
 const { pascalCaseToSpace } = useString();
@@ -59,10 +64,11 @@ const DefaultSideBar = [
 	{ text: "Community", items: Links },
 ];
 
-/**
- * @type {import('vitepress').UserConfig}
- */
-const config = {
+const PWA = VitePWA({
+	outDir: "packages/.vitepress/dist",
+});
+
+export default defineConfig({
 	// extends: themeConfig,
 
 	title: "AgufaUI",
@@ -70,20 +76,50 @@ const config = {
 	appearance: true,
 	base: "/",
 	lang: "en-US",
-	srcExclude: ["**/node_modules/**", "**/dist/**", "**/README.md", "../use/functions/**/*.md"],
+	srcExclude: [
+		"**/node_modules/**",
+		"**/dist/**",
+		"**/README.md",
+		"../use/functions/**/*.md",
+		"**/CHANGELOG.md",
+	],
+
+	vite: {
+		plugins: [PWA],
+	},
+
+	async buildEnd() {
+		const viteConfig = await resolveConfig(
+			{
+				plugins: [PWA],
+			},
+			"build",
+			"production"
+		);
+		const pwaPlugin: VitePluginPWAAPI = viteConfig.plugins.find(
+			(i) => i.name === "vite-plugin-pwa"
+		)?.api;
+		const pwa = pwaPlugin && !pwaPlugin.disabled;
+		// await optimizePages(pwa);
+		if (pwa) await pwaPlugin.generateSW();
+		sitemap({
+			hostname: "https://ui.agufa.tech/",
+			exclude: ["/use"],
+			outDir: "packages/.vitepress/dist",
+			extentions: ["html"],
+		});
+	},
+
 	themeConfig: {
 		siteTitle: "gufaUI",
 		logo: "/favicon.svg",
-		repo: "agufaui/agufaui",
-		docsDir: "packages",
-
 		editLink: {
 			pattern: "https://github.com/agufaui/agufaui/blob/main/packages/:path",
 			text: "Suggest changes to this page",
 		},
-		lastUpdated: "Last Updated",
 
 		algolia: {
+			appId: "IF8E60OYOX",
 			apiKey: "a99ef8de1b2b27949975ce96642149c6",
 			indexName: "agufaui",
 		},
@@ -183,7 +219,7 @@ const config = {
 		["meta", { name: "twitter:creator", content: "@agufatech" }],
 		["meta", { name: "twitter:image", content: "https://ui.agufa.tech/favicon.svg" }],
 	],
-};
+});
 
 function getComponentsCategories() {
 	const links = [];
@@ -251,5 +287,3 @@ function getFunctionsSideBar() {
 
 	return links;
 }
-
-export default config;

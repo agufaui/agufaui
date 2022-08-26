@@ -11,10 +11,10 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.4.0",
-		"@agufaui/locale": "workspace:^0.1.0",
-		"@agufaui/svelte": "workspace:^0.4.0",
-		"@agufaui/theme": "workspace:^0.4.0",
+		"@agufaui/config": "workspace:^0.5.0",
+		"@agufaui/locale": "workspace:^0.2.0",
+		"@agufaui/svelte": "workspace:^0.5.0",
+		"@agufaui/theme": "workspace:^0.5.0",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",
 		"@tsconfig/svelte": "^3.0.0",
 		"@unocss/reset": "^0.44.0",

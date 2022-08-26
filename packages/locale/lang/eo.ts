@@ -4,4 +4,7 @@ export default {
 		open: "Malfermu menuon",
 		close: "Fermu menuon",
 	},
+	ammsidebar: {
+		close: "Fermu la flankbreton",
+	},
 };
