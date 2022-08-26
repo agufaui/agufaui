@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.0](https://github.com/agufaui/agufaui/compare/use-v0.5.0...use-v0.6.0) (2022-08-26)
+
+
+### Features
+
+* badge, hyperlink, subscript, superscript, tag components ([#4](https://github.com/agufaui/agufaui/issues/4)) ([3cea373](https://github.com/agufaui/agufaui/commit/3cea373247489e9f9a3c38822a058f3c440cc33f))
+* button alert alertError ([23b1361](https://github.com/agufaui/agufaui/commit/23b1361e99c21a35276e3210b9c1ec0c2f5190c0))
+* mobile toggle menu component, i18n support ([#6](https://github.com/agufaui/agufaui/issues/6)) ([692458e](https://github.com/agufaui/agufaui/commit/692458ebf4f3b3b158d62de81f9c6db16369e59e))
+
 ## [0.5.0](https://github.com/agufaui/agufaui/compare/use-v0.4.0...use-v0.5.0) (2022-08-24)
 
 
