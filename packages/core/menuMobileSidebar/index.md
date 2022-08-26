@@ -64,6 +64,3 @@ Two slots, one named "header", one named "footer".
 
 <<< @/theme/prop.type.ts#iprops
 
-### Inherit from IPropsIcon
-
-<<< @/theme/prop.type.ts#ipropsicon

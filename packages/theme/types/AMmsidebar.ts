@@ -2,7 +2,7 @@ import type { IProps, IPropsIcon } from "../prop.type";
 // #region props
 import type { IAMsidebarItem } from "./AMsidebar";
 
-export interface IAMmsidebarProps extends IProps, IPropsIcon {
+export interface IAMmsidebarProps extends IProps {
 	show?: boolean; // if show sidebar
 	overlayc?: string; // css classes for background overlay 'div' html element
 	closec?: string; // css classes for close button 'button' html element

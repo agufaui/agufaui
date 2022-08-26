@@ -7,7 +7,7 @@ export type IAMsidebarLink = Omit<IAMpanelLink, "subtitle" | "subtitlec">;
 
 export type IAMsidebarItem = IAMdropdownProps | IAMsidebarLink;
 
-export interface IAMsidebarProps extends IProps, IPropsIcon {
+export interface IAMsidebarProps extends IProps {
 	items: IAMsidebarItem[]; // menu items
 	mdropdownt?: string; // common Amdropdown type for sidebar items
 	mpanelt?: string; // common Ampanel type for sidebar items
