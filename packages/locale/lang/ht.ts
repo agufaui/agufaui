@@ -4,4 +4,7 @@ export default {
 		open: "Louvri meni",
 		close: "Fèmen meni an",
 	},
+	ammsidebar: {
+		close: "Fèmen ankadre",
+	},
 };

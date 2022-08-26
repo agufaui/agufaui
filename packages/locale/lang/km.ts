@@ -4,4 +4,7 @@ export default {
 		open: "បើកម៉ឺនុយ",
 		close: "បិទម៉ឺនុយ",
 	},
+	ammsidebar: {
+		close: "បិទរបារចំហៀង",
+	},
 };

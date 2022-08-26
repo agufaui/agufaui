@@ -4,4 +4,7 @@ export default {
 		open: "Menu veke",
 		close: "Menuyê bigire",
 	},
+	ammsidebar: {
+		close: "Li kêlekê bigire",
+	},
 };

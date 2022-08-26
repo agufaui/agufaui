@@ -4,4 +4,7 @@ export default {
 		open: "විවෘත මෙනුව",
 		close: "මෙනුව වසන්න",
 	},
+	ammsidebar: {
+		close: "පැති තීරුව වසන්න",
+	},
 };

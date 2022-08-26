@@ -4,4 +4,7 @@ export default {
 		open: "פתח את התפריט",
 		close: "סגור תפריט",
 	},
+	ammsidebar: {
+		close: "סגור את סרגל הצד",
+	},
 };

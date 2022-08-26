@@ -4,4 +4,7 @@ export default {
 		open: "Tuwhera te tahua",
 		close: "Katia te tahua",
 	},
+	ammsidebar: {
+		close: "Katia te paetaha",
+	},
 };

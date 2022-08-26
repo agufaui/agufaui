@@ -4,4 +4,7 @@ export default {
 		open: "Բացեք ընտրացանկը",
 		close: "Փակել ընտրացանկը",
 	},
+	ammsidebar: {
+		close: "Փակել կողագոտին",
+	},
 };

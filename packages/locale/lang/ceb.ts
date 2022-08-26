@@ -4,4 +4,7 @@ export default {
 		open: "Bukas nga menu",
 		close: "Isira ang menu",
 	},
+	ammsidebar: {
+		close: "Isira ang sidebar",
+	},
 };

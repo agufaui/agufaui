@@ -28,7 +28,7 @@ export const DAInputInlineBlock = {
 	display: "inline-block",
 };
 
-export const DAInput: Readonly<Record<string, IAInputProps>> = {
+export const DAInput: Readonly<Record<string, Partial<IAInputProps>>> = {
 	[CDefaultType]: DAInputDefault,
 	inlineblock: DAInputInlineBlock,
 };

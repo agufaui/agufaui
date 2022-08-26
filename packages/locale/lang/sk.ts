@@ -4,4 +4,7 @@ export default {
 		open: "Otvoriť menu",
 		close: "Zavrieť menu",
 	},
+	ammsidebar: {
+		close: "Zavrieť bočný panel",
+	},
 };

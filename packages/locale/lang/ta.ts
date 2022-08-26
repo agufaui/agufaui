@@ -4,4 +4,7 @@ export default {
 		open: "மெனுவைத் திற",
 		close: "மெனுவை மூடு",
 	},
+	ammsidebar: {
+		close: "பக்கப்பட்டியை மூடு",
+	},
 };

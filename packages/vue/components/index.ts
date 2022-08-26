@@ -10,3 +10,6 @@ export { default as Asub } from "./subscript/Asub.vue";
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";
 export { default as Ampanel } from "./menuPanel/Ampanel.vue";
 export { default as Amflyout } from "./menuFlyout/Amflyout.vue";
+export { default as Amdropdown } from "./menuDropdown/Amdropdown.vue";
+export { default as Amsidebar } from "./menuSidebar/Amsidebar.vue";
+export { default as Ammsidebar } from "./menuMobileSidebar/Ammsidebar.vue";

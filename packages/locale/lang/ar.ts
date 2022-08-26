@@ -4,4 +4,7 @@ export default {
 		open: "فتح القائمة",
 		close: "إغلاق القائمة",
 	},
+	ammsidebar: {
+		close: "إغلاق الشريط الجانبي",
+	},
 };

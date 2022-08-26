@@ -4,4 +4,7 @@ export default {
 		open: "Menyuni oching",
 		close: "Menyuni yopish",
 	},
+	ammsidebar: {
+		close: "Yon panelni yoping",
+	},
 };

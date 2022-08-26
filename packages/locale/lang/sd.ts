@@ -4,4 +4,7 @@ export default {
 		open: "اوپن مينيو",
 		close: "مينيو بند ڪريو",
 	},
+	ammsidebar: {
+		close: "سائڊبار بند ڪريو",
+	},
 };

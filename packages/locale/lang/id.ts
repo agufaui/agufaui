@@ -4,4 +4,7 @@ export default {
 		open: "Buka menu",
 		close: "Tutup menu",
 	},
+	ammsidebar: {
+		close: "Tutup bilah sisi",
+	},
 };

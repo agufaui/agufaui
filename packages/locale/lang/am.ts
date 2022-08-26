@@ -4,4 +4,7 @@ export default {
 		open: "ምናሌን ክፈት",
 		close: "ምናሌን ዝጋ",
 	},
+	ammsidebar: {
+		close: "የጎን አሞሌን ዝጋ",
+	},
 };

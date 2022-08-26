@@ -4,4 +4,7 @@ export default {
 		open: "Åbn menuen",
 		close: "Luk menuen",
 	},
+	ammsidebar: {
+		close: "Luk sidebjælken",
+	},
 };

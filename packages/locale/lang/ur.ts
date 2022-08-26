@@ -4,4 +4,7 @@ export default {
 		open: "مینو کھولیں۔",
 		close: "مینو بند کریں۔",
 	},
+	ammsidebar: {
+		close: "سائڈبار بند کریں۔",
+	},
 };

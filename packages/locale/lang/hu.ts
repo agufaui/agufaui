@@ -4,4 +4,7 @@ export default {
 		open: "Menü megnyitása",
 		close: "Menü bezárása",
 	},
+	ammsidebar: {
+		close: "Oldalsáv bezárása",
+	},
 };

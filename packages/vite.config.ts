@@ -5,7 +5,6 @@ import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import Inspect from "vite-plugin-inspect";
 import VueTypeImports from "@zolyn/vite-plugin-vue-type-imports";
-import { generateSitemap as sitemap } from "sitemap-ts";
 
 // https://vitejs.dev/config/
 export default defineConfig({

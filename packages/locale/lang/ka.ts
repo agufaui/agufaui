@@ -4,4 +4,7 @@ export default {
 		open: "მენიუს გახსნა",
 		close: "მენიუს დახურვა",
 	},
+	ammsidebar: {
+		close: "გვერდითი ზოლის დახურვა",
+	},
 };

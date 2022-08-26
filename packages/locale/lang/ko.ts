@@ -4,4 +4,7 @@ export default {
 		open: "메뉴 열기",
 		close: "메뉴 닫기",
 	},
+	ammsidebar: {
+		close: "사이드바 닫기",
+	},
 };

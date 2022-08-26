@@ -3,10 +3,10 @@ import type { IAMpanelLink } from "./AMpanel";
 
 // #region props
 export interface IAMflyoutProps extends IProps {
-	v?: string; // menu name.  Not configurable
+	v: string; // menu name.  Not configurable
+	links: IAMpanelLink[]; // links array.  Not configurable
 	vc?: string; // css classes for menu name 'p' html element
-	links?: IAMpanelLink[]; // links array.  Not configurable
-	linksContainerc?: string; // common css classes for links 'a' html element
-	mpanelType?: string; // 'Ampanel' component type
+	linksc?: string; // css classes for links contaienr 'div' html element
+	mpanelt?: string; // 'Ampanel' component type
 }
 // #endregion props

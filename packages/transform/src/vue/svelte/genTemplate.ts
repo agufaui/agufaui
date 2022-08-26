@@ -121,11 +121,14 @@ export function genSvelteTemplate(
 					} else if (attr.name.startsWith("v-once")) {
 						final += ` once`;
 					} else if (attr.name.startsWith("v-bind")) {
-						if (val === '"$attrs"') {
-							final += " {...$$restProps}";
-						} else {
-							val = val.replace(/^"|"$/g, "");
-							final += ` {...${val}}`;
+						const valClean = val.replace(/[{}\.\s"]/g, "");
+						const valArray = valClean.split(",");
+						for (const valSingle of valArray) {
+							if (valSingle === "$attrs") {
+								final += " {...$$restProps}";
+							} else {
+								final += ` {...${valSingle}}`;
+							}
 						}
 					} else if (attr.name.startsWith("v-model:")) {
 						val = val.replace(/^"|"$/g, "");
@@ -157,9 +160,9 @@ export function genSvelteTemplate(
 						}
 
 						if (matches[2]) {
-							pre = `{#each ${matches[3]} ?? [] as ${matches[1]}, ${matches[2]}}`;
+							pre = `{#each ${matches[3]} as ${matches[1]}, ${matches[2]}}`;
 						} else {
-							pre = `{#each ${matches[3]} ?? [] as ${matches[1]}}`;
+							pre = `{#each ${matches[3]} as ${matches[1]}}`;
 						}
 					} else {
 						final += ` ${attr.name}=${val}`;
@@ -168,23 +171,28 @@ export function genSvelteTemplate(
 					return final;
 				}, "");
 
+				// wrap html element or component attributes
 				attrs = attrs.trim();
-
 				attrs = attrs ? " " + attrs + (noClosingTags.has(tagNode.name) ? " />" : ">") : ">";
 
+				// Agufaui components name first letter to uppercase
 				if (tagNode.name.startsWith("a") && tagNode.name.length > 1) {
 					tagNode.name = tagNode.name.charAt(0).toUpperCase() + tagNode.name.substring(1);
 				}
 
 				if (pre) {
+					// conditional statement if...else or for loop
 					code += "\n" + indent + pre + "\n\t" + indent + "<" + tagNode.name + attrs;
 
+					// recursive call child nodes
 					code += genSvelteTemplate(tagNode.block, context, indent + "\t\t");
 
+					// if not self-closing tag
 					if (!noClosingTags.has(tagNode.name)) {
 						code += "\n\t" + indent + "</" + tagNode.name + ">";
 					}
 
+					// wrap conditional statement
 					if (pre.includes("{#if")) {
 						code += "\n" + indent + "{/if}";
 					} else if (pre.includes("{:else")) {
@@ -193,9 +201,13 @@ export function genSvelteTemplate(
 						code += "\n" + indent + "{/each}";
 					}
 				} else {
+					// normal nodes
 					code += "\n" + indent + "<" + tagNode.name + attrs;
+
+					// recursive call child nodes
 					code += genSvelteTemplate(tagNode.block, context, indent + "\t");
 
+					// if not self-closing tag
 					if (!noClosingTags.has(tagNode.name)) {
 						code += "\n" + indent + "</" + tagNode.name + ">";
 					}

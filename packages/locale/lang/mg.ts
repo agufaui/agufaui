@@ -4,4 +4,7 @@ export default {
 		open: "Sokafy ny sakafo",
 		close: "Akatona ny sakafo",
 	},
+	ammsidebar: {
+		close: "Akatona ny sisiny",
+	},
 };

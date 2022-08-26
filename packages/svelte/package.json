@@ -66,8 +66,8 @@
 		"vite": "^3.0.0"
 	},
 	"dependencies": {
-		"@agufaui/config": "workspace:^0.4.0",
-		"@agufaui/locale": "workspace:^0.1.0",
-		"@agufaui/theme": "workspace:^0.4.0"
+		"@agufaui/config": "workspace:^0.5.0",
+		"@agufaui/locale": "workspace:^0.2.0",
+		"@agufaui/theme": "workspace:^0.5.0"
 	}
 }

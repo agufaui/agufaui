@@ -4,4 +4,7 @@ export default {
 		open: "Menü opmaachen",
 		close: "Menu zoumaachen",
 	},
+	ammsidebar: {
+		close: "Zoumaachen Sidebar",
+	},
 };
