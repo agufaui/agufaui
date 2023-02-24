@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Kaw sidebar",
 	},
+	atoggle: {
+		on: "Ntawm",
+		off: "Tawm",
+	},
 };

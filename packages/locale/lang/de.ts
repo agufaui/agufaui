@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Seitenleiste schließen",
 	},
+	atoggle: {
+		on: "An",
+		off: "Aus",
+	},
 };

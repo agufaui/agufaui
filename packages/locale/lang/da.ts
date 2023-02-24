@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Luk sidebjælken",
 	},
+	atoggle: {
+		on: "På",
+		off: "Af",
+	},
 };

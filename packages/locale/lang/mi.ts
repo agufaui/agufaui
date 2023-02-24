@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Katia te paetaha",
 	},
+	atoggle: {
+		on: "Kei runga",
+		off: "Wehe",
+	},
 };

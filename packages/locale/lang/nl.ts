@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zijbalk sluiten",
 	},
+	atoggle: {
+		on: "Op",
+		off: "Uit",
+	},
 };

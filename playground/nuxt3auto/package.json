@@ -1,19 +1,21 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"clean": "rimraf dist .output",
-		"lint": "eslint . --ext .vue,.js,.ts --ignore-path ../../.eslintignore .",
-		"lintfix": "nr lint --fix"
-	},
-	"devDependencies": {
-		"@unocss/nuxt": "^0.43.2",
-		"nuxt": "3.0.0-rc.6"
-	},
-	"dependencies": {
-		"@agufaui/vue": "workspace:^0.5.0"
-	}
+  "name": "@agufaui/playground-nuxt3auto",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "clean": "rimraf dist .output",
+    "lint": "eslint . --ext .vue,.js,.ts --ignore-path ../../.eslintignore .",
+    "lintfix": "nr lint --fix"
+  },
+  "devDependencies": {
+    "@unocss/nuxt": "^0.43.2",
+    "nuxt": "3.0.0-rc.6"
+  },
+  "dependencies": {
+    "@agufaui/vue": "workspace:^0.6.0"
+  }
 }

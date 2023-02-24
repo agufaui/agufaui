@@ -1,7 +1,9 @@
 <!-- #region showcase -->
 <template>
-	<div class="flex items-center flex-wrap gap-2 doc">
-		<ampanel :links="links" t="flyout" c="dark:bg-white w-14em" vc="dark:text-gray-900" />
+	<div class="flex items-start flex-wrap gap-4 doc">
+		<ampanel :sections="sections" c="w-14rem" />
+		<ampanel :sections="titlesSections" c="w-14rem" />
+		<ampanel :sections="titlesSections" t="noDivide" c="w-14rem" />
 	</div>
 </template>
 
@@ -12,18 +14,157 @@ export default {
 </script>
 
 <script setup lang="ts">
-const links = [
+import type { TAMSection } from "@agufaui/theme";
+
+const sections: TAMSection[] = [
 	{
-		v: "Google",
-		href: "https://google.com",
-		i: "i-logos:google-icon",
-		subtitle: "Google Site",
+		items: [
+			{
+				name: "dropdown",
+				props: {
+					t: "sidebar",
+					v: "Sites",
+					i: "i-majesticons:sitemap",
+					titlesc: "dark:hover:text-gray-9",
+					items: [
+						{
+							name: "link",
+							props: {
+								v: "Google",
+								c: "dark:hover:text-gray-9",
+								t: "sidebar",
+								href: "https://google.com",
+								i: "i-logos:google-icon",
+								subtitle: "Google Site",
+							},
+						},
+						{
+							name: "link",
+							props: {
+								v: "Github",
+								c: "dark:hover:text-gray-9",
+								t: "sidebar",
+								href: "https://github.com",
+								i: "i-logos:github-icon",
+							},
+						},
+					],
+				},
+			},
+			{
+				name: "link",
+				props: {
+					v: "Google",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://google.com",
+					i: "i-logos:google-icon",
+					subtitle: "Google Site",
+				},
+			},
+		],
 	},
 	{
-		v: "Github",
-		href: "https://github.com",
-		i: "i-logos:github-icon",
-		subtitle: "Github Site",
+		items: [
+			{
+				name: "link",
+				props: {
+					v: "Google",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://google.com",
+					i: "i-logos:google-icon",
+					subtitle: "Google Site",
+				},
+			},
+			{
+				name: "link",
+				props: {
+					v: "Github",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://github.com",
+					i: "i-logos:github-icon",
+				},
+			},
+		],
+	},
+];
+
+const titlesSections: TAMSection[] = [
+	{
+		title: "Category1",
+		items: [
+			{
+				name: "dropdown",
+				props: {
+					t: "sidebar",
+					v: "Sites",
+					i: "i-majesticons:sitemap",
+					titlesc: "dark:hover:text-gray-9",
+					items: [
+						{
+							name: "link",
+							props: {
+								v: "Google",
+								c: "dark:hover:text-gray-9",
+								t: "sidebar",
+								href: "https://google.com",
+								i: "i-logos:google-icon",
+								subtitle: "Google Site",
+							},
+						},
+						{
+							name: "link",
+							props: {
+								v: "Github",
+								c: "dark:hover:text-gray-9",
+								t: "sidebar",
+								href: "https://github.com",
+								i: "i-logos:github-icon",
+							},
+						},
+					],
+				},
+			},
+			{
+				name: "link",
+				props: {
+					v: "Google",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://google.com",
+					i: "i-logos:google-icon",
+					subtitle: "Google Site",
+				},
+			},
+		],
+	},
+	{
+		title: "Category2",
+		items: [
+			{
+				name: "link",
+				props: {
+					v: "Google",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://google.com",
+					i: "i-logos:google-icon",
+					subtitle: "Google Site",
+				},
+			},
+			{
+				name: "link",
+				props: {
+					v: "Github",
+					c: "dark:hover:text-gray-9",
+					t: "sidebar",
+					href: "https://github.com",
+					i: "i-logos:github-icon",
+				},
+			},
+		],
 	},
 ];
 </script>

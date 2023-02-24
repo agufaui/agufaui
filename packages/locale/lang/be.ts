@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Зачыніць бакавую панэль",
 	},
+	atoggle: {
+		on: "Укл",
+		off: "Выкл",
+	},
 };

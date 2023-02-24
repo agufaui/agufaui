@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "ປິດແຖບດ້ານຂ້າງ",
 	},
+	atoggle: {
+		on: "ສຸດ",
+		off: "ປິດ",
+	},
 };

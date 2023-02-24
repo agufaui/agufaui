@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Stäng sidofältet",
 	},
+	atoggle: {
+		on: "På",
+		off: "Av",
+	},
 };

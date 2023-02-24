@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "సైడ్‌బార్‌ను మూసివేయండి",
 	},
+	atoggle: {
+		on: "పై",
+		off: "ఆఫ్",
+	},
 };

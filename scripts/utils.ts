@@ -3,10 +3,8 @@ import { join, resolve } from "path";
 import fs from "fs-extra";
 import Git from "simple-git";
 import type { PackageIndexes, AgufaUIElement } from "../packages/metadata";
-import { $fetch } from "ohmyfetch";
+import { $fetch } from "ofetch";
 import { getCategories } from "../packages/metadata/utils";
-import { transform } from "../packages/transform/index";
-import { useString } from "../packages/use/index";
 
 export const git = Git();
 
@@ -120,72 +118,4 @@ export async function updateCountBadge(indexes: PackageIndexes) {
 	const url = `https://img.shields.io/badge/-${elCount}%20components-13708a`;
 	const data = await $fetch(url, { responseType: "text" });
 	await fs.writeFile(join(DIR_ROOT, "packages/public/badge-function-count.svg"), data, "utf-8");
-}
-
-export async function updateSvelte({ packages, components }: PackageIndexes) {
-	const vuePath = join(DIR_ROOT, "packages/vue/components/");
-	const sveltePath = join(DIR_ROOT, "packages/svelte/src/lib/");
-	const { vueToSvelte } = transform();
-
-	const noComputed = new Set(["t", "v", "tabindex", "label"]);
-
-	const noImport = new Set(["vue"]);
-
-	for (const { name } of Object.values(packages)) {
-		if (name !== "core") continue;
-
-		const imports: string[] = await Promise.all(
-			components
-				.filter((i) => i.package === name)
-				.map((f) => f.name)
-				.sort()
-				.map(async (name) => {
-					let fname = name;
-
-					switch (name) {
-						case "hyperlink":
-							fname = "a";
-							break;
-						case "superscript":
-							fname = "sup";
-							break;
-						case "subscript":
-							fname = "sub";
-							break;
-						case "menuToggle":
-							fname = "mtoggle";
-							break;
-						case "menuPanel":
-							fname = "mpanel";
-							break;
-						case "menuFlyout":
-							fname = "mflyout";
-							break;
-						case "menuDropdown":
-							fname = "mdropdown";
-							break;
-						case "menuSidebar":
-							fname = "msidebar";
-							break;
-						case "menuMobileSidebar":
-							fname = "mmsidebar";
-							break;
-					}
-
-					const varName = "A" + fname;
-					const vueName = varName + ".vue";
-					const svelteName = varName + ".svelte";
-					await vueToSvelte(vuePath + name + "/" + vueName, sveltePath + name, svelteName, {
-						noComputed,
-						noImport,
-					});
-					return `export { default as ${varName} } from "./${name}/${svelteName}";`;
-				})
-		);
-
-		await fs.writeFile(
-			join(sveltePath, "index.ts"),
-			`${imports.join("\n")}\nexport { configStore } from "./config";\n`
-		);
-	}
 }

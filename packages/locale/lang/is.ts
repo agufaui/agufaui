@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Lokaðu hliðarstikunni",
 	},
+	atoggle: {
+		on: "Á",
+		off: "Af",
+	},
 };

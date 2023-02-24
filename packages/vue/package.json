@@ -68,10 +68,16 @@
 		"vue": "^3.2.37"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.5.0",
-		"@agufaui/locale": "workspace:^0.2.0",
-		"@agufaui/theme": "workspace:^0.5.0",
-		"@agufaui/use": "workspace:^0.5.0",
-		"@agufaui/usevue": "workspace:^0.5.0"
+		"@agufaui/config": "workspace:^0.6.0",
+		"@agufaui/locale": "workspace:^0.3.0",
+		"@agufaui/theme": "workspace:^0.6.0",
+		"@agufaui/use": "workspace:^0.6.0",
+		"@agufaui/usevue": "workspace:^0.6.0",
+		"@volar/vue-language-plugin-pug": "^1.0.24",
+		"unocss": "link:../../../../community/github.com/unocss/packages/unocss"
+	},
+	"dependencies": {
+		"@vueuse/components": "^9.13.0",
+		"@vueuse/core": "^9.13.0"
 	}
 }

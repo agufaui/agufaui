@@ -46,7 +46,7 @@ One default slot replace hyperlink content including icon and loading icon.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AA.ts
+<<< @/theme/default/basic/AA.ts
 
 ## Attributes (Properties)
 
@@ -56,7 +56,7 @@ One default slot replace hyperlink content including icon and loading icon.
 
 ### Unique
 
-<<< @/theme/types/AA.ts#props
+<<< @/theme/types/basic/AA.ts#props
 
 ### Inherit from IProps
 
@@ -80,4 +80,4 @@ One default slot replace hyperlink content including icon and loading icon.
 
 ## Events
 
-<<< @/theme/types/AA.ts#emits
+<<< @/theme/types/basic/AA.ts#emits

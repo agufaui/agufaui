@@ -52,7 +52,8 @@
 		"coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
+		"@agufaui/use": "workspace:^0.6.0",
 		"@types/babel__generator": "^7.6.4",
-		"@types/babel__traverse": "^7.18.0"
+		"@types/babel__traverse": "^7.18.3"
 	}
 }

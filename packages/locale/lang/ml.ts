@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "സൈഡ്‌ബാർ അടയ്ക്കുക",
 	},
+	atoggle: {
+		on: "ഓൺ",
+		off: "ഓഫ്",
+	},
 };

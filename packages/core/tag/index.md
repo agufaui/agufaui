@@ -45,7 +45,7 @@ One default slot replace tag content.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/ATag.ts
+<<< @/theme/default/basic/ATag.ts
 
 ## Attributes (Properties)
 
@@ -55,7 +55,7 @@ One default slot replace tag content.
 
 ### Unique
 
-<<< @/theme/types/ATag.ts#props
+<<< @/theme/types/basic/ATag.ts#props
 
 ### Inherit from IProps
 
@@ -67,4 +67,4 @@ One default slot replace tag content.
 
 ## Events
 
-<<< @/theme/types/ATag.ts#emits
+<<< @/theme/types/basic/ATag.ts#emits

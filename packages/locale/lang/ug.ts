@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "يان بالداقنى تاقاش",
 	},
+	atoggle: {
+		on: "On",
+		off: "Off",
+	},
 };

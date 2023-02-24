@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zapri stransko vrstico",
 	},
+	atoggle: {
+		on: "Vklopljeno",
+		off: "Izključeno",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Затваряне на страничната лента",
 	},
+	atoggle: {
+		on: "На",
+		off: "Изкл",
+	},
 };

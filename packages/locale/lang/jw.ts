@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Nutup sidebar",
 	},
+	atoggle: {
+		on: "On",
+		off: "Mati",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Închideți bara laterală",
 	},
+	atoggle: {
+		on: "Pe",
+		off: "Oprit",
+	},
 };

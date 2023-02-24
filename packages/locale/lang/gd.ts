@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Dùin am bàr-taobh",
 	},
+	atoggle: {
+		on: "Air adhart",
+		off: "dheth",
+	},
 };

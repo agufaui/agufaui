@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "பக்கப்பட்டியை மூடு",
 	},
+	atoggle: {
+		on: "அன்று",
+		off: "ஆஃப்",
+	},
 };

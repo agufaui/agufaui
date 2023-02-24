@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Funga utepe",
 	},
+	atoggle: {
+		on: "Washa",
+		off: "Imezimwa",
+	},
 };

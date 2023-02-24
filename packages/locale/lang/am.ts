@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "የጎን አሞሌን ዝጋ",
 	},
+	atoggle: {
+		on: "በርቷል",
+		off: "ጠፍቷል",
+	},
 };

@@ -18,7 +18,7 @@ export function getFileAst(content: string): ParseResult<File> {
 	return babelParse(content, {
 		sourceType: "module",
 		plugins: ["typescript", "topLevelAwait"],
-	});
+	}) as ParseResult<File>;
 }
 
 /**

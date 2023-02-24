@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "سائڈبار بند کریں۔",
 	},
+	atoggle: {
+		on: "پر",
+		off: "بند",
+	},
 };

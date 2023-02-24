@@ -1,7 +1,7 @@
 <!-- #region showcase -->
 <template>
 	<div class="flex w-full doc">
-		<ammsidebar :items="items" :show="true" mdropdownt="sidebar" mpanelt="flyout">
+		<ammsidebar :mpanel="mpanel" mpanelc="bg-gray-8" :show="true">
 			<template #header>
 				<aa
 					href="https://google.com"
@@ -32,53 +32,91 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { IAMsidebarItem } from "@agufaui/theme";
-const items: IAMsidebarItem[] = [
-	{
-		v: "Sites",
-		i: "i-majesticons:sitemap",
-		links: [
-			{
-				v: "Google",
-				vc: "dark:text-gray-900",
-				href: "https://google.com",
-				i: "i-logos:google-icon",
-				subtitle: "Google Site",
-			},
-			{
-				v: "Github",
-				vc: "dark:text-gray-900",
-				href: "https://github.com",
-				i: "i-logos:github-icon",
-				subtitle: "Github Site",
-			},
-		],
-	},
-	{
-		v: "Another Sites",
-		i: "i-dashicons:admin-site",
-		links: [
-			{
-				v: "Google",
-				vc: "dark:text-gray-900",
-				href: "https://google.com",
-				i: "i-logos:google-icon",
-				subtitle: "Google Site",
-			},
-			{
-				v: "Github",
-				vc: "dark:text-gray-900",
-				href: "https://github.com",
-				i: "i-logos:github-icon",
-				subtitle: "Github Site",
-			},
-		],
-	},
-	{
-		v: "Google",
-		i: "i-logos:google-icon",
-		href: "https://google.com",
-	},
-];
+import type { IAMpanelProps } from "@agufaui/theme";
+
+const mpanel: IAMpanelProps = {
+	t: "dark",
+	sections: [
+		{
+			items: [
+				{
+					name: "dropdown",
+					props: {
+						v: "Sites",
+						i: "i-majesticons:sitemap",
+						t: "sidebarDark",
+						items: [
+							{
+								name: "link",
+								props: {
+									v: "Google",
+									t: "sidebarDark",
+									href: "https://google.com",
+									i: "i-logos:google-icon",
+									subtitle: "Google Site",
+								},
+							},
+							{
+								name: "link",
+								props: {
+									v: "Github",
+									t: "sidebarDark",
+									href: "https://github.com",
+									i: "i-logos:github-icon",
+									ic: "bg-gray-2 rounded-lg",
+								},
+							},
+						],
+					},
+				},
+				{
+					name: "dropdown",
+					props: {
+						v: "Another Sites",
+						i: "i-dashicons:admin-site",
+						t: "sidebarDark",
+						items: [
+							{
+								name: "link",
+								props: {
+									v: "Google",
+									t: "sidebarDark",
+									href: "https://google.com",
+									i: "i-logos:google-icon",
+									subtitle: "Google Site",
+								},
+							},
+							{
+								name: "link",
+								props: {
+									v: "Github",
+									t: "sidebarDark",
+									href: "https://github.com",
+									i: "i-logos:github-icon",
+									ic: "bg-gray-2 rounded-lg",
+								},
+							},
+						],
+					},
+				},
+			],
+		},
+		{
+			title: "Links",
+			items: [
+				{
+					name: "link",
+					props: {
+						v: "Google",
+						t: "sidebarDark",
+						href: "https://google.com",
+						i: "i-logos:google-icon",
+						subtitle: "Google Site",
+					},
+				},
+			],
+		},
+	],
+};
 </script>
 <!-- #endregion showcase -->

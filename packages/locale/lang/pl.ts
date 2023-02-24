@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zamknij pasek boczny",
 	},
+	atoggle: {
+		on: "NA",
+		off: "Wyłączony",
+	},
 };

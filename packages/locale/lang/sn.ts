@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Vhara sidebar",
 	},
+	atoggle: {
+		on: "On",
+		off: "Off",
+	},
 };

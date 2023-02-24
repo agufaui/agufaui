@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "נאָענט סיידבאַר",
 	},
+	atoggle: {
+		on: "אויף",
+		off: "אַוועק",
+	},
 };

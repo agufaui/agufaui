@@ -1,4 +1,4 @@
-import type { IConfig } from "./config.type";
+import { IConfig, CConfigReplaceLine, CConfigDeleteLine } from "./config.type";
 import type { TLang } from "@agufaui/locale";
 import { en } from "@agufaui/locale";
 import {
@@ -21,7 +21,7 @@ export class Config implements IConfig {
 	constructor(userConfig: IUserConfig = {}) {
 		// this.#replace = userConfig.replace ?? this.#replace;
 		this.#locale = userConfig.locale ?? this.#locale;
-		this.locales = userConfig.locales;
+		userConfig.locales?.map((locale) => (this.#locales[locale.locale] = locale));
 		this.setTheme(userConfig.baseTheme, userConfig.theme);
 	}
 
@@ -66,13 +66,7 @@ export class Config implements IConfig {
 								continue;
 							} else {
 								// merge useType object into current type object
-								for (const [field, value] of Object.entries(useTypeObj)) {
-									if (typeObj[field] === undefined) {
-										typeObj[field] = value;
-									} else if (field.endsWith("c")) {
-										typeObj[field] = value + " " + typeObj[field];
-									}
-								}
+								this.#processUseType(typeObj, useTypeObj);
 							}
 						}
 
@@ -142,13 +136,7 @@ export class Config implements IConfig {
 								continue;
 							} else {
 								// merge useType object into current type object
-								for (const [field, value] of Object.entries(useTypeObj)) {
-									if (typeObj[field] === undefined) {
-										typeObj[field] = value;
-									} else if (field.endsWith("c")) {
-										typeObj[field] = value + " " + typeObj[field];
-									}
-								}
+								this.#processUseType(typeObj, useTypeObj);
 							}
 						}
 
@@ -163,6 +151,67 @@ export class Config implements IConfig {
 		}
 	}
 
+	#processUseType(currentObj: TComponentType, useTypeObj: TComponentType): void {
+		for (const [field, value] of Object.entries(useTypeObj)) {
+			if (currentObj[field] === undefined) {
+				currentObj[field] = value;
+			} else if (currentObj[field].startsWith(CConfigReplaceLine)) {
+				// replace useType object field with current type object field
+				currentObj[field] = currentObj[field].slice(4);
+				continue;
+			} else if (currentObj[field].startsWith(CConfigDeleteLine)) {
+				// delete this field
+				delete currentObj[field];
+				continue;
+			} else if (field.endsWith("c")) {
+				const currentElements: string[] = currentObj[field].split(" ").filter(Boolean);
+				let useTypeElements: string[] = value.split(" ").filter(Boolean);
+
+				const replaceList: string[] = [];
+				const deleteList: string[] = [];
+
+				for (let i = 0; i < currentElements.length; i++) {
+					const ele = currentElements[i];
+
+					if (ele.startsWith("r@")) {
+						// eg. [r@, text-blue-2]
+						currentElements[i] = "";
+
+						i++;
+
+						if (i === currentElements.length) {
+							break;
+						}
+
+						// eg. text-blue-2 to [text, blue, 2]
+						const quasis = currentElements[i].split("-");
+
+						// eg. [text, blue, 2] to text
+						const match = quasis[0];
+
+						// eg. [text-lg, text-blue-1, hover:text-blue-2] to [hover:text-blue-2]
+						useTypeElements = useTypeElements.filter((e) => !e.startsWith(match));
+					}
+
+					if (ele.startsWith("d@")) {
+						// eg. d@text-blue-2 to text-blue-2
+						const match = currentElements[i].slice(2);
+
+						// eg. [text-lg, text-blue-2, hover:text-blue-2] to [text-lg, hover:text-blue-2]
+						useTypeElements = useTypeElements.filter((e) => e !== match);
+
+						currentElements[i] = "";
+					}
+				}
+
+				const useTypeElementsString = useTypeElements.join(" ");
+				const currentElementsString = currentElements.filter(Boolean).join(" ");
+
+				currentObj[field] = useTypeElementsString + " " + currentElementsString;
+			}
+		}
+	}
+
 	setTheme(baseTheme: ITheme | undefined, userTheme: ITheme | undefined): void {
 		this.#setBaseTheme(baseTheme);
 		this.#setUserTheme(userTheme);
@@ -170,6 +219,10 @@ export class Config implements IConfig {
 
 	get theme(): ITheme {
 		return this.#userTheme;
+	}
+
+	set userTheme(userTheme: ITheme) {
+		this.#userTheme = userTheme;
 	}
 
 	get locale(): string | object {

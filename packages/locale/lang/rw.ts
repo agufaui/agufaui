@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Funga kuruhande",
 	},
+	atoggle: {
+		on: "Kuri",
+		off: "Hanze",
+	},
 };

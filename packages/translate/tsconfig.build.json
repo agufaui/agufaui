@@ -1,9 +1,13 @@
 {
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"emitDeclarationOnly": true,
-		"isolatedModules": false,
-		"declaration": true
-	},
-	"exclude": ["**/*.test.ts", "vite.config.ts"]
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "emitDeclarationOnly": true,
+        "isolatedModules": false,
+        "declaration": true
+    },
+    "exclude": [
+        "dist",
+        "**/*.test.ts",
+        "vite.config.ts"
+    ]
 }

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Agħlaq il-sidebar",
 	},
+	atoggle: {
+		on: "Fuq",
+		off: "Mitfi",
+	},
 };

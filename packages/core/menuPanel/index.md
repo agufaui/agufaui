@@ -28,8 +28,6 @@ Theme component name: `{{ CAMpanelName }}`
 
 ## Showcase
 
-- Menu links panel.
-
 <DocMenuPanel />
 
 ::: details Click to see code
@@ -40,13 +38,13 @@ Theme component name: `{{ CAMpanelName }}`
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AMpanel.ts
+<<< @/theme/default/navigation/AMpanel.ts
 
 ## Attributes (Properties)
 
 ### Unique
 
-<<< @/theme/types/AMpanel.ts#props
+<<< @/theme/types/navigation/AMpanel.ts#props
 
 ### Inherit from IProps
 

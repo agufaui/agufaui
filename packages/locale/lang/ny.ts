@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Tsekani kambali",
 	},
+	atoggle: {
+		on: "Yambani",
+		off: "Kuzimitsa",
+	},
 };
