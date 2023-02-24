@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Xir dhinaca bar-geeska",
 	},
+	atoggle: {
+		on: "Daar",
+		off: "Demin",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Sulje sivupalkki",
 	},
+	atoggle: {
+		on: "Päällä",
+		off: "Vinossa",
+	},
 };

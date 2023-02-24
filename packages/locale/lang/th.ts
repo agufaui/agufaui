@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "ปิดแถบด้านข้าง",
 	},
+	atoggle: {
+		on: "บน",
+		off: "ปิด",
+	},
 };

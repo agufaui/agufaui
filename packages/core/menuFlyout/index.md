@@ -44,7 +44,7 @@ Theme component name: `{{ CAMflyoutName }}`
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AMflyout.ts
+<<< @/theme/default/navigation/AMflyout.ts
 
 ## Attributes (Properties)
 
@@ -54,7 +54,7 @@ Theme component name: `{{ CAMflyoutName }}`
 
 ### Unique
 
-<<< @/theme/types/AMflyout.ts#props
+<<< @/theme/types/navigation/AMflyout.ts#props
 
 ### Inherit from IProps
 

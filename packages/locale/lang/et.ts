@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Sule külgriba",
 	},
+	atoggle: {
+		on: "Peal",
+		off: "Väljas",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Maak sybalk toe",
 	},
+	atoggle: {
+		on: "Aan",
+		off: "Af",
+	},
 };

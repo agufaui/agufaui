@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "সাইডবার বন্ধ করুন",
 	},
+	atoggle: {
+		on: "চালু",
+		off: "বন্ধ",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Prope pars",
 	},
+	atoggle: {
+		on: "On",
+		off: "Off",
+	},
 };

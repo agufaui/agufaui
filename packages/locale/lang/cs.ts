@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zavřít postranní panel",
 	},
+	atoggle: {
+		on: "Na",
+		off: "Vypnuto",
+	},
 };

@@ -1,60 +1,60 @@
 {
-	"name": "@agufaui/theme",
-	"version": "0.6.0",
-	"description": "AgufaUI Theme",
-	"author": "Agufa.tech <https://agufa.tech>",
-	"license": "MIT",
-	"homepage": "https://ui.agufa.tech",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/agufaui/agufaui",
-		"directory": "packages/theme"
-	},
-	"bugs": {
-		"url": "https://github.com/agufaui/agufaui/issues"
-	},
-	"keywords": [
-		"agufa-ui",
-		"agufaui",
-		"agufa",
-		"theme"
-	],
-	"sideEffects": false,
-	"type": "module",
-	"files": [
-		"dist"
-	],
-	"main": "./dist/cjs/theme/index.cjs",
-	"module": "./dist/es/theme/index.mjs",
-	"unpkg": "./dist/iife/index.js",
-	"jsdelivr": "./dist/iife/index.js",
-	"types": "./dist/types/index.d.ts",
-	"style": "./dist/es/assets/theme.css",
-	"exports": {
-		".": {
-			"import": "./dist/es/theme/index.mjs",
-			"require": "./dist/cjs/theme/index.cjs",
-			"default": "./dist/umd/index.js"
-		},
-		"./theme.css": {
-			"import": "./dist/es/assets/theme.css",
-			"require": "./dist/cjs/assets/theme.css"
-		},
-		"./types": "./dist/types/index.d.ts"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"watch": "nr build:types && vite build --watch",
-		"build": "vite build && tsc -p tsconfig.build.json",
-		"build:types": "tsc -p tsconfig.build.json",
-		"clean": "rimraf dist",
-		"lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
-		"lintfix": "nr lint --fix",
-		"typecheck": "tsc --noEmit"
-	},
-	"devDependencies": {
-		"@agufaui/config": "workspace:^0.5.0"
-	}
+  "name": "@agufaui/theme",
+  "version": "0.6.0",
+  "description": "AgufaUI Theme",
+  "author": "Agufa.tech <https://agufa.tech>",
+  "license": "MIT",
+  "homepage": "https://ui.agufa.tech",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agufaui/agufaui",
+    "directory": "packages/theme"
+  },
+  "bugs": {
+    "url": "https://github.com/agufaui/agufaui/issues"
+  },
+  "keywords": [
+    "agufa-ui",
+    "agufaui",
+    "agufa",
+    "theme"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cjs/theme/index.cjs",
+  "module": "./dist/es/theme/index.mjs",
+  "unpkg": "./dist/iife/index.js",
+  "jsdelivr": "./dist/iife/index.js",
+  "types": "./dist/types/index.d.ts",
+  "style": "./dist/es/assets/theme.css",
+  "exports": {
+    ".": {
+      "import": "./dist/es/theme/index.mjs",
+      "require": "./dist/cjs/theme/index.cjs",
+      "default": "./dist/umd/index.js"
+    },
+    "./theme.css": {
+      "import": "./dist/es/assets/theme.css",
+      "require": "./dist/cjs/assets/theme.css"
+    },
+    "./types": "./dist/types/index.d.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "watch": "nr build:types && vite build --watch",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:types": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .ts --ignore-path ../../.eslintignore .",
+    "lintfix": "nr lint --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@agufaui/config": "workspace:^0.6.0"
+  }
 }

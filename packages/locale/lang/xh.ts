@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Vala ibha esecaleni",
 	},
+	atoggle: {
+		on: "Vula",
+		off: "Cimile",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zoumaachen Sidebar",
 	},
+	atoggle: {
+		on: "Op",
+		off: "Off",
+	},
 };

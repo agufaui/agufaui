@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Бүйірлік тақтаны жабыңыз",
 	},
+	atoggle: {
+		on: "Қосулы",
+		off: "Өшірулі",
+	},
 };

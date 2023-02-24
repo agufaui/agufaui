@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Koala barathoko",
 	},
+	atoggle: {
+		on: "E butsoe",
+		off: "E tima",
+	},
 };

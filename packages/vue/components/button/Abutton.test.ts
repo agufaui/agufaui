@@ -7,18 +7,18 @@ describe.concurrent("AButton Test", async () => {
 		props: {
 			"data-testid": "custom-element",
 			v: "component test",
-			c: "hover:bg-pink-400 focus:bg-red-600",
+			c: "hover:bg-pink-4 focus:bg-red-6",
 		},
 	});
 	const button = getByTestId("custom-element");
 
 	it("Component test", async () => {
 		await fireEvent.mouseMove(button);
-		expect(button.classList.value.includes("hover:bg-pink-400")).toBe(true);
-		expect(button.classList.value.includes(" bg-pink-400")).toBe(false);
+		expect(button.classList.value.includes("hover:bg-pink-4")).toBe(true);
+		expect(button.classList.value.includes(" bg-pink-4")).toBe(false);
 
 		await fireEvent.click(button);
-		expect(button.classList.value.includes("focus:bg-red-600")).toBe(true);
-		expect(button.classList.value.includes(" bg-red-600")).toBe(false);
+		expect(button.classList.value.includes("focus:bg-red-6")).toBe(true);
+		expect(button.classList.value.includes(" bg-red-6")).toBe(false);
 	});
 });

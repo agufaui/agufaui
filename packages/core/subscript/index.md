@@ -42,7 +42,7 @@ One default slot replace sub content including icon.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/ASub.ts
+<<< @/theme/default/basic/ASub.ts
 
 ## Attributes (Properties)
 
@@ -52,7 +52,7 @@ One default slot replace sub content including icon.
 
 ### Unique
 
-<<< @/theme/types/ASub.ts#props
+<<< @/theme/types/basic/ASub.ts#props
 
 ### Inherit from IProps
 

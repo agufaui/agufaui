@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "إغلاق الشريط الجانبي",
 	},
+	atoggle: {
+		on: "على",
+		off: "عن",
+	},
 };

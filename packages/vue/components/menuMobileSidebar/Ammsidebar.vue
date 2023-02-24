@@ -8,13 +8,8 @@ div(:class="cc" v-show="show")
 				span(:class="[cclosei, ccloseic]")
 		div(class="relative flex-1 flex flex-col" :class="csidebarc")
 			slot(name="header")
-			div(class="flex flex-col flex-1 overflow-y-auto")
-				nav(class="flex-1" :class="clinksc")
-					div(class="flex-1" v-for="item, i in items" :key="i")
-						amdropdown(v-if="'links' in item" :t="cmdropdownt" :mpanelt="cmpanelt" v-bind="{...item, ...$attrs}")
-						a(v-else :href="item.href" v-bind="$attrs" class="flex items-center" :class="[clinkc, item.hrefc]")
-							div(v-if="item.i" :class="[cic, item.i, item.ic]")
-							span(:class="[cvc, item.vc]") {{item.v}}
+			nav(class="flex flex-col flex-1 overflow-y-auto" :class="cmpanelc")
+				ampanel(v-bind="{...mpanel, ...$attrs}")
 			slot(name="footer")
 		div(class="flex-shrink-0 w-14" aria-hidden="true")
 </template>
@@ -27,16 +22,13 @@ export default {
 </script>
 
 <script setup lang="ts">
-import Amdropdown from "../menuDropdown/Amdropdown.vue";
 import type { IAMmsidebarProps, IAMmsidebarEmits } from "@agufaui/theme";
 import { CAMmsidebarName } from "@agufaui/theme";
-import { CDefaultType } from "@agufaui/config";
 import { useVue, useLocale } from "@agufaui/usevue";
+import Ampanel from "../menuPanel/Ampanel.vue";
 
 const defaultPropValues = {
 	// #region props
-	mdropdownt: CDefaultType,
-	mpanelt: CDefaultType,
 	// #endregion props
 };
 
@@ -50,20 +42,7 @@ const computedProperties = getComputedFromProps<IAMmsidebarProps>(
 	defaultPropValues
 );
 
-const {
-	cc,
-	coverlayc,
-	cclosec,
-	cclosei,
-	ccloseic,
-	csidebarc,
-	cmdropdownt,
-	cmpanelt,
-	clinksc,
-	clinkc,
-	cic,
-	cvc,
-} = computedProperties;
+const { cc, coverlayc, cclosec, cclosei, ccloseic, csidebarc, cmpanelc } = computedProperties;
 
 const emits = defineEmits<IAMmsidebarEmits>();
 

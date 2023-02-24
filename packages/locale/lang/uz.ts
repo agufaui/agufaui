@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Yon panelni yoping",
 	},
+	atoggle: {
+		on: "Yoniq",
+		off: "Oʻchirilgan",
+	},
 };

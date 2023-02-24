@@ -69,9 +69,7 @@ export default defineConfig({
 			// mode: "per-module",
 		}),
 		VueTypeImports(),
-		vue({
-			reactivityTransform: true,
-		}),
+		vue(),
 	],
 	test: {
 		globals: true,

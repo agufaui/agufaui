@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Itxi alboko barra",
 	},
+	atoggle: {
+		on: "On",
+		off: "Desaktibatuta",
+	},
 };

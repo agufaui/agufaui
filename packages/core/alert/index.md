@@ -47,7 +47,7 @@ One default slot for message `span` html element
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AAlert.ts
+<<< @/theme/default/basic/AAlert.ts
 
 ## Attributes (Properties)
 
@@ -57,7 +57,7 @@ One default slot for message `span` html element
 
 ### Unique
 
-<<< @/theme/types/AAlert.ts#props
+<<< @/theme/types/basic/AAlert.ts#props
 
 ### Inherit from IProps
 
@@ -73,4 +73,4 @@ One default slot for message `span` html element
 
 ## Events
 
-<<< @/theme/types/AAlert.ts#emits
+<<< @/theme/types/basic/AAlert.ts#emits

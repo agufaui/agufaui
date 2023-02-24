@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Isira ang sidebar",
 	},
+	atoggle: {
+		on: "Sa",
+		off: "Off",
+	},
 };

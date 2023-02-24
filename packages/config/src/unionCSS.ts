@@ -47,7 +47,7 @@ export function matchedRules(str: string, separator: string = ":"): TMatchedRule
 			// dynamic rules
 			const [matcher, handler, meta] = rule;
 
-			if (meta?.prefix && !util.startsWith(meta.prefix)) continue;
+			if (meta?.prefix && !util.startsWith(meta.prefix as string)) continue;
 			const unprefixed = meta?.prefix ? util.slice(meta.prefix.length) : util;
 			const match = unprefixed.match(matcher);
 			if (!match) continue;

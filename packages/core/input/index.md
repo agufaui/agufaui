@@ -41,7 +41,7 @@ Theme component name: `{{ CAInputName }}`
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AInput.ts
+<<< @/theme/default/basic/AInput.ts
 
 ## Attributes (Properties)
 
@@ -51,7 +51,7 @@ Theme component name: `{{ CAInputName }}`
 
 ### Unique
 
-<<< @/theme/types/AInput.ts#props
+<<< @/theme/types/basic/AInput.ts#props
 
 ### Inherit from IProps
 
@@ -63,4 +63,4 @@ Theme component name: `{{ CAInputName }}`
 
 ## Events
 
-<<< @/theme/types/AInput.ts#emits
+<<< @/theme/types/basic/AInput.ts#emits

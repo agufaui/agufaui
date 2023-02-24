@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "사이드바 닫기",
 	},
+	atoggle: {
+		on: "~에",
+		off: "끄다",
+	},
 };

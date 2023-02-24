@@ -8,5 +8,7 @@ coverage
 package
 .svelte-kit
 .output
+lib-types
+lib
 !packages/.vitepress/theme/index.ts
 !packages/.vitepress/config.ts

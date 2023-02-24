@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Đóng thanh bên",
 	},
+	atoggle: {
+		on: "TRÊN",
+		off: "Tắt",
+	},
 };

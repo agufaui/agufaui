@@ -267,6 +267,145 @@ theme: {
 }
 ```
 
+7. Replace Field Operator **`rf@`** will replace parent field directly without merging.  Put **`rf@`** at beginning followed by a space.
+
+```ts
+{
+  baseTheme: {
+    abutton: {
+      default: {
+        c: "text-blue text-lg",
+      },
+    },
+  },
+  theme: {
+    abutton: {
+      default: {
+        useType: "default",
+        c: "rf@ space-x-1.2",
+      },
+    }
+  }
+}
+```
+
+will become
+
+```ts
+theme: {
+  abutton: {
+    default: {
+      c: "space-x-1.2",
+    },
+  }
+}
+```
+
+8. Delete Field Operator **`df@`** will delete parent field directly
+
+```ts
+{
+  baseTheme: {
+    abutton: {
+      default: {
+        c: "text-blue text-lg",
+        vc: "bg-red",
+      },
+    },
+  },
+  theme: {
+    abutton: {
+      default: {
+        useType: "default",
+        c: "df@",
+      },
+    }
+  }
+}
+```
+
+will become
+
+```ts
+theme: {
+  abutton: {
+    default: {
+      vc: "bg-red",
+    },
+  }
+}
+```
+
+9. Replace Classname Operator **`r@`** only applies to a single classname that immediately follows it.  It will greedily replace matching **utility** (eg. text, bg) classnames in parent field, ignoring **variants** (eg. blue-500, sm, md, lg)
+
+```ts
+{
+  baseTheme: {
+    abutton: {
+      default: {
+        c: "text-blue text-lg bg-red",
+      },
+    },
+  },
+  theme: {
+    abutton: {
+      default: {
+        useType: "default",
+        c: "r@ text-white text-sm bg-blue!",
+      },
+    }
+  }
+}
+```
+
+will become
+
+```ts
+theme: {
+  abutton: {
+    default: {
+      c: "bg-red text-white text-sm bg-blue!",
+    },
+  }
+}
+```
+**`r@`** will apply to `text-white`, note that **a space** is required between **`r@`** and `text-white` because without this space, your utility css library compiler will not recognize `r@text-white`, thus `text-white` will not be generated to css file.
+
+10. Delete Classname Operator **`d@`** only applies to a single classname.  It will only delete matching classname in parent field
+
+```ts
+{
+  baseTheme: {
+    abutton: {
+      default: {
+        c: "text-blue text-lg bg-red",
+      },
+    },
+  },
+  theme: {
+    abutton: {
+      default: {
+        useType: "default",
+        c: "d@text-blue text-white",
+      },
+    }
+  }
+}
+```
+
+will become
+
+```ts
+theme: {
+  abutton: {
+    default: {
+      c: "text-lg bg-red text-white",
+    },
+  }
+}
+```
+**`d@`** will apply to `text-blue`, note that **no space** is required between **`d@`** and `text-blue` because your utility css library compiler already picked up `text-blue` defined in `baseTheme`.
+
 #### baseTheme
 
 **Type:** ITheme <br />

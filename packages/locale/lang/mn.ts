@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Хажуугийн самбарыг хаах",
 	},
+	atoggle: {
+		on: "Асаалттай",
+		off: "Унтраах",
+	},
 };

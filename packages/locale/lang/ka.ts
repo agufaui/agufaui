@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "გვერდითი ზოლის დახურვა",
 	},
+	atoggle: {
+		on: "ჩართულია",
+		off: "გამორთულია",
+	},
 };

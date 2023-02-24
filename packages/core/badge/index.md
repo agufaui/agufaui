@@ -42,7 +42,7 @@ One default slot replace badge content including icon.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/ABadge.ts
+<<< @/theme/default/basic/ABadge.ts
 
 ## Attributes (Properties)
 
@@ -52,7 +52,7 @@ One default slot replace badge content including icon.
 
 ### Unique
 
-<<< @/theme/types/ABadge.ts#props
+<<< @/theme/types/basic/ABadge.ts#props
 
 ### Inherit from IProps
 

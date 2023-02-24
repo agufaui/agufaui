@@ -14,7 +14,7 @@ export function useVue(): IUseVue {
 		const config = getConfig();
 
 		for (const propName in props) {
-			if (["t", "v", "tabindex", "label"].includes(propName)) continue;
+			if (["t", "v", "tabindex", "label", "mpanel", "id", "name"].includes(propName)) continue;
 
 			const prop = toRef(props, propName as keyof T);
 

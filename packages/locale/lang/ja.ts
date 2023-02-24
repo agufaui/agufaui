@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "サイドバーを閉じる",
 	},
+	atoggle: {
+		on: "の上",
+		off: "オフ",
+	},
 };

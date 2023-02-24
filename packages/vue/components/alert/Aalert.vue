@@ -1,4 +1,5 @@
 <template lang="pug">
+//- @ts-ignore
 div(
   v-if="showAlert"
   v-bind="$attrs"

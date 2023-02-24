@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Փակել կողագոտին",
 	},
+	atoggle: {
+		on: "Վրա",
+		off: "Անջատված",
+	},
 };

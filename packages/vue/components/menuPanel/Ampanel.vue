@@ -1,15 +1,9 @@
 <template lang="pug">
-div(:class="cc")
-	a(v-bind="$attrs"
-		class="flex items-center"
-		v-for="link, i in links"
-		:class="[clinkc, link.hrefc]"
-		:href="link.href"
-		:key="i")
-		span(class="flex-shrink-0" v-if="link.i" :class="[cic, link.i, link.ic]")
-		span(:class="ctitlesc")
-			p(:class="[cvc, link.vc]") {{link.v}}
-			p(v-if="link.subtitle" :class="[csubtitlec, link.subtitlec]") {{link.subtitle}}
+//- @ts-ignore
+div(:class="cc" v-bind="$attrs")
+  div(v-for="section, i in sections" :key="i" :class="csectionc")
+    p(v-if="section.title" :class="ctitlec") {{ section.title }}
+    amitem(v-for="item, j in section.items" :key="j" :v="item")
 </template>
 
 <script lang="ts">
@@ -23,6 +17,7 @@ export default {
 import type { IAMpanelProps } from "@agufaui/theme";
 import { CAMpanelName } from "@agufaui/theme";
 import { useVue } from "@agufaui/usevue";
+import Amitem from "../menuItem/Amitem.vue";
 
 const defaultPropValues = {
 	// #region props
@@ -39,5 +34,5 @@ const computedProperties = getComputedFromProps<IAMpanelProps>(
 	defaultPropValues
 );
 
-const { cc, clinkc, cic, ctitlesc, cvc, csubtitlec } = computedProperties;
+const { cc, csectionc, ctitlec } = computedProperties;
 </script>

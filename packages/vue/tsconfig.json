@@ -5,5 +5,10 @@
 		"baseUrl": ".",
 		"outDir": "./dist/types"
 	},
+    // "vueCompilerOptions": {
+    //     "plugins": [
+    //       "@volar/vue-language-plugin-pug"
+    //     ]
+    // },
 	"include": ["components", "types", "*.ts"]
 }

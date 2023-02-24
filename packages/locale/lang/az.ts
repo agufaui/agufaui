@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Yan paneli bağlayın",
 	},
+	atoggle: {
+		on: "Aktiv",
+		off: "Söndür",
+	},
 };

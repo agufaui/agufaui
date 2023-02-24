@@ -1,4 +1,5 @@
 <template lang="pug">
+//- @ts-ignore
 sub(
   v-bind="$attrs"
   class="inline-flex justify-center items-center"

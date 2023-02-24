@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Закрити бічну панель",
 	},
+	atoggle: {
+		on: "Увімкнено",
+		off: "Вимкнено",
+	},
 };

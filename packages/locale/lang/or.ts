@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "ପାର୍ଶ୍ୱ ପଟି ବନ୍ଦ କରନ୍ତୁ |",
 	},
+	atoggle: {
+		on: "ଅନ୍",
+		off: "ବନ୍ଦ",
+	},
 };

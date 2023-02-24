@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Gapdal paneli ýapyň",
 	},
+	atoggle: {
+		on: "Işlediň",
+		off: "Öçürilen",
+	},
 };

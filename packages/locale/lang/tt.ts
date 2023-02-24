@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Капка ягын ябу",
 	},
+	atoggle: {
+		on: "Яна",
+		off: "Сүндерелгән",
+	},
 };
