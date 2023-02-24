@@ -84,25 +84,25 @@ export async function updateSvelte() {
 	);
 
 	// generate qwik files
-	const importsQwik: string[] = await Promise.all(
-		vueComponentFiles.map(async (vueComponentFile) => {
-			const varName = vueComponentFile.file.replace(".vue", ""); // Abutton.vue to Abutton
-			const qwikFileName = varName + ".tsx";
-			const vueFilePath = vuePath + vueComponentFile.dir + "/" + vueComponentFile.file;
-			const qwikDirPath = qwikComponentsPath + vueComponentFile.dir;
-			await vueToQwik(vueFilePath, qwikDirPath, qwikFileName, {
-				noComputedProp,
-				noComputedFile,
-				noImport,
-				recursiveComponentsInfo,
-				fromFileName: vueComponentFile.file,
-			});
-			return `export { default as ${varName} } from "./components/${vueComponentFile.dir}/${varName}";`;
-		})
-	);
+	// const importsQwik: string[] = await Promise.all(
+	// 	vueComponentFiles.map(async (vueComponentFile) => {
+	// 		const varName = vueComponentFile.file.replace(".vue", ""); // Abutton.vue to Abutton
+	// 		const qwikFileName = varName + ".tsx";
+	// 		const vueFilePath = vuePath + vueComponentFile.dir + "/" + vueComponentFile.file;
+	// 		const qwikDirPath = qwikComponentsPath + vueComponentFile.dir;
+	// 		await vueToQwik(vueFilePath, qwikDirPath, qwikFileName, {
+	// 			noComputedProp,
+	// 			noComputedFile,
+	// 			noImport,
+	// 			recursiveComponentsInfo,
+	// 			fromFileName: vueComponentFile.file,
+	// 		});
+	// 		return `export { default as ${varName} } from "./components/${vueComponentFile.dir}/${varName}";`;
+	// 	})
+	// );
 
-	await fs.writeFile(
-		join(qwikSrcPath, "index.ts"),
-		`${importsQwik.join("\n")}\nexport { tr } from "./locale";\nexport * from "./helper";`
-	);
+	// await fs.writeFile(
+	// 	join(qwikSrcPath, "index.ts"),
+	// 	`${importsQwik.join("\n")}\nexport { tr } from "./locale";\nexport * from "./helper";`
+	// );
 }
