@@ -1,5 +1,15 @@
 # Changelog
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @agufaui/config bumped from workspace:^0.7.0 to workspace:^0.8.0
+    * @agufaui/locale bumped from workspace:^0.4.0 to workspace:^0.5.0
+    * @agufaui/theme bumped from workspace:^0.7.0 to workspace:^0.8.0
+    * @agufaui/use bumped from workspace:^0.7.0 to workspace:^0.8.0
+    * @agufaui/usevue bumped from workspace:^0.7.0 to workspace:^0.8.0
+
 ## [0.7.0](https://github.com/agufaui/agufaui/compare/vue-v0.6.0...vue-v0.7.0) (2023-02-25)
 
 
