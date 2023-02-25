@@ -5,6 +5,10 @@ export default {
 		close: "Tutup menu",
 	},
 	ammsidebar: {
-		close: "Tutup bilah sisi",
+		close: "Tutup sidebar",
+	},
+	atoggle: {
+		on: "Pada",
+		off: "Mati",
 	},
 };

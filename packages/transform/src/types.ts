@@ -9,14 +9,34 @@ export interface ITransform {
 	 * @param to Svelte file to transform to
 	 */
 	vueToSvelte: (
-		from: string,
-		toDir: string,
-		toFile: string,
+		fromPath: string,
+		toDirPath: string,
+		toFileName: string,
+		options: ITransformOptions
+	) => Promise<void>;
+
+	vueToQwik: (
+		fromPath: string,
+		toDirPath: string,
+		toFileName: string,
 		options: ITransformOptions
 	) => Promise<void>;
 }
 
 export interface ITransformOptions {
-	noComputed?: Set<string>;
+	noComputedProp?: Set<string>;
+	noComputedFile?: Set<string>;
 	noImport?: Set<string>;
+	recursiveComponentsInfo?: TRecursiveComponentInfo[];
+	fromFileName?: string;
 }
+
+export type TRecursiveComponentInfo = {
+	fileName: string;
+	matchName: string;
+};
+
+export type TVueComponentFile = {
+	dir: string;
+	file: string;
+};

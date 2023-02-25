@@ -45,7 +45,7 @@ One default slot replace button content including icon and loading icon.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AButton.ts
+<<< @/theme/default/basic/AButton.ts
 
 ## Attributes (Properties)
 
@@ -55,7 +55,7 @@ One default slot replace button content including icon and loading icon.
 
 ### Unique
 
-<<< @/theme/types/AButton.ts#props
+<<< @/theme/types/basic/AButton.ts#props
 
 ### Inherit from IProps
 
@@ -79,4 +79,4 @@ One default slot replace button content including icon and loading icon.
 
 ## Events
 
-<<< @/theme/types/AButton.ts#emits
+<<< @/theme/types/basic/AButton.ts#emits

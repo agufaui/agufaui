@@ -5,6 +5,10 @@ export default {
 		close: "Tapuni le lisi",
 	},
 	ammsidebar: {
-		close: "Tapuni le itu pito",
+		close: "Tapuni itu itu",
+	},
+	atoggle: {
+		on: "luga",
+		off: "Tape",
 	},
 };

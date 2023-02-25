@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Akatona ny sisiny",
 	},
+	atoggle: {
+		on: "On",
+		off: "NIALA",
+	},
 };

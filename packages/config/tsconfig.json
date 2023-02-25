@@ -5,5 +5,5 @@
 		"baseUrl": ".",
 		"outDir": "./dist/types"
 	},
-	"include": ["**/*.ts"]
+	"include": ["src/*.ts", "./index.ts"]
 }

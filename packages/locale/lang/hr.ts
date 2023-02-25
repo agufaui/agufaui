@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Zatvori bočnu traku",
 	},
+	atoggle: {
+		on: "Na",
+		off: "Isključeno",
+	},
 };

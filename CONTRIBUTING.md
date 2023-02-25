@@ -115,7 +115,7 @@ for `index.md` the first sentence will be displayed as the short intro in the fu
 Files will be generated in `packages/svelte/src/lib` folder.
 
 ```bash
-pnpm run post
+pnpm run postpkdbuild
 ```
 
 This step is included in "pnpm run build" command.
@@ -139,9 +139,17 @@ This step is not included in "pnpm run build" command.
 5. `packages/theme/default.theme.ts` file to add new component types to default theme
 6. `packages/theme/index.ts` file to export default theme new component types and Interfaces, note that interfaces need to be named export for vue to pickup interface definition
 7. `packages/core` folder to add docs for new Component
-8. `scripts/utils.ts` file `updateSvelte(...)` function to map folder name to file name if they are different (`button` folder and `Abutton.vue` are considered same name, `superscript` folder and `Asup.vue` are considered different name).  And update `noComputed` and `noImport` variables if needed, `noComputed` means don't generate computed properties for these variable names, `noImport` means don't generate import statement for these library names.
+8. `scripts/postpkgbuild.ts` file `updateSvelte(...)` function to map folder name to file name if they are different (`button` folder and `Abutton.vue` are considered same name, `superscript` folder and `Asup.vue` are considered different name).  And update `noComputedProp` and `noImport` variables if needed, `noComputedProp` means don't generate computed properties for these variable names, `noImport` means don't generate import statement for these library names.
 9. `packges/transform/src/vue/svelte` folder `genScript.ts` file and `genTemplate.ts` file, if rules needs to be added or updated for generating svelte component.
 10. `packages/locale/lang/en.ts` file if needs to add i18n for new component, then run `pnpm run translate` to generate other language files.  New component name should be defined in `packages/theme/default.theme.ts` file.
+
+## Debugging external library
+
+### eg. Debug Unocss
+
+1. create a new directory "test" somewhere else, in "test", clone project "git clone https://github.com/unocss/unocss"
+2. suppose you debug in "theme" package, now under "theme" directory, add local dependency "pnpm add -D ../../../test/unocss/packages/unocss"
+3. now you can add debug lines in unocss project files, eg. in "unocss/packages/vite" package, you add code "console.log('hi')" in src->modes->global->build.ts; under "unocss/packages/vite" directory, run "pnpm run stub"; under "theme" directory, run "pnpm run build" to see changes in console log.
 
 ## Code Style
 

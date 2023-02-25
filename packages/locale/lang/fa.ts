@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "نوار کناری را ببندید",
 	},
+	atoggle: {
+		on: "بر",
+		off: "خاموش",
+	},
 };

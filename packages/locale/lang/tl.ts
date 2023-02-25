@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Isara ang sidebar",
 	},
+	atoggle: {
+		on: "Naka-on",
+		off: "Naka-off",
+	},
 };

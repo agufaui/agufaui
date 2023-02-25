@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Fèmen ankadre",
 	},
+	atoggle: {
+		on: "Sou",
+		off: "Off",
+	},
 };

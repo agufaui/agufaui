@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Tutup bar sisi",
 	},
+	atoggle: {
+		on: "hidup",
+		off: "Mati",
+	},
 };

@@ -7,7 +7,17 @@ export { default as Abadge } from "./badge/Abadge.vue";
 export { default as Atag } from "./tag/Atag.vue";
 export { default as Asup } from "./superscript/Asup.vue";
 export { default as Asub } from "./subscript/Asub.vue";
+export { default as Atoggle } from "./toggle/Atoggle.vue";
+export { default as Acheckbox } from "./checkbox/Acheckbox.vue";
+export { default as Aradio } from "./radio/Aradio.vue";
+export { default as Adropdown } from "./dropdown/Adropdown.vue";
+export { default as Adropdownbutton } from "./dropdown/Adropdownbutton.vue";
+export { default as Aselect } from "./select/Aselect.vue";
+
+// navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";
+export { default as Amlink } from "./menuLink/Amlink.vue";
+export { default as Amitem } from "./menuItem/Amitem.vue";
 export { default as Ampanel } from "./menuPanel/Ampanel.vue";
 export { default as Amflyout } from "./menuFlyout/Amflyout.vue";
 export { default as Amdropdown } from "./menuDropdown/Amdropdown.vue";

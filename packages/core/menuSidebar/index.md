@@ -48,7 +48,7 @@ Two slots, one named "header", one named "footer".
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AMsidebar.ts
+<<< @/theme/default/navigation/AMsidebar.ts
 
 ## Attributes (Properties)
 
@@ -58,7 +58,7 @@ Two slots, one named "header", one named "footer".
 
 ### Unique
 
-<<< @/theme/types/AMsidebar.ts#props
+<<< @/theme/types/navigation/AMsidebar.ts#props
 
 ### Inherit from IProps
 

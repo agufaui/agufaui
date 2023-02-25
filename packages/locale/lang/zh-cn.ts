@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "关闭侧边栏",
 	},
+	atoggle: {
+		on: "在",
+		off: "离开",
+	},
 };

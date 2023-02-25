@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Oldalsáv bezárása",
 	},
+	atoggle: {
+		on: "Tovább",
+		off: "Ki",
+	},
 };

@@ -1,4 +1,5 @@
 <template lang="pug">
+//- @ts-ignore
 span(
   v-bind="$attrs"
 	v-if="show"

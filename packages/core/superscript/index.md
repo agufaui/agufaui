@@ -42,7 +42,7 @@ One default slot replace sup content including icon.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/ASup.ts
+<<< @/theme/default/basic/ASup.ts
 
 ## Attributes (Properties)
 
@@ -52,7 +52,7 @@ One default slot replace sup content including icon.
 
 ### Unique
 
-<<< @/theme/types/ASup.ts#props
+<<< @/theme/types/basic/ASup.ts#props
 
 ### Inherit from IProps
 

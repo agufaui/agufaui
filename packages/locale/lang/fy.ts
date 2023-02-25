@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Slút sydbalke",
 	},
+	atoggle: {
+		on: "Op",
+		off: "Út",
+	},
 };

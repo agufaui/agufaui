@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Pechar a barra lateral",
 	},
+	atoggle: {
+		on: "Activado",
+		off: "Desactivado",
+	},
 };

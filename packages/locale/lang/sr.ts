@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Затвори бочну траку",
 	},
+	atoggle: {
+		on: "на",
+		off: "Ван",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "ဘေးဘားကိုပိတ်ပါ။",
 	},
+	atoggle: {
+		on: "ဂရန်",
+		off: "ပိတ်သည်။",
+	},
 };

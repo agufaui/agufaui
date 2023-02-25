@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Dún barra taoibh",
 	},
+	atoggle: {
+		on: "Ar",
+		off: "as",
+	},
 };

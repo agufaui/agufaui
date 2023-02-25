@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Fermu la flankbreton",
 	},
+	atoggle: {
+		on: "On",
+		off: "Malŝaltita",
+	},
 };

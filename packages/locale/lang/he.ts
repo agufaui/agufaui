@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "סגור את סרגל הצד",
 	},
+	atoggle: {
+		on: "עַל",
+		off: "כבוי",
+	},
 };

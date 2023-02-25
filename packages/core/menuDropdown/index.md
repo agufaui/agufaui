@@ -12,7 +12,7 @@ Menu dropdown.
 
 #### Child Components
 
-- [Menu Panel](/core/menuPanel/)
+- [Menu Link](/core/menuLink/)
 
 ## Usage
 
@@ -40,11 +40,15 @@ Theme component name: `{{ CAMdropdownName }}`
 <<< @/core/menuDropdown/DocMenuDropdown.vue#showcase
 :::
 
+## Slot
+
+One default slot for badge, superscript or subscript of title text.
+
 ## AgufaUI provided Theme
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AMdropdown.ts
+<<< @/theme/default/navigation/AMdropdown.ts
 
 ## Attributes (Properties)
 
@@ -54,7 +58,7 @@ Theme component name: `{{ CAMdropdownName }}`
 
 ### Unique
 
-<<< @/theme/types/AMdropdown.ts#props
+<<< @/theme/types/navigation/AMdropdown.ts#props
 
 ### Inherit from IProps
 

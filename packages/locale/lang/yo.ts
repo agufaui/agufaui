@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Padebar ẹgbẹ",
 	},
+	atoggle: {
+		on: "Tan-an",
+		off: "Paa",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Mbyll shiritin anësor",
 	},
+	atoggle: {
+		on: "Aktiv",
+		off: "Joaktiv",
+	},
 };

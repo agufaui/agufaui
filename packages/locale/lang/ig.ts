@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Mechie sidebar",
 	},
+	atoggle: {
+		on: "Gbanye",
+		off: "Gbanyụọ",
+	},
 };

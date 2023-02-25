@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Caewch y bar ochr",
 	},
+	atoggle: {
+		on: "Ar",
+		off: "I ffwrdd",
+	},
 };

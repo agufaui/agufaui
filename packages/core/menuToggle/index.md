@@ -44,7 +44,7 @@ One default slot replace mobile icon and text.
 
 `CDefaultType` is just string constant "default"
 
-<<< @/theme/default/AMtoggle.ts
+<<< @/theme/default/navigation/AMtoggle.ts
 
 ## Attributes (Properties)
 
@@ -54,7 +54,7 @@ One default slot replace mobile icon and text.
 
 ### Unique
 
-<<< @/theme/types/AMtoggle.ts#props
+<<< @/theme/types/navigation/AMtoggle.ts#props
 
 ### Inherit from IProps
 
@@ -62,4 +62,4 @@ One default slot replace mobile icon and text.
 
 ## Events
 
-<<< @/theme/types/AMtoggle.ts#emits
+<<< @/theme/types/navigation/AMtoggle.ts#emits

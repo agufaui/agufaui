@@ -1,20 +1,20 @@
 <template lang="pug">
 div(class="relative select-none" :class="[cdisplay, cc]")
   input(:value="v"
-				:type="ctype"
-				:id="cid"
-				:name="cid"
-        placeholder=" "
-				maxlength="255"
-				:disabled="disabled"
-				:aria-disabled="disabled"
-        v-bind="$attrs"
-				:class="cvc"
-        @input="input($event)")
+    :type="ctype"
+    :id="id"
+    :name="id"
+    placeholder=" "
+    maxlength="255"
+    :disabled="disabled"
+    :aria-disabled="disabled"
+    v-bind="$attrs"
+    :class="cvc"
+    @input="input($event)")
   label(:for="id"
-				v-if="label"
-				class="absolute top-0 py-2 px-3 -z-1" 
-				:class="clabelc") {{ label }}
+    v-if="label"
+    class="absolute top-0 py-2 px-3 -z-1" 
+    :class="clabelc") {{ label }}
 </template>
 
 <script lang="ts">
@@ -46,7 +46,7 @@ const computedProperties = getComputedFromProps<IAInputProps>(
 	defaultPropValues
 );
 
-const { ctype, cid, cdisplay, cvc, cc, clabelc } = computedProperties;
+const { ctype, cdisplay, cvc, cc, clabelc } = computedProperties;
 
 const emits = defineEmits<IAInputEmits>();
 

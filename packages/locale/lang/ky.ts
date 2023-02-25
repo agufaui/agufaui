@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Каптал тилкесин жабуу",
 	},
+	atoggle: {
+		on: "Күйүк",
+		off: "Өчүк",
+	},
 };

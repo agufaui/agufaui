@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Li kêlekê bigire",
 	},
+	atoggle: {
+		on: "Li",
+		off: "Ji",
+	},
 };

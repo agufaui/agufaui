@@ -3,15 +3,19 @@ import type { Program, File } from "@babel/types";
 import type { ParseResult } from "@babel/parser";
 import type { ITransformOptions } from "src/types";
 import type { IContext, IBlock } from "./types";
+import { Framework } from "./types";
 import { getFileAst } from "./ast/utils";
 import pugLex from "pug-lexer";
 import pugParse from "pug-parser";
-import { getSvelteTemplate } from "./svelte/genTemplate";
-import { getSvelteScript } from "./svelte/genScript";
+import { getSvelteTemplate } from "./svelte/genSvelteTemplate";
+import { getSvelteScript } from "./svelte/genSvelteScript";
+import { getQwikTemplate } from "./qwik/genQwikTemplate";
+import { getQwikScript, HtmlTemplatePlaceHolder } from "./qwik/genQwikScript";
 
 export async function transformVue(
 	code: string,
-	from: string,
+	fromPath: string,
+	toFramework: Framework,
 	options: ITransformOptions
 ): Promise<string> {
 	const {
@@ -28,16 +32,28 @@ export async function transformVue(
 
 	const context: IContext = {
 		scriptContent: scriptSetup.content,
-		path: from,
+		path: fromPath,
 		scriptFile,
 		scriptAst,
 		templateAst,
 		...options,
 	};
 
-	const svelteTemplate = getSvelteTemplate(context);
+	if (toFramework === Framework.Svelte) {
+		const svelteTemplate = getSvelteTemplate(context);
 
-	const svelteScript = await getSvelteScript(context);
+		const svelteScript = await getSvelteScript(context);
 
-	return svelteTemplate + "\n" + svelteScript;
+		return svelteTemplate + "\n" + svelteScript;
+	}
+
+	if (toFramework === Framework.Qwik) {
+		const qwikScript = await getQwikScript(context);
+
+		const qwikTemplate = getQwikTemplate(context);
+
+		return qwikScript.replace('"' + HtmlTemplatePlaceHolder + '";', "(\n" + qwikTemplate + "\n);");
+	}
+
+	return Promise.reject("No to-framework specified");
 }

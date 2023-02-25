@@ -1,3 +1,4 @@
 src/lib/*
 !src/lib/config.ts
 !src/lib/locale.ts
+!src/lib/helper.ts

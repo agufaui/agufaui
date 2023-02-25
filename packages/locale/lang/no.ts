@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Lukk sidefeltet",
 	},
+	atoggle: {
+		on: "På",
+		off: "Av",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Uždaryti šoninę juostą",
 	},
+	atoggle: {
+		on: "Įjungta",
+		off: "Išjungta",
+	},
 };

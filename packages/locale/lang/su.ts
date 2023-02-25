@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Tutup sidebar",
 	},
+	atoggle: {
+		on: "Dina",
+		off: "Pareum",
+	},
 };

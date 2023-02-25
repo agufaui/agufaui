@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Pani ʻaoʻao",
 	},
+	atoggle: {
+		on: "Ma ka",
+		off: "Paʻa",
+	},
 };

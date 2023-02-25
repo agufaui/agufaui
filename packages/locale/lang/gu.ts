@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "સાઇડબાર બંધ કરો",
 	},
+	atoggle: {
+		on: "ચાલુ",
+		off: "બંધ",
+	},
 };

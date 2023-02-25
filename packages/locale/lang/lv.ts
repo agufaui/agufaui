@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Aizvērt sānjoslu",
 	},
+	atoggle: {
+		on: "Ieslēgts",
+		off: "Izslēgts",
+	},
 };

@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Κλείσιμο πλαϊνής γραμμής",
 	},
+	atoggle: {
+		on: "Επί",
+		off: "Μακριά από",
+	},
 };

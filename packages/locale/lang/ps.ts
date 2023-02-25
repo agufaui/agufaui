@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "سایډ بار بند کړئ",
 	},
+	atoggle: {
+		on: "پر",
+		off: "بند",
+	},
 };

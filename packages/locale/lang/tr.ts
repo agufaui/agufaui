@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "Kenar çubuğunu kapat",
 	},
+	atoggle: {
+		on: "Açık",
+		off: "Kapalı",
+	},
 };

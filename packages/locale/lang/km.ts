@@ -7,4 +7,8 @@ export default {
 	ammsidebar: {
 		close: "បិទរបារចំហៀង",
 	},
+	atoggle: {
+		on: "បើក",
+		off: "បិទ",
+	},
 };
