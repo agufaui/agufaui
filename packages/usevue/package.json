@@ -1,6 +1,6 @@
 {
 	"name": "@agufaui/usevue",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "Vue Composables Library",
 	"author": "Agufa.tech <https://agufa.tech>",
 	"license": "MIT",
@@ -55,6 +55,6 @@
 		"coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
-		"@agufaui/config": "workspace:^0.6.0"
+		"@agufaui/config": "workspace:^0.7.0"
 	}
 }
