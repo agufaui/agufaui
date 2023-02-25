@@ -1,6 +1,6 @@
 {
 	"name": "@agufaui/config",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "AgufaUI Config",
 	"author": "Agufa.tech <https://agufa.tech>",
 	"license": "MIT",
@@ -51,7 +51,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@agufaui/locale": "workspace:^0.3.0",
+		"@agufaui/locale": "workspace:^0.4.0",
 		"@unocss/preset-uno": "^0.49.4"
 	}
 }
