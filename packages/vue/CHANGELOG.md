@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.7.0](https://github.com/agufaui/agufaui/compare/vue-v0.6.0...vue-v0.7.0) (2023-02-25)
+
+
+### Features
+
+* **components:** menuItem, menuLink, toggle, checkbox, dropdown, select, radio ([#15](https://github.com/agufaui/agufaui/issues/15)) ([#16](https://github.com/agufaui/agufaui/issues/16)) ([b3e0859](https://github.com/agufaui/agufaui/commit/b3e08593f2e0e9088f09701637eaacc1a7e4b659))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @agufaui/config bumped from workspace:^0.6.0 to workspace:^0.7.0
+    * @agufaui/locale bumped from workspace:^0.3.0 to workspace:^0.4.0
+    * @agufaui/theme bumped from workspace:^0.6.0 to workspace:^0.7.0
+    * @agufaui/use bumped from workspace:^0.6.0 to workspace:^0.7.0
+    * @agufaui/usevue bumped from workspace:^0.6.0 to workspace:^0.7.0
+
 ## [0.6.0](https://github.com/agufaui/agufaui/compare/vue-v0.5.0...vue-v0.6.0) (2022-08-26)
 
 
