@@ -80,4 +80,4 @@ jobs:
           token: ${{secrets.WORKFLOW_TOKEN}}
           monorepo-tags: true
           signoff: 'release-please-action[bot] <release-please-action[bot]@users.noreply.github.com>'
-          extra-files: [packages/svelte/package.json, packages/qwik/package.json]
+          extra-files: packages/svelte/package.json,packages/qwik/package.json
