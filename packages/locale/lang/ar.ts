@@ -11,4 +11,7 @@ export default {
 		on: "على",
 		off: "عن",
 	},
+	asearch: {
+		search: "يبحث",
+	},
 };

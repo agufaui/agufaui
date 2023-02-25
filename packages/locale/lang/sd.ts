@@ -11,4 +11,7 @@ export default {
 		on: "تي",
 		off: "بند",
 	},
+	asearch: {
+		search: "ڳولا",
+	},
 };

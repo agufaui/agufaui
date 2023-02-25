@@ -11,4 +11,7 @@ export default {
 		on: "ଅନ୍",
 		off: "ବନ୍ଦ",
 	},
+	asearch: {
+		search: "ସନ୍ଧାନ କର |",
+	},
 };

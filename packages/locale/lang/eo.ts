@@ -11,4 +11,7 @@ export default {
 		on: "On",
 		off: "Malŝaltita",
 	},
+	asearch: {
+		search: "Serĉu",
+	},
 };

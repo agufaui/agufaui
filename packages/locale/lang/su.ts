@@ -11,4 +11,7 @@ export default {
 		on: "Dina",
 		off: "Pareum",
 	},
+	asearch: {
+		search: "Pilarian",
+	},
 };

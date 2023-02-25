@@ -11,4 +11,7 @@ export default {
 		on: "Sobre",
 		off: "Desligado",
 	},
+	asearch: {
+		search: "Procurar",
+	},
 };

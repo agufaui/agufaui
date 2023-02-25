@@ -11,4 +11,7 @@ export default {
 		on: "En",
 		off: "Apagado",
 	},
+	asearch: {
+		search: "Buscar",
+	},
 };

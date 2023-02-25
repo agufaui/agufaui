@@ -11,4 +11,7 @@ export default {
 		on: "Ma ka",
 		off: "Paʻa",
 	},
+	asearch: {
+		search: "Huli",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "Дар",
 		off: "Хомӯш",
 	},
+	asearch: {
+		search: "Ҷустуҷӯ",
+	},
 };

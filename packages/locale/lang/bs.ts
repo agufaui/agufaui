@@ -11,4 +11,7 @@ export default {
 		on: "On",
 		off: "Isključeno",
 	},
+	asearch: {
+		search: "Traži",
+	},
 };

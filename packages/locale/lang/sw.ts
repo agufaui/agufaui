@@ -11,4 +11,7 @@ export default {
 		on: "Washa",
 		off: "Imezimwa",
 	},
+	asearch: {
+		search: "Tafuta",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "ચાલુ",
 		off: "બંધ",
 	},
+	asearch: {
+		search: "શોધો",
+	},
 };

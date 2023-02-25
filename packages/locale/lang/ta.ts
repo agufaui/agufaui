@@ -11,4 +11,7 @@ export default {
 		on: "அன்று",
 		off: "ஆஃப்",
 	},
+	asearch: {
+		search: "தேடு",
+	},
 };

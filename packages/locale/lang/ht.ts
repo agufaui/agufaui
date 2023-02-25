@@ -11,4 +11,7 @@ export default {
 		on: "Sou",
 		off: "Off",
 	},
+	asearch: {
+		search: "Rechèch",
+	},
 };

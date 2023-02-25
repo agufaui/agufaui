@@ -11,4 +11,7 @@ export default {
 		on: "Işlediň",
 		off: "Öçürilen",
 	},
+	asearch: {
+		search: "Gözlemek",
+	},
 };

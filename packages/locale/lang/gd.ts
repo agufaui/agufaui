@@ -11,4 +11,7 @@ export default {
 		on: "Air adhart",
 		off: "dheth",
 	},
+	asearch: {
+		search: "Rannsaich",
+	},
 };

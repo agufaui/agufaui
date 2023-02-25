@@ -11,4 +11,7 @@ export default {
 		on: "Op",
 		off: "Uit",
 	},
+	asearch: {
+		search: "Zoekopdracht",
+	},
 };

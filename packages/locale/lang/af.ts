@@ -11,4 +11,7 @@ export default {
 		on: "Aan",
 		off: "Af",
 	},
+	asearch: {
+		search: "Soek",
+	},
 };

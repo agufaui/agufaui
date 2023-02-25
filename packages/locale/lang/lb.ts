@@ -11,4 +11,7 @@ export default {
 		on: "Op",
 		off: "Off",
 	},
+	asearch: {
+		search: "Sichen",
+	},
 };

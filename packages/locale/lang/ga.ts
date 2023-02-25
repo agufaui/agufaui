@@ -11,4 +11,7 @@ export default {
 		on: "Ar",
 		off: "as",
 	},
+	asearch: {
+		search: "Cuardach",
+	},
 };

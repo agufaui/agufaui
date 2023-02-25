@@ -11,4 +11,7 @@ export default {
 		on: "Açık",
 		off: "Kapalı",
 	},
+	asearch: {
+		search: "Aramak",
+	},
 };

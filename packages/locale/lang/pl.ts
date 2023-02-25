@@ -11,4 +11,7 @@ export default {
 		on: "NA",
 		off: "Wyłączony",
 	},
+	asearch: {
+		search: "Szukaj",
+	},
 };

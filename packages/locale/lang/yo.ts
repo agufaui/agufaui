@@ -11,4 +11,7 @@ export default {
 		on: "Tan-an",
 		off: "Paa",
 	},
+	asearch: {
+		search: "Wa",
+	},
 };

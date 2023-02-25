@@ -14,6 +14,7 @@ import { DARadio } from "./default/basic/ARadio";
 import { DADropdown } from "./default/basic/ADropdown";
 import { DADropdownButton } from "./default/basic/ADropdown";
 import { DASelect } from "./default/basic/ASelect";
+import { DASearch } from "./default/basic/ASearch";
 import { DAMtoggle } from "./default/navigation/AMtoggle";
 import { DAMlink } from "./default/navigation/AMlink";
 import { DAMitem } from "./default/navigation/AMitem";
@@ -38,6 +39,7 @@ export const CARadioName = "aradio";
 export const CASelectName = "aselect";
 export const CADropdownName = "adropdown";
 export const CADropdownButtonName = "adropdownbutton";
+export const CASearchName = "asearch";
 export const CAMtoggleName = "amtoggle";
 export const CAMlinkName = "amlink";
 export const CAMitemName = "amitem";
@@ -63,6 +65,7 @@ export const Theme: ITheme = {
 	[CASelectName]: DASelect,
 	[CADropdownName]: DADropdown,
 	[CADropdownButtonName]: DADropdownButton,
+	[CASearchName]: DASearch,
 	[CAMtoggleName]: DAMtoggle,
 	[CAMlinkName]: DAMlink,
 	[CAMitemName]: DAMitem,

@@ -11,4 +11,7 @@ export default {
 		on: "Li",
 		off: "Ji",
 	},
+	asearch: {
+		search: "Gerr",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "Ar",
 		off: "I ffwrdd",
 	},
+	asearch: {
+		search: "Chwiliwch",
+	},
 };

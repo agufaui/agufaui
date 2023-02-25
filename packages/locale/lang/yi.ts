@@ -11,4 +11,7 @@ export default {
 		on: "אויף",
 		off: "אַוועק",
 	},
+	asearch: {
+		search: "זוכן",
+	},
 };

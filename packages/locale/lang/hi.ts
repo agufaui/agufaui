@@ -11,4 +11,7 @@ export default {
 		on: "पर",
 		off: "बंद",
 	},
+	asearch: {
+		search: "खोज",
+	},
 };

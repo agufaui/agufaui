@@ -11,4 +11,7 @@ export default {
 		on: "Tovább",
 		off: "Ki",
 	},
+	asearch: {
+		search: "Keresés",
+	},
 };

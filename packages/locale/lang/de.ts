@@ -11,4 +11,7 @@ export default {
 		on: "An",
 		off: "Aus",
 	},
+	asearch: {
+		search: "Suchen",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "මත",
 		off: "අක්රියයි",
 	},
+	asearch: {
+		search: "සෙවීම",
+	},
 };

@@ -14,6 +14,7 @@ export * from "./default/basic/ACheckbox";
 export * from "./default/basic/ARadio";
 export * from "./default/basic/ASelect";
 export * from "./default/basic/ADropdown";
+export * from "./default/basic/ASearch";
 export * from "./default/navigation/AMtoggle";
 export * from "./default/navigation/AMlink";
 export * from "./default/navigation/AMpanel";
@@ -57,6 +58,7 @@ export type {
 	IADropdownButtonEmitsS,
 	TDropdownButtonItem,
 } from "./types/basic/ADropdown";
+export type { IASearchProps, IASearchEmits, IASearchEmitsS } from "./types/basic/ASearch";
 export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/navigation/AMtoggle";
 export type { IAMlinkProps } from "./types/navigation/AMlink";
 export type { IAMitemProps, TAMItem, TAMItemComponentName } from "./types/navigation/AMitem";

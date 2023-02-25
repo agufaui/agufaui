@@ -11,4 +11,7 @@ export default {
 		on: "Yoniq",
 		off: "Oʻchirilgan",
 	},
+	asearch: {
+		search: "Qidirmoq",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "चालू",
 		off: "बंद",
 	},
+	asearch: {
+		search: "शोधा",
+	},
 };

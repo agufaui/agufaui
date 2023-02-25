@@ -11,4 +11,7 @@ export default {
 		on: "بر",
 		off: "خاموش",
 	},
+	asearch: {
+		search: "جستجو کردن",
+	},
 };

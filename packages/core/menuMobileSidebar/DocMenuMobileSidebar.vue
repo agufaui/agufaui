@@ -7,11 +7,11 @@
 					href="https://google.com"
 					i="i-logos:google"
 					ic="text-5xl"
-					c="flex-shrink-0 bg-gray-900 rounded-none"
+					c="flex-shrink-0 bg-gray-9 rounded-none"
 				/>
 			</template>
 			<template #footer>
-				<div class="bg-gray-900">
+				<div class="bg-gray-9">
 					<abutton
 						v="signout"
 						i="i-ic:sharp-logout"

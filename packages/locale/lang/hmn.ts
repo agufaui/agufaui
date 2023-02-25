@@ -11,4 +11,7 @@ export default {
 		on: "Ntawm",
 		off: "Tawm",
 	},
+	asearch: {
+		search: "Nrhiav",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "Укл",
 		off: "Выкл",
 	},
+	asearch: {
+		search: "Пошук",
+	},
 };

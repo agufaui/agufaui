@@ -11,4 +11,7 @@ export default {
 		on: "'ਤੇ",
 		off: "ਬੰਦ",
 	},
+	asearch: {
+		search: "ਖੋਜ",
+	},
 };

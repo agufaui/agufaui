@@ -11,4 +11,7 @@ export default {
 		on: "luga",
 		off: "Tape",
 	},
+	asearch: {
+		search: "Saili",
+	},
 };

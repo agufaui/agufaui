@@ -11,4 +11,7 @@ export default {
 		on: "Vuliwe",
 		off: "Valiwe",
 	},
+	asearch: {
+		search: "Sesha",
+	},
 };

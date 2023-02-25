@@ -23,6 +23,7 @@
 		Aselect,
 		Adropdown,
 		Adropdownbutton,
+		Asearch,
 	} from "@agufaui/svelte";
 	// let AButton;
 	// onMount(async () => {
@@ -42,6 +43,8 @@
 
 	let text = ""; // Ainput
 	$: console.log("text", text); // Ainput
+
+	let searchtext = ""; // Asearch
 
 	let on = false; // Atoggle
 	// Atoggle
@@ -142,6 +145,7 @@
 	/>
 	<Adropdown v="options" items={itemsDropdown} />
 	<Adropdownbutton items={itemsDropdownButton} />
+	<Asearch v={searchtext} vc="dark:text-white" on:update:v={(e) => (text = e)} />
 	<!-- {#if AButton}
 	 <svelte:component this={AButton} text="cick me" />
 {:else}

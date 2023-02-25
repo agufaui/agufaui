@@ -11,4 +11,7 @@ export default {
 		on: "Activado",
 		off: "Desactivado",
 	},
+	asearch: {
+		search: "Busca",
+	},
 };

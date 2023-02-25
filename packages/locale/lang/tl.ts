@@ -11,4 +11,7 @@ export default {
 		on: "Naka-on",
 		off: "Naka-off",
 	},
+	asearch: {
+		search: "Maghanap",
+	},
 };

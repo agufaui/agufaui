@@ -2,7 +2,7 @@
 <template>
 	<div class="flex items-start flex-wrap gap-2 h-22rem doc">
 		<div class="flex items-center justify-between w-14rem">
-			<amflyout v="Sites" :mpanel="mpanel" vc="dark:text-white dark:hover:text-gray-900" />
+			<amflyout v="Sites" :mpanel="mpanel" vc="dark:text-white dark:hover:text-gray-9" />
 			<amflyout
 				t="arrow"
 				v="Sites"
@@ -39,7 +39,7 @@ const mpanel: IAMpanelProps = {
 					props: {
 						v: "Google",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 						subtitle: "Google Site",
@@ -57,7 +57,7 @@ const mpanel: IAMpanelProps = {
 					props: {
 						v: "Github",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 						subtitle: "Github Site",
@@ -72,7 +72,7 @@ const mpanel: IAMpanelProps = {
 					props: {
 						v: "Google",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 						subtitle: "Google Site",
@@ -83,7 +83,7 @@ const mpanel: IAMpanelProps = {
 					props: {
 						v: "Github",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 						subtitle: "Github Site",
@@ -105,7 +105,7 @@ const mpanelTitle: IAMpanelProps = {
 					props: {
 						v: "Google",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 						subtitle: "Google Site",
@@ -123,7 +123,7 @@ const mpanelTitle: IAMpanelProps = {
 					props: {
 						v: "Github",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 						subtitle: "Github Site",
@@ -139,7 +139,7 @@ const mpanelTitle: IAMpanelProps = {
 					props: {
 						v: "Google",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 						subtitle: "Google Site",
@@ -150,7 +150,7 @@ const mpanelTitle: IAMpanelProps = {
 					props: {
 						v: "Github",
 						t: "sidebar",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 						subtitle: "Github Site",

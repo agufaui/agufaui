@@ -11,4 +11,7 @@ export default {
 		on: "Pada",
 		off: "Mati",
 	},
+	asearch: {
+		search: "Mencari",
+	},
 };

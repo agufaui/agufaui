@@ -11,4 +11,7 @@ export default {
 		on: "Vula",
 		off: "Cimile",
 	},
+	asearch: {
+		search: "Khangela",
+	},
 };

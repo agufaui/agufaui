@@ -11,4 +11,7 @@ export default {
 		on: "Асаалттай",
 		off: "Унтраах",
 	},
+	asearch: {
+		search: "Хайх",
+	},
 };

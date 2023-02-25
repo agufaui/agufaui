@@ -11,4 +11,7 @@ export default {
 		on: "на",
 		off: "Ван",
 	},
+	asearch: {
+		search: "Претрага",
+	},
 };

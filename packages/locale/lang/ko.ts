@@ -11,4 +11,7 @@ export default {
 		on: "~에",
 		off: "끄다",
 	},
+	asearch: {
+		search: "찾다",
+	},
 };

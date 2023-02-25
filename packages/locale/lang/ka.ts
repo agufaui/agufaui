@@ -11,4 +11,7 @@ export default {
 		on: "ჩართულია",
 		off: "გამორთულია",
 	},
+	asearch: {
+		search: "ძიება",
+	},
 };

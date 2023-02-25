@@ -11,4 +11,7 @@ export default {
 		on: "Op",
 		off: "Út",
 	},
+	asearch: {
+		search: "Sykje",
+	},
 };

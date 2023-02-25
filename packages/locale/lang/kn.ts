@@ -11,4 +11,7 @@ export default {
 		on: "ಆನ್",
 		off: "ಆರಿಸಿ",
 	},
+	asearch: {
+		search: "ಹುಡುಕಿ Kannada",
+	},
 };

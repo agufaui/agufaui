@@ -11,4 +11,7 @@ export default {
 		on: "ဂရန်",
 		off: "ပိတ်သည်။",
 	},
+	asearch: {
+		search: "ရှာရန်",
+	},
 };

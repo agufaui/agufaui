@@ -11,4 +11,7 @@ export default {
 		on: "Zapnuté",
 		off: "Vypnuté",
 	},
+	asearch: {
+		search: "Vyhľadávanie",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "ഓൺ",
 		off: "ഓഫ്",
 	},
+	asearch: {
+		search: "തിരയുക",
+	},
 };

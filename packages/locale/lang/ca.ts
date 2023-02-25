@@ -11,4 +11,7 @@ export default {
 		on: "Encès",
 		off: "Apagat",
 	},
+	asearch: {
+		search: "Cerca",
+	},
 };

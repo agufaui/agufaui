@@ -11,4 +11,7 @@ export default {
 		on: "अन",
 		off: "बन्द",
 	},
+	asearch: {
+		search: "खोज्नुहोस्",
+	},
 };

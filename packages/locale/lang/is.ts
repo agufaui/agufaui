@@ -11,4 +11,7 @@ export default {
 		on: "Á",
 		off: "Af",
 	},
+	asearch: {
+		search: "Leita",
+	},
 };

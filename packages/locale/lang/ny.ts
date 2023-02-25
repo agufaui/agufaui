@@ -11,4 +11,7 @@ export default {
 		on: "Yambani",
 		off: "Kuzimitsa",
 	},
+	asearch: {
+		search: "Sakani",
+	},
 };

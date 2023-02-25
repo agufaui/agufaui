@@ -11,4 +11,7 @@ export default {
 		on: "E butsoe",
 		off: "E tima",
 	},
+	asearch: {
+		search: "Batla",
+	},
 };

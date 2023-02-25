@@ -11,4 +11,7 @@ export default {
 		on: "hidup",
 		off: "Mati",
 	},
+	asearch: {
+		search: "Cari",
+	},
 };

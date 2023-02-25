@@ -11,4 +11,7 @@ export default {
 		on: "På",
 		off: "Av",
 	},
+	asearch: {
+		search: "Søk",
+	},
 };

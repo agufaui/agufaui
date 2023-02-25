@@ -11,4 +11,7 @@ export default {
 		on: "Aktiv",
 		off: "Joaktiv",
 	},
+	asearch: {
+		search: "Kërko",
+	},
 };

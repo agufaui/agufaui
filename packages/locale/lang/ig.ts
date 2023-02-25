@@ -11,4 +11,7 @@ export default {
 		on: "Gbanye",
 		off: "Gbanyụọ",
 	},
+	asearch: {
+		search: "Chọọ",
+	},
 };

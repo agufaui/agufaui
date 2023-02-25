@@ -11,4 +11,7 @@ export default {
 		on: "Fuq",
 		off: "Mitfi",
 	},
+	asearch: {
+		search: "Fittex",
+	},
 };

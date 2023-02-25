@@ -11,4 +11,7 @@ export default {
 		on: "Päällä",
 		off: "Vinossa",
 	},
+	asearch: {
+		search: "Hae",
+	},
 };

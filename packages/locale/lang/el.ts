@@ -11,4 +11,7 @@ export default {
 		on: "Επί",
 		off: "Μακριά από",
 	},
+	asearch: {
+		search: "Αναζήτηση",
+	},
 };

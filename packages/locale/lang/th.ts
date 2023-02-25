@@ -11,4 +11,7 @@ export default {
 		on: "บน",
 		off: "ปิด",
 	},
+	asearch: {
+		search: "ค้นหา",
+	},
 };

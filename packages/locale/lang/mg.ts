@@ -11,4 +11,7 @@ export default {
 		on: "On",
 		off: "NIALA",
 	},
+	asearch: {
+		search: "karohy",
+	},
 };

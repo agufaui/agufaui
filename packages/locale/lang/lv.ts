@@ -11,4 +11,7 @@ export default {
 		on: "Ieslēgts",
 		off: "Izslēgts",
 	},
+	asearch: {
+		search: "Meklēt",
+	},
 };

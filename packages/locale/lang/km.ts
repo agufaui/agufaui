@@ -11,4 +11,7 @@ export default {
 		on: "បើក",
 		off: "បិទ",
 	},
+	asearch: {
+		search: "ស្វែងរក",
+	},
 };

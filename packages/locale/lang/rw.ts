@@ -11,4 +11,7 @@ export default {
 		on: "Kuri",
 		off: "Hanze",
 	},
+	asearch: {
+		search: "Shakisha",
+	},
 };

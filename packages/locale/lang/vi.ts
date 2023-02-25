@@ -11,4 +11,7 @@ export default {
 		on: "TRÊN",
 		off: "Tắt",
 	},
+	asearch: {
+		search: "Tìm kiếm",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "Įjungta",
 		off: "Išjungta",
 	},
+	asearch: {
+		search: "Paieška",
+	},
 };

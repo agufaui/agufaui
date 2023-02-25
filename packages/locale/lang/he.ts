@@ -11,4 +11,7 @@ export default {
 		on: "עַל",
 		off: "כבוי",
 	},
+	asearch: {
+		search: "לחפש",
+	},
 };

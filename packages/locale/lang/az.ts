@@ -11,4 +11,7 @@ export default {
 		on: "Aktiv",
 		off: "Söndür",
 	},
+	asearch: {
+		search: "Axtar",
+	},
 };

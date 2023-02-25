@@ -11,4 +11,7 @@ export default {
 		on: "Күйүк",
 		off: "Өчүк",
 	},
+	asearch: {
+		search: "Издөө",
+	},
 };

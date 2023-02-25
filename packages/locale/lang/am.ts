@@ -11,4 +11,7 @@ export default {
 		on: "በርቷል",
 		off: "ጠፍቷል",
 	},
+	asearch: {
+		search: "ፈልግ",
+	},
 };

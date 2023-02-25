@@ -7,7 +7,17 @@ execSync("pnpm run build", { stdio: "inherit" });
 
 const scope = "@agufaui";
 
-const packages = ["config", "theme", "metadata", "use", "usevue", "transform", "vue", "svelte"];
+const packages = [
+	"translate",
+	"config",
+	"theme",
+	"metadata",
+	"use",
+	"usevue",
+	"transform",
+	"vue",
+	"svelte",
+];
 //const packages = ["svelte"];
 
 for (const name of packages) {

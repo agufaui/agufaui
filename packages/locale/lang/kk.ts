@@ -11,4 +11,7 @@ export default {
 		on: "Қосулы",
 		off: "Өшірулі",
 	},
+	asearch: {
+		search: "Іздеу",
+	},
 };

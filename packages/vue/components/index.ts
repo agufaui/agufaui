@@ -13,6 +13,7 @@ export { default as Aradio } from "./radio/Aradio.vue";
 export { default as Adropdown } from "./dropdown/Adropdown.vue";
 export { default as Adropdownbutton } from "./dropdown/Adropdownbutton.vue";
 export { default as Aselect } from "./select/Aselect.vue";
+export { default as Asearch } from "./search/Asearch.vue";
 
 // navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";

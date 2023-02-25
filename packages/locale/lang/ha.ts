@@ -11,4 +11,7 @@ export default {
 		on: "Kunna",
 		off: "Kashe",
 	},
+	asearch: {
+		search: "Bincika",
+	},
 };

@@ -11,4 +11,7 @@ export default {
 		on: "在",
 		off: "离开",
 	},
+	asearch: {
+		search: "搜索",
+	},
 };

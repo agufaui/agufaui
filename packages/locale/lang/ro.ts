@@ -11,4 +11,7 @@ export default {
 		on: "Pe",
 		off: "Oprit",
 	},
+	asearch: {
+		search: "Căutare",
+	},
 };

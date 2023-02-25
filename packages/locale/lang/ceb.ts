@@ -11,4 +11,7 @@ export default {
 		on: "Sa",
 		off: "Off",
 	},
+	asearch: {
+		search: "Pangitaa",
+	},
 };

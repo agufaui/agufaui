@@ -11,4 +11,7 @@ export default {
 		on: "ສຸດ",
 		off: "ປິດ",
 	},
+	asearch: {
+		search: "ຊອກຫາ",
+	},
 };

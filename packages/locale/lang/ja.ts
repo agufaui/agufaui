@@ -11,4 +11,7 @@ export default {
 		on: "の上",
 		off: "オフ",
 	},
+	asearch: {
+		search: "検索",
+	},
 };

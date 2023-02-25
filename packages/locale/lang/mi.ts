@@ -11,4 +11,7 @@ export default {
 		on: "Kei runga",
 		off: "Wehe",
 	},
+	asearch: {
+		search: "Rapu",
+	},
 };

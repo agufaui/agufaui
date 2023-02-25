@@ -11,4 +11,7 @@ export default {
 		on: "Daar",
 		off: "Demin",
 	},
+	asearch: {
+		search: "Raadi",
+	},
 };

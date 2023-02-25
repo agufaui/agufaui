@@ -11,4 +11,7 @@ export default {
 		on: "Peal",
 		off: "Väljas",
 	},
+	asearch: {
+		search: "Otsing",
+	},
 };

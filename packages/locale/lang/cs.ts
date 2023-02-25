@@ -11,4 +11,7 @@ export default {
 		on: "Na",
 		off: "Vypnuto",
 	},
+	asearch: {
+		search: "Vyhledávání",
+	},
 };

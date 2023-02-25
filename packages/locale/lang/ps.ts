@@ -11,4 +11,7 @@ export default {
 		on: "پر",
 		off: "بند",
 	},
+	asearch: {
+		search: "لټون",
+	},
 };

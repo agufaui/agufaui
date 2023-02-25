@@ -11,4 +11,7 @@ export default {
 		on: "চালু",
 		off: "বন্ধ",
 	},
+	asearch: {
+		search: "অনুসন্ধান করুন",
+	},
 };
