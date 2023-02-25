@@ -61,12 +61,7 @@ jobs:
         run: nci
 
       - name: Build
-        uses: nick-fields/retry@v2
-			  with:
-				  max_attempts: 3
-				  retry_on: error
-          command: |
-            nr build
+        run: nr build
 
       - name: Typecheck
         run: nr typecheck
