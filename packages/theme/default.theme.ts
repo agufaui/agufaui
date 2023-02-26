@@ -15,6 +15,8 @@ import { DADropdown } from "./default/basic/ADropdown";
 import { DADropdownButton } from "./default/basic/ADropdown";
 import { DASelect } from "./default/basic/ASelect";
 import { DASearch } from "./default/basic/ASearch";
+import { DALabel } from "./default/basic/ALabel";
+import { DATooltip } from "./default/basic/ATooltip";
 import { DAMtoggle } from "./default/navigation/AMtoggle";
 import { DAMlink } from "./default/navigation/AMlink";
 import { DAMitem } from "./default/navigation/AMitem";
@@ -23,6 +25,7 @@ import { DAMflyout } from "./default/navigation/AMflyout";
 import { DAMdropdown } from "./default/navigation/AMdropdown";
 import { DAMsidebar } from "./default/navigation/AMsidebar";
 import { DAMmsidebar } from "./default/navigation/AMmsidebar";
+import { DASd } from "./default/form/ASd";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
@@ -40,6 +43,8 @@ export const CASelectName = "aselect";
 export const CADropdownName = "adropdown";
 export const CADropdownButtonName = "adropdownbutton";
 export const CASearchName = "asearch";
+export const CALabelName = "alabel";
+export const CATooltipName = "atooltip";
 export const CAMtoggleName = "amtoggle";
 export const CAMlinkName = "amlink";
 export const CAMitemName = "amitem";
@@ -48,6 +53,7 @@ export const CAMflyoutName = "amflyout";
 export const CAMdropdownName = "amdropdown";
 export const CAMsidebarName = "amsidebar";
 export const CAMmsidebarName = "ammsidebar";
+export const CASdName = "asd";
 
 export const Theme: ITheme = {
 	[CAButtonName]: DAButton,
@@ -66,6 +72,8 @@ export const Theme: ITheme = {
 	[CADropdownName]: DADropdown,
 	[CADropdownButtonName]: DADropdownButton,
 	[CASearchName]: DASearch,
+	[CALabelName]: DALabel,
+	[CATooltipName]: DATooltip,
 	[CAMtoggleName]: DAMtoggle,
 	[CAMlinkName]: DAMlink,
 	[CAMitemName]: DAMitem,
@@ -74,4 +82,5 @@ export const Theme: ITheme = {
 	[CAMdropdownName]: DAMdropdown,
 	[CAMsidebarName]: DAMsidebar,
 	[CAMmsidebarName]: DAMmsidebar,
+	[CASdName]: DASd,
 };

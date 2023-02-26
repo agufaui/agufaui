@@ -15,6 +15,8 @@ export * from "./default/basic/ARadio";
 export * from "./default/basic/ASelect";
 export * from "./default/basic/ADropdown";
 export * from "./default/basic/ASearch";
+export * from "./default/basic/ATooltip";
+export * from "./default/basic/ALabel";
 export * from "./default/navigation/AMtoggle";
 export * from "./default/navigation/AMlink";
 export * from "./default/navigation/AMpanel";
@@ -22,6 +24,7 @@ export * from "./default/navigation/AMflyout";
 export * from "./default/navigation/AMdropdown";
 export * from "./default/navigation/AMsidebar";
 export * from "./default/navigation/AMmsidebar";
+export * from "./default/form/ASd";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/basic/AAlert";
@@ -59,6 +62,8 @@ export type {
 	TDropdownButtonItem,
 } from "./types/basic/ADropdown";
 export type { IASearchProps, IASearchEmits, IASearchEmitsS } from "./types/basic/ASearch";
+export type { IALabelProps } from "./types/basic/ALabel";
+export type { IATooltipProps } from "./types/basic/ATooltip";
 export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/navigation/AMtoggle";
 export type { IAMlinkProps } from "./types/navigation/AMlink";
 export type { IAMitemProps, TAMItem, TAMItemComponentName } from "./types/navigation/AMitem";
@@ -71,3 +76,4 @@ export type {
 	IAMmsidebarEmits,
 	IAMmsidebarEmitsS,
 } from "./types/navigation/AMmsidebar";
+export type { IASdProps } from "./types/form/ASd";

@@ -14,6 +14,8 @@ export { default as Adropdown } from "./dropdown/Adropdown.vue";
 export { default as Adropdownbutton } from "./dropdown/Adropdownbutton.vue";
 export { default as Aselect } from "./select/Aselect.vue";
 export { default as Asearch } from "./search/Asearch.vue";
+export { default as Alabel } from "./label/Alabel.vue";
+export { default as Atooltip } from "./tooltip/Atooltip.vue";
 
 // navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";
@@ -24,3 +26,6 @@ export { default as Amflyout } from "./menuFlyout/Amflyout.vue";
 export { default as Amdropdown } from "./menuDropdown/Amdropdown.vue";
 export { default as Amsidebar } from "./menuSidebar/Amsidebar.vue";
 export { default as Ammsidebar } from "./menuMobileSidebar/Ammsidebar.vue";
+
+// form
+export { default as Asd } from "./statusDecorator/Asd.vue";

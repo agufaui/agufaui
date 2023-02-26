@@ -24,6 +24,8 @@
 		Adropdown,
 		Adropdownbutton,
 		Asearch,
+		Atooltip,
+		Alabel,
 	} from "@agufaui/svelte";
 	// let AButton;
 	// onMount(async () => {
@@ -146,6 +148,8 @@
 	<Adropdown v="options" items={itemsDropdown} />
 	<Adropdownbutton items={itemsDropdownButton} />
 	<Asearch v={searchtext} vc="dark:text-white" on:update:v={(e) => (text = e)} />
+	<Alabel v="Username" vc="dark:text-white" />
+	<Atooltip v="user name" />
 	<!-- {#if AButton}
 	 <svelte:component this={AButton} text="cick me" />
 {:else}
