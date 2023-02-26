@@ -17,11 +17,11 @@ export interface IAAlertProps extends IProps, IPropsComposeX, IPropsIcon {
 
 // #region emits
 export interface IAAlertEmits {
-	(e: "close"): void; // close alert event
+	(e: "close"): void; // close event
 }
 // #endregion emits
 
 // Svelte events interface
 export interface IAAlertEmitsS {
-	close: void; // click event
+	close: void; // close event
 }

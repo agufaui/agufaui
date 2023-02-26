@@ -17,6 +17,7 @@ export * from "./default/basic/ASearch";
 export * from "./default/basic/ALabel";
 export * from "./default/basic/ATooltip";
 export * from "./default/basic/ATextarea";
+export * from "./default/basic/AModal";
 // Utility
 export * from "./default/utility/AAlertError";
 // Navigation
@@ -64,6 +65,7 @@ export type { IASearchProps, IASearchEmits, IASearchEmitsS } from "./types/basic
 export type { IALabelProps } from "./types/basic/ALabel";
 export type { IATooltipProps } from "./types/basic/ATooltip";
 export type { IATextareaProps, IATextareaEmits, IATextareaEmitsS } from "./types/basic/ATextarea";
+export type { IAModalProps, IAModalEmits, IAModalEmitsS } from "./types/basic/AModal";
 // Utility
 export type {
 	IAAlertErrorProps,

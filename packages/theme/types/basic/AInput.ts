@@ -20,5 +20,5 @@ export interface IAInputEmits {
 
 // Svelte events interface
 export interface IAInputEmitsS {
-	"update:v": string; // click event
+	"update:v": string; // input event
 }

@@ -38,6 +38,11 @@ Theme component name: `{{ CASdName }}`
 <<< @/core/statusDecorator/DocSd.vue#showcase
 :::
 
+## Slot
+
+- One default slot for error or success message
+- One named slot `info` for info message
+
 ## AgufaUI provided Theme
 
 `CDefaultType` is just string constant "default"
@@ -57,3 +62,7 @@ Theme component name: `{{ CASdName }}`
 ### Inherit from IProps
 
 <<< @/theme/prop.type.ts#iprops
+
+### Inherit from IPropsComposeY
+
+<<< @/theme/prop.type.ts#ipropscomposey

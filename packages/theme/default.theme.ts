@@ -17,6 +17,7 @@ import { DASearch } from "./default/basic/ASearch";
 import { DALabel } from "./default/basic/ALabel";
 import { DATooltip } from "./default/basic/ATooltip";
 import { DATextarea } from "./default/basic/ATextarea";
+import { DAModal } from "./default/basic/AModal";
 //utility
 import { DAAlertError } from "./default/utility/AAlertError";
 // Navigation
@@ -49,6 +50,7 @@ export const CASearchName = "asearch";
 export const CALabelName = "alabel";
 export const CATooltipName = "atooltip";
 export const CATextareaName = "atextarea";
+export const CAModalName = "amodal";
 //utility
 export const CAAlertErrorName = "aalertError";
 // Navigation
@@ -82,6 +84,7 @@ export const Theme: ITheme = {
 	[CALabelName]: DALabel,
 	[CATooltipName]: DATooltip,
 	[CATextareaName]: DATextarea,
+	[CAModalName]: DAModal,
 	//utility
 	[CAAlertErrorName]: DAAlertError,
 	// Navigation

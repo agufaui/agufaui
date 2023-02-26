@@ -2,12 +2,12 @@ import { CDefaultType, CUseType } from "@agufaui/config";
 import type { IAButtonProps } from "../../types/basic/AButton";
 
 export const DAButtonDefault = {
-	c: "px-4 py-2 rounded-md text-sm font-medium select-none disabled:(opacity-50 cursor-not-allowed) focus:outline-none",
+	c: "px-4 py-2 rounded-md text-sm font-medium select-none disabled:(opacity-50 cursor-not-allowed)",
 };
 
 export const DAButtonFocus = {
 	[CUseType]: CDefaultType,
-	c: "focus:(ring-2 ring-offset-2)",
+	c: "focus:(outline-none ring-2 ring-offset-2)",
 };
 
 export const DAButtonFocusBlock = {
