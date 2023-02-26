@@ -1,17 +1,17 @@
 export default {
 	locale: "sk",
 	amtoggle: {
-		open: "Otvoriť menu",
-		close: "Zatvoriť ponuku",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Zavrieť bočný panel",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Zapnuté",
-		off: "Vypnuté",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Vyhľadávanie",
+		search: "Search",
 	},
 };

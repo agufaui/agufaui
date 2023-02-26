@@ -1,10 +1,10 @@
 <template lang="pug">
 div(class="relative select-none" :class="[cdisplay, cc]")
-  textarea(:value="v" :id="id" :name="id"
+  textarea(:id="id" :name="id"
     v-bind="$attrs"
     :maxlength="maxlength" :aria-describedby="id" placeholder=" ", :disabled="disabled" :aria-disabled="disabled"
     :class="cvc"
-    @input="input($event)")
+    @input="input($event)") {{ v }}
   label(:for="id" v-if="label" class="absolute top-0 py-2 px-3 -z-1" :class="clabelc") {{ label }}
 </template>
 

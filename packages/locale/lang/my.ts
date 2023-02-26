@@ -1,17 +1,17 @@
 export default {
 	locale: "my",
 	amtoggle: {
-		open: "Menu ကိုဖွင့်ပါ။",
-		close: "မီနူးကိုပိတ်ပါ။",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "ဘေးဘားကိုပိတ်ပါ။",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "ဂရန်",
-		off: "ပိတ်သည်။",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "ရှာရန်",
+		search: "Search",
 	},
 };

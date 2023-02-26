@@ -1,17 +1,17 @@
 export default {
 	locale: "tr",
 	amtoggle: {
-		open: "Menüyü aç",
-		close: "Menüyü kapat",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Kenar çubuğunu kapat",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Açık",
-		off: "Kapalı",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Aramak",
+		search: "Search",
 	},
 };

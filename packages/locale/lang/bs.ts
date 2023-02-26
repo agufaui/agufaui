@@ -1,17 +1,17 @@
 export default {
 	locale: "bs",
 	amtoggle: {
-		open: "Otvorite meni",
-		close: "Zatvori meni",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Zatvori bočnu traku",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
 		on: "On",
-		off: "Isključeno",
+		off: "Off",
 	},
 	asearch: {
-		search: "Traži",
+		search: "Search",
 	},
 };

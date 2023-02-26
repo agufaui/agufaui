@@ -1,17 +1,17 @@
 export default {
 	locale: "su",
 	amtoggle: {
-		open: "Buka ménu",
-		close: "Tutup ménu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Tutup sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Dina",
-		off: "Pareum",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Pilarian",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "fi",
 	amtoggle: {
-		open: "Avaa valikko",
-		close: "Sulje valikko",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Sulje sivupalkki",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Päällä",
-		off: "Vinossa",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Hae",
+		search: "Search",
 	},
 };

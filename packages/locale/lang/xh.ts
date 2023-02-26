@@ -1,17 +1,17 @@
 export default {
 	locale: "xh",
 	amtoggle: {
-		open: "Vula imenyu",
-		close: "Vala imenyu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Vala ibha esecaleni",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Vula",
-		off: "Cimile",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Khangela",
+		search: "Search",
 	},
 };

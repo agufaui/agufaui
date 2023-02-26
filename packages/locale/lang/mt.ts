@@ -1,17 +1,17 @@
 export default {
 	locale: "mt",
 	amtoggle: {
-		open: "Iftaħ il-menu",
-		close: "Agħlaq il-menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Agħlaq il-sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Fuq",
-		off: "Mitfi",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Fittex",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "ta",
 	amtoggle: {
-		open: "மெனுவைத் திற",
-		close: "மெனுவை மூடு",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "பக்கப்பட்டியை மூடு",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "அன்று",
-		off: "ஆஃப்",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "தேடு",
+		search: "Search",
 	},
 };

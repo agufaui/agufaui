@@ -1,17 +1,17 @@
 export default {
 	locale: "ceb",
 	amtoggle: {
-		open: "Bukas nga menu",
-		close: "Isira ang menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Isira ang sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Sa",
+		on: "On",
 		off: "Off",
 	},
 	asearch: {
-		search: "Pangitaa",
+		search: "Search",
 	},
 };

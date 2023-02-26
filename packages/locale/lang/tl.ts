@@ -1,17 +1,17 @@
 export default {
 	locale: "tl",
 	amtoggle: {
-		open: "Buksan ang menu",
-		close: "Isara ang menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Isara ang sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Naka-on",
-		off: "Naka-off",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Maghanap",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "ur",
 	amtoggle: {
-		open: "مینو کھولیں۔",
-		close: "مینو بند کریں۔",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "سائڈبار بند کریں۔",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "پر",
-		off: "بند",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "تلاش کریں۔",
+		search: "Search",
 	},
 };

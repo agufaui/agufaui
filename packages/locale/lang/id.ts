@@ -1,17 +1,17 @@
 export default {
 	locale: "id",
 	amtoggle: {
-		open: "Buka menu",
-		close: "Tutup menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Tutup sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Pada",
-		off: "Mati",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Mencari",
+		search: "Search",
 	},
 };

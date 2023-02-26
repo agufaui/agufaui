@@ -18,6 +18,7 @@ import { DALabel } from "./default/basic/ALabel";
 import { DATooltip } from "./default/basic/ATooltip";
 import { DATextarea } from "./default/basic/ATextarea";
 import { DAModal } from "./default/basic/AModal";
+import { DADrawer } from "./default/basic/ADrawer";
 //utility
 import { DAAlertError } from "./default/utility/AAlertError";
 // Navigation
@@ -51,6 +52,7 @@ export const CALabelName = "alabel";
 export const CATooltipName = "atooltip";
 export const CATextareaName = "atextarea";
 export const CAModalName = "amodal";
+export const CADrawerName = "adrawer";
 //utility
 export const CAAlertErrorName = "aalertError";
 // Navigation
@@ -85,6 +87,7 @@ export const Theme: ITheme = {
 	[CATooltipName]: DATooltip,
 	[CATextareaName]: DATextarea,
 	[CAModalName]: DAModal,
+	[CADrawerName]: DADrawer,
 	//utility
 	[CAAlertErrorName]: DAAlertError,
 	// Navigation

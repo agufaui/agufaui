@@ -1,17 +1,17 @@
 export default {
 	locale: "mn",
 	amtoggle: {
-		open: "Цэсийг нээх",
-		close: "Цэсийг хаах",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Хажуугийн самбарыг хаах",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Асаалттай",
-		off: "Унтраах",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Хайх",
+		search: "Search",
 	},
 };

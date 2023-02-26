@@ -1,17 +1,17 @@
 export default {
 	locale: "mi",
 	amtoggle: {
-		open: "Tuwhera te tahua",
-		close: "Katia te tahua",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Katia te paetaha",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Kei runga",
-		off: "Wehe",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Rapu",
+		search: "Search",
 	},
 };

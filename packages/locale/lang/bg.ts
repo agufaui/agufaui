@@ -1,17 +1,17 @@
 export default {
 	locale: "bg",
 	amtoggle: {
-		open: "Отворете менюто",
-		close: "Затваряне на менюто",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Затваряне на страничната лента",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "На",
-		off: "Изкл",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Търсене",
+		search: "Search",
 	},
 };

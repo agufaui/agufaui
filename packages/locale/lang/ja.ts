@@ -1,17 +1,17 @@
 export default {
 	locale: "ja",
 	amtoggle: {
-		open: "メニューを開く",
-		close: "メニューを閉じる",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "サイドバーを閉じる",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "の上",
-		off: "オフ",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "検索",
+		search: "Search",
 	},
 };

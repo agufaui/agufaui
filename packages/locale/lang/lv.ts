@@ -1,17 +1,17 @@
 export default {
 	locale: "lv",
 	amtoggle: {
-		open: "Atvērt izvēlni",
-		close: "Aizvērt izvēlni",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Aizvērt sānjoslu",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Ieslēgts",
-		off: "Izslēgts",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Meklēt",
+		search: "Search",
 	},
 };

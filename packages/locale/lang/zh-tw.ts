@@ -1,17 +1,17 @@
 export default {
 	locale: "zh-tw",
 	amtoggle: {
-		open: "打開菜單",
-		close: "關閉菜單",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "關閉側邊欄",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "在",
-		off: "離開",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "搜索",
+		search: "Search",
 	},
 };

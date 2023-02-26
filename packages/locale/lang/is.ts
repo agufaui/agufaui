@@ -1,17 +1,17 @@
 export default {
 	locale: "is",
 	amtoggle: {
-		open: "Opna valmynd",
-		close: "Loka valmynd",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Lokaðu hliðarstikunni",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Á",
-		off: "Af",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Leita",
+		search: "Search",
 	},
 };

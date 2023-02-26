@@ -1,17 +1,17 @@
 export default {
 	locale: "sw",
 	amtoggle: {
-		open: "Fungua menyu",
-		close: "Funga menyu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Funga utepe",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Washa",
-		off: "Imezimwa",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Tafuta",
+		search: "Search",
 	},
 };

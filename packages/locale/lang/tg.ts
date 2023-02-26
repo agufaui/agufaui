@@ -1,17 +1,17 @@
 export default {
 	locale: "tg",
 	amtoggle: {
-		open: "Менюро кушоед",
-		close: "Менюро пӯшед",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Панели паҳлӯро пӯшед",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Дар",
-		off: "Хомӯш",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Ҷустуҷӯ",
+		search: "Search",
 	},
 };

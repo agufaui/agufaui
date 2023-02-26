@@ -1,17 +1,17 @@
 export default {
 	locale: "cs",
 	amtoggle: {
-		open: "Otevřít nabídku",
-		close: "Zavřít nabídku",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Zavřít postranní panel",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Na",
-		off: "Vypnuto",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Vyhledávání",
+		search: "Search",
 	},
 };

@@ -18,6 +18,7 @@ export * from "./default/basic/ALabel";
 export * from "./default/basic/ATooltip";
 export * from "./default/basic/ATextarea";
 export * from "./default/basic/AModal";
+export * from "./default/basic/ADrawer";
 // Utility
 export * from "./default/utility/AAlertError";
 // Navigation
@@ -66,6 +67,7 @@ export type { IALabelProps } from "./types/basic/ALabel";
 export type { IATooltipProps } from "./types/basic/ATooltip";
 export type { IATextareaProps, IATextareaEmits, IATextareaEmitsS } from "./types/basic/ATextarea";
 export type { IAModalProps, IAModalEmits, IAModalEmitsS } from "./types/basic/AModal";
+export type { IADrawerProps, IADrawerEmits, IADrawerEmitsS, TPos } from "./types/basic/ADrawer";
 // Utility
 export type {
 	IAAlertErrorProps,

@@ -1,27 +1,31 @@
 <!-- #region showcase -->
 <template>
-	<div class="flex w-full doc">
-		<ammsidebar :mpanel="mpanel" mpanelc="bg-gray-8 w-14rem" :show="true" @close="close">
-			<template #header>
-				<aa
-					href="https://google.com"
-					i="i-logos:google"
-					ic="text-5xl"
-					c="flex-shrink-0 bg-gray-9 rounded-none"
-				/>
-			</template>
-			<template #footer>
-				<div class="bg-gray-9">
-					<abutton
-						v="signout"
-						i="i-ic:sharp-logout"
-						ic="text-lg"
-						spacex="space-x-4"
-						c="flex-shrink-0 text-white rounded-none"
-					/>
-				</div>
-			</template>
-		</ammsidebar>
+	<div class="flex space-x-4 w-full doc">
+		<abutton
+			v="Show Top"
+			c="text-white bg-blue-5 hover:(bg-blue-6 -translate-px shadow-md shadow-blue) active:translate-px focus:(ring-offset-none ring-none)"
+			@click="showPos('top')"
+		/>
+		<abutton
+			v="Show Bottom"
+			c="text-white bg-blue-5 hover:(bg-blue-6 -translate-px shadow-md shadow-blue) active:translate-px focus:(ring-offset-none ring-none)"
+			@click="showPos('bottom')"
+		/>
+		<abutton
+			v="Show Left"
+			c="text-white bg-blue-5 hover:(bg-blue-6 -translate-px shadow-md shadow-blue) active:translate-px focus:(ring-offset-none ring-none)"
+			@click="showPos('left')"
+		/>
+		<abutton
+			v="Show Right"
+			c="text-white bg-blue-5 hover:(bg-blue-6 -translate-px shadow-md shadow-blue) active:translate-px focus:(ring-offset-none ring-none)"
+			@click="showPos('right')"
+		/>
+		<adrawer :show="show" :pos="pos" @close="show = false">
+			<nav class="flex flex-col flex-1 overflow-y-auto h-full bg-gray-8 min-w-14rem">
+				<ampanel v-bind="mpanel" />
+			</nav>
+		</adrawer>
 	</div>
 </template>
 
@@ -32,7 +36,19 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { IAMpanelProps } from "@agufaui/theme";
+import { TPos, IAMpanelProps } from "@agufaui/theme";
+
+const close = () => {
+	console.log("close");
+};
+
+let show = ref(false);
+let pos = ref<TPos>("left");
+
+const showPos = (p: string) => {
+	show.value = true;
+	pos.value = p as TPos;
+};
 
 const mpanel: IAMpanelProps = {
 	t: "dark",
@@ -117,10 +133,6 @@ const mpanel: IAMpanelProps = {
 			],
 		},
 	],
-};
-
-const close = () => {
-	console.log("close");
 };
 </script>
 <!-- #endregion showcase -->

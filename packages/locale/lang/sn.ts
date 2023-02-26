@@ -1,11 +1,11 @@
 export default {
 	locale: "sn",
 	amtoggle: {
-		open: "Vhura menyu",
-		close: "Vhara menyu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Vhara sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
 		on: "On",

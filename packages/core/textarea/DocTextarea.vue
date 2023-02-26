@@ -2,16 +2,16 @@
 	<div class="flex flex-col gap-y-4">
 		<!-- #region showcase -->
 		<atextarea
-			v-model:v="text"
+			:v="text"
 			label="Comment"
 			t="inlineblock"
 			:rows="5"
 			vc="dark:text-white"
 			labelc="dark:(bg-#242424 text-white)"
-			@update:v="notify"
+			@update:v="notify($event)"
 		></atextarea>
 		<atextarea
-			v-model:v="text1"
+			:v="text1"
 			label="Comment"
 			t="inlineblock"
 			:rows="5"
@@ -35,7 +35,8 @@ export default {
 let text = ref("");
 let text1 = ref("");
 
-function notify() {
+function notify(e: string) {
+	text.value = e;
 	console.log(text.value);
 }
 </script>

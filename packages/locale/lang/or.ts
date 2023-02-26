@@ -1,17 +1,17 @@
 export default {
 	locale: "or",
 	amtoggle: {
-		open: "ମେନୁ ଖୋଲନ୍ତୁ |",
-		close: "ମେନୁ ବନ୍ଦ କରନ୍ତୁ |",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "ପାର୍ଶ୍ୱ ପଟି ବନ୍ଦ କରନ୍ତୁ |",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "ଅନ୍",
-		off: "ବନ୍ଦ",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "ସନ୍ଧାନ କର |",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "ha",
 	amtoggle: {
-		open: "Buɗe menu",
-		close: "Rufe menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Rufe labarun gefe",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Kunna",
-		off: "Kashe",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Bincika",
+		search: "Search",
 	},
 };

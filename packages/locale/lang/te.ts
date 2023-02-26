@@ -1,17 +1,17 @@
 export default {
 	locale: "te",
 	amtoggle: {
-		open: "మెనుని తెరవండి",
-		close: "మెనుని మూసివేయండి",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "సైడ్‌బార్‌ను మూసివేయండి",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "పై",
-		off: "ఆఫ్",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "వెతకండి",
+		search: "Search",
 	},
 };

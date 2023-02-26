@@ -1,17 +1,17 @@
 export default {
 	locale: "zh-cn",
 	amtoggle: {
-		open: "打开菜单",
-		close: "关闭菜单",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "关闭侧边栏",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "在",
-		off: "离开",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "搜索",
+		search: "Search",
 	},
 };

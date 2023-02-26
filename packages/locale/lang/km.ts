@@ -1,17 +1,17 @@
 export default {
 	locale: "km",
 	amtoggle: {
-		open: "បើកម៉ឺនុយ",
-		close: "បិទម៉ឺនុយ",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "បិទរបារចំហៀង",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "បើក",
-		off: "បិទ",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "ស្វែងរក",
+		search: "Search",
 	},
 };

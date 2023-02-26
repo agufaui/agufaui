@@ -1,17 +1,17 @@
 export default {
 	locale: "ms",
 	amtoggle: {
-		open: "Buka menu",
-		close: "Tutup menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Tutup bar sisi",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "hidup",
-		off: "Mati",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Cari",
+		search: "Search",
 	},
 };

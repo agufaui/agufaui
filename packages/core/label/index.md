@@ -10,6 +10,10 @@ import { CALabelName } from '@agufaui/theme'
 
 Basic label
 
+#### Child Components
+
+- [Tooltip](/core/tooltip/)
+
 ## Usage
 
 #### Import

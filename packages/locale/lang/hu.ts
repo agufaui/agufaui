@@ -1,17 +1,17 @@
 export default {
 	locale: "hu",
 	amtoggle: {
-		open: "Menü megnyitása",
-		close: "Menü bezárása",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Oldalsáv bezárása",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Tovább",
-		off: "Ki",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Keresés",
+		search: "Search",
 	},
 };

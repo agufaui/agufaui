@@ -4,8 +4,8 @@ export default {
 		open: "Open menu",
 		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Close sidebar",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
 		on: "On",

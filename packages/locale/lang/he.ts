@@ -1,17 +1,17 @@
 export default {
 	locale: "he",
 	amtoggle: {
-		open: "פתח את התפריט",
-		close: "סגור תפריט",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "סגור את סרגל הצד",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "עַל",
-		off: "כבוי",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "לחפש",
+		search: "Search",
 	},
 };

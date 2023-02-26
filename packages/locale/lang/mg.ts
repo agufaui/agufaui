@@ -1,17 +1,17 @@
 export default {
 	locale: "mg",
 	amtoggle: {
-		open: "Sokafy ny sakafo",
-		close: "Akatona ny sakafo",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Akatona ny sisiny",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
 		on: "On",
-		off: "NIALA",
+		off: "Off",
 	},
 	asearch: {
-		search: "karohy",
+		search: "Search",
 	},
 };

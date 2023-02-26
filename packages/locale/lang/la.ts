@@ -4,14 +4,14 @@ export default {
 		open: "Open menu",
 		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Prope pars",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
 		on: "On",
 		off: "Off",
 	},
 	asearch: {
-		search: "Quaerere",
+		search: "Search",
 	},
 };

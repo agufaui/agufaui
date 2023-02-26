@@ -1,17 +1,17 @@
 export default {
 	locale: "st",
 	amtoggle: {
-		open: "Bula lenane",
-		close: "Kwala lenane",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Koala barathoko",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "E butsoe",
-		off: "E tima",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Batla",
+		search: "Search",
 	},
 };

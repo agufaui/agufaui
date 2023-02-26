@@ -1,17 +1,17 @@
 export default {
 	locale: "ro",
 	amtoggle: {
-		open: "Deschide meniul",
-		close: "Închide meniul",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Închideți bara laterală",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Pe",
-		off: "Oprit",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Căutare",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "ml",
 	amtoggle: {
-		open: "മെനു തുറക്കുക",
-		close: "മെനു അടയ്ക്കുക",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "സൈഡ്‌ബാർ അടയ്ക്കുക",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "ഓൺ",
-		off: "ഓഫ്",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "തിരയുക",
+		search: "Search",
 	},
 };

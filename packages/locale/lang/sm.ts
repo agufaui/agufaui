@@ -1,17 +1,17 @@
 export default {
 	locale: "sm",
 	amtoggle: {
-		open: "Tatala le lisi",
-		close: "Tapuni le lisi",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Tapuni itu itu",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "luga",
-		off: "Tape",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Saili",
+		search: "Search",
 	},
 };

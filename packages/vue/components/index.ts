@@ -1,6 +1,5 @@
 export { default as Abutton } from "./button/Abutton.vue";
 export { default as Aalert } from "./alert/Aalert.vue";
-export { default as AalertError } from "./alertError/AalertError.vue";
 export { default as Ainput } from "./input/Ainput.vue";
 export { default as Aa } from "./hyperlink/Aa.vue";
 export { default as Abadge } from "./badge/Abadge.vue";
@@ -17,6 +16,11 @@ export { default as Asearch } from "./search/Asearch.vue";
 export { default as Alabel } from "./label/Alabel.vue";
 export { default as Atooltip } from "./tooltip/Atooltip.vue";
 export { default as Atextarea } from "./textarea/Atextarea.vue";
+export { default as Amodal } from "./modal/Amodal.vue";
+export { default as Adrawer } from "./drawer/Adrawer.vue";
+
+// utility
+export { default as AalertError } from "./alertError/AalertError.vue";
 
 // navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";

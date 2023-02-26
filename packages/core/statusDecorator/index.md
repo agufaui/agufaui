@@ -10,6 +10,13 @@ import { CASdName } from '@agufaui/theme'
 
 Add label, and show error, success and info messages for components (dynamic components)
 
+#### Child Components
+
+- [Label](/core/label/)
+- [Badge](/core/badge/)
+- [Alert](/core/alert/)
+- [AlertError](/core/alertError/)
+
 ## Usage
 
 #### Import

@@ -1,17 +1,17 @@
 export default {
 	locale: "sl",
 	amtoggle: {
-		open: "Odpri meni",
-		close: "Zapri meni",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Zapri stransko vrstico",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Vklopljeno",
-		off: "Izključeno",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Iskanje",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "zu",
 	amtoggle: {
-		open: "Vula imenyu",
-		close: "Vala imenyu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Vala ibha eseceleni",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Vuliwe",
-		off: "Valiwe",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Sesha",
+		search: "Search",
 	},
 };

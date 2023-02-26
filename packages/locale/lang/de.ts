@@ -1,17 +1,17 @@
 export default {
 	locale: "de",
 	amtoggle: {
-		open: "Menü öffnen",
-		close: "Menü schließen",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Seitenleiste schließen",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "An",
-		off: "Aus",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Suchen",
+		search: "Search",
 	},
 };

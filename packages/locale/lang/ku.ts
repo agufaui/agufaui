@@ -1,17 +1,17 @@
 export default {
 	locale: "ku",
 	amtoggle: {
-		open: "Menu veke",
-		close: "Menuyê bigire",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Li kêlekê bigire",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Li",
-		off: "Ji",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Gerr",
+		search: "Search",
 	},
 };

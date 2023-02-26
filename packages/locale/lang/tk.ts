@@ -1,17 +1,17 @@
 export default {
 	locale: "tk",
 	amtoggle: {
-		open: "Açyk menýu",
-		close: "Menýu ýapyň",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Gapdal paneli ýapyň",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Işlediň",
-		off: "Öçürilen",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Gözlemek",
+		search: "Search",
 	},
 };

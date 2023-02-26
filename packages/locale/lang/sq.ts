@@ -1,17 +1,17 @@
 export default {
 	locale: "sq",
 	amtoggle: {
-		open: "Hap menunë",
-		close: "Mbyll menunë",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Mbyll shiritin anësor",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Aktiv",
-		off: "Joaktiv",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Kërko",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "be",
 	amtoggle: {
-		open: "Адкрыць меню",
-		close: "Зачыніць меню",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Зачыніць бакавую панэль",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Укл",
-		off: "Выкл",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Пошук",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "gl",
 	amtoggle: {
-		open: "Abrir menú",
-		close: "Pechar menú",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Pechar a barra lateral",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Activado",
-		off: "Desactivado",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Busca",
+		search: "Search",
 	},
 };

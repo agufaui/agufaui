@@ -1,17 +1,17 @@
 export default {
 	locale: "yo",
 	amtoggle: {
-		open: "Ṣii akojọ aṣayan",
-		close: "Pa akojọ aṣayan",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Padebar ẹgbẹ",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Tan-an",
-		off: "Paa",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Wa",
+		search: "Search",
 	},
 };

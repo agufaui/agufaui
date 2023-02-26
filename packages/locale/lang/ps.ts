@@ -1,17 +1,17 @@
 export default {
 	locale: "ps",
 	amtoggle: {
-		open: "مینو خلاص کړئ",
-		close: "مینو بند کړئ",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "سایډ بار بند کړئ",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "پر",
-		off: "بند",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "لټون",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "si",
 	amtoggle: {
-		open: "විවෘත මෙනුව",
-		close: "මෙනුව වසන්න",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "පැති තීරුව වසන්න",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "මත",
-		off: "අක්රියයි",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "සෙවීම",
+		search: "Search",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "vi",
 	amtoggle: {
-		open: "Mở thực đơn",
-		close: "Đóng menu",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Đóng thanh bên",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "TRÊN",
-		off: "Tắt",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Tìm kiếm",
+		search: "Search",
 	},
 };

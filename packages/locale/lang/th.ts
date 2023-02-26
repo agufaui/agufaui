@@ -1,17 +1,17 @@
 export default {
 	locale: "th",
 	amtoggle: {
-		open: "เปิดเมนู",
-		close: "ปิดเมนู",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "ปิดแถบด้านข้าง",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "บน",
-		off: "ปิด",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "ค้นหา",
+		search: "Search",
 	},
 };

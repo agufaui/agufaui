@@ -1,17 +1,17 @@
 export default {
 	locale: "cy",
 	amtoggle: {
-		open: "Dewislen agored",
-		close: "Cau'r ddewislen",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "Caewch y bar ochr",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "Ar",
-		off: "I ffwrdd",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "Chwiliwch",
+		search: "Search",
 	},
 };

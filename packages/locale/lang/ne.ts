@@ -1,17 +1,17 @@
 export default {
 	locale: "ne",
 	amtoggle: {
-		open: "मेनु खोल्नुहोस्",
-		close: "मेनु बन्द गर्नुहोस्",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "साइडबार बन्द गर्नुहोस्",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "अन",
-		off: "बन्द",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "खोज्नुहोस्",
+		search: "Search",
 	},
 };

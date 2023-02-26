@@ -1,17 +1,17 @@
 export default {
 	locale: "lo",
 	amtoggle: {
-		open: "ເປີດເມນູ",
-		close: "ປິດເມນູ",
+		open: "Open menu",
+		close: "Close menu",
 	},
-	ammsidebar: {
-		close: "ປິດແຖບດ້ານຂ້າງ",
+	adrawer: {
+		close: "Close",
 	},
 	atoggle: {
-		on: "ສຸດ",
-		off: "ປິດ",
+		on: "On",
+		off: "Off",
 	},
 	asearch: {
-		search: "ຊອກຫາ",
+		search: "Search",
 	},
 };
