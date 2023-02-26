@@ -1,6 +1,5 @@
 import { ITheme } from "@agufaui/config";
 import { DAAlert } from "./default/basic/AAlert";
-import { DAAlertError } from "./default/utility/AAlertError";
 import { DAButton } from "./default/basic/AButton";
 import { DAInput } from "./default/basic/AInput";
 import { DAA } from "./default/basic/AA";
@@ -17,6 +16,10 @@ import { DASelect } from "./default/basic/ASelect";
 import { DASearch } from "./default/basic/ASearch";
 import { DALabel } from "./default/basic/ALabel";
 import { DATooltip } from "./default/basic/ATooltip";
+import { DATextarea } from "./default/basic/ATextarea";
+//utility
+import { DAAlertError } from "./default/utility/AAlertError";
+// Navigation
 import { DAMtoggle } from "./default/navigation/AMtoggle";
 import { DAMlink } from "./default/navigation/AMlink";
 import { DAMitem } from "./default/navigation/AMitem";
@@ -25,11 +28,11 @@ import { DAMflyout } from "./default/navigation/AMflyout";
 import { DAMdropdown } from "./default/navigation/AMdropdown";
 import { DAMsidebar } from "./default/navigation/AMsidebar";
 import { DAMmsidebar } from "./default/navigation/AMmsidebar";
+// Form
 import { DASd } from "./default/form/ASd";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
-export const CAAlertErrorName = "aalertError";
 export const CAInputName = "ainput";
 export const CAAName = "aa";
 export const CABadgeName = "abadge";
@@ -45,6 +48,10 @@ export const CADropdownButtonName = "adropdownbutton";
 export const CASearchName = "asearch";
 export const CALabelName = "alabel";
 export const CATooltipName = "atooltip";
+export const CATextareaName = "atextarea";
+//utility
+export const CAAlertErrorName = "aalertError";
+// Navigation
 export const CAMtoggleName = "amtoggle";
 export const CAMlinkName = "amlink";
 export const CAMitemName = "amitem";
@@ -53,12 +60,12 @@ export const CAMflyoutName = "amflyout";
 export const CAMdropdownName = "amdropdown";
 export const CAMsidebarName = "amsidebar";
 export const CAMmsidebarName = "ammsidebar";
+// Form
 export const CASdName = "asd";
 
 export const Theme: ITheme = {
 	[CAButtonName]: DAButton,
 	[CAAlertName]: DAAlert,
-	[CAAlertErrorName]: DAAlertError,
 	[CAInputName]: DAInput,
 	[CAAName]: DAA,
 	[CABadgeName]: DABadge,
@@ -74,6 +81,10 @@ export const Theme: ITheme = {
 	[CASearchName]: DASearch,
 	[CALabelName]: DALabel,
 	[CATooltipName]: DATooltip,
+	[CATextareaName]: DATextarea,
+	//utility
+	[CAAlertErrorName]: DAAlertError,
+	// Navigation
 	[CAMtoggleName]: DAMtoggle,
 	[CAMlinkName]: DAMlink,
 	[CAMitemName]: DAMitem,
@@ -82,5 +93,6 @@ export const Theme: ITheme = {
 	[CAMdropdownName]: DAMdropdown,
 	[CAMsidebarName]: DAMsidebar,
 	[CAMmsidebarName]: DAMmsidebar,
+	// Form
 	[CASdName]: DASd,
 };

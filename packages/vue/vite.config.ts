@@ -37,26 +37,26 @@ export default defineConfig({
 					preserveModulesRoot: resolve(__dirname, "../"),
 					sourcemap: false,
 				},
-				{
-					globals: {
-						vue: "Vue",
-					},
-					dir: "dist/umd",
-					format: "umd",
-					entryFileNames: "index.js",
-					name: "AgufaUI",
-					sourcemap: false,
-				},
-				{
-					globals: {
-						vue: "Vue",
-					},
-					dir: "dist/iife",
-					format: "iife",
-					entryFileNames: "index.js",
-					name: "AgufaUI",
-					sourcemap: false,
-				},
+				// {
+				// 	globals: {
+				// 		vue: "Vue",
+				// 	},
+				// 	dir: "dist/umd",
+				// 	format: "umd",
+				// 	entryFileNames: "index.js",
+				// 	name: "AgufaUI",
+				// 	sourcemap: false,
+				// },
+				// {
+				// 	globals: {
+				// 		vue: "Vue",
+				// 	},
+				// 	dir: "dist/iife",
+				// 	format: "iife",
+				// 	entryFileNames: "index.js",
+				// 	name: "AgufaUI",
+				// 	sourcemap: false,
+				// },
 			],
 		},
 		outDir: "dist",

@@ -16,6 +16,7 @@ export { default as Aselect } from "./select/Aselect.vue";
 export { default as Asearch } from "./search/Asearch.vue";
 export { default as Alabel } from "./label/Alabel.vue";
 export { default as Atooltip } from "./tooltip/Atooltip.vue";
+export { default as Atextarea } from "./textarea/Atextarea.vue";
 
 // navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";

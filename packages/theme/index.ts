@@ -1,7 +1,6 @@
 import "uno.css";
 export * from "./default.theme";
 export * from "./default/basic/AAlert";
-export * from "./default/utility/AAlertError";
 export * from "./default/basic/AButton";
 export * from "./default/basic/AInput";
 export * from "./default/basic/AA";
@@ -15,8 +14,12 @@ export * from "./default/basic/ARadio";
 export * from "./default/basic/ASelect";
 export * from "./default/basic/ADropdown";
 export * from "./default/basic/ASearch";
-export * from "./default/basic/ATooltip";
 export * from "./default/basic/ALabel";
+export * from "./default/basic/ATooltip";
+export * from "./default/basic/ATextarea";
+// Utility
+export * from "./default/utility/AAlertError";
+// Navigation
 export * from "./default/navigation/AMtoggle";
 export * from "./default/navigation/AMlink";
 export * from "./default/navigation/AMpanel";
@@ -24,15 +27,11 @@ export * from "./default/navigation/AMflyout";
 export * from "./default/navigation/AMdropdown";
 export * from "./default/navigation/AMsidebar";
 export * from "./default/navigation/AMmsidebar";
+// Form
 export * from "./default/form/ASd";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/basic/AAlert";
-export type {
-	IAAlertErrorProps,
-	IAAlertErrorEmits,
-	IAAlertErrorEmitsS,
-} from "./types/utility/AAlertError";
 export type {
 	IAButtonProps,
 	IAButtonEmits,
@@ -64,6 +63,14 @@ export type {
 export type { IASearchProps, IASearchEmits, IASearchEmitsS } from "./types/basic/ASearch";
 export type { IALabelProps } from "./types/basic/ALabel";
 export type { IATooltipProps } from "./types/basic/ATooltip";
+export type { IATextareaProps, IATextareaEmits, IATextareaEmitsS } from "./types/basic/ATextarea";
+// Utility
+export type {
+	IAAlertErrorProps,
+	IAAlertErrorEmits,
+	IAAlertErrorEmitsS,
+} from "./types/utility/AAlertError";
+// Navigation
 export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/navigation/AMtoggle";
 export type { IAMlinkProps } from "./types/navigation/AMlink";
 export type { IAMitemProps, TAMItem, TAMItemComponentName } from "./types/navigation/AMitem";
@@ -76,4 +83,5 @@ export type {
 	IAMmsidebarEmits,
 	IAMmsidebarEmitsS,
 } from "./types/navigation/AMmsidebar";
+// Form
 export type { IASdProps } from "./types/form/ASd";
