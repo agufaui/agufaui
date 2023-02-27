@@ -1,17 +1,17 @@
 export default {
 	locale: "si",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "විවෘත මෙනුව",
+		close: "මෙනුව වසන්න",
 	},
 	adrawer: {
-		close: "Close",
+		close: "වසන්න",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "මත",
+		off: "අක්රියයි",
 	},
 	asearch: {
-		search: "Search",
+		search: "සෙවීම",
 	},
 };

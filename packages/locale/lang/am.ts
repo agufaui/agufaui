@@ -1,17 +1,17 @@
 export default {
 	locale: "am",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "ምናሌን ክፈት",
+		close: "ምናሌን ዝጋ",
 	},
 	adrawer: {
-		close: "Close",
+		close: "ገጠመ",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "በርቷል",
+		off: "ጠፍቷል",
 	},
 	asearch: {
-		search: "Search",
+		search: "ፈልግ",
 	},
 };

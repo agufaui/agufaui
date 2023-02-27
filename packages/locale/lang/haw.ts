@@ -1,17 +1,17 @@
 export default {
 	locale: "haw",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "E wehe i ka papa kuhikuhi",
+		close: "E pani i ka papa kuhikuhi",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Pani",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Ma ka",
+		off: "Paʻa",
 	},
 	asearch: {
-		search: "Search",
+		search: "Huli",
 	},
 };

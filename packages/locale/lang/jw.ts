@@ -1,17 +1,17 @@
 export default {
 	locale: "jw",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Bukak menu",
+		close: "Nutup menu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Nutup",
 	},
 	atoggle: {
 		on: "On",
-		off: "Off",
+		off: "Mati",
 	},
 	asearch: {
-		search: "Search",
+		search: "Nggoleki",
 	},
 };

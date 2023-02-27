@@ -1,17 +1,17 @@
 export default {
 	locale: "hi",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "मेनू खोलें",
+		close: "मेन्यू बंद करें",
 	},
 	adrawer: {
-		close: "Close",
+		close: "बंद करना",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "पर",
+		off: "बंद",
 	},
 	asearch: {
-		search: "Search",
+		search: "खोज",
 	},
 };

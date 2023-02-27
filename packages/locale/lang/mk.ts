@@ -1,17 +1,17 @@
 export default {
 	locale: "mk",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Отворете го менито",
+		close: "Затворете го менито",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Затвори",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "На",
+		off: "Исклучено",
 	},
 	asearch: {
-		search: "Search",
+		search: "Пребарување",
 	},
 };

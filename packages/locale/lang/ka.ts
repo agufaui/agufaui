@@ -1,17 +1,17 @@
 export default {
 	locale: "ka",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "მენიუს გახსნა",
+		close: "მენიუს დახურვა",
 	},
 	adrawer: {
-		close: "Close",
+		close: "დახურვა",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "ჩართულია",
+		off: "გამორთულია",
 	},
 	asearch: {
-		search: "Search",
+		search: "ძიება",
 	},
 };

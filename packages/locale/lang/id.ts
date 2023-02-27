@@ -1,17 +1,17 @@
 export default {
 	locale: "id",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Buka menu",
+		close: "Tutup menu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Menutup",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Pada",
+		off: "Mati",
 	},
 	asearch: {
-		search: "Search",
+		search: "Mencari",
 	},
 };

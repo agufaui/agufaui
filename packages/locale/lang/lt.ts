@@ -1,17 +1,17 @@
 export default {
 	locale: "lt",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Atidaryti meniu",
+		close: "Uždaryti meniu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Uždaryti",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Įjungta",
+		off: "Išjungta",
 	},
 	asearch: {
-		search: "Search",
+		search: "Paieška",
 	},
 };

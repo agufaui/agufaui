@@ -1,17 +1,17 @@
 export default {
 	locale: "hmn",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Qhib ntawv qhia zaub mov",
+		close: "Kaw cov ntawv qhia zaub mov",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Kaw",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Ntawm",
+		off: "Tawm",
 	},
 	asearch: {
-		search: "Search",
+		search: "Nrhiav",
 	},
 };

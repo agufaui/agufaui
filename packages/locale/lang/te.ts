@@ -1,17 +1,17 @@
 export default {
 	locale: "te",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "మెనుని తెరవండి",
+		close: "మెనుని మూసివేయండి",
 	},
 	adrawer: {
-		close: "Close",
+		close: "దగ్గరగా",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "పై",
+		off: "ఆఫ్",
 	},
 	asearch: {
-		search: "Search",
+		search: "వెతకండి",
 	},
 };

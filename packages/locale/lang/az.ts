@@ -1,17 +1,17 @@
 export default {
 	locale: "az",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Menyu açın",
+		close: "Menyunu bağlayın",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Yaxın",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Aktiv",
+		off: "Söndür",
 	},
 	asearch: {
-		search: "Search",
+		search: "Axtar",
 	},
 };

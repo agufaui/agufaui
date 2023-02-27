@@ -1,17 +1,17 @@
 export default {
 	locale: "fy",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Menu iepenje",
+		close: "Menu slute",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Slute",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Op",
+		off: "Út",
 	},
 	asearch: {
-		search: "Search",
+		search: "Sykje",
 	},
 };

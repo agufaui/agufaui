@@ -1,17 +1,17 @@
 export default {
 	locale: "uz",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Menyuni oching",
+		close: "Menyuni yopish",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Yopish",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Yoniq",
+		off: "Oʻchirilgan",
 	},
 	asearch: {
-		search: "Search",
+		search: "Qidirmoq",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "hy",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Բացեք ընտրացանկը",
+		close: "Փակել ընտրացանկը",
 	},
 	adrawer: {
-		close: "Close",
+		close: "փակել",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Վրա",
+		off: "Անջատված",
 	},
 	asearch: {
-		search: "Search",
+		search: "Որոնում",
 	},
 };

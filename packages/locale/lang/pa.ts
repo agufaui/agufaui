@@ -1,17 +1,17 @@
 export default {
 	locale: "pa",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "ਮੀਨੂ ਖੋਲ੍ਹੋ",
+		close: "ਮੀਨੂ ਬੰਦ ਕਰੋ",
 	},
 	adrawer: {
-		close: "Close",
+		close: "ਬੰਦ ਕਰੋ",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "'ਤੇ",
+		off: "ਬੰਦ",
 	},
 	asearch: {
-		search: "Search",
+		search: "ਖੋਜ",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "lb",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Menü opmaachen",
+		close: "Menu zoumaachen",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Zoumaachen",
 	},
 	atoggle: {
-		on: "On",
+		on: "Op",
 		off: "Off",
 	},
 	asearch: {
-		search: "Search",
+		search: "Sichen",
 	},
 };

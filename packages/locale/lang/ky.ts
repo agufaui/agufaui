@@ -1,17 +1,17 @@
 export default {
 	locale: "ky",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Менюну ачуу",
+		close: "Менюну жабуу",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Жабуу",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Күйүк",
+		off: "Өчүк",
 	},
 	asearch: {
-		search: "Search",
+		search: "Издөө",
 	},
 };

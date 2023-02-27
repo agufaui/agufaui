@@ -1,17 +1,17 @@
 export default {
 	locale: "so",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Fur menu",
+		close: "Xir liiska",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Xir",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Daar",
+		off: "Demin",
 	},
 	asearch: {
-		search: "Search",
+		search: "Raadi",
 	},
 };

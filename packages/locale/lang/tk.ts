@@ -1,17 +1,17 @@
 export default {
 	locale: "tk",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Açyk menýu",
+		close: "Menýu ýapyň",
 	},
 	adrawer: {
-		close: "Close",
+		close: ".Akyn",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Işlediň",
+		off: "Öçürilen",
 	},
 	asearch: {
-		search: "Search",
+		search: "Gözlemek",
 	},
 };

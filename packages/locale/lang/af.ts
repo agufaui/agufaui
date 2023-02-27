@@ -1,17 +1,17 @@
 export default {
 	locale: "af",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Maak spyskaart oop",
+		close: "Maak spyskaart toe",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Naby",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Aan",
+		off: "Af",
 	},
 	asearch: {
-		search: "Search",
+		search: "Soek",
 	},
 };

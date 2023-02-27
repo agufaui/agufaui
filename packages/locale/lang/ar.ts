@@ -1,17 +1,17 @@
 export default {
 	locale: "ar",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "فتح القائمة",
+		close: "إغلاق القائمة",
 	},
 	adrawer: {
-		close: "Close",
+		close: "يغلق",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "على",
+		off: "عن",
 	},
 	asearch: {
-		search: "Search",
+		search: "يبحث",
 	},
 };

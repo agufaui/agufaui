@@ -1,17 +1,17 @@
 export default {
 	locale: "ny",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Tsegulani menyu",
+		close: "Tsekani menyu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Tsekani",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Yambani",
+		off: "Kuzimitsa",
 	},
 	asearch: {
-		search: "Search",
+		search: "Sakani",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "tt",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Ачык меню",
+		close: "Ябык меню",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Ябу",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Яна",
+		off: "Сүндерелгән",
 	},
 	asearch: {
-		search: "Search",
+		search: "Эзләү",
 	},
 };

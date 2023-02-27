@@ -1,17 +1,17 @@
 export default {
 	locale: "ga",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Roghchlár a oscailt",
+		close: "Dún an roghchlár",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Dún",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Ar",
+		off: "as",
 	},
 	asearch: {
-		search: "Search",
+		search: "Cuardach",
 	},
 };

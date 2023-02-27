@@ -1,17 +1,17 @@
 export default {
 	locale: "sd",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "اوپن مينيو",
+		close: "مينيو بند ڪريو",
 	},
 	adrawer: {
-		close: "Close",
+		close: "بند",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "تي",
+		off: "بند",
 	},
 	asearch: {
-		search: "Search",
+		search: "ڳولا",
 	},
 };

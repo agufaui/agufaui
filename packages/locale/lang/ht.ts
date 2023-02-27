@@ -1,17 +1,17 @@
 export default {
 	locale: "ht",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Louvri meni",
+		close: "Fèmen meni an",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Fèmen",
 	},
 	atoggle: {
-		on: "On",
+		on: "Sou",
 		off: "Off",
 	},
 	asearch: {
-		search: "Search",
+		search: "Rechèch",
 	},
 };

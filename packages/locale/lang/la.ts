@@ -12,6 +12,6 @@ export default {
 		off: "Off",
 	},
 	asearch: {
-		search: "Search",
+		search: "Quaerere",
 	},
 };

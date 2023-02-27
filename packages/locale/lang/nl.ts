@@ -1,17 +1,17 @@
 export default {
 	locale: "nl",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Menu openen",
+		close: "Menu sluiten",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Dichtbij",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Op",
+		off: "Uit",
 	},
 	asearch: {
-		search: "Search",
+		search: "Zoekopdracht",
 	},
 };

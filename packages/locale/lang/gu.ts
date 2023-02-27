@@ -1,17 +1,17 @@
 export default {
 	locale: "gu",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "મેનુ ખોલો",
+		close: "મેનુ બંધ કરો",
 	},
 	adrawer: {
-		close: "Close",
+		close: "બંધ",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "ચાલુ",
+		off: "બંધ",
 	},
 	asearch: {
-		search: "Search",
+		search: "શોધો",
 	},
 };

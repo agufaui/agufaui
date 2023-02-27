@@ -1,17 +1,17 @@
 export default {
 	locale: "rw",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Fungura menu",
+		close: "Funga menu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Funga",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Kuri",
+		off: "Hanze",
 	},
 	asearch: {
-		search: "Search",
+		search: "Shakisha",
 	},
 };

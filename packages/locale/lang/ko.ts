@@ -1,17 +1,17 @@
 export default {
 	locale: "ko",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "메뉴 열기",
+		close: "메뉴 닫기",
 	},
 	adrawer: {
-		close: "Close",
+		close: "닫다",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "~에",
+		off: "끄다",
 	},
 	asearch: {
-		search: "Search",
+		search: "찾다",
 	},
 };

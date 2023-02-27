@@ -1,17 +1,17 @@
 export default {
 	locale: "el",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Άνοιγμα μενού",
+		close: "Κλείσιμο μενού",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Κλείσε",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Επί",
+		off: "Μακριά από",
 	},
 	asearch: {
-		search: "Search",
+		search: "Αναζήτηση",
 	},
 };

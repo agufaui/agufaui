@@ -1,17 +1,17 @@
 export default {
 	locale: "bn",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "মেনু খুলুন",
+		close: "মেনু বন্ধ করুন",
 	},
 	adrawer: {
-		close: "Close",
+		close: "বন্ধ",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "চালু",
+		off: "বন্ধ",
 	},
 	asearch: {
-		search: "Search",
+		search: "অনুসন্ধান করুন",
 	},
 };

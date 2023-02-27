@@ -1,8 +1,8 @@
 export default {
 	locale: "sn",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Vhura menyu",
+		close: "Vhara menyu",
 	},
 	adrawer: {
 		close: "Close",

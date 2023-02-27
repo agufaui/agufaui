@@ -1,17 +1,17 @@
 export default {
 	locale: "gd",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Clàr-taice fosgailte",
+		close: "Dùin an clàr-taice",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Dùin",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Air adhart",
+		off: "dheth",
 	},
 	asearch: {
-		search: "Search",
+		search: "Rannsaich",
 	},
 };

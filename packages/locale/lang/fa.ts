@@ -1,17 +1,17 @@
 export default {
 	locale: "fa",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "منو را باز کنید",
+		close: "بستن منو",
 	},
 	adrawer: {
-		close: "Close",
+		close: "بستن",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "بر",
+		off: "خاموش",
 	},
 	asearch: {
-		search: "Search",
+		search: "جستجو کردن",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "yi",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "עפענען מעניו",
+		close: "נאָענט מעניו",
 	},
 	adrawer: {
-		close: "Close",
+		close: "נאָענט",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "אויף",
+		off: "אַוועק",
 	},
 	asearch: {
-		search: "Search",
+		search: "זוכן",
 	},
 };

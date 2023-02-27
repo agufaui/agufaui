@@ -1,17 +1,17 @@
 export default {
 	locale: "kn",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "ಮೆನು ತೆರೆಯಿರಿ",
+		close: "ಮೆನುವನ್ನು ಮುಚ್ಚಿ",
 	},
 	adrawer: {
-		close: "Close",
+		close: "ಮುಚ್ಚಿ",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "ಆನ್",
+		off: "ಆರಿಸಿ",
 	},
 	asearch: {
-		search: "Search",
+		search: "ಹುಡುಕಿ Kannada",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "st",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Bula lenane",
+		close: "Kwala lenane",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Koala",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "E butsoe",
+		off: "E tima",
 	},
 	asearch: {
-		search: "Search",
+		search: "Batla",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "eo",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Malfermu menuon",
+		close: "Fermu menuon",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Fermu",
 	},
 	atoggle: {
 		on: "On",
-		off: "Off",
+		off: "Malŝaltita",
 	},
 	asearch: {
-		search: "Search",
+		search: "Serĉu",
 	},
 };

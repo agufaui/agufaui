@@ -1,17 +1,17 @@
 export default {
 	locale: "eu",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Ireki menua",
+		close: "Itxi menua",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Itxi",
 	},
 	atoggle: {
 		on: "On",
-		off: "Off",
+		off: "Desaktibatuta",
 	},
 	asearch: {
-		search: "Search",
+		search: "Bilatu",
 	},
 };

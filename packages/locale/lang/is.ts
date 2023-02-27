@@ -1,17 +1,17 @@
 export default {
 	locale: "is",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Opna valmynd",
+		close: "Loka valmynd",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Loka",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Á",
+		off: "Af",
 	},
 	asearch: {
-		search: "Search",
+		search: "Leita",
 	},
 };

@@ -1,17 +1,17 @@
 export default {
 	locale: "ug",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "تىزىملىكنى ئېچىڭ",
+		close: "تىزىملىكنى تاقاش",
 	},
 	adrawer: {
-		close: "Close",
+		close: "تاقاش",
 	},
 	atoggle: {
 		on: "On",
 		off: "Off",
 	},
 	asearch: {
-		search: "Search",
+		search: "ئىزدەش",
 	},
 };

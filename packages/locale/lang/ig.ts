@@ -1,17 +1,17 @@
 export default {
 	locale: "ig",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Mepee menu",
+		close: "Mechie menu",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Mechie",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Gbanye",
+		off: "Gbanyụọ",
 	},
 	asearch: {
-		search: "Search",
+		search: "Chọọ",
 	},
 };

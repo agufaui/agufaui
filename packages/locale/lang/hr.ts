@@ -1,17 +1,17 @@
 export default {
 	locale: "hr",
 	amtoggle: {
-		open: "Open menu",
-		close: "Close menu",
+		open: "Otvori izbornik",
+		close: "Zatvori izbornik",
 	},
 	adrawer: {
-		close: "Close",
+		close: "Zatvoriti",
 	},
 	atoggle: {
-		on: "On",
-		off: "Off",
+		on: "Na",
+		off: "Isključeno",
 	},
 	asearch: {
-		search: "Search",
+		search: "traži",
 	},
 };
