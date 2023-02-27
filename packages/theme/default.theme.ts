@@ -21,6 +21,7 @@ import { DAModal } from "./default/basic/AModal";
 import { DADrawer } from "./default/basic/ADrawer";
 //utility
 import { DAAlertError } from "./default/utility/AAlertError";
+import { DARating } from "./default/utility/ARating";
 // Navigation
 import { DAMtoggle } from "./default/navigation/AMtoggle";
 import { DAMlink } from "./default/navigation/AMlink";
@@ -55,6 +56,7 @@ export const CAModalName = "amodal";
 export const CADrawerName = "adrawer";
 //utility
 export const CAAlertErrorName = "aalertError";
+export const CARatingName = "arating";
 // Navigation
 export const CAMtoggleName = "amtoggle";
 export const CAMlinkName = "amlink";
@@ -90,6 +92,7 @@ export const Theme: ITheme = {
 	[CADrawerName]: DADrawer,
 	//utility
 	[CAAlertErrorName]: DAAlertError,
+	[CARatingName]: DARating,
 	// Navigation
 	[CAMtoggleName]: DAMtoggle,
 	[CAMlinkName]: DAMlink,

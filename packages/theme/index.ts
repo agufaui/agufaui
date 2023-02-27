@@ -21,6 +21,7 @@ export * from "./default/basic/AModal";
 export * from "./default/basic/ADrawer";
 // Utility
 export * from "./default/utility/AAlertError";
+export * from "./default/utility/ARating";
 // Navigation
 export * from "./default/navigation/AMtoggle";
 export * from "./default/navigation/AMlink";
@@ -74,6 +75,7 @@ export type {
 	IAAlertErrorEmits,
 	IAAlertErrorEmitsS,
 } from "./types/utility/AAlertError";
+export type { IARatingProps, IARatingEmits, IARatingEmitsS } from "./types/utility/ARating";
 // Navigation
 export type { IAMtoggleProps, IAMtoggleEmits, IAMtoggleEmitsS } from "./types/navigation/AMtoggle";
 export type { IAMlinkProps } from "./types/navigation/AMlink";

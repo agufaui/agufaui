@@ -294,9 +294,28 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 				path.replaceWith(node.arguments[0] as Node);
 
 				if (!context.refs) {
-					context.refs = new Array<string>();
+					context.refs = new Map<string, string>();
 				}
-				context.refs.push(((path.parent as t.VariableDeclarator).id as t.Identifier).name);
+
+				const refVar = ((path.parent as t.VariableDeclarator).id as t.Identifier).name;
+				const valueNode = node.arguments[0];
+				let valueType = "";
+				if (t.isBooleanLiteral(valueNode)) {
+					valueType = "boolean";
+				} else if (t.isStringLiteral(valueNode)) {
+					valueType = "string";
+				} else if (t.isNumericLiteral(valueNode)) {
+					valueType = "number";
+				} else if (t.isMemberExpression(valueNode)) {
+					const memberTypeNode = node.typeParameters?.params[0];
+					if (t.isTSNumberKeyword(memberTypeNode)) {
+						valueType = "number";
+					}
+
+					path.replaceWith(valueNode.object);
+				}
+
+				context.refs.set(refVar, valueType);
 				break;
 			case "reactive":
 				path.replaceWith(node.arguments[0] as Node);
@@ -389,7 +408,13 @@ export function transformMemberExpression(path: NodePath<t.MemberExpression>, co
 		property = node.property.name;
 	}
 
-	if (property === "value" && context.refs?.includes(name)) {
+	// replace ref.value to ref
+	if (property === "value" && context.refs?.has(name)) {
+		path.replaceWith(node.object as Node);
+	}
+
+	// replace cref.value to cref
+	if (property === "value" && name.startsWith("c")) {
 		path.replaceWith(node.object as Node);
 	}
 

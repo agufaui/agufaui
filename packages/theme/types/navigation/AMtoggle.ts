@@ -7,7 +7,7 @@ export interface IAMtoggleProps extends IProps {
 	vc?: string; // css classes for menu text 'span' html element
 	i?: string; // menu icon
 	ic?: string; // css classes for icon element
-	closeicon?: string; // icon for close button
+	closei?: string; // icon for close button
 	closec?: string; // css classes for close button element
 }
 // #endregion props

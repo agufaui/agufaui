@@ -9,7 +9,7 @@ button(
 )
   slot
     span(class="sr-only") {{ open? tr(CAMtoggleName, "close") : tr(CAMtoggleName, "open") }}
-    span(v-if="open" :class="[ccloseicon, cclosec]")
+    span(v-if="open" :class="[cclosei, cclosec]")
     span(v-else :class="[ci, cic]")
     span(v-if="v" :class="cvc") {{v}}
 </template>
@@ -29,7 +29,7 @@ import { useVue, useLocale } from "@agufaui/usevue";
 const defaultPropValues = {
 	// #region props
 	i: "i-tabler:menu-2",
-	closeicon: "i-material-symbols:close",
+	closei: "i-material-symbols:close",
 	// #endregion props
 };
 
@@ -43,7 +43,7 @@ const computedProperties = getComputedFromProps<IAMtoggleProps>(
 	defaultPropValues
 );
 
-const { cc, ccloseicon, ci, cic, cclosec, cvc } = computedProperties;
+const { cc, cclosei, ci, cic, cclosec, cvc } = computedProperties;
 
 const emits = defineEmits<IAMtoggleEmits>();
 

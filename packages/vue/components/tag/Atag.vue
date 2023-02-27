@@ -2,13 +2,13 @@
 //- @ts-ignore
 span(
   v-bind="$attrs"
-	v-if="show"
+  v-if="show"
   class="inline-flex justify-center items-center"
   :class="[cspacex, cpos === 'right' ? 'flex-row-reverse space-x-reverse' : '', cc]"
 )
-	span(:class="cvc") 
-		slot {{ v }}
-	span(class="flex-shrink-0 cursor-pointer" :class="[ccloseicon, cclosec]" @click.stop="click")
+  span(:class="cvc") 
+    slot {{ v }}
+  span(class="flex-shrink-0 cursor-pointer" :class="[cclosei, cclosec]" @click.stop="click")
 </template>
 
 <script lang="ts">
@@ -27,7 +27,7 @@ import { ref } from "vue";
 const defaultPropValues = {
 	// #region props
 	spacex: "space-x-1.5",
-	closeicon: "i-iwwa:delete",
+	closei: "i-iwwa:delete",
 	// #endregion props
 };
 
@@ -39,7 +39,7 @@ const { getComputedFromProps } = useVue();
 
 const computedProperties = getComputedFromProps<IATagProps>(props, CATagName, defaultPropValues);
 
-const { cc, cvc, cpos, ccloseicon, cclosec, cspacex } = computedProperties;
+const { cc, cvc, cpos, cclosei, cclosec, cspacex } = computedProperties;
 
 const emits = defineEmits<IATagEmits>();
 

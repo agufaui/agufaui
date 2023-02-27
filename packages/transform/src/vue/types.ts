@@ -20,7 +20,7 @@ export interface IContext extends ITransformOptions {
 	noComputedProp?: Set<string>; // common props, eg. v, t
 	noComputedFile?: Set<string>; // eg. Abutton.vue
 	componentName?: string; // eg. CAButtonName
-	refs?: string[]; // eg. show, open
+	refs?: Map<string, string>; // eg. <show, boolean>, <full, number>
 	reactives?: string[];
 	noImport?: Set<string>; // eg. vue, useVue
 	defaultValues?: Record<string, any>; // eg. i: "i-icon"

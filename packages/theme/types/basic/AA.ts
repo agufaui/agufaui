@@ -4,7 +4,7 @@ import type { IProps, IPropsComposeX, IPropsForm, IPropsLoading } from "../../pr
 export interface IAAProps extends IProps, IPropsForm, IPropsComposeX, IPropsLoading {
 	v?: string; // link text.  Not configurable
 	vc?: string; // css classes for text element
-	loadicon?: string; // loading icon eg. i-eos-icons:loading
+	loadi?: string; // loading icon eg. i-eos-icons:loading
 	loadc?: string; // css classes for loading icon element
 	disablec?: string; // css classes for disabled state
 	tabindex?: number; // tabindex for link

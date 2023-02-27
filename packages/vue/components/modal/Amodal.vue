@@ -6,7 +6,7 @@ div(class="fixed z-100 inset-0 overflow-y-auto" v-if="showModal" :class="cc")
     span(class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true") &#8203;
     div(class="inline-block" role="dialog" aria-modal="true" aria-labelledby="modal-headline" v-bind="$attrs" :class="cpanelc")
       div(class="absolute top-0 right-0 pt-4 pr-4")
-        div(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[ccloseicon, cclosec]" @click.stop="close")
+        div(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[cclosei, cclosec]" @click.stop="close")
       slot
 </template>
 
@@ -27,7 +27,7 @@ let showModal = ref(false);
 
 const defaultPropValues = {
 	// #region props
-	closeicon: "i-iwwa:delete",
+	closei: "i-iwwa:delete",
 	// #endregion props
 };
 
@@ -41,7 +41,7 @@ const computedProperties = getComputedFromProps<IAModalProps>(
 	defaultPropValues
 );
 
-const { cc, cpanelc, ccloseicon, cclosec } = computedProperties;
+const { cc, cpanelc, cclosei, cclosec } = computedProperties;
 
 const emits = defineEmits<IAModalEmits>();
 

@@ -6,7 +6,7 @@ export interface IAModalProps extends IProps, IPropsIcon {
 	show?: boolean; // show modal
 	panelc?: string; // css classes for message 'span' html element
 	closable?: boolean; // if modal is self closable
-	closeicon?: string; // icon for close button
+	closei?: string; // icon for close button
 	closec?: string; // css classes for close button
 }
 // #endregion props

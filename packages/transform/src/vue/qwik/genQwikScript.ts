@@ -373,9 +373,19 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 					);
 
 				if (!context.refs) {
-					context.refs = new Array<string>();
+					context.refs = new Map<string, string>();
 				}
-				context.refs.push(((path.parent as t.VariableDeclarator).id as t.Identifier).name);
+
+				const refVar = ((path.parent as t.VariableDeclarator).id as t.Identifier).name;
+				const valueNode = node.arguments[0];
+				let valueType = "number";
+				if (t.isBooleanLiteral(valueNode)) {
+					valueType = "boolean";
+				} else if (t.isStringLiteral(valueNode)) {
+					valueType = "string";
+				}
+
+				context.refs.set(refVar, valueType);
 				break;
 			case "reactive":
 				path.replaceWith(node.arguments[0] as Node);

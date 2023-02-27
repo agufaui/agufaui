@@ -10,7 +10,7 @@ export interface IAAlertProps extends IProps, IPropsComposeX, IPropsIcon {
 	v?: string; // message.  Not configurable
 	vc?: string; // css classes for message 'span' html element
 	closable?: boolean; // is component closable
-	closeicon?: string; // icon for close button
+	closei?: string; // icon for close button
 	closec?: string; // css classes for close button
 }
 // #endregion props

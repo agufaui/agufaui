@@ -504,8 +504,13 @@ export function reduceAttrs(
 				// eg. transform item, i in items to {#each items as item, i}
 				pre.push(`{#each ${matches[3]} as ${matches[1]}, ${matches[2]}}`);
 			} else {
-				// eg. transform item in items to {#each items as item}
-				pre.push(`{#each ${matches[3]} as ${matches[1]}}`);
+				if (context.refs?.has(matches[3]) && context.refs?.get(matches[3]) === "number") {
+					// eg. transform number iteration to {#each Array(total) as _, i}
+					pre.push(`{#each Array.from({length: ${matches[3]}}, (_, i) => i+1) as ${matches[1]}}`);
+				} else {
+					// eg. transform item in items to {#each items as item}
+					pre.push(`{#each ${matches[3]} as ${matches[1]}}`);
+				}
 			}
 
 			preClose.push(`{/each}`);

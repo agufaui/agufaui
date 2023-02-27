@@ -40,9 +40,9 @@ export async function transformVue(
 	};
 
 	if (toFramework === Framework.Svelte) {
-		const svelteTemplate = getSvelteTemplate(context);
-
 		const svelteScript = await getSvelteScript(context);
+
+		const svelteTemplate = getSvelteTemplate(context);
 
 		return svelteTemplate + "\n" + svelteScript;
 	}
