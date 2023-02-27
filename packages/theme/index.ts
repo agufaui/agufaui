@@ -32,6 +32,8 @@ export * from "./default/navigation/AMsidebar";
 export * from "./default/navigation/AMmsidebar";
 // Form
 export * from "./default/form/ASd";
+// Table
+export * from "./default/table/APagination";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/basic/AAlert";
@@ -91,3 +93,9 @@ export type {
 } from "./types/navigation/AMmsidebar";
 // Form
 export type { IASdProps } from "./types/form/ASd";
+// Table
+export type {
+	IAPaginationProps,
+	IAPaginationEmits,
+	IAPaginationEmitsS,
+} from "./types/table/APagination";

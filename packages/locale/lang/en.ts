@@ -14,4 +14,9 @@ export default {
 	asearch: {
 		search: "Search",
 	},
+	apagination: {
+		previous: "Previous",
+		next: "Next",
+		goto: "Goto",
+	},
 };

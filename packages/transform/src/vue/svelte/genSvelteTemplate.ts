@@ -320,6 +320,8 @@ export function reduceAttrs(
 			name = "on:click_outside";
 			val = val.replace(/^"|"$/g, "");
 			final += ` use:clickOutside ${name}={${val}}`;
+		} else if (val.includes("tr(")) {
+			val = val.replace(/tr\(/g, "$tr(");
 		} else if (attr.name.startsWith(":") || attr.name.startsWith("v-bind:")) {
 			// eg. :class to class
 			name = attr.name.substring(1);

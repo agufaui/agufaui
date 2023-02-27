@@ -163,9 +163,6 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 	const { node } = path;
 	const { source, specifiers } = node;
 	const { value } = source;
-	if (context.noImport?.has(value)) {
-		path.remove();
-	}
 
 	if (value.includes(".vue")) {
 		source.value = value.replace(".vue", "");
@@ -239,9 +236,32 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 
 			path.insertBefore(helperImport as Node);
 		}
+
+		if (value === "vue") {
+			if (name === "onMounted") {
+				const onMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onMount"), t.identifier("onMount"))],
+					t.stringLiteral("builder.io/qwik")
+				);
+
+				path.insertBefore(onMountImport as Node);
+			}
+			if (name === "onUnmounted") {
+				const onUnMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onDestroy"), t.identifier("onDestroy"))],
+					t.stringLiteral("builder.io/qwik")
+				);
+
+				path.insertBefore(onUnMountImport as Node);
+			}
+		}
 	}
 
 	if (["@agufaui/usevue", "@vueuse/components"].includes(value)) {
+		path.remove();
+	}
+
+	if (context.noImport?.has(value)) {
 		path.remove();
 	}
 }
@@ -505,6 +525,12 @@ export function transformExpressionStatement(
 
 								path.replaceWith(useTaskExpStatement as Node);
 							}
+							break;
+						case "onMounted":
+							(node.expression.callee as t.Identifier).name = "onMount";
+							break;
+						case "onUnmounted":
+							(node.expression.callee as t.Identifier).name = "onDestroy";
 							break;
 					}
 					break;

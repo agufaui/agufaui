@@ -14,7 +14,7 @@ div(class="max-w-xs sm:w-full select-none" :class="[cdisplay, cc]")
       class="disabled:(opacity-50 cursor-default)"
       :class="cvc"
       @input="input($event)"
-      @keyup.enter="search()")
+      @keyup.enter="search($event)")
     div(class="cursor-pointer absolute inset-y-0 right-0 pr-3 flex items-center" @click="search()")
       i(class="h-5 w-5" :class="[ci, v ? ciconc : cicondc, cic]")
 </template>
@@ -52,13 +52,23 @@ const { cdisplay, cvc, cc, ci, cic, ciconc, cicondc } = computedProperties;
 
 const emits = defineEmits<IASearchEmits>();
 
+let timeout: NodeJS.Timeout;
+
 const input = (e: Event) => {
-	const target = e.target as HTMLInputElement;
-	emits("update:v", target.value);
+	if (timeout) {
+		clearTimeout(timeout);
+	}
+
+	timeout = setTimeout(function () {
+		const target = e.target as HTMLInputElement;
+		emits("update:v", target.value);
+	}, 1000);
 };
 
-const search = () => {
-	emits("search", props.v);
+const search = (e: Event) => {
+	const target = e.target as HTMLInputElement;
+	target.blur();
+	emits("search", target.value);
 };
 
 const { tr } = useLocale();

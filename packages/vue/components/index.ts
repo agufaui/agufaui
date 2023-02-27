@@ -21,6 +21,7 @@ export { default as Adrawer } from "./drawer/Adrawer.vue";
 
 // utility
 export { default as AalertError } from "./alertError/AalertError.vue";
+export { default as Arating } from "./rating/Arating.vue";
 
 // navigation
 export { default as Amtoggle } from "./menuToggle/Amtoggle.vue";
@@ -34,3 +35,6 @@ export { default as Ammsidebar } from "./menuMobileSidebar/Ammsidebar.vue";
 
 // form
 export { default as Asd } from "./statusDecorator/Asd.vue";
+
+// table
+export { default as Apagination } from "./table/Apagination.vue";

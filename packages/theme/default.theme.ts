@@ -33,6 +33,8 @@ import { DAMsidebar } from "./default/navigation/AMsidebar";
 import { DAMmsidebar } from "./default/navigation/AMmsidebar";
 // Form
 import { DASd } from "./default/form/ASd";
+// Table
+import { DAPagination } from "./default/table/APagination";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
@@ -68,6 +70,8 @@ export const CAMsidebarName = "amsidebar";
 export const CAMmsidebarName = "ammsidebar";
 // Form
 export const CASdName = "asd";
+// Table
+export const CAPaginationName = "apagination";
 
 export const Theme: ITheme = {
 	[CAButtonName]: DAButton,
@@ -104,4 +108,6 @@ export const Theme: ITheme = {
 	[CAMmsidebarName]: DAMmsidebar,
 	// Form
 	[CASdName]: DASd,
+	// Table
+	[CAPaginationName]: DAPagination,
 };
