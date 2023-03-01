@@ -11,7 +11,7 @@ div(v-if="items.length > 0" class="relative" :class="cc" v-on-click-outside="out
       :ic="'h-5 w-5 ' + cic"
       @click="show = !show")
   div(v-if="show" class="absolute flex flex-col z-20 mt-1 rounded-md" :class="cpanelc")
-    abutton(v-for="item, i in items.slice(1)" :key="i" :v="item.display" :i="item.icon" :c="citemc" :class="i === 0 ? 'rounded-t-md' : i === items.length-2? 'rounded-b-md' : ''" @click="itemClick(items.event)")
+    abutton(v-for="item, i in items.slice(1)" :key="i" :v="item.display" :i="item.icon" :c="citemc" :class="[i === 0 ? 'rounded-t-md' : '', i === items.length-2? 'rounded-b-md' : '']" @click="itemClick(items.event)")
 </template>
 
 <script lang="ts">

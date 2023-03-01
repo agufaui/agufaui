@@ -7,7 +7,7 @@ export interface IAButtonProps extends IProps, IPropsForm, IPropsComposeX, IProp
 	type?: ButtonType; // html element button type
 	v?: string; // button text.  Not configurable
 	vc?: string; // css classes for text element
-	loadicon?: string; // loading icon eg. i-eos-icons:loading
+	loadi?: string; // loading icon eg. i-eos-icons:loading
 	loadc?: string; // css classes for loading icon element
 }
 // #endregion props

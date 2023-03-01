@@ -163,9 +163,6 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 	const { node } = path;
 	const { source, specifiers } = node;
 	const { value } = source;
-	if (context.noImport?.has(value)) {
-		path.remove();
-	}
 
 	if (value.includes(".vue")) {
 		source.value = value.replace(".vue", "");
@@ -239,9 +236,32 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 
 			path.insertBefore(helperImport as Node);
 		}
+
+		if (value === "vue") {
+			if (name === "onMounted") {
+				const onMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onMount"), t.identifier("onMount"))],
+					t.stringLiteral("builder.io/qwik")
+				);
+
+				path.insertBefore(onMountImport as Node);
+			}
+			if (name === "onUnmounted") {
+				const onUnMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onDestroy"), t.identifier("onDestroy"))],
+					t.stringLiteral("builder.io/qwik")
+				);
+
+				path.insertBefore(onUnMountImport as Node);
+			}
+		}
 	}
 
 	if (["@agufaui/usevue", "@vueuse/components"].includes(value)) {
+		path.remove();
+	}
+
+	if (context.noImport?.has(value)) {
 		path.remove();
 	}
 }
@@ -373,9 +393,19 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 					);
 
 				if (!context.refs) {
-					context.refs = new Array<string>();
+					context.refs = new Map<string, string>();
 				}
-				context.refs.push(((path.parent as t.VariableDeclarator).id as t.Identifier).name);
+
+				const refVar = ((path.parent as t.VariableDeclarator).id as t.Identifier).name;
+				const valueNode = node.arguments[0];
+				let valueType = "number";
+				if (t.isBooleanLiteral(valueNode)) {
+					valueType = "boolean";
+				} else if (t.isStringLiteral(valueNode)) {
+					valueType = "string";
+				}
+
+				context.refs.set(refVar, valueType);
 				break;
 			case "reactive":
 				path.replaceWith(node.arguments[0] as Node);
@@ -495,6 +525,12 @@ export function transformExpressionStatement(
 
 								path.replaceWith(useTaskExpStatement as Node);
 							}
+							break;
+						case "onMounted":
+							(node.expression.callee as t.Identifier).name = "onMount";
+							break;
+						case "onUnmounted":
+							(node.expression.callee as t.Identifier).name = "onDestroy";
 							break;
 					}
 					break;

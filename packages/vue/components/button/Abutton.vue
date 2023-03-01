@@ -10,7 +10,7 @@ button(
   @click.stop="click($event)"
 )
   slot
-    span(v-if="loading" class="animate-spin preserve-3d" :class="[cloadicon, cloadc]")
+    span(v-if="loading" class="animate-spin preserve-3d" :class="[cloadi, cloadc]")
     span(v-else-if="ci" :class="[ci, cic]")
     span(v-if="v" :class="cvc") {{ v }}
 </template>
@@ -30,7 +30,7 @@ import { useVue } from "@agufaui/usevue";
 const defaultPropValues = {
 	// #region props
 	type: "button",
-	loadicon: "i-eos-icons:loading",
+	loadi: "i-eos-icons:loading",
 	spacex: "space-x-1.5",
 	// #endregion props
 };
@@ -45,7 +45,7 @@ const computedProperties = getComputedFromProps<IAButtonProps>(
 	defaultPropValues
 );
 
-const { ctype, cc, cvc, ci, cipos, cic, cloadicon, cloadc, cspacex } = computedProperties;
+const { ctype, cc, cvc, ci, cipos, cic, cloadi, cloadc, cspacex } = computedProperties;
 
 const emits = defineEmits<IAButtonEmits>();
 

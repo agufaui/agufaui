@@ -4,11 +4,39 @@ export default {
 		open: "Menu veke",
 		close: "Menuyê bigire",
 	},
-	ammsidebar: {
-		close: "Li kêlekê bigire",
+	adrawer: {
+		close: "Nêzîkî",
 	},
 	atoggle: {
 		on: "Li",
 		off: "Ji",
+	},
+	asearch: {
+		search: "Gerr",
+	},
+	apagination: {
+		previous: "Pêşî",
+		next: "Piştî",
+		goto: "Biçe",
+	},
+	atpanel: {
+		actions: "Actions",
+		empty: "No tomar",
+	},
+	aselectoption: {
+		options: "Vebijêrk",
+		select: "vebijarkek hilbijêre",
+	},
+	adropdownselect: {
+		display: "Pêşkêşî",
+	},
+	atable: {
+		new: "Nşh",
+		delete: "Jêbirin",
+		filters: "Parzûnên",
+		display: "Pêşkêşî",
+		of: "ji",
+		records: "tomar dike",
+		show: "Rêdan",
 	},
 };

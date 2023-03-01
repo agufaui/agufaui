@@ -9,7 +9,7 @@ git push
 
 if [ -n $1 ]
 then
-    if [$1 -ne "main" && $1 -ne "next"]
+    if [ $1 != "main" ] && [ $1 != "next" ]
     then
         git push origin --delete $1
         git branch -D $1
@@ -22,7 +22,7 @@ fi
 
 if [ -n "$2" ]
 then
-    if [$1 -ne "main" && $1 -ne "next"]
+    if [ $2 != "main" ] && [ $2 != "next" ]
     then
         git checkout -b $2 next
     else

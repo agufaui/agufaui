@@ -5,19 +5,19 @@
 		<amtoggle
 			:open="open1"
 			i="i-icon-park-outline:menu-unfold"
-			closeicon="i-icon-park-outline:menu-fold"
+			closei="i-icon-park-outline:menu-fold"
 			@click="open1 = !open1"
 		/>
 		<amtoggle
 			:open="open2"
 			i="i-system-uicons:side-menu"
-			closeicon="i-system-uicons:menu-vertical"
+			closei="i-system-uicons:menu-vertical"
 			@click="open2 = !open2"
 		/>
 		<amtoggle
 			:open="open3"
 			i="i-icon-park-outline:application-menu"
-			closeicon="i-healthicons:ui-menu-grid-outline"
+			closei="i-healthicons:ui-menu-grid-outline"
 			@click="open3 = !open3"
 		/>
 		<amtoggle
@@ -31,7 +31,7 @@
 			v="menu"
 			vc="text-gray-4 text-sm ml-0.5"
 			i="i-icon-park-outline:menu-fold-one"
-			closeicon="i-icon-park-outline:menu-unfold-one"
+			closei="i-icon-park-outline:menu-unfold-one"
 			@click="open5 = !open5"
 		/>
 		<!-- #endregion showcase -->

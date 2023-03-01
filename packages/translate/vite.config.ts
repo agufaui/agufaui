@@ -9,7 +9,6 @@ export default defineConfig({
 			name: "@agufaui/translate",
 		},
 		rollupOptions: {
-			external: ["node-fetch"],
 			output: [
 				{
 					dir: "dist/es",
@@ -28,9 +27,6 @@ export default defineConfig({
 					sourcemap: false,
 				},
 				{
-					globals: {
-						"node-fetch": "fetch",
-					},
 					dir: "dist/umd",
 					format: "umd",
 					entryFileNames: "index.js",
@@ -38,9 +34,6 @@ export default defineConfig({
 					sourcemap: false,
 				},
 				{
-					globals: {
-						"node-fetch": "fetch",
-					},
 					dir: "dist/iife",
 					format: "iife",
 					entryFileNames: "index.js",

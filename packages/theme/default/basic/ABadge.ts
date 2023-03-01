@@ -28,6 +28,14 @@ export const DABadgeLabel = {
 	c: "text-base",
 };
 
+export const DABadgePre = {
+	c: "rounded-l-lg text-gray-9 text-lg bg-gray-2 px-2 h-10 shadow-md",
+};
+
+export const DABadgePost = {
+	c: "rounded-r-lg text-gray-9 text-lg bg-gray-2 px-2 h-10 shadow-md",
+};
+
 export const DABadge: Readonly<Record<string, IABadgeProps>> = {
 	[CDefaultType]: DABadgeDefault,
 	rec: DABadgeRec,
@@ -35,4 +43,6 @@ export const DABadge: Readonly<Record<string, IABadgeProps>> = {
 	icon: DABadgeIcon,
 	circle: DABadgeCircle,
 	label: DABadgeLabel,
+	pre: DABadgePre,
+	post: DABadgePost,
 };

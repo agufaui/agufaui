@@ -8,6 +8,7 @@
 		TSelectOption,
 		TDropdownItem,
 		TDropdownButtonItem,
+		TPos,
 	} from "@agufaui/theme";
 	import {
 		configStore,
@@ -23,6 +24,12 @@
 		Aselect,
 		Adropdown,
 		Adropdownbutton,
+		Asearch,
+		Atooltip,
+		Alabel,
+		Atextarea,
+		Amodal,
+		Adrawer,
 	} from "@agufaui/svelte";
 	// let AButton;
 	// onMount(async () => {
@@ -42,6 +49,8 @@
 
 	let text = ""; // Ainput
 	$: console.log("text", text); // Ainput
+
+	let searchtext = ""; // Asearch
 
 	let on = false; // Atoggle
 	// Atoggle
@@ -120,6 +129,16 @@
 			event: "save",
 		},
 	];
+
+	// drawer
+	let showDrawer = false;
+	let posDrawer = "left" as TPos;
+
+	// modal
+	let showModal = false;
+	const closeModal = () => {
+		showModal = false;
+	};
 </script>
 
 <main>
@@ -142,6 +161,31 @@
 	/>
 	<Adropdown v="options" items={itemsDropdown} />
 	<Adropdownbutton items={itemsDropdownButton} />
+	<Asearch v={searchtext} vc="dark:text-white" on:update:v={(e) => (text = e)} />
+	<Alabel v="Username" vc="dark:text-white" />
+	<Atooltip v="user name" />
+	<Atextarea
+		v="hi"
+		label="Comment"
+		t="inlineblock"
+		rows={5}
+		vc="dark:text-white"
+		labelc="dark:(bg-#242424 text-white)"
+	/>
+	<Abutton v="click me" on:click={(e) => (showDrawer = true)} />
+	<Adrawer show={showDrawer} pos={posDrawer} on:close={() => (showDrawer = false)}>
+		<nav class="flex flex-col flex-1 overflow-y-auto h-full bg-gray-8 min-w-14rem">
+			<p>hi</p>
+		</nav>
+	</Adrawer>
+	<Abutton
+		v="Show modal"
+		c="text-white bg-blue-5 hover:(bg-blue-6 -translate-px shadow-md shadow-blue) active:translate-px focus:(ring-offset-none ring-none)"
+		on:click={() => (showModal = true)}
+	/>
+	<Amodal show={showModal} closable on:close={() => (showModal = false)}>
+		<p>hi</p>
+	</Amodal>
 	<!-- {#if AButton}
 	 <svelte:component this={AButton} text="cick me" />
 {:else}

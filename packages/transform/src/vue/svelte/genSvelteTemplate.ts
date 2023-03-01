@@ -320,6 +320,8 @@ export function reduceAttrs(
 			name = "on:click_outside";
 			val = val.replace(/^"|"$/g, "");
 			final += ` use:clickOutside ${name}={${val}}`;
+		} else if (val.includes("tr(")) {
+			val = val.replace(/tr\(/g, "$tr(");
 		} else if (attr.name.startsWith(":") || attr.name.startsWith("v-bind:")) {
 			// eg. :class to class
 			name = attr.name.substring(1);
@@ -396,13 +398,23 @@ export function reduceAttrs(
 			name = "on:" + subName;
 
 			// eg. click.stop.prevent to on:click|stopPropagation|preventDefault
-			name = name
-				.replace(".stop", "|stopPropagation")
-				.replace(".prevent", "|preventDefault")
-				.replace(".once", "|once")
-				.replace(".capture", "|capture")
-				.replace(".self", "|self")
-				.replace(".passive", "|passive");
+			if (tagNode.name.startsWith("a") && tagNode.name.length > 1) {
+				name = name
+					.replace(".stop", "")
+					.replace(".prevent", "")
+					.replace(".once", "|once")
+					.replace(".capture", "")
+					.replace(".self", "")
+					.replace(".passive", "");
+			} else {
+				name = name
+					.replace(".stop", "|stopPropagation")
+					.replace(".prevent", "|preventDefault")
+					.replace(".once", "|once")
+					.replace(".capture", "|capture")
+					.replace(".self", "|self")
+					.replace(".passive", "|passive");
+			}
 
 			// eg. "show=!show" to show=!show
 			val = val.replace(/^"|"$/g, "");
@@ -440,6 +452,9 @@ export function reduceAttrs(
 		} else if (attr.name.startsWith("#")) {
 			// eg. transform #default to slot="default"
 			const slotName = attr.name.substring(1);
+			if (slotName === "label") {
+				tagNode.name = "span";
+			}
 			final += ` slot="${slotName}"`;
 		} else if (attr.name.startsWith("v-once")) {
 			final += ` once`;
@@ -504,8 +519,13 @@ export function reduceAttrs(
 				// eg. transform item, i in items to {#each items as item, i}
 				pre.push(`{#each ${matches[3]} as ${matches[1]}, ${matches[2]}}`);
 			} else {
-				// eg. transform item in items to {#each items as item}
-				pre.push(`{#each ${matches[3]} as ${matches[1]}}`);
+				if (context.refs?.has(matches[3]) && context.refs?.get(matches[3]) === "number") {
+					// eg. transform number iteration to {#each Array(total) as _, i}
+					pre.push(`{#each Array.from({length: ${matches[3]}}, (_, i) => i+1) as ${matches[1]}}`);
+				} else {
+					// eg. transform item in items to {#each items as item}
+					pre.push(`{#each ${matches[3]} as ${matches[1]}}`);
+				}
 			}
 
 			preClose.push(`{/each}`);

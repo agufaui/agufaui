@@ -5,5 +5,5 @@ export interface IEngine {
 	needkey: boolean;
 
 	fetch: (opts: ITranslateOptions) => string[];
-	parse: (response: Response) => Promise<string>;
+	parse: (response: any[]) => string;
 }

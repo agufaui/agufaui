@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import { ofetch } from "ofetch";
 import * as languages from "./languages";
 // Translate text into different languages;
 import engines from "./engines";
@@ -44,9 +44,14 @@ export async function translate(
 
 	const fetchOpts = engine.fetch(opts);
 
-	return fetch(fetchOpts[0])
-		.then(engine.parse)
-		.then((translated: string) => {
-			return cache.put(id, translated, (opts as ITranslateOptions).cache!);
-		});
+	try {
+		const response = await ofetch(fetchOpts[0]);
+		const translated: string = engine.parse(response);
+
+		if (translated) return cache.put(id, translated, (opts as ITranslateOptions).cache!);
+	} catch (e) {
+		console.log(e);
+	}
+
+	return "";
 }

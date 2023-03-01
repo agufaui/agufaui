@@ -119,7 +119,7 @@ const elevationItems: TAMItem[] = [
 		name: "link",
 		props: {
 			v: "Google",
-			vc: "dark:text-gray-900",
+			vc: "dark:text-gray-9",
 			href: "https://google.com",
 			i: "i-logos:google-icon",
 		},
@@ -128,7 +128,7 @@ const elevationItems: TAMItem[] = [
 		name: "link",
 		props: {
 			v: "Github",
-			vc: "dark:text-gray-900",
+			vc: "dark:text-gray-9",
 			href: "https://github.com",
 			i: "i-logos:github-icon",
 		},
@@ -138,14 +138,14 @@ const elevationItems: TAMItem[] = [
 		props: {
 			v: "Other Sites",
 			i: "i-majesticons:sitemap",
-			titlesc: "dark:text-gray-800 dark:hover:text-gray-500",
+			titlesc: "dark:text-gray-8 dark:hover:text-gray-5",
 			t: "elevation",
 			items: [
 				{
 					name: "link",
 					props: {
 						v: "Google",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 					},
@@ -154,7 +154,7 @@ const elevationItems: TAMItem[] = [
 					name: "link",
 					props: {
 						v: "Github",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 					},
@@ -167,7 +167,7 @@ const elevationItems: TAMItem[] = [
 		props: {
 			v: "Expanded Sites",
 			i: "i-majesticons:sitemap",
-			titlesc: "dark:text-gray-800",
+			titlesc: "dark:text-gray-8",
 			t: "elevation",
 			expand: true,
 			items: [
@@ -175,7 +175,7 @@ const elevationItems: TAMItem[] = [
 					name: "link",
 					props: {
 						v: "Google",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://google.com",
 						i: "i-logos:google-icon",
 					},
@@ -184,7 +184,7 @@ const elevationItems: TAMItem[] = [
 					name: "link",
 					props: {
 						v: "Github",
-						vc: "dark:text-gray-900",
+						vc: "dark:text-gray-9",
 						href: "https://github.com",
 						i: "i-logos:github-icon",
 					},

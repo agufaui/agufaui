@@ -41,7 +41,7 @@ export function getQwikTemplate(context: IContext = {}): string {
 			(genTemplate = genTemplate.replace(new RegExp("\\b" + p + "\\b(?!=)", "g"), "props." + p))
 	);
 	context.refs?.forEach(
-		(p) => (genTemplate = genTemplate.replace(new RegExp("\\b" + p + "\\b", "g"), p + ".value"))
+		(_, p) => (genTemplate = genTemplate.replace(new RegExp("\\b" + p + "\\b", "g"), p + ".value"))
 	);
 	// if (context.componentName === "CADropdownButtonName") {
 	//   console.log(genTemplate)

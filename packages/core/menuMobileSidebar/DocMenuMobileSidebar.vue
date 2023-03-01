@@ -1,17 +1,17 @@
 <!-- #region showcase -->
 <template>
 	<div class="flex w-full doc">
-		<ammsidebar :mpanel="mpanel" mpanelc="bg-gray-8" :show="true">
+		<ammsidebar :mpanel="mpanel" mpanelc="bg-gray-8 w-14rem" :show="true" @close="close">
 			<template #header>
 				<aa
 					href="https://google.com"
 					i="i-logos:google"
 					ic="text-5xl"
-					c="flex-shrink-0 bg-gray-900 rounded-none"
+					c="flex-shrink-0 bg-gray-9 rounded-none"
 				/>
 			</template>
 			<template #footer>
-				<div class="bg-gray-900">
+				<div class="bg-gray-9">
 					<abutton
 						v="signout"
 						i="i-ic:sharp-logout"
@@ -117,6 +117,10 @@ const mpanel: IAMpanelProps = {
 			],
 		},
 	],
+};
+
+const close = () => {
+	console.log("close");
 };
 </script>
 <!-- #endregion showcase -->

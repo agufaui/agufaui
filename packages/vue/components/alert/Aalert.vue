@@ -8,7 +8,7 @@ div(
   span(:class="[ci, cic]")
   span(class="block" :class="cvc")
     slot {{ v }}
-  span(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[ccloseicon, cclosec]" @click.stop="click")
+  span(v-if="closable" class="flex-shrink-0 cursor-pointer" :class="[cclosei, cclosec]" @click.stop="click")
 </template>
 
 <script lang="ts">
@@ -28,7 +28,7 @@ const defaultPropValues = {
 	// #region props
 	display: "flex",
 	spacex: "space-x-1.2",
-	closeicon: "i-iwwa:delete",
+	closei: "i-iwwa:delete",
 	// #endregion props
 };
 
@@ -44,7 +44,7 @@ const computedProperties = getComputedFromProps<IAAlertProps>(
 	defaultPropValues
 );
 
-const { cdisplay, cc, cvc, ci, cipos, cic, cspacex, ccloseicon, cclosec } = computedProperties;
+const { cdisplay, cc, cvc, ci, cipos, cic, cspacex, cclosei, cclosec } = computedProperties;
 
 const emits = defineEmits<IAAlertEmits>();
 

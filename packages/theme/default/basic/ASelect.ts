@@ -1,5 +1,5 @@
 import { CDefaultType, CUseType } from "@agufaui/config";
-import type { IASelectProps } from "../../types/basic/ASelect";
+import type { IASelectProps, IASelectoptionProps } from "../../types/basic/ASelect";
 
 export const DASelectDefault = {
 	labelc: "text-gray-7",
@@ -21,4 +21,13 @@ export const DASelectGreen = {
 export const DASelect: Readonly<Record<string, Partial<IASelectProps>>> = {
 	[CDefaultType]: DASelectDefault,
 	green: DASelectGreen,
+};
+
+export const DASelectoptionDefault = {
+	labelc: "text-gray-7 sm:mr-2",
+	vc: "pl-3 pr-10 py-2 text-base rounded-md outline outline-gray-3 focus:(outline-none ring ring-blue-5 focus:outline-blue-5)",
+};
+
+export const DASelectoption: Readonly<Record<string, Partial<IASelectoptionProps>>> = {
+	[CDefaultType]: DASelectoptionDefault,
 };

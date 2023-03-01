@@ -36,6 +36,10 @@ export async function genSvelteScript(context: IContext, indent: string = ""): P
 	traverse(context.scriptFile as Node, {
 		enter(path) {
 			// console.log(path.node);
+			// if (context.fromFileName === "Atable.vue") {
+			//   if (t.isCallExpression(path.node))
+			//     console.log(path.node)
+			// }
 		},
 		Program(path) {
 			// insert node at the beginning of script body
@@ -87,9 +91,6 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 	const { node } = path;
 	const { source, specifiers } = node;
 	const { value } = source;
-	if (context.noImport?.has(value)) {
-		path.remove();
-	}
 
 	if (value.includes(".vue")) {
 		source.value = value.replace(".vue", ".svelte");
@@ -146,9 +147,32 @@ export function transformImportDeclaration(path: NodePath<t.ImportDeclaration>, 
 
 			path.insertBefore(helperImport as Node);
 		}
+
+		if (value === "vue") {
+			if (name === "onMounted") {
+				const onMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onMount"), t.identifier("onMount"))],
+					t.stringLiteral("svelte")
+				);
+
+				path.insertBefore(onMountImport as Node);
+			}
+			if (name === "onUnmounted") {
+				const onUnMountImport = t.importDeclaration(
+					[t.importSpecifier(t.identifier("onDestroy"), t.identifier("onDestroy"))],
+					t.stringLiteral("svelte")
+				);
+
+				path.insertBefore(onUnMountImport as Node);
+			}
+		}
 	}
 
 	if (["@agufaui/usevue", "@vueuse/components"].includes(value)) {
+		path.remove();
+	}
+
+	if (context.noImport?.has(value)) {
 		path.remove();
 	}
 }
@@ -294,9 +318,32 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 				path.replaceWith(node.arguments[0] as Node);
 
 				if (!context.refs) {
-					context.refs = new Array<string>();
+					context.refs = new Map<string, string>();
 				}
-				context.refs.push(((path.parent as t.VariableDeclarator).id as t.Identifier).name);
+
+				const refVar = ((path.parent as t.VariableDeclarator).id as t.Identifier).name;
+				const valueNode = node.arguments[0];
+				let valueType = "";
+				if (t.isBooleanLiteral(valueNode)) {
+					valueType = "boolean";
+				} else if (t.isStringLiteral(valueNode)) {
+					valueType = "string";
+				} else if (t.isNumericLiteral(valueNode)) {
+					valueType = "number";
+				} else if (t.isMemberExpression(valueNode)) {
+					const memberTypeNode = node.typeParameters?.params[0];
+					if (t.isTSNumberKeyword(memberTypeNode)) {
+						valueType = "number";
+					}
+
+					if (t.isIdentifier(valueNode.object) && valueNode.object.name === "props") {
+						path.replaceWith(valueNode.property);
+					} else {
+						path.replaceWith(valueNode.object);
+					}
+				}
+
+				context.refs.set(refVar, valueType);
 				break;
 			case "reactive":
 				path.replaceWith(node.arguments[0] as Node);
@@ -340,6 +387,25 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 				// path: defineProps<IxxxProps>();
 				transformDefineProps(node, path, context);
 				break;
+			case "computed":
+				if (context.fromFileName === "Atable.vue") {
+					// const displayEnd = computed(()=>{...})
+					// will parse to
+					// $: displayEnd = (()=>{...})()
+					if (
+						t.isVariableDeclarator(path.parent) &&
+						t.isArrowFunctionExpression(node.arguments[0])
+					) {
+						// create call expression (()=>{...})()
+						const callExp = t.callExpression(node.arguments[0], []);
+						const assignmentExp = t.assignmentExpression("=", path.parent.id, callExp);
+						const expStatement = t.expressionStatement(assignmentExp);
+						const labelStatement = t.labeledStatement(t.identifier("$"), expStatement);
+
+						path.parentPath.parentPath?.replaceWith(labelStatement);
+					}
+				}
+				break;
 		}
 	}
 }
@@ -360,6 +426,15 @@ export function transformExpressionStatement(
 						case "watch":
 							if (callExpression.arguments.length >= 2) {
 								const arrowFunc = callExpression.arguments[1] as t.ArrowFunctionExpression;
+								if (
+									context.fromFileName === "Apagination.vue" &&
+									t.isIdentifier(arrowFunc.params[0]) &&
+									arrowFunc.params[0].name === "totalPages"
+								) {
+									path.remove();
+									break;
+								}
+
 								if (t.isBlockStatement(arrowFunc.body)) {
 									const labelStatement = t.labeledStatement(
 										t.identifier("$"),
@@ -369,6 +444,12 @@ export function transformExpressionStatement(
 									path.replaceWith(labelStatement as Node);
 								}
 							}
+							break;
+						case "onMounted":
+							(node.expression.callee as t.Identifier).name = "onMount";
+							break;
+						case "onUnmounted":
+							(node.expression.callee as t.Identifier).name = "onDestroy";
 							break;
 					}
 					break;
@@ -389,7 +470,13 @@ export function transformMemberExpression(path: NodePath<t.MemberExpression>, co
 		property = node.property.name;
 	}
 
-	if (property === "value" && context.refs?.includes(name)) {
+	// replace ref.value to ref
+	if (property === "value" && context.refs?.has(name)) {
+		path.replaceWith(node.object as Node);
+	}
+
+	// replace cref.value to cref
+	if (property === "value" && name.startsWith("c")) {
 		path.replaceWith(node.object as Node);
 	}
 
@@ -423,7 +510,7 @@ export function transformIfStatement(path: NodePath<t.IfStatement>, context: ICo
  *  get type annotation of a call expression
  *  @example
  *  // returns IAMdropdownProps
- *  withDefault(defineProps<IAMdropdownProps>(), { vc: "text-lg", c: "text-sm"})
+ *  withDefaults(defineProps<IAMdropdownProps>(), { vc: "text-lg", c: "text-sm"})
  *  @param {t.CallExpression} callExpression - call expression
  * *  @param {IContext} context - context
  *  @returns {string}
@@ -584,6 +671,9 @@ function getTypeDef(
 				// }
 				identityProp.typeAnnotation = t.tsTypeAnnotation(typeProp);
 
+				// get default value of prop, eg. iconDefaultValue: "i-ion:arrow-down-b"
+				const defaultValue = context.defaultValues?.[prop];
+
 				// {
 				//   type: 'ExportNamedDeclaration',
 				//   declaration: {
@@ -605,7 +695,9 @@ function getTypeDef(
 				path.insertBefore(
 					t.exportNamedDeclaration(
 						t.variableDeclaration("let", [
-							match.includes("?")
+							defaultValue
+								? t.variableDeclarator(identityProp, defaultValue)
+								: match.includes("?")
 								? t.variableDeclarator(identityProp, t.identifier("undefined"))
 								: t.variableDeclarator(identityProp),
 						])
@@ -721,9 +813,6 @@ function getTypeDef(
 					path.insertBefore(labelStatement as Node);
 				} else {
 					// if prop is not a "class" property
-
-					// get default value of prop, eg. iconDefaultValue: "i-ion:arrow-down-b"
-					const defaultValue = context.defaultValues?.[prop];
 
 					const memberExp = t.memberExpression(
 						t.identifier("$configStore"),

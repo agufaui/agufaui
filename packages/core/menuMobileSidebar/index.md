@@ -13,6 +13,7 @@ Menu mobile sidebar.
 #### Child Components
 
 - [Menu Dropdown](/core/menuDropdown/)
+- [Drawer](/core/drawer/)
 
 ## Usage
 
@@ -64,3 +65,6 @@ Two slots, one named "header", one named "footer".
 
 <<< @/theme/prop.type.ts#iprops
 
+## Events
+
+<<< @/theme/types/navigation/AMmsidebar.ts#emits

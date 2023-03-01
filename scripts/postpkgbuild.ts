@@ -50,7 +50,7 @@ export async function updateSvelte() {
 
 	const { vueToSvelte, vueToQwik } = transform();
 
-	const noComputedProp = new Set(["t", "v", "tabindex", "label", "mpanel", "id", "name"]);
+	const noComputedProp = new Set(["t", "v", "tabindex", "label", "mpanel", "id", "name", "dir"]);
 
 	const noComputedFile = new Set(["Amitem.vue"]);
 

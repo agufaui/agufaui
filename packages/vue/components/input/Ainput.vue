@@ -10,7 +10,8 @@ div(class="relative select-none" :class="[cdisplay, cc]")
     :aria-disabled="disabled"
     v-bind="$attrs"
     :class="cvc"
-    @input="input($event)")
+    @input="input($event)"
+    @keyup.enter="blur($event)")
   label(:for="id"
     v-if="label"
     class="absolute top-0 py-2 px-3 -z-1" 
@@ -50,8 +51,22 @@ const { ctype, cdisplay, cvc, cc, clabelc } = computedProperties;
 
 const emits = defineEmits<IAInputEmits>();
 
+let timeout: NodeJS.Timeout;
+
 const input = (e: Event) => {
+	if (timeout) {
+		clearTimeout(timeout);
+	}
+
+	timeout = setTimeout(function () {
+		const target = e.target as HTMLInputElement;
+		emits("update:v", target.value);
+	}, 1000);
+};
+
+const blur = (e: Event) => {
 	const target = e.target as HTMLInputElement;
-	emits("update:v", target.value);
+	target.blur();
+	emits("blur", target.value);
 };
 </script>
