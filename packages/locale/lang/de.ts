@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Suchen",
 	},
+	apagination: {
+		previous: "Vorherige",
+		next: "Nächste",
+		goto: "Gehe zu",
+	},
+	atpanel: {
+		actions: "Aktionen",
+		empty: "Keine Aufzeichnungen",
+	},
+	aselectoption: {
+		options: "Optionen",
+		select: "Wähle eine Option",
+	},
+	adropdownselect: {
+		display: "Anzeige",
+	},
+	atable: {
+		new: "Neu",
+		delete: "Löschen",
+		filters: "Filter",
+		display: "Anzeige",
+		of: "von",
+		records: "Aufzeichnungen",
+		show: "Zeigen",
+	},
 };

@@ -10,6 +10,10 @@ import { CAPaginationName } from '@agufaui/theme'
 
 Table pagination
 
+#### Child Components
+
+- [Input](/core/input/)
+
 ## Usage
 
 #### Import

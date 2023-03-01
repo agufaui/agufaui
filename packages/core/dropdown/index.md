@@ -3,7 +3,7 @@ category: Basic
 ---
 
 <script setup>
-import { CADropdownName, CADropdownButtonName } from '@agufaui/theme'
+import { CADropdownName, CADropdownButtonName, CADropdownSelectName, CADropdownDecoName, CADropdownControlName } from '@agufaui/theme'
 </script>
 
 # Dropdown
@@ -15,22 +15,28 @@ Basic dropdown.
 #### Import
 
 ```ts
-import { Adropdown, Adropdownbutton } from "@agufaui/${framework name}";
+import { Adropdown, Adropdownbutton, Adropdownselect, Adropdowndeco, Adropdowncontrol } from "@agufaui/${framework name}";
 ```
 
 #### Html
 
 `<adropdown />` or `<Adropdown />` <br/>
-`<adropdownbutton />` or `<Adropdownbutton />`
+`<adropdownbutton />` or `<Adropdownbutton />` <br/>
+`<adropdownselect />` or `<Adropdownselect />` <br/>
+`<adropdowndeco />` or `<Adropdowndeco />` <br/>
+`<adropdowncontrol />` or `<Adropdowncontrol />` <br/>
 
 #### Configuration
 
 Theme component name: `{{ CADropdownName }}` <br/>
-Theme component name: `{{ CADropdownButtonName }}`
+Theme component name: `{{ CADropdownButtonName }}` <br/>
+Theme component name: `{{ CADropdownSelectName }}` <br/>
+Theme component name: `{{ CADropdownDecoName }}` <br/>
+Theme component name: `{{ CADropdownControlName }}` <br/>
 
 ## Showcase
 
-- adropdown
+- component **Adropdown**
 
 <DocDropdown />
 
@@ -38,13 +44,49 @@ Theme component name: `{{ CADropdownButtonName }}`
 <<< @/core/dropdown/DocDropdown.vue#showcase
 :::
 
-- adropdownbutton
+- component **Adropdownbutton**
 
 <DocDropdownButton />
 
 ::: details Click to see code
 <<< @/core/dropdown/DocDropdownButton.vue#showcase
 :::
+
+- component **Adropdownselect**
+
+<DocDropdownSelect />
+
+::: details Click to see code
+<<< @/core/dropdown/DocDropdownSelect.vue#showcase
+:::
+
+- component **Adropdowndeco**
+
+<DocDropdownDeco />
+
+::: details Click to see code
+<<< @/core/dropdown/DocDropdownDeco.vue#showcase
+:::
+
+- component **Adropdowncontrol**
+
+<DocDropdownControl />
+
+::: details Click to see code
+<<< @/core/dropdown/DocDropdownControl.vue#showcase
+:::
+
+## Slot
+
+- component **Adropdownselect**
+  * One default slot for button text
+
+- component **Adropdowndeco**
+  * One default slot for panel content
+  * One named slot `label` for button text
+
+- component **Adropdowncontrol**
+  * One default slot for button text
 
 ## AgufaUI provided Theme
 
@@ -56,7 +98,25 @@ Theme component name: `{{ CADropdownButtonName }}`
 
 #### Default Values
 
+- component **Adropdown**
+
 <<< @/vue/components/dropdown/Adropdown.vue#props
+
+- component **Adropdownbutton**
+
+<<< @/vue/components/dropdown/Adropdownbutton.vue#props
+
+- component **Adropdownselect**
+
+<<< @/vue/components/dropdown/Adropdownselect.vue#props
+
+- component **Adropdowndeco**
+
+<<< @/vue/components/dropdown/Adropdowndeco.vue#props
+
+- component **Adropdowncontrol**
+
+<<< @/vue/components/dropdown/Adropdowncontrol.vue#props
 
 ### Unique
 
@@ -75,5 +135,7 @@ Theme component name: `{{ CADropdownButtonName }}`
 <<< @/theme/prop.type.ts#ipropsform
 
 ## Events
+
+- component **Adropdownbutton** and **Adropdownselect** and **Adropdowncontrol**
 
 <<< @/theme/types/basic/ADropdown.ts#emits

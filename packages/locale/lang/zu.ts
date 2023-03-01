@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Sesha",
 	},
+	apagination: {
+		previous: "Ngaphambilini",
+		next: "Olandelayo",
+		goto: "Iya ku",
+	},
+	atpanel: {
+		actions: "Izenzo",
+		empty: "Awekho amarekhodi",
+	},
+	aselectoption: {
+		options: "Izinketho",
+		select: "khetha inketho",
+	},
+	adropdownselect: {
+		display: "Bonisa",
+	},
+	atable: {
+		new: "Okusha",
+		delete: "Susa",
+		filters: "Izihlungi",
+		display: "Bonisa",
+		of: "kwe",
+		records: "amarekhodi",
+		show: "Bonisa",
+	},
 };

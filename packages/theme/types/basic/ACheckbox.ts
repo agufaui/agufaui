@@ -2,9 +2,10 @@ import type { IProps, IPropsIcon, IPropsForm } from "../../prop.type";
 
 // #region props
 export interface IACheckboxProps extends IProps, IPropsIcon, IPropsForm {
-	v: boolean; // if checked.  Not configurable
-	vc?: string; // css classes for checkbox html element
+	v?: boolean; // if checked.  Not configurable
+	vc?: string; // css classes for div html element
 	label?: string; // Not configurable
+	inputc?: string; // css classes for 'input' html element
 }
 // #endregion props
 

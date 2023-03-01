@@ -36,6 +36,10 @@ export async function genSvelteScript(context: IContext, indent: string = ""): P
 	traverse(context.scriptFile as Node, {
 		enter(path) {
 			// console.log(path.node);
+			// if (context.fromFileName === "Atable.vue") {
+			//   if (t.isCallExpression(path.node))
+			//     console.log(path.node)
+			// }
 		},
 		Program(path) {
 			// insert node at the beginning of script body
@@ -382,6 +386,25 @@ export function transformCallExpression(path: NodePath<t.CallExpression>, contex
 			case "defineProps":
 				// path: defineProps<IxxxProps>();
 				transformDefineProps(node, path, context);
+				break;
+			case "computed":
+				if (context.fromFileName === "Atable.vue") {
+					// const displayEnd = computed(()=>{...})
+					// will parse to
+					// $: displayEnd = (()=>{...})()
+					if (
+						t.isVariableDeclarator(path.parent) &&
+						t.isArrowFunctionExpression(node.arguments[0])
+					) {
+						// create call expression (()=>{...})()
+						const callExp = t.callExpression(node.arguments[0], []);
+						const assignmentExp = t.assignmentExpression("=", path.parent.id, callExp);
+						const expStatement = t.expressionStatement(assignmentExp);
+						const labelStatement = t.labeledStatement(t.identifier("$"), expStatement);
+
+						path.parentPath.parentPath?.replaceWith(labelStatement);
+					}
+				}
 				break;
 		}
 	}

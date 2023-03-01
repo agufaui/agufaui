@@ -11,6 +11,7 @@ export interface IASdProps<T extends IProps> extends IProps, IPropsComposeY {
 	labelgridasdc?: string; // if there is a label, display grid
 	labelgridspanasdc?: string; // if there is a label, dynamic component span how many columns of a grid
 	uplabelasd?: boolean; // if label position at top of control
+	labelc?: string; // css classes for label
 	componentc?: string; // css classes for component container 'div' html element
 	vasd?: string; // component name (eg. button stands for Abutton).  Not configurable
 	dirasd?: string; // component file dir (eg. button for Abutton)

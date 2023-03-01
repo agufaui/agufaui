@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Soek",
 	},
+	apagination: {
+		previous: "Vorige",
+		next: "Volgende",
+		goto: "Gaan na",
+	},
+	atpanel: {
+		actions: "Aksies",
+		empty: "Geen rekords nie",
+	},
+	aselectoption: {
+		options: "Opsies",
+		select: "kies 'n opsie",
+	},
+	adropdownselect: {
+		display: "Vertoon",
+	},
+	atable: {
+		new: "Nuut",
+		delete: "Vee uit",
+		filters: "Filters",
+		display: "Vertoon",
+		of: "van",
+		records: "rekords",
+		show: "Wys",
+	},
 };

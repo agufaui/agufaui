@@ -1,8 +1,8 @@
 <template>
 	<div class="flex items-start justify-end flex-wrap gap-8 h-7rem">
 		<!-- #region showcase -->
+		<adropdown v="options" :deco="deco" :items="items"> </adropdown>
 		<adropdown v="options" :items="items"> </adropdown>
-		<adropdown v="options" t="hovertext" :items="items"> </adropdown>
 		<adropdown v="disabled" :items="items" :disabled="true"> </adropdown>
 		<!-- #endregion showcase -->
 	</div>
@@ -27,4 +27,11 @@ const items: TDropdownItem[] = [
 		href: "https://github.com",
 	},
 ];
+
+const deco = {
+	control: {
+		t: "outline",
+		arrowc: "ml-3",
+	},
+};
 </script>

@@ -41,10 +41,21 @@
 		/>
 		<asd vasd="button" dirasd="button" :propsasd="propsButton" :alerterrorasd="alertErrorSuccess" />
 		<asd vasd="button" dirasd="button" :propsasd="propsSlot" :alerterrorasd="alertErrorSuccess">
-			<template #default>
+			<template #msg>
 				<span>Submitted</span>
 			</template>
 		</asd>
+		<b>Responsive</b>
+		<asd
+			:labelasd="labelRes"
+			vasd="input"
+			t="resgrid4"
+			dirasd="input"
+			:propsasd="props"
+			:alertasd="alert"
+			:alerterrorasd="alertError"
+			@update:v="notify($event)"
+		/>
 	</div>
 </template>
 
@@ -168,6 +179,13 @@ let propsSlot = reactive<IAButtonProps>({
 	t: "focusblock",
 	c: "text-white bg-sky-5 hover:bg-sky-6 focus:ring-sky-5",
 });
+
+let labelRes: IALabelProps = {
+	v: "Username",
+	c: "pr-2",
+	required: true,
+	tooltip: { v: "user name" },
+};
 
 function notify(e: string) {
 	props.v = e;

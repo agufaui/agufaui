@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="flex items-center" :class="[{'justify-end': right}, cc]")
+div(class="flex items-center" v-bind="$attrs" :class="[{'justify-end': right}, cc]")
   span(v-if="required" :class="v? error? crequiredec : crequiredc : crequiredc") *
   label(:for="id" :class="cvc") {{ v }}
   atooltip(v-bind="tooltip")

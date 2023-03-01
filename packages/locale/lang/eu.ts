@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Bilatu",
 	},
+	apagination: {
+		previous: "Aurrekoa",
+		next: "Hurrengoa",
+		goto: "Joan",
+	},
+	atpanel: {
+		actions: "Ekintzak",
+		empty: "Erregistrorik ez",
+	},
+	aselectoption: {
+		options: "Aukerak",
+		select: "hautatu aukera bat",
+	},
+	adropdownselect: {
+		display: "Bistaratzea",
+	},
+	atable: {
+		new: "Berria",
+		delete: "Ezabatu",
+		filters: "Iragazkiak",
+		display: "Bistaratzea",
+		of: "de",
+		records: "erregistroak",
+		show: "Erakutsi",
+	},
 };

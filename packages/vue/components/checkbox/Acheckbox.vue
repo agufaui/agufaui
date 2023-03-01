@@ -2,12 +2,13 @@
 label(class="inline-flex items-center" :class="[{'cursor-pointer': !disabled}, cc]")
   input(type="checkbox" :checked="v" :disabled="disabled"
     class="hidden peer"
-    @click="click($event)")
+    :class="cinputc"
+    @input="click($event)")
   div(v-bind="$attrs" class=`flex items-center justify-center shrink-0 select-none
     peer-checked:(outline-none bg-current shadow ring-2 ring-offset-2)
     cursor-pointer peer-disabled:(opacity-50 cursor-default)` :class="cvc")
-    i(v-show="checked" :class="[ci, cic]")
-  slot {{ label }}
+    span(class="[:not(peer-checked)]:hidden" :class="[ci, cic]")
+  slot {{ label ?? "" }}
 </template>
 
 <script lang="ts">
@@ -41,7 +42,7 @@ const computedProperties = getComputedFromProps<IACheckboxProps>(
 	defaultPropValues
 );
 
-const { cvc, cc, ci, cic } = computedProperties;
+const { cvc, cc, ci, cic, cinputc } = computedProperties;
 
 const emits = defineEmits<IACheckboxEmits>();
 

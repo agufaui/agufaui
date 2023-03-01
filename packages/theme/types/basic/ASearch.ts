@@ -2,7 +2,7 @@ import type { IProps, IPropsIcon, IPropsForm } from "../../prop.type";
 
 // #region props
 export interface IASearchProps extends IProps, IPropsIcon, IPropsForm {
-	v: string; // search text.  Not configurable
+	v?: string; // search text.  Not configurable
 	id?: string; // html element search 'id' and 'name' value, html element label 'for' value
 	display?: string; // display class for root div html element
 	vc?: string; // css classes for search 'input' html element

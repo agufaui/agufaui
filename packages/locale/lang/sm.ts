@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Saili",
 	},
+	apagination: {
+		previous: "Muamua",
+		next: "Sosoo ai",
+		goto: "Alu i le",
+	},
+	atpanel: {
+		actions: "Gaioiga",
+		empty: "Leai ni faamaumauga",
+	},
+	aselectoption: {
+		options: "Filifiliga",
+		select: "filifili se filifiliga",
+	},
+	adropdownselect: {
+		display: "Faaalia",
+	},
+	atable: {
+		new: "Fou",
+		delete: "Aveese",
+		filters: "Filifiliga",
+		display: "Faaalia",
+		of: "o",
+		records: "faamaumauga",
+		show: "Faaalia",
+	},
 };

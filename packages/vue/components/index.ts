@@ -11,7 +11,9 @@ export { default as Acheckbox } from "./checkbox/Acheckbox.vue";
 export { default as Aradio } from "./radio/Aradio.vue";
 export { default as Adropdown } from "./dropdown/Adropdown.vue";
 export { default as Adropdownbutton } from "./dropdown/Adropdownbutton.vue";
+export { default as Adropdownselect } from "./dropdown/Adropdownselect.vue";
 export { default as Aselect } from "./select/Aselect.vue";
+export { default as Aselectoption } from "./select/Aselectoption.vue";
 export { default as Asearch } from "./search/Asearch.vue";
 export { default as Alabel } from "./label/Alabel.vue";
 export { default as Atooltip } from "./tooltip/Atooltip.vue";
@@ -38,3 +40,5 @@ export { default as Asd } from "./statusDecorator/Asd.vue";
 
 // table
 export { default as Apagination } from "./table/Apagination.vue";
+export { default as Atpanel } from "./table/Atpanel.vue";
+export { default as Atable } from "./table/Atable.vue";

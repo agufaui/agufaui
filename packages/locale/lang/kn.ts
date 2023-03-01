@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "ಹುಡುಕಿ Kannada",
 	},
+	apagination: {
+		previous: "ಹಿಂದಿನ",
+		next: "ಮುಂದೆ",
+		goto: "ಗೊಟೊ",
+	},
+	atpanel: {
+		actions: "ಕ್ರಿಯೆಗಳು",
+		empty: "ದಾಖಲೆಗಳಿಲ್ಲ",
+	},
+	aselectoption: {
+		options: "ಆಯ್ಕೆಗಳು",
+		select: "ಒಂದು ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ",
+	},
+	adropdownselect: {
+		display: "ಪ್ರದರ್ಶನ",
+	},
+	atable: {
+		new: "ಹೊಸದು",
+		delete: "ಅಳಿಸಿ",
+		filters: "ಶೋಧಕಗಳು",
+		display: "ಪ್ರದರ್ಶನ",
+		of: "ನ",
+		records: "ದಾಖಲೆಗಳು",
+		show: "ತೋರಿಸು",
+	},
 };

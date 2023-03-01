@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Пошук",
 	},
+	apagination: {
+		previous: "Папярэдні",
+		next: "Далей",
+		goto: "Goto",
+	},
+	atpanel: {
+		actions: "Дзеянні",
+		empty: "Запісаў няма",
+	},
+	aselectoption: {
+		options: "Параметры",
+		select: "абярыце варыянт",
+	},
+	adropdownselect: {
+		display: "Дысплей",
+	},
+	atable: {
+		new: "Новы",
+		delete: "Выдаліць",
+		filters: "Фільтры",
+		display: "Дысплей",
+		of: "з",
+		records: "запісы",
+		show: "Паказаць",
+	},
 };

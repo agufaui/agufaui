@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "ئىزدەش",
 	},
+	apagination: {
+		previous: "ئالدىنقى",
+		next: "كېيىنكى",
+		goto: "گوتو",
+	},
+	atpanel: {
+		actions: "ھەرىكەتلەر",
+		empty: "خاتىرە يوق",
+	},
+	aselectoption: {
+		options: "تاللانما",
+		select: "تاللاشنى تاللاڭ",
+	},
+	adropdownselect: {
+		display: "كۆرسىتىش",
+	},
+	atable: {
+		new: "يېڭى",
+		delete: "ئۆچۈرۈش",
+		filters: "سۈزگۈچ",
+		display: "كۆرسىتىش",
+		of: "of",
+		records: "خاتىرىلەر",
+		show: "Show",
+	},
 };

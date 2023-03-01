@@ -12,7 +12,11 @@ import { DACheckbox } from "./default/basic/ACheckbox";
 import { DARadio } from "./default/basic/ARadio";
 import { DADropdown } from "./default/basic/ADropdown";
 import { DADropdownButton } from "./default/basic/ADropdown";
+import { DADropdownSelect } from "./default/basic/ADropdown";
+import { DADropdownDeco } from "./default/basic/ADropdown";
+import { DADropdownControl } from "./default/basic/ADropdown";
 import { DASelect } from "./default/basic/ASelect";
+import { DASelectoption } from "./default/basic/ASelect";
 import { DASearch } from "./default/basic/ASearch";
 import { DALabel } from "./default/basic/ALabel";
 import { DATooltip } from "./default/basic/ATooltip";
@@ -35,6 +39,8 @@ import { DAMmsidebar } from "./default/navigation/AMmsidebar";
 import { DASd } from "./default/form/ASd";
 // Table
 import { DAPagination } from "./default/table/APagination";
+import { DATpanel } from "./default/table/ATpanel";
+import { DATable } from "./default/table/ATable";
 
 export const CAButtonName = "abutton";
 export const CAAlertName = "aalert";
@@ -48,8 +54,12 @@ export const CAToggleName = "atoggle";
 export const CACheckboxName = "acheckbox";
 export const CARadioName = "aradio";
 export const CASelectName = "aselect";
+export const CASelectoptionName = "aselectoption";
 export const CADropdownName = "adropdown";
 export const CADropdownButtonName = "adropdownbutton";
+export const CADropdownSelectName = "adropdownselect";
+export const CADropdownDecoName = "adropdowndeco";
+export const CADropdownControlName = "adropdowncontrol";
 export const CASearchName = "asearch";
 export const CALabelName = "alabel";
 export const CATooltipName = "atooltip";
@@ -72,6 +82,8 @@ export const CAMmsidebarName = "ammsidebar";
 export const CASdName = "asd";
 // Table
 export const CAPaginationName = "apagination";
+export const CATpanelName = "atpanel";
+export const CATableName = "atable";
 
 export const Theme: ITheme = {
 	[CAButtonName]: DAButton,
@@ -86,8 +98,12 @@ export const Theme: ITheme = {
 	[CACheckboxName]: DACheckbox,
 	[CARadioName]: DARadio,
 	[CASelectName]: DASelect,
+	[CASelectoptionName]: DASelectoption,
 	[CADropdownName]: DADropdown,
 	[CADropdownButtonName]: DADropdownButton,
+	[CADropdownSelectName]: DADropdownSelect,
+	[CADropdownDecoName]: DADropdownDeco,
+	[CADropdownControlName]: DADropdownControl,
 	[CASearchName]: DASearch,
 	[CALabelName]: DALabel,
 	[CATooltipName]: DATooltip,
@@ -110,4 +126,6 @@ export const Theme: ITheme = {
 	[CASdName]: DASd,
 	// Table
 	[CAPaginationName]: DAPagination,
+	[CATpanelName]: DATpanel,
+	[CATableName]: DATable,
 };

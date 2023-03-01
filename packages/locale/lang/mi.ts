@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Rapu",
 	},
+	apagination: {
+		previous: "Tuhinga o mua",
+		next: "Whai muri",
+		goto: "Haere",
+	},
+	atpanel: {
+		actions: "Nga Mahi",
+		empty: "Karekau he rekoata",
+	},
+	aselectoption: {
+		options: "Kōwhiringa",
+		select: "tīpakohia he kōwhiringa",
+	},
+	adropdownselect: {
+		display: "Whakaatu",
+	},
+	atable: {
+		new: "Hou",
+		delete: "Mukua",
+		filters: "Tātari",
+		display: "Whakaatu",
+		of: "o",
+		records: "rekoata",
+		show: "Whakaatu",
+	},
 };

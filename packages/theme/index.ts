@@ -34,6 +34,8 @@ export * from "./default/navigation/AMmsidebar";
 export * from "./default/form/ASd";
 // Table
 export * from "./default/table/APagination";
+export * from "./default/table/ATpanel";
+export * from "./default/table/ATable";
 
 export * from "./prop.type";
 export type { IAAlertProps, IAAlertEmits, IAAlertEmitsS } from "./types/basic/AAlert";
@@ -57,13 +59,25 @@ export type {
 	IASelectEmits,
 	IASelectEmitsS,
 	TSelectOption,
+	IASelectoptionProps,
+	IASelectoptionEmits,
+	IASelectoptionEmitsS,
 } from "./types/basic/ASelect";
-export type { IADropdownProps, TDropdownItem } from "./types/basic/ADropdown";
 export type {
+	IADropdownProps,
+	TDropdownItem,
 	IADropdownButtonProps,
 	IADropdownButtonEmits,
 	IADropdownButtonEmitsS,
 	TDropdownButtonItem,
+	IADropdownSelectProps,
+	IADropdownSelectEmits,
+	IADropdownSelectEmitsS,
+	TDropdownSelectItem,
+	IADropdownDecoProps,
+	IADropdownControlProps,
+	IADropdownControlEmits,
+	IADropdownControlEmitsS,
 } from "./types/basic/ADropdown";
 export type { IASearchProps, IASearchEmits, IASearchEmitsS } from "./types/basic/ASearch";
 export type { IALabelProps } from "./types/basic/ALabel";
@@ -99,3 +113,11 @@ export type {
 	IAPaginationEmits,
 	IAPaginationEmitsS,
 } from "./types/table/APagination";
+export type {
+	IATpanelProps,
+	IATpanelEmits,
+	IATpanelEmitsS,
+	TTableHeading,
+	TTpanelEmit,
+} from "./types/table/ATpanel";
+export type { IATableProps, IATableEmits, IATableEmitsS, TTableFilter } from "./types/table/ATable";

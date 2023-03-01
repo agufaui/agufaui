@@ -398,13 +398,23 @@ export function reduceAttrs(
 			name = "on:" + subName;
 
 			// eg. click.stop.prevent to on:click|stopPropagation|preventDefault
-			name = name
-				.replace(".stop", "|stopPropagation")
-				.replace(".prevent", "|preventDefault")
-				.replace(".once", "|once")
-				.replace(".capture", "|capture")
-				.replace(".self", "|self")
-				.replace(".passive", "|passive");
+			if (tagNode.name.startsWith("a") && tagNode.name.length > 1) {
+				name = name
+					.replace(".stop", "")
+					.replace(".prevent", "")
+					.replace(".once", "|once")
+					.replace(".capture", "")
+					.replace(".self", "")
+					.replace(".passive", "");
+			} else {
+				name = name
+					.replace(".stop", "|stopPropagation")
+					.replace(".prevent", "|preventDefault")
+					.replace(".once", "|once")
+					.replace(".capture", "|capture")
+					.replace(".self", "|self")
+					.replace(".passive", "|passive");
+			}
 
 			// eg. "show=!show" to show=!show
 			val = val.replace(/^"|"$/g, "");
@@ -442,6 +452,9 @@ export function reduceAttrs(
 		} else if (attr.name.startsWith("#")) {
 			// eg. transform #default to slot="default"
 			const slotName = attr.name.substring(1);
+			if (slotName === "label") {
+				tagNode.name = "span";
+			}
 			final += ` slot="${slotName}"`;
 		} else if (attr.name.startsWith("v-once")) {
 			final += ` once`;

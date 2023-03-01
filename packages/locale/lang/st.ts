@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Batla",
 	},
+	apagination: {
+		previous: "E fetileng",
+		next: "E 'ngoe",
+		goto: "Eya",
+	},
+	atpanel: {
+		actions: "Liketso",
+		empty: "Ha ho lirekoto",
+	},
+	aselectoption: {
+		options: "Dikgetho",
+		select: "khetha kgetho",
+	},
+	adropdownselect: {
+		display: "Pontšo",
+	},
+	atable: {
+		new: "E ncha",
+		delete: "Hlakola",
+		filters: "Lisefe",
+		display: "Pontšo",
+		of: "ea",
+		records: "litlaleho",
+		show: "Bontsha",
+	},
 };

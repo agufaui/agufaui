@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Αναζήτηση",
 	},
+	apagination: {
+		previous: "Προηγούμενος",
+		next: "Επόμενο",
+		goto: "Παω σε",
+	},
+	atpanel: {
+		actions: "Ενέργειες",
+		empty: "Κανένα αρχείο",
+	},
+	aselectoption: {
+		options: "Επιλογές",
+		select: "επιλέξτε μια επιλογή",
+	},
+	adropdownselect: {
+		display: "Απεικόνιση",
+	},
+	atable: {
+		new: "Νέος",
+		delete: "Διαγράφω",
+		filters: "Φίλτρα",
+		display: "Απεικόνιση",
+		of: "του",
+		records: "εγγραφές",
+		show: "προβολή",
+	},
 };

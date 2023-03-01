@@ -14,4 +14,29 @@ export default {
 	asearch: {
 		search: "Sakani",
 	},
+	apagination: {
+		previous: "Zam'mbuyo",
+		next: "Ena",
+		goto: "Pitani",
+	},
+	atpanel: {
+		actions: "Zochita",
+		empty: "Palibe zolemba",
+	},
+	aselectoption: {
+		options: "Zosankha",
+		select: "sankhani njira",
+	},
+	adropdownselect: {
+		display: "Onetsani",
+	},
+	atable: {
+		new: "Chatsopano",
+		delete: "Chotsani",
+		filters: "Zosefera",
+		display: "Onetsani",
+		of: "za",
+		records: "zolemba",
+		show: "Onetsani",
+	},
 };

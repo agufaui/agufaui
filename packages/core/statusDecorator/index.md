@@ -47,8 +47,11 @@ Theme component name: `{{ CASdName }}`
 
 ## Slot
 
-- One default slot for error or success message
+- One default slot for your own markups/components replacing dynamic AgufaUI component
 - One named slot `info` for info message
+- One named slot `msg` for error and success message
+- One named slot `pre` for your own markups/components replacing prepend `Abadge` component
+- One named slot `post` for your own markups/components replacing postpend `Abadge` component
 
 ## AgufaUI provided Theme
 
