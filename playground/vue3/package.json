@@ -1,7 +1,7 @@
 {
   "name": "@agufaui/playground-vue3",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "dev": "vite",
     "build": "nr type-check && nr build-only",
@@ -13,7 +13,7 @@
     "lintfix": "nr lint --fix"
   },
   "dependencies": {
-    "@agufaui/vue": "workspace:^0.8.0",
+    "@agufaui/vue": "workspace:^0.9.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
