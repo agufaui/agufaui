@@ -1,7 +1,7 @@
 {
   "name": "@agufaui/playground-svelte",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +11,10 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@agufaui/config": "workspace:^0.7.0",
-    "@agufaui/locale": "workspace:^0.4.0",
-    "@agufaui/svelte": "workspace:^0.7.0",
-    "@agufaui/theme": "workspace:^0.7.0",
+    "@agufaui/config": "workspace:^0.8.0",
+    "@agufaui/locale": "workspace:^0.5.0",
+    "@agufaui/svelte": "workspace:^0.8.0",
+    "@agufaui/theme": "workspace:^0.8.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "@tsconfig/svelte": "^3.0.0",
     "@unocss/reset": "^0.49.4",
