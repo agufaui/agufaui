@@ -1,83 +1,83 @@
 {
-	"name": "@agufaui/vue",
-	"version": "0.7.1",
-	"description": "Vue UI Components Library",
-	"author": "Agufa.tech <https://agufa.tech>",
-	"license": "MIT",
-	"homepage": "https://ui.agufa.tech",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/agufaui/agufaui",
-		"directory": "packages/vue"
-	},
-	"bugs": {
-		"url": "https://github.com/agufaui/agufaui/issues"
-	},
-	"keywords": [
-		"agufa-ui",
-		"agufaui",
-		"agufa",
-		"component library",
-		"ui framework",
-		"ui",
-		"vue",
-		"nuxt"
-	],
-	"sideEffects": false,
-	"type": "module",
-	"files": [
-		"dist"
-	],
-	"main": "./dist/cjs/vue/index.cjs",
-	"module": "./dist/es/vue/index.mjs",
-	"unpkg": "./dist/iife/index.js",
-	"jsdelivr": "./dist/iife/index.js",
-	"types": "./dist/types/index.d.ts",
-	"style": "./dist/es/assets/agufaui.css",
-	"exports": {
-		".": {
-			"import": "./dist/es/vue/index.mjs",
-			"require": "./dist/cjs/vue/index.cjs",
-			"default": "./dist/umd/index.js"
-		},
-		"./agufaui.css": {
-			"import": "./dist/es/assets/agufaui.css",
-			"require": "./dist/cjs/assets/agufaui.css"
-		},
-		"./theme.css": {
-			"import": "./dist/es/assets/theme.css",
-			"require": "./dist/cjs/assets/theme.css"
-		},
-		"./types": "./dist/types/index.d.ts"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"watch": "nr build:types && vite build --watch",
-		"build": "vite build && vue-tsc -p tsconfig.build.json && cp ../theme/dist/es/assets/theme.css dist/es/assets/theme.css && cp ../theme/dist/cjs/assets/theme.css dist/cjs/assets/theme.css",
-		"build:types": "vue-tsc -p tsconfig.build.json",
-		"clean": "rimraf dist",
-		"lint": "eslint --ext .ts,.vue --ignore-path ../../.eslintignore .",
-		"lintfix": "nr lint --fix",
-		"typecheck": "vue-tsc --noEmit",
-		"test": "vitest",
-		"coverage": "vitest run --coverage"
-	},
-	"peerDependencies": {
-		"vue": "^3.2.37"
-	},
-	"devDependencies": {
-		"@agufaui/config": "workspace:^0.8.0",
-		"@agufaui/locale": "workspace:^0.5.0",
-		"@agufaui/theme": "workspace:^0.8.0",
-		"@agufaui/use": "workspace:^0.8.0",
-		"@agufaui/usevue": "workspace:^0.8.0",
-		"@volar/vue-language-plugin-pug": "^1.0.24",
-		"unocss": "link:../../../../community/github.com/unocss/packages/unocss"
-	},
-	"dependencies": {
-		"@vueuse/components": "^9.13.0",
-		"@vueuse/core": "^9.13.0"
-	}
+  "name": "@agufaui/vue",
+  "version": "0.8.0",
+  "description": "Vue UI Components Library",
+  "author": "Agufa.tech <https://agufa.tech>",
+  "license": "MIT",
+  "homepage": "https://ui.agufa.tech",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agufaui/agufaui",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/agufaui/agufaui/issues"
+  },
+  "keywords": [
+    "agufa-ui",
+    "agufaui",
+    "agufa",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue",
+    "nuxt"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cjs/vue/index.cjs",
+  "module": "./dist/es/vue/index.mjs",
+  "unpkg": "./dist/iife/index.js",
+  "jsdelivr": "./dist/iife/index.js",
+  "types": "./dist/types/index.d.ts",
+  "style": "./dist/es/assets/agufaui.css",
+  "exports": {
+    ".": {
+      "import": "./dist/es/vue/index.mjs",
+      "require": "./dist/cjs/vue/index.cjs",
+      "default": "./dist/umd/index.js"
+    },
+    "./agufaui.css": {
+      "import": "./dist/es/assets/agufaui.css",
+      "require": "./dist/cjs/assets/agufaui.css"
+    },
+    "./theme.css": {
+      "import": "./dist/es/assets/theme.css",
+      "require": "./dist/cjs/assets/theme.css"
+    },
+    "./types": "./dist/types/index.d.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "watch": "nr build:types && vite build --watch",
+    "build": "vite build && vue-tsc -p tsconfig.build.json && cp ../theme/dist/es/assets/theme.css dist/es/assets/theme.css && cp ../theme/dist/cjs/assets/theme.css dist/cjs/assets/theme.css",
+    "build:types": "vue-tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .ts,.vue --ignore-path ../../.eslintignore .",
+    "lintfix": "nr lint --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@agufaui/config": "workspace:^0.8.0",
+    "@agufaui/locale": "workspace:^0.5.0",
+    "@agufaui/theme": "workspace:^0.8.0",
+    "@agufaui/use": "workspace:^0.8.0",
+    "@agufaui/usevue": "workspace:^0.8.0",
+    "@volar/vue-language-plugin-pug": "^1.0.24",
+    "unocss": "link:../../../../community/github.com/unocss/packages/unocss"
+  },
+  "dependencies": {
+    "@vueuse/components": "^9.13.0",
+    "@vueuse/core": "^9.13.0"
+  }
 }

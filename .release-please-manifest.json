@@ -1,5 +1,5 @@
 {
-  "packages/vue": "0.7.1",
+  "packages/vue": "0.8.0",
   "packages/svelte": "0.8.0",
   "packages/use": "0.8.0",
   "packages/usevue": "0.8.0",
